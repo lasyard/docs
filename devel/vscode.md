@@ -41,7 +41,7 @@ Set `im-select` as the input method switching command in VSCode:
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
   "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
-  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select"
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}"
 }
 ```
 
