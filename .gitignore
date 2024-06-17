@@ -1,0 +1,16 @@
+.*
+!.gitignore
+!.gitattributes
+!.gitmodules
+!.editorconfig
+
+*.log
+
+# Sphinx generated files
+_build/
+
+# VSCode files
+!.vscode/
+
+# Readthedocs files
+!.readthedocs.yaml

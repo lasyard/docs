@@ -1,0 +1,11 @@
+STATUS:           Success (0)
+ENCODE_HOST:      las1 (172.20.3.73)
+ENCODE_TIME:      2024-05-31 11:29:17 +0800 (1717126157)
+DECODE_TIME:      2024-05-31 11:29:17 +0800 (1717126157)
+TTL:              10
+CIPHER:           aes128 (4)
+MAC:              sha256 (5)
+ZIP:              none (0)
+UID:              root (0)
+GID:              root (0)
+LENGTH:           0

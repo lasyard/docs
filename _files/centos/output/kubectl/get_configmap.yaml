@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  slurm.properties: |
+    ClusterName=las
+    SlurmctldHost=las1
+    SlurmctldPort=6817
+    SlurmUser=slurm
+    SlurmUserId=1001
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-06-14T09:53:46Z"
+  name: slurm-config
+  namespace: default
+  resourceVersion: "1260232"
+  uid: 9f70b9c0-29f4-4e8d-8d39-18033eb63989

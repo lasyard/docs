@@ -1,0 +1,3 @@
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+normal*      up    1:00:00      3   idle las[1-3]
+high         up    1:00:00      3   idle las[1-3]

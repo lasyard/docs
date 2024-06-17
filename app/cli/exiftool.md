@@ -1,0 +1,80 @@
+# exiftool
+
+<https://exiftool.org/>
+
+ExifTool is a platform-independent Perl library plus a command-line application for reading, writing and editing meta information in a wide variety of files.
+
+## Usage
+
+### Show version
+
+```sh
+exiftool -ver
+```
+
+{.cli-output}
+
+```text
+12.85
+```
+
+### Move files
+
+```sh
+exiftool -fast2 -ext jpg -if '${DateTimeOriginal} and ${Keywords} and ${Model}' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal#;DateFmt('%Y/p%Y%m')}/\${DateTimeOriginal#;DateFmt('%Y%m%d_%H%M%S')}_\${Keywords;s/, /_/g}_\${Model;tr/ /_/}%+3c.jpg" *
+```
+
+### Rename files
+
+```sh
+exiftool -fast2 -ext jpg -if '${DateTimeOriginal}' "-Filename<IMG_\${DateTimeOriginal#;DateFmt('%Y%m%d_%H%M%S')}%+3c.jpg" *
+```
+
+### Modify time
+
+Set time to the file modification time if no time is set in EXIF:
+
+```sh
+exiftool -ext jpg -if 'not ${DateTimeOriginal}' '-AllDates<FileModifyDate' −overwrite_original *
+```
+
+Set time to a specified time:
+
+```sh
+exiftool -ext jpg '-AllDates=2020:02:02 20:00:00' −overwrite_original *
+exiftool -ext jpg "-AllDates=$(date -j -f "%s" "+%Y:%m:%d %H:%M:%S" 1012586522)" −overwrite_original *
+```
+
+Set time to one day before the original time:
+
+```sh
+exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' −overwrite_original *
+```
+
+### Modify Camera Model
+
+Set camera model to `UNKNOWN` if it is not set in EXIF:
+
+```sh
+exiftool -ext jpg -if 'not ${Model}' '-Model=UNKNOWN' -overwrite_original *
+```
+
+Some cameras write `Software` instead of `Model`, so set camera model accordingly:
+
+```sh
+exiftool -ext jpg -if 'not ${Model}' -if '${Software}' '-Model<${Software;$_=substr($_, 0, 8)}' -overwrite_original *
+```
+
+### Copy tags
+
+For example, copy `Model`:
+
+```sh
+exiftool -TagsFromFile source.jpg -Model -overwrite_original target.jpg
+```
+
+### Remove thumbnail image
+
+```sh
+exiftool -ext jpg -if '${ThumbnailImage}' -ThumbnailImage= -overwrite_original -R .
+```

@@ -1,0 +1,10 @@
+/* The colors is set to be consistent with sphinx_rtd_theme */
+
+.cli-output .highlight {
+    color: #edf0f2;
+    background-color: #343131;
+}
+
+.file-content .highlight {
+    background-color: #e7f2fa;
+}

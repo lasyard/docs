@@ -1,0 +1,6 @@
+NAMESPACE          NAME                              TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                  AGE
+calico-apiserver   calico-api                        ClusterIP   10.97.145.20   <none>        443/TCP                  5m7s
+calico-system      calico-kube-controllers-metrics   ClusterIP   None           <none>        9094/TCP                 5m13s
+calico-system      calico-typha                      ClusterIP   10.97.159.61   <none>        5473/TCP                 6m
+default            kubernetes                        ClusterIP   10.96.0.1      <none>        443/TCP                  114m
+kube-system        kube-dns                          ClusterIP   10.96.0.10     <none>        53/UDP,53/TCP,9153/TCP   114m

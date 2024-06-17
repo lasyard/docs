@@ -1,0 +1,2 @@
+NAME                	URL
+kubernetes-dashboard	https://kubernetes.github.io/dashboard/

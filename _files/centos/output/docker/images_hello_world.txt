@@ -1,0 +1,2 @@
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+hello-world   latest    feb5d9fea6a5   2 years ago   13.3kB
