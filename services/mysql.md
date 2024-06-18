@@ -1,35 +1,22 @@
-# MySQL
+# mysql
 
 <https://www.mysql.com/>
 
 The world's most popular open source database.
 
-## Usage
+## Install
 
-### Create user
+### CentOS
 
-Start mysql client:
+:CPU: x86_64 * 8
+:OS: CentOS 8.5
 
 ```sh
-mysql -u root -p
+dnf install mysql-server
 ```
 
-In mysql client:
+## Configure
 
-```sql
-CREATE USER xxx IDENTIFIED BY 'xxxxxxxx';
-GRANT ALL ON xxdb.* to 'xxx'@'%';
-quit;
-```
-
-Relogin as the new user:
-
-```sql
-mysql -u xxx -p
-```
-
-In mysql client:
-
-```sql
-CREATE DATABASE xxdb;
+```sh
+mysql_secure_installation
 ```
