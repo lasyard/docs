@@ -9,6 +9,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ```sh
+omz version
+```
+
+{.cli-ouput}
+
+```text
+master (373a1fd)
+```
+
+Edit startup scripts:
+
+```sh
 vi ~/.zshrc
 ```
 
@@ -16,3 +28,9 @@ vi ~/.zshrc
 :diff: /_files/macos/home/zshrc.orig
 :class: file-content
 :::
+
+Mannully update:
+
+```sh
+omz update
+```
