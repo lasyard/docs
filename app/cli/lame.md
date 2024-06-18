@@ -1,8 +1,15 @@
 # lame
 
+<https://lame.sourceforge.io/>
+
+LAME is a high quality MPEG Audio Layer III (MP3) encoder licensed under the LGPL.
+
 ## Install
 
 ### macOS
+
+:CPU: x86_64 * 2
+:OS: macOS Monterey
 
 ```sh
 brew install lame
