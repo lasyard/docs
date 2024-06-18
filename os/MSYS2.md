@@ -22,6 +22,12 @@ pacman -S ${MINGW_PACKAGE_PREFIX}-mediainfo
 pacman -S ${MINGW_PACKAGE_PREFIX}-jq
 ```
 
+Update all packages:
+
+```sh
+pacman -Syu
+```
+
 ## Install development tools
 
 ```sh
