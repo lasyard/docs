@@ -4,8 +4,14 @@
 
 `chrony` is a versatile implementation of the Network Time Protocol (NTP).
 
-:CPU: x86_64 * 8
-:OS: CentOS 8.5
+:::{include} /_frags/plats/centos.txt
+:::
+
+:::{include} /_frags/nodes/las.txt
+:::
+
+Roles of the nodes:
+
 :NTP Server: las1
 :NTP Client: las2, las3
 

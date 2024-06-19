@@ -6,10 +6,8 @@ A complete, cross-platform solution to record, convert and stream audio and vide
 
 ## Install
 
-### macOS
-
-:CPU: x86_64 * 2
-:OS: macOS Monterey
+:::{include} /_frags/plats/macos.txt
+:::
 
 ```sh
 brew install ffmpeg

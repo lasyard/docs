@@ -1,9 +1,15 @@
 # Slurm Deployment
 
-:CPU: x86-64 * 8
-:OS: CentOS 8.5
-:Controller Node: las1/172.20.3.73
-:Compute Nodes: las1/172.20.3.73, las2/172.20.3.48, las3/172.20.3.79
+:::{include} /_frags/plats/centos.txt
+:::
+
+:::{include} /_frags/nodes/las.txt
+:::
+
+Roles of the nodes:
+
+:Controller: las1
+:Compute Nodes: las1, las2, las3
 
 ## Prerequisites
 

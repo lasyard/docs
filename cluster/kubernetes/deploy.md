@@ -1,9 +1,15 @@
 # Kubernetes Deployment
 
-:Nodes: las1/172.20.3.73, las2/172.20.3.48, las3/172.20.3.79
-:CPU: x86-64 * 8
-:OS: CentOS 8.5
-:Kubernetes: 1.30
+:::{include} /_frags/plats/centos.txt
+:::
+
+:::{include} /_frags/nodes/las.txt
+:::
+
+Roles of the nodes:
+
+:Control-plane: las1
+:Nodes: las1, las2, las3
 
 ## Prerequisites
 

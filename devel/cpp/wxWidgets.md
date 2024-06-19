@@ -12,12 +12,13 @@ wget https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.5/wxWidgets-3
 
 ## Build
 
-### macOS
+:::{include} /_frags/plats/macos.txt
+:::
 
-:CPU: x86-64 * 2
-:OS: macOS Monterey
-:Toolchain: Apple clang 14.0.0, CMake 3.29.3
-:wxWidgets: 3.2.5
+With toolchains:
+
+- Apple clang 14.0.0
+- CMake 3.29.3
 
 Extract sources:
 
@@ -26,7 +27,7 @@ tar -C ~/workspace/devel/ -xjf wxWidgets-3.2.5.tar.bz2
 cd ~/workspace/devel/wxWidgets-3.2.5
 ```
 
-#### Release
+### Release
 
 ```sh
 cmake -S . -B build-x86_64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~
@@ -52,7 +53,7 @@ To uninstall wxWidgets, run:
 cmake --build . --target uninstall
 ```
 
-#### Debug
+### Debug
 
 ```sh
 cmake -S . -B build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel

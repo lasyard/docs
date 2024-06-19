@@ -6,10 +6,8 @@ GnuPG is a complete and free implementation of the OpenPGP standard as defined b
 
 ## Install
 
-### macOS
-
-:CPU: x86_64 * 2
-:OS: macOS Monterey
+:::{include} /_frags/plats/macos.txt
+:::
 
 ```sh
 brew install gpg

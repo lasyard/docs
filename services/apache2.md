@@ -4,8 +4,10 @@
 
 The Apache HTTP Server Project is an effort to develop and maintain an open-source HTTP server for modern operating systems including UNIX and Windows.
 
-:CPU: x86-64 * 2
-:OS: macOS Monterey
+## Install
+
+:::{include} /_frags/plats/macos.txt
+:::
 
 `apache2` is pre-installed on macOS Monterey as `httpd`.
 

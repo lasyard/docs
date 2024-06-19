@@ -1,0 +1,8 @@
+:::{admonition} macOS
+The contents started from here are applicable to **macOS**. Detailed configurations:
+
+:OS: macOS Monterey
+:CPU: x86-64 * 2
+
+:Toolchain: Apple clang 14.0.0, CMake 3.29.3
+:::

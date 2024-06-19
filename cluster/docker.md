@@ -2,8 +2,8 @@
 
 <https://www.docker.com/>
 
-:CPU: x86_64 * 8
-:OS: CentOS 8.5
+:::{include} /_frags/plats/centos.txt
+:::
 
 ## Install
 

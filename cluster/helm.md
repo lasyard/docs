@@ -8,10 +8,8 @@ Helm is the best way to find, share, and use software built for Kubernetes.
 
 ## Install
 
-### CentOS
-
-:CPU: x86_64 * 8
-:OS: CentOS 8.5
+:::{include} /_frags/plats/centos.txt
+:::
 
 ```sh
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3

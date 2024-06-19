@@ -1,0 +1,7 @@
+:::{admonition} CentOS
+The contents started from here are applicable to **CentOS**. Detailed configurations:
+
+:OS: CentOS 8.5
+:CPU: x86_64 * 8
+
+:::
