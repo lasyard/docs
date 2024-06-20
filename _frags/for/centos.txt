@@ -1,4 +1,4 @@
-:::{admonition} The contents started here are applicable to **CentOS**
+:::{admonition} The contents started here are applicable to CentOS
 :class: attention
 
 ![CentOS logo](/_images/logo/centos.png){align=center}

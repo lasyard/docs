@@ -1,4 +1,4 @@
-:::{admonition} The contents started here are applicable to **macOS**
+:::{admonition} The contents started here are applicable to macOS
 :class: attention
 
 ![macOS logo](/_images/logo/macos.png){align=center}

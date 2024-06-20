@@ -1,6 +1,6 @@
 # Install PHP
 
-## macOS
+{{ for_macos }}
 
 ```sh
 brew install php
@@ -15,6 +15,26 @@ php -v
 :class: cli-output
 :::
 
+## Configure PHP
+
+See where to find `ini` configuration:
+
 ```sh
-codesign --sign 'XXXX' --force --keychain ~/Library/Keychains/login.keychain-db /usr/local/opt/php/lib/php/20230831/opcache.so
+php --ini
 ```
+
+:::{literalinclude} /_files/macos/output/php/ini.txt
+:language: text
+:class: cli-output
+:::
+
+Disable opcache:
+
+```sh
+vi /usr/local/etc/php/8.3/conf.d/opcache.ini
+```
+
+:::{literalinclude} /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini
+:diff: /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini.orig
+:class: file-content
+:::

@@ -1,4 +1,4 @@
-:::{admonition} The contents started here are applicable to **Windows**
+:::{admonition} The contents started here are applicable to Windows
 :class: attention
 
 ![Windows logo](/_images/logo/windows.png){align=center}

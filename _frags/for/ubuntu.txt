@@ -1,4 +1,4 @@
-:::{admonition} The contents started here are applicable to **Ubuntu**
+:::{admonition} The contents started here are applicable to Ubuntu
 :class: attention
 
 ![Ubuntu logo](/_images/logo/ubuntu.png){align=center}
