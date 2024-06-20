@@ -1,6 +1,8 @@
 # Install Slurm Packages
 
-## Using dnf on CentOS
+## By Package Manager
+
+{{ for_centos }}
 
 ```sh
 dnf config-manager --set-enabled powertools
@@ -47,9 +49,9 @@ dnf install slurm-slurmdbd
 dnf install slurm-slurmrestd
 ```
 
-## Using apt on Ubuntu/Debian
+{{ for_ubuntu }}
 
-Package of slurm client is standalone on Debian/Ubuntu, install it with:
+Package of slurm client is standalone on Ubuntu, install it with:
 
 ```sh
 sudo apt update
