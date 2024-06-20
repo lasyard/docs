@@ -49,11 +49,41 @@ Set `im-select` as the input method switching command in VSCode:
 
 ### shell
 
-On macOS, install `shfmt`:
+{{ for_macos }}
 
 ```sh
 brew install shfmt
 ```
+
+```sh
+shfmt --version
+```
+
+{.cli-output}
+
+```text
+3.8.0
+```
+
+{{ for_centos }}
+
+```sh
+wget https://github.com/patrickvane/shfmt/releases/download/master/shfmt_linux_amd64
+chmod +x shfmt_linux_amd64
+cp shfmt_linux_amd64 /usr/local/bin/shfmt
+```
+
+```sh
+shfmt --version
+```
+
+{.cli-output}
+
+```text
+(devel)
+```
+
+Configure VSCode to use `shfmt` for formatting shell scripts:
 
 ```sh
 vi "${HOME}/Library/Application Support/Code/User/settings.json"
