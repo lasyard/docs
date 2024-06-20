@@ -197,8 +197,8 @@ docker unpause zealous_leavitt
 If there are a `Dockerfile` in the current directory, build the image:
 
 ```sh
-docker build -t ubuntu-slurm-client:22.04_23.11.7 .
-docker tag ubuntu-slurm-client:22.04_23.11.7 ubuntu-slurm-client
+docker build -t slurm-ubuntu-client:22.04_23.11.7 .
+docker tag slurm-ubuntu-client:22.04_23.11.7 slurm-ubuntu-client
 ```
 
 ### Clean up
