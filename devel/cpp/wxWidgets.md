@@ -4,21 +4,17 @@
 
 wxWidgets is a C++ library that lets developers create applications for Windows, macOS, Linux and other platforms with a single code base.
 
-## Download Sources
+## Build from sources
+
+Download sources:
 
 ```sh
 wget https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.5/wxWidgets-3.2.5.tar.bz2
 ```
 
-## Build
+{{ for_macos }}
 
-:::{include} /_frags/plats/macos.txt
-:::
-
-With toolchains:
-
-- Apple clang 14.0.0
-- CMake 3.29.3
+{{ macos_build }}
 
 Extract sources:
 

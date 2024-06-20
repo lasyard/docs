@@ -6,8 +6,7 @@ A complete, cross-platform solution to record, convert and stream audio and vide
 
 ## Install
 
-:::{include} /_frags/plats/macos.txt
-:::
+{{ for_macos }}
 
 ```sh
 brew install ffmpeg

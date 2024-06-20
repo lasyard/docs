@@ -1,5 +1,7 @@
 # Ubuntu
 
+![Ubuntu Logo](/_images/logo/ubuntu.png)
+
 <https://ubuntu.com/>
 
 Open Source Edge: Secure & Fast

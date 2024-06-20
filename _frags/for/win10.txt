@@ -1,0 +1,10 @@
+:::{admonition} The contents started here are applicable to **Windows**
+:class: attention
+
+![Windows logo](/_images/logo/windows.png){align=center}
+
+Detailed configurations:
+
+:OS: Windows 10
+:CPU: x86-64 * 2
+:::

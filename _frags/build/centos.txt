@@ -1,0 +1,6 @@
+The toolchain used for this build is as follows:
+
+- gcc 11.2.1
+- GNU Make 4.3
+- cmake 3.27.7 (may not used)
+- rpmbuild 4.14.3 (may not used)

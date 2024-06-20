@@ -1,0 +1,10 @@
+:::{admonition} The contents started here are applicable to **Ubuntu**
+:class: attention
+
+![Ubuntu logo](/_images/logo/ubuntu.png){align=center}
+
+Detailed configurations:
+
+:OS: Ubuntu 22.04
+:CPU: x86_64 * 4
+:::

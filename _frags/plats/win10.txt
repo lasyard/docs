@@ -1,7 +1,0 @@
-:::{admonition} Windows
-The contents started from here are applicable to **Windows**. Detailed configurations:
-
-:OS: Windows 10
-:CPU: x86-64 * 2
-
-:::

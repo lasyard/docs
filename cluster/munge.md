@@ -6,11 +6,9 @@ MUNGE (MUNGE Uid 'N' Gid Emporium) is an authentication service for creating and
 
 ## Deploy
 
-:::{include} /_frags/plats/centos.txt
-:::
+{{ for_centos }}
 
-:::{include} /_frags/nodes/las.txt
-:::
+{{ cluster_las }}
 
 ### Install
 

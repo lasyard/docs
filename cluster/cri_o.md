@@ -4,8 +4,7 @@
 
 LIGHTWEIGHT CONTAINER RUNTIME FOR KUBERNETES.
 
-:::{include} /_frags/plats/centos.txt
-:::
+{{ for_centos }}
 
 ## Install
 

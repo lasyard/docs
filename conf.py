@@ -31,8 +31,21 @@ myst_enable_extensions = [
     'deflist',
     'fieldlist',
     'tasklist',
+    'attrs_inline',
     'attrs_block',
+    'substitution',
 ]
+
+myst_substitutions = {
+    'for_macos': ":::{include} /_frags/for/macos.txt\n:::",
+    'for_centos': ":::{include} /_frags/for/centos.txt\n:::",
+    'for_ubuntu': ":::{include} /_frags/for/ubuntu.txt\n:::",
+    'for_win10': ":::{include} /_frags/for/win10.txt\n:::",
+    'macos_build': ":::{include} /_frags/build/macos.txt\n:::",
+    'centos_build': ":::{include} /_frags/build/centos.txt\n:::",
+    'ubuntu_build': ":::{include} /_frags/build/ubuntu.txt\n:::",
+    'cluster_las': ":::{include} /_frags/cluster/las.txt\n:::",
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

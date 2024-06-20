@@ -4,11 +4,9 @@
 
 `chrony` is a versatile implementation of the Network Time Protocol (NTP).
 
-:::{include} /_frags/plats/centos.txt
-:::
+{{ for_centos }}
 
-:::{include} /_frags/nodes/las.txt
-:::
+{{ cluster_las }}
 
 Roles of the nodes:
 

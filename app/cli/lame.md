@@ -6,8 +6,7 @@ LAME is a high quality MPEG Audio Layer III (MP3) encoder licensed under the LGP
 
 ## Install
 
-:::{include} /_frags/plats/macos.txt
-:::
+{{ for_macos }}
 
 ```sh
 brew install lame

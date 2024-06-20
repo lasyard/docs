@@ -6,8 +6,7 @@ The Apache HTTP Server Project is an effort to develop and maintain an open-sour
 
 ## Install
 
-:::{include} /_frags/plats/macos.txt
-:::
+{{ for_macos }}
 
 `apache2` is pre-installed on macOS Monterey as `httpd`.
 

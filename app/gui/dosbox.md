@@ -6,8 +6,7 @@ DOSBox is an emulator that recreates a MS-DOS compatible environment (complete w
 
 ## Configure
 
-:::{include} /_frags/plats/macos.txt
-:::
+{{ for_macos }}
 
 ```sh
 vi ~/Library/Preferences/"DOSBox 0.74-3 Preferences"
@@ -18,8 +17,7 @@ vi ~/Library/Preferences/"DOSBox 0.74-3 Preferences"
 :class: file_content
 :::
 
-:::{include} /_frags/plats/win10.txt
-:::
+{{ for_win10 }}
 
 Edit `%USERPROFILE%\AppData\Local\DOSBox\dosbox-0.74-3.conf`:
 

@@ -4,8 +4,7 @@
 
 tmux is a terminal multiplexer. It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal.
 
-:::{include} /_frags/plats/centos.txt
-:::
+{{ for_centos }}
 
 ## Install
 

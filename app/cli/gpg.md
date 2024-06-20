@@ -6,8 +6,7 @@ GnuPG is a complete and free implementation of the OpenPGP standard as defined b
 
 ## Install
 
-:::{include} /_frags/plats/macos.txt
-:::
+{{ for_macos }}
 
 ```sh
 brew install gpg

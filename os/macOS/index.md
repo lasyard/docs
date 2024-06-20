@@ -1,5 +1,7 @@
 # macOS
 
+![macOS logo](/_images/logo/macos.png)
+
 <https://support.apple.com/macos>
 
 :::{toctree}

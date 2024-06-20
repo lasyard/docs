@@ -1,10 +1,8 @@
 # Kubernetes Deployment
 
-:::{include} /_frags/plats/centos.txt
-:::
+{{ for_centos }}
 
-:::{include} /_frags/nodes/las.txt
-:::
+{{ cluster_las }}
 
 Roles of the nodes:
 

@@ -1,0 +1,10 @@
+:::{admonition} The contents started here are applicable to **macOS**
+:class: attention
+
+![macOS logo](/_images/logo/macos.png){align=center}
+
+Detailed configurations:
+
+:OS: macOS Monterey
+:CPU: x86-64 * 2
+:::

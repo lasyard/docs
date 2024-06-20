@@ -2,8 +2,7 @@
 
 <https://www.docker.com/>
 
-:::{include} /_frags/plats/centos.txt
-:::
+{{ for_centos }}
 
 ## Install
 

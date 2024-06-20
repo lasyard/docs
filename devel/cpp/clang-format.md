@@ -2,8 +2,7 @@
 
 ## Install
 
-:::{include} /_frags/plats/macos.txt
-:::
+{{ for_macos }}
 
 ```sh
 brew install clang-format

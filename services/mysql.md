@@ -6,8 +6,7 @@ The world's most popular open source database.
 
 ## Install
 
-:::{include} /_frags/plats/centos.txt
-:::
+{{ for_centos }}
 
 ```sh
 dnf install mysql-server

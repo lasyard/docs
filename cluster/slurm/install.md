@@ -56,15 +56,17 @@ sudo apt update
 sudo apt satisfy slurm-client
 ```
 
-## From source
+## Build from sources
 
-Download source:
+Download sources:
 
 ```sh
 wget https://download.schedmd.com/slurm/slurm-23.11.7.tar.bz2
 ```
 
-### Build rpm package on CentOS
+{{ for_centos }}
+
+{{ centos_build }}
 
 See "<project:/os/CentOS/devel.md>" for how to install build tools on CentOS.
 
@@ -100,7 +102,9 @@ rpm -iv slurm-slurmd-23.11.7-1.el8.x86_64.rpm
 Packages installed by `rpm` can be uninstalled by `dnf remove`.
 :::
 
-### Build deb package on Ubuntu/Debian
+{{ for_ubuntu }}
+
+{{ ubuntu_build }}
 
 See "<project:/os/Ubuntu/devel.md>" for how to install build tools on Ubuntu/Debian.
 

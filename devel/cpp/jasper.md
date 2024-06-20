@@ -4,21 +4,17 @@
 
 JasPer is a software toolkit for the handling of image data. The software provides a means for representing images, and facilitates the manipulation of image data, as well as the import/export of such data in numerous formats (e.g., JPEG-2000 JP2, JPEG, PNM, BMP, Sun Rasterfile, and PGX).
 
-## Download Sources
+## Build form sources
+
+Download sources:
 
 ```sh
 wget https://github.com/jasper-software/jasper/releases/download/version-4.0.0/jasper-4.0.0.tar.gz
 ```
 
-## Build
+{{ for_macos }}
 
-:::{include} /_frags/plats/macos.txt
-:::
-
-With toolchains:
-
-- Apple clang 14.0.0
-- CMake 3.29.3
+{{ macos_build }}
 
 Extract sources:
 
