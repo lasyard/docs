@@ -6,6 +6,15 @@ Software Distribution and Building Platform for Windows.
 
 MSYS2 is a collection of tools and libraries providing you with an easy-to-use environment for building, installing and running native Windows software.
 
+## Configure
+
+Edit `C:\msys64\etc\nsswitch.conf` to set home directory to `%USERPROFILE%`:
+
+:::{literalinclude} /_files/msys2/etc/nsswitch.conf
+:diff: /_files/msys2/etc/nsswitch.conf.orig
+:class: file-content
+:::
+
 ## pacman
 
 Search for a package:
