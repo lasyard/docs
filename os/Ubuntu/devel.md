@@ -8,6 +8,12 @@ Install build essenstial:
 sudo apt satisfy build-essential
 ```
 
+Install kernel headers if you need to compile kernel modules:
+
+```sh
+sudo apt satisfy linux-headers-$(uname -r)
+```
+
 Install other tools:
 
 ```sh

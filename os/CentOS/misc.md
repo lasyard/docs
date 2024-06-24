@@ -119,3 +119,81 @@ cat /proc/1/limits
 :language: text
 :class: cli-output
 :::
+
+## Show system logs
+
+Monitor system logs continuously:
+
+```sh
+journalctl -f
+```
+
+Just like `tail -f`.
+
+Show system logs for a specific unit (service):
+
+```sh
+journalctl -u chrony
+```
+
+### hostname
+
+Show hostname:
+
+```sh
+hostname
+```
+
+Temporarily set hostname:
+
+```sh
+hostname xxxx
+```
+
+Set hostname:
+
+```sh
+vi /etc/hostname
+```
+
+Make it effective immediately:
+
+```sh
+hostname -F /etc/hostname
+```
+
+You may need to edit `/etc/hosts` to map the hostname accordingly.
+
+### systemctl
+
+Control the systemd system and service manager.
+
+### Time zone
+
+Show information:
+
+```sh
+timedatectl
+```
+
+:::{literalinclude} /_files/centos/output/timedatectl/no_args.txt
+:language: ini
+:class: cli-output
+:::
+
+List available time zones:
+
+```sh
+timedatectl list-timezones
+```
+
+:::{literalinclude} /_files/centos/output/timedatectl/list_timezones.txt
+:language: ini
+:class: cli-output
+:::
+
+Set time zone:
+
+```sh
+timedatectl set-timezone Asia/Shanghai
+```
