@@ -14,7 +14,7 @@ dnf repolist powertools
 :class: cli-output
 :::
 
-For controller node:
+For controller nodes:
 
 ```sh
 dnf install slurm-slurmctld

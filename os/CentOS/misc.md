@@ -70,3 +70,52 @@ swapoff /dev/dm-1
 ```
 
 To permanently disable swap, edit `/etc/fstab` and comment out the line that mounts the swap partition.
+
+## ulimit
+
+Provides control over the resources available to the shell and to processes started by it, on systems that allow such control.
+
+Show current limits:
+
+```sh
+ulimit -a
+```
+
+:::{literalinclude} /_files/centos/output/ulimit/a.txt
+:language: text
+:class: cli-output
+:::
+
+Set the maximum number of open files:
+
+```sh
+ulimit -n 1048576
+```
+
+This is effective only in current shell and any child processes. To make it permanent:
+
+```sh
+vi /etc/security/limits.conf
+```
+
+:::{literalinclude} /_files/centos/etc/security/limits.conf.orig
+:language: text
+:class: file-content
+:::
+
+The modification will take effect after a re-login.
+
+:::{note}
+If there are file in `/etc/security/limits.d`, the values may be overridden by those files.
+:::
+
+The limits are applied by a per-process manner. You can check the limits for process 1 (i.e. the init process):
+
+```sh
+cat /proc/1/limits
+```
+
+:::{literalinclude} /_files/centos/output/cat/proc_1_limits.txt
+:language: text
+:class: cli-output
+:::
