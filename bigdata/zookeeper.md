@@ -52,7 +52,7 @@ vi /opt/zookeeper/conf/zoo.cfg
 :class: file-content
 :::
 
-Create directory for `${dataDir}`:
+Create the directory of `${dataDir}` on each node:
 
 ```sh
 mkdir -p /opt/tmp/zookeeper

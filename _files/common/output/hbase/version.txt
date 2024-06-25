@@ -1,0 +1,4 @@
+HBase 2.5.8-hadoop3
+Source code repository git://buildbox.localdomain/home/apurtell/RM/hbase revision=37444de6531b1bdabf2e445c83d0268ab1a6f919
+Compiled by apurtell on Thu Feb 29 15:55:21 PST 2024
+From source with checksum 6610447458ea7ade7bba51c568868aebd22fd3c750bc0b3a5eafd006b0cd1029eae305a85f389356517b557096d62b79d99b427b07c6b1794b4964407d6e75a3

@@ -67,7 +67,7 @@ vi /opt/hadoop/etc/hadoop/core-site.xml
 :class: file-content
 :::
 
-Make directory for `${hadoop.tmp.dir}`:
+Create the directory of `${hadoop.tmp.dir}` on each node:
 
 ```sh
 mkdir -p /opt/tmp/hadoop
@@ -122,7 +122,7 @@ vi /opt/hadoop/etc/hadoop/mapred-site.xml
 
 #### Distribute configuration files
 
-Copy these files to all nodes:
+Copy these files in directory `/opt/hadoop/etc/hadoop/` to all nodes:
 
 - `hadoop-env.sh`
 - `core-site.xml`

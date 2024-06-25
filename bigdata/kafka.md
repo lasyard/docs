@@ -53,7 +53,7 @@ vi /opt/kafka/config/server.properties
 :class: file-content
 :::
 
-Create directories for `${log.dirs}`:
+Create the directory of `${log.dirs}` on each node:
 
 ```sh
 mkdir -p /opt/tmp/kafka-logs
