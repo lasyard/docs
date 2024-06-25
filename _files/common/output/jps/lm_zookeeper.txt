@@ -1,0 +1,2 @@
+497523 sun.tools.jps.Jps -lm
+495802 org.apache.zookeeper.server.quorum.QuorumPeerMain /opt/zookeeper/bin/../conf/zoo.cfg
