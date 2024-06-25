@@ -14,15 +14,27 @@ Get shell scripts:
 
 - [install_java_bin](https://github.com/lasyard/coding/blob/main/shell/install_java_bin.sh)
 
-Download java packages:
+Download the java binary packages:
 
 ```sh
 wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.8.4/apache-zookeeper-3.8.4-bin.tar.gz
 ```
 
+Check sum:
+
+```sh
+sha512sum apache-zookeeper-3.8.4-bin.tar.gz
+```
+
+{.cli-output}
+
+```text
+4d85d6f7644d5f36d9c4d65e78bd662ab35ebe1380d762c24c12b98af029027eee453437c9245dbdf2b9beb77cd6b690b69e26f91cf9d11b0a183a979c73fa43  apache-zookeeper-3.8.4-bin.tar.gz
+```
+
 ## Deploy
 
-Install java packages on each node:
+Install the java packages on each node:
 
 ```sh
 install_java_bin zookeeper apache-zookeeper-3.8.4-bin.tar.gz /opt
@@ -59,7 +71,7 @@ Create `myid` file for each node:
 
 ```sh
 for i in {1..3}; do
-    ssh las$i "echo $i | tee /opt/tmp/zookeeper/myid"
+    ssh las${i} "echo ${i} | tee /opt/tmp/zookeeper/myid"
 done
 ```
 
@@ -121,3 +133,5 @@ done
 ```sh
 zkCli.sh -server las1
 ```
+
+The admin service is started on port 8080 on each node by default. Open `http://las1:8080/commands` to see the list of available commands.

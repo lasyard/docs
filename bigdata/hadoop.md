@@ -21,7 +21,7 @@ Get shell scripts:
 
 - [install_java_bin](https://github.com/lasyard/coding/blob/main/shell/install_java_bin.sh)
 
-Download the java packages:
+Download the java binary packages:
 
 ```sh
 wget https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
