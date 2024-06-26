@@ -1,0 +1,4 @@
+las2: stopping org.apache.spark.deploy.worker.Worker
+las3: stopping org.apache.spark.deploy.worker.Worker
+las1: stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.master.Master

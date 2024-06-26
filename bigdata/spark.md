@@ -65,6 +65,11 @@ Start the Spark cluster on the Master node:
 /opt/spark/sbin/start-all.sh
 ```
 
+:::{literalinclude} /_files/common/output/spark/start_all.txt
+:language: text
+:class: cli-output
+:::
+
 :::{caution}
 The `hadoop` distribution contains scripts with the same name `start-all.sh`. Do not run the wrong one.
 :::
@@ -91,6 +96,11 @@ To stop the Spark cluster:
 ```sh
 /opt/spark/sbin/stop-all.sh
 ```
+
+:::{literalinclude} /_files/common/output/spark/stop_all.txt
+:language: text
+:class: cli-output
+:::
 
 ## Usage
 
