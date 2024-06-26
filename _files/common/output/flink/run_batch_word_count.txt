@@ -1,0 +1,14 @@
+Printing result to stdout. Use --output to specify output path.
+Job has been submitted with JobID b6e02171e403af11c714a77d87cc2805
+Program execution finished
+Job with JobID b6e02171e403af11c714a77d87cc2805 has finished.
+Job Runtime: 530 ms
+Accumulator Results:
+- 6a02f82a469652b78531e0753112686e (java.util.ArrayList) [5 elements]
+
+
+(alice,3)
+(betty,2)
+(cindy,1)
+(doris,2)
+(emily,2)

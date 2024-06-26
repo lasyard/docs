@@ -1,0 +1,6 @@
+JobManager Web Interface: http://las1:41947
+2024-06-26 16:30:28,946 INFO  org.apache.flink.yarn.cli.FlinkYarnSessionCli                [] - The Flink YARN session cluster has been started in detached mode. In order to stop Flink gracefully, use the following command:
+$ echo "stop" | ./bin/yarn-session.sh -id application_1719390403783_0001
+If this should not be possible, then you can also kill Flink via YARN's web interface or via:
+$ yarn application -kill application_1719390403783_0001
+Note that killing Flink might not clean up all job artifacts and temporary files.

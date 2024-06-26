@@ -123,6 +123,17 @@ Stop hbase:
 stop-hbase.sh
 ```
 
+:::{tip}
+If the command above does not work, try these commands:
+
+```sh
+hbase-daemon.sh stop master
+hbase-daemon.sh stop regionserver
+```
+
+to stop the master and each region server one by one.
+:::
+
 ## Usage
 
 ```sh

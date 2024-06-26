@@ -1,0 +1,5 @@
+Starting cluster.
+Starting standalonesession daemon on host las1.
+Starting taskexecutor daemon on host las1.
+Starting taskexecutor daemon on host las2.
+Starting taskexecutor daemon on host las3.

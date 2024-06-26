@@ -195,7 +195,31 @@ hdfs dfs -rm file.dat
 
 The hadoop web UI is available at `http://las1:9870`.
 
-### Clear hdfs data
+#### Safe mode
+
+Show current safe mode status:
+
+```sh
+hdfs dfsadmin -safemode get
+```
+
+Enter safe mode:
+
+```sh
+hdfs dfsadmin -safemode enter
+```
+
+Leave safe mode:
+
+```sh
+hdfs dfsadmin -safemode leave
+```
+
+:::{note}
+A freshly started/restarted NameNode is in safe mode temporarily. It will leave safe mode automatically.
+:::
+
+#### Clear all data
 
 If you want to clear the hdfs data, stop hdfs and run the following commands on each node:
 
