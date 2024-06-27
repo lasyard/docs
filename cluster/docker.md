@@ -192,6 +192,12 @@ docker pause zealous_leavitt
 docker unpause zealous_leavitt
 ```
 
+### Run an image with overriden entrypoint
+
+```sh
+docker run -it --entrypoint /bin/bash slurm-ubuntu-client
+```
+
 ### Build images
 
 If there are a `Dockerfile` in the current directory, build the image:
