@@ -245,8 +245,8 @@ bd4ed095dc7f   registry:2   "/entrypoint.sh /etc…"   4 hours ago   Up 3 minute
 Re tag an image and push it to the local registry:
 
 ```sh
-docker tag ubuntu-slurm-client:latest las1:5000/ubuntu-slurm-client
-docker push las1:5000/ubuntu-slurm-client
+docker tag slurm-ubuntu-client:latest las1:5000/slurm-ubuntu-client
+docker push las1:5000/slurm-ubuntu-client
 ```
 
 See there is something in the local registry:
@@ -280,11 +280,11 @@ vi /etc/docker/daemon.json
 Remove the local copy of the image:
 
 ```sh
-docker rmi las1:5000/ubuntu-slurm-client
+docker rmi las1:5000/slurm-ubuntu-client
 ```
 
 Now we can pull the image from the local registry:
 
 ```sh
-docker pull las1:5000/ubuntu-slurm-client
+docker pull las1:5000/slurm-ubuntu-client
 ```
