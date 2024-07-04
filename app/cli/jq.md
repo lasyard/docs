@@ -21,3 +21,19 @@ jq --version
 ```text
 jq-1.5
 ```
+
+{{ for_macos }}
+
+```sh
+brew install jq
+```
+
+```sh
+jq --version
+```
+
+{.cli-output}
+
+```text
+jq-1.7.1
+```
