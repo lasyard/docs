@@ -294,3 +294,9 @@ Now we can pull the image from the local registry:
 ```sh
 docker pull las1:5000/slurm-ubuntu-client
 ```
+
+### Save images to file
+
+```sh
+docker image save slurm-ubuntu-client -o slurm-ubuntu-client.tar
+```

@@ -129,3 +129,75 @@ Note the difference.
 ```sh
 kubectl exec -it slurm-client -- /bin/bash
 ```
+
+## crictl
+
+```sh
+crictl --version
+```
+
+{.cli-output}
+
+```text
+crictl version v1.30.0
+```
+
+Set config:
+
+```sh
+crictl config --set image-endpoint=unix:///run/containerd/containerd.sock
+crictl config --set runtime-endpoint=unix:///run/containerd/containerd.sock
+```
+
+Show config:
+
+```sh
+crictl config --list
+```
+
+:::{literalinclude} /_files/centos/output/crictl/config_list.txt
+:language: text
+:class: cli-output
+:::
+
+:::{tip}
+Configurations are stored in `/etc/crictl.yaml`.
+:::
+
+Show images:
+
+```sh
+crictl images
+```
+
+Show pods:
+
+```sh
+crictl pods
+```
+
+Show containers:
+
+```sh
+crictl ps
+```
+
+## ctr
+
+`ctr` is an unsupported debug and administrative client for interacting with the containerd daemon. Because it is unsupported, the commands, options, and operations are not guaranteed to be backward compatible or stable from release to release of the containerd project.
+
+```sh
+ctr --version
+```
+
+{.cli-output}
+
+```text
+ctr containerd.io 1.6.32
+```
+
+Import an image:
+
+```sh
+ctr -n k8s.io image import slurm-ubuntu-client.tar
+```
