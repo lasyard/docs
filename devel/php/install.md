@@ -28,7 +28,7 @@ php --ini
 :class: cli-output
 :::
 
-Disable opcache:
+Disable opcache (for unsigned libs cannot be loaded on newer macOS):
 
 ```sh
 vi /usr/local/etc/php/8.3/conf.d/opcache.ini
