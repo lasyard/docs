@@ -48,3 +48,17 @@ sudo mdutil -X "/Volumes/LAS_256G"
 ```sh
 cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/
 ```
+
+## chflags
+
+See flags of files:
+
+```sh
+ls -lO
+```
+
+Remove hidden (hide from GUI) flag:
+
+```sh
+chflags nohidden xxxx-file
+```
