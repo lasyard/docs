@@ -21,7 +21,7 @@ exiftool -ver
 ### Move files
 
 ```sh
-exiftool -fast2 -ext jpg -if '${DateTimeOriginal} and ${Keywords} and ${Model}' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal#;DateFmt('%Y/p%Y%m')}/\${DateTimeOriginal#;DateFmt('%Y%m%d_%H%M%S')}_\${Keywords;s/, /_/g}_\${Model;tr/ /_/}%+3c.jpg" *
+exiftool -fast2 -ext jpg -if '${DateTimeOriginal} and ${Subject} and ${Model}' "-FileName<${HOME}/Pictures/photo/\${DateTimeOriginal#;DateFmt('%Y/p%Y%m')}/\${DateTimeOriginal#;DateFmt('%Y%m%d_%H%M%S')}_\${Subject;s/, /_/g}_\${Model;tr/ /_/}%+3c.jpg" *
 ```
 
 ### Rename files
