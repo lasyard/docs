@@ -2,9 +2,21 @@
 
 <https://www.docker.com/>
 
-{{ for_centos }}
-
 ## Install
+
+{{ for_ubuntu }}
+
+Download deb packages from <https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/>.
+
+Install:
+
+```sh
+sudo dpkg -i containerd.io_1.7.19-1_amd64.deb \
+    docker-ce_27.1.1-1~ubuntu.22.04~jammy_amd64.deb \
+    docker-ce-cli_27.1.1-1~ubuntu.22.04~jammy_amd64.deb
+```
+
+{{ for_centos }}
 
 Add `docker` repository:
 
