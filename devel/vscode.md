@@ -96,3 +96,30 @@ vi "${HOME}/Library/Application Support/Code/User/settings.json"
     "shellformat.path": "/usr/local/bin/shfmt"
 }
 ```
+
+### C
+
+{{ for_ubuntu }}
+
+```sh
+sudo apt install clangd
+```
+
+```sh
+clangd --version
+```
+
+{.cli-output}
+
+```text
+Ubuntu clangd version 14.0.0-1ubuntu1.1
+Features: linux+grpc
+Platform: x86_64-pc-linux-gnu
+```
+
+Install clangd plugin in VSCode, then set:
+
+```json
+{
+    "clangd.path": "/usr/bin/clangd"
+}

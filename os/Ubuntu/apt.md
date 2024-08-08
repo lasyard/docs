@@ -11,7 +11,19 @@ Use `apt-get` instead of `apt` in scripts for it has stable interfaces.
 List installed packages:
 
 ```sh
-apt list --installed
+sudo apt list --installed
+```
+
+Show info about a package:
+
+```sh
+sudo apt show libopenmpi-dev
+```
+
+Show installed files of a package:
+
+```sh
+dpkg-query -L libopenmpi-dev
 ```
 
 ## Popular packages
