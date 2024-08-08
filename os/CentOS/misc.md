@@ -12,6 +12,20 @@ cat /etc/centos-release
 CentOS Linux release 8.5.2111
 ```
 
+## User Management
+
+Add a user:
+
+```sh
+useradd xxxx
+```
+
+Add the user to a group:
+
+```sh
+usermod -aG wheel xxxx
+```
+
 ## List port listening
 
 ```sh

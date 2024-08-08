@@ -1,5 +1,7 @@
 # MPI
 
+## Install
+
 {{ for_ubuntu }}
 
 ```sh
@@ -39,13 +41,33 @@ On worker nodes, only the runtime libraries need to be installed:
 sudo apt install openmpi-common libopenmpi3 openmpi-bin
 ```
 
-## Compile sources
+### Install from sources
+
+To install the newest Open MPI, we need to build it from sources. Firstly, download the tarball of sources:
+
+```sh
+wget https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.5.tar.bz2
+```
+
+```sh
+tar -C ~/workspace/devel -xjf openmpi-5.0.5.tar.bz2
+```
+
+```sh
+cd ~/workspace/devel
+./configure
+make
+```
+
+## Usage
+
+### Compile sources
 
 ```sh
 mpicc mpi_hello_world.c -o mpi_hello_world
 ```
 
-## Run an executable
+### Run an executable
 
 Run the executable directly will start up only one process.
 
