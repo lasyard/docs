@@ -1,0 +1,31 @@
+/* The colors is set to be consistent with sphinx_rtd_theme */
+
+.cli-output .highlight {
+    color: #edf0f2;
+    background-color: #343131;
+}
+
+.file-content .highlight {
+    background-color: #e7f2fa;
+}
+
+.rst-content .plat {
+    background-color: #edf0f2;
+}
+
+.rst-content .plat .admonition-title {
+    background-color: #f0b37e;
+}
+
+.rst-content .plat .admonition-title::before {
+    color: black;
+}
+
+/* FontAwesome */
+.rst-content .macos .admonition-title::before {
+    content: '\f179';
+}
+
+.rst-content .windows .admonition-title::before {
+    content: '\f17a';
+}

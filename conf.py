@@ -12,6 +12,8 @@ import sys
 from datetime import date
 
 
+sys.path.append(os.path.abspath("./_ext"))
+
 project = "Lasy's Documentation"
 copyright = date.today().strftime('%Y') + ', Lasy'
 author = 'Lasy'
@@ -28,6 +30,10 @@ extensions = [
     'sphinx_prompt', # not working well with sphinx_copybutton
     'sphinx_rtd_theme',
     'sphinxcontrib.mermaid',
+]
+
+extensions += [
+    'plat'
 ]
 
 myst_enable_extensions = [
@@ -49,6 +55,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README.md']
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+if html_theme == 'sphinx_rtd_theme':
+    html_css_files = ['css/lasy_sphinx_rtd_theme.css']
 
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#auto-generated-header-anchors
