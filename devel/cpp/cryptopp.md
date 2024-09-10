@@ -48,7 +48,7 @@ To uninstall:
 make uninstall PREFIX=~
 ```
 
-See the version:
+Show the version:
 
 ```sh
 cryptest.exe V
