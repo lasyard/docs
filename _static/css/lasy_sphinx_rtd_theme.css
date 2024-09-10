@@ -11,30 +11,37 @@
 
 .rst-content .plat {
     background-color: #edf0f2;
-    border: 2px solid #f0b37e;
+    border: 2px solid #6666ff;
 }
 
 .rst-content .plat>.admonition-title {
-    background-color: #f0b37e;
+    background-color: #6666ff;
 }
 
-.rst-content .plat>.admonition-title::before {
-    color: black;
-}
-
-/* FontAwesome */
 .rst-content .macos>.admonition-title::before {
-    content: '\f179';
+    content: url(../images/logo/macos.png);
 }
 
 .rst-content .windows>.admonition-title::before {
-    content: '\f17a';
+    content: url(../images/logo/windows.png);
 }
 
 .rst-content .centos>.admonition-title::before {
-    content: '\f789';
+    content: url(../images/logo/centos.png);
 }
 
 .rst-content .ubuntu>.admonition-title::before {
-    content: '\f7df';
+    content: url(../images/logo/ubuntu.png);
+}
+
+.rst-content .debian>.admonition-title::before {
+    content: url(../images/logo/debian.png);
+}
+
+.rst-content .linux>.admonition-title::before {
+    content: url(../images/logo/linux.png);
+}
+
+.rst-content .android>.admonition-title::before {
+    content: url(../images/logo/android.png);
 }
