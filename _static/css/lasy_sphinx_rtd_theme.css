@@ -30,3 +30,11 @@
 .rst-content .windows>.admonition-title::before {
     content: '\f17a';
 }
+
+.rst-content .centos>.admonition-title::before {
+    content: '\f789';
+}
+
+.rst-content .ubuntu>.admonition-title::before {
+    content: '\f7df';
+}
