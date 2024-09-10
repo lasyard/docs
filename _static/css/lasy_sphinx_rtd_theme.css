@@ -11,21 +11,22 @@
 
 .rst-content .plat {
     background-color: #edf0f2;
+    border: 2px solid #f0b37e;
 }
 
-.rst-content .plat .admonition-title {
+.rst-content .plat>.admonition-title {
     background-color: #f0b37e;
 }
 
-.rst-content .plat .admonition-title::before {
+.rst-content .plat>.admonition-title::before {
     color: black;
 }
 
 /* FontAwesome */
-.rst-content .macos .admonition-title::before {
+.rst-content .macos>.admonition-title::before {
     content: '\f179';
 }
 
-.rst-content .windows .admonition-title::before {
+.rst-content .windows>.admonition-title::before {
     content: '\f17a';
 }

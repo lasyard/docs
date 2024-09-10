@@ -3,5 +3,6 @@
 :::{toctree}
 :maxdepth: 2
 app/index
+devel/index
 misc/index
 :::
