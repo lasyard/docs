@@ -1,0 +1,2 @@
+Composer version 2.7.9 2024-09-04 14:43:28
+PHP version 8.3.11 (/usr/local/Cellar/php/8.3.11/bin/php)
