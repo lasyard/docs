@@ -1,0 +1,5 @@
+The hostname/IP of the cluster nodes are:
+
+:las1: 172.20.3.73
+:las2: 172.20.3.48
+:las3: 172.20.3.79

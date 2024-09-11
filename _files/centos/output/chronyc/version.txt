@@ -1,0 +1,1 @@
+chronyc (chrony) version 4.1 (+READLINE +SECHASH +IPV6 +DEBUG)

@@ -49,6 +49,10 @@ myst_enable_extensions = [
 templates_path = ['_templates']
 exclude_patterns = ['.*', '_*', 'Thumbs.db', 'README.*']
 
+myst_substitutions = {
+    'cluster_las': ":::{include} /_files/frags/cluster/las.txt\n:::",
+}
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
