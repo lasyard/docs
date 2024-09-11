@@ -22,6 +22,7 @@ class PlatDirective(SphinxDirective):
         'centos': 'CentOS',
         'ubuntu': 'Ubuntu',
         'linux': 'Linux',
+        'msys2': 'MSYS2',
     }
 
     def run(self) -> list[nodes.Node]:

@@ -45,3 +45,7 @@
 .rst-content .android>.admonition-title::before {
     content: url(../images/logo/android.png);
 }
+
+.rst-content .msys2>.admonition-title::before {
+    content: url(../images/logo/msys2.png);
+}
