@@ -1,0 +1,2 @@
+NODELIST             CPUS       MEMORY     AVAIL_FEATURES            GRES
+las[1-3]             8          15831      (null)                    (null)

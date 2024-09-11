@@ -6,5 +6,6 @@ os/index
 service/index
 app/index
 devel/index
+cluster/index
 misc/index
 :::
