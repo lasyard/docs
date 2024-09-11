@@ -3,6 +3,7 @@
 :::{toctree}
 :maxdepth: 2
 os/index
+service/index
 app/index
 devel/index
 misc/index
