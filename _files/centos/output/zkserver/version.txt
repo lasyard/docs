@@ -1,0 +1,3 @@
+ZooKeeper JMX enabled by default
+Using config: /opt/zookeeper/bin/../conf/zoo.cfg
+Apache ZooKeeper, version 3.8.4 2024-02-12 22:16 UTC
