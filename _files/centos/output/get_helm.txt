@@ -1,0 +1,4 @@
+Downloading https://get.helm.sh/helm-v3.15.3-linux-amd64.tar.gz
+Verifying checksum... Done.
+Preparing to install helm into /usr/local/bin
+helm installed into /usr/local/bin/helm

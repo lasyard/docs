@@ -1,0 +1,3 @@
+NAME               DATA   AGE
+kube-root-ca.crt   1      7d5h
+slurm-config       1      32s

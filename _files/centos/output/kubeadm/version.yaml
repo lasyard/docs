@@ -1,0 +1,10 @@
+clientVersion:
+  buildDate: "2024-05-14T10:49:05Z"
+  compiler: gc
+  gitCommit: 6911225c3f747e1cd9d109c305436d08b668f086
+  gitTreeState: clean
+  gitVersion: v1.30.1
+  goVersion: go1.22.2
+  major: "1"
+  minor: "30"
+  platform: linux/amd64

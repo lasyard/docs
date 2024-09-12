@@ -1,0 +1,2 @@
+NAME                    NAMESPACE               REVISION        UPDATED                                 STATUS          CHART                         APP VERSION
+kubernetes-dashboard    kubernetes-dashboard    1               2024-05-30 16:28:11.77744534 +0800 CST  deployed        kubernetes-dashboard-7.4.0

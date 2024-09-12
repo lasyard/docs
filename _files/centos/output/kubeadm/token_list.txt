@@ -1,0 +1,2 @@
+TOKEN                     TTL         EXPIRES                USAGES                   DESCRIPTION                                                EXTRA GROUPS
+abcdef.0123456789abcdef   23h         2024-05-31T07:17:11Z   authentication,signing   <none>                                                     system:bootstrappers:kubeadm:default-node-token

@@ -1,0 +1,27 @@
+Name:         slurm-config
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+SlurmUserId:
+----
+1001
+SlurmctldHost:
+----
+las1
+SlurmctldPort:
+----
+6817
+ClusterName:
+----
+las
+SlurmUser:
+----
+slurm
+
+BinaryData
+====
+
+Events:  <none>
