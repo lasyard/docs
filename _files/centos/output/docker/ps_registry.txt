@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE        COMMAND                   CREATED       STATUS         PORTS                                       NAMES
+bd4ed095dc7f   registry:2   "/entrypoint.sh /etc…"   4 hours ago   Up 3 minutes   0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   registry

@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+ad2338f0f1e6   hello-world   "/hello"   28 seconds ago   Exited (0) 27 seconds ago             interesting_blackburn
