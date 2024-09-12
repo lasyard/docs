@@ -7,5 +7,6 @@ service/index
 app/index
 devel/index
 cluster/index
+bigdata/index
 misc/index
 :::

@@ -1,0 +1,6 @@
+328102 sun.tools.jps.Jps -lm
+324684 org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+326527 org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
+324344 org.apache.hadoop.hdfs.server.datanode.DataNode
+324105 org.apache.hadoop.hdfs.server.namenode.NameNode
+326777 org.apache.hadoop.yarn.server.nodemanager.NodeManager
