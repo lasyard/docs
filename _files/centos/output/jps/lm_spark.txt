@@ -1,0 +1,3 @@
+882564 org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://las1:7077
+882416 org.apache.spark.deploy.master.Master --host las1 --port 7077 --webui-port 8080
+886295 sun.tools.jps.Jps -lm
