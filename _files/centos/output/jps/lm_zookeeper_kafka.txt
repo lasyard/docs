@@ -1,0 +1,3 @@
+580623 sun.tools.jps.Jps -lm
+568612 kafka.Kafka /opt/kafka/config/server.properties
+498601 org.apache.zookeeper.server.quorum.QuorumPeerMain /opt/zookeeper/bin/../conf/zoo.cfg
