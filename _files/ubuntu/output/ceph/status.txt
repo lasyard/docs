@@ -1,0 +1,20 @@
+  cluster:
+    id:     7e4c0eda-02e0-11ef-bedf-e4434b2ce110
+    health: HEALTH_OK
+
+  services:
+    mon: 5 daemons, quorum sd-ceph01,sd-ceph02,sd-ceph03,sd-ceph04,sd-ceph06 (age 7d)
+    mgr: sd-ceph01.dyhxvr(active, since 5w), standbys: sd-ceph02.xsqsdp
+    mds: 27/27 daemons up, 3 standby
+    osd: 84 osds: 84 up (since 6w), 84 in (since 6w)
+    rgw: 6 daemons active (6 hosts, 1 zones)
+
+  data:
+    volumes: 27/27 healthy
+    pools:   71 pools, 4833 pgs
+    objects: 8.53M objects, 20 TiB
+    usage:   104 TiB used, 1.0 PiB / 1.1 PiB avail
+    pgs:     4833 active+clean
+
+  io:
+    client:   456 KiB/s rd, 3.3 MiB/s wr, 357 op/s rd, 276 op/s wr

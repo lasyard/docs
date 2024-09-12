@@ -4,10 +4,10 @@
 
 LIGHTWEIGHT CONTAINER RUNTIME FOR KUBERNETES.
 
-## Install
-
 ::::{plat} centos
 :vers: CentOS 8.5
+
+## Install
 
 ```sh
 sudo vi /etc/yum.repos.d/cri-o.repo
