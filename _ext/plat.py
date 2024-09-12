@@ -41,6 +41,7 @@ class PlatDirective(SphinxDirective):
                 if count > 0:
                     p.append(nodes.Text(', '))
                 p.append(nodes.strong(rawsource=s, text=s))
+                count += 1
             node.insert(1, p)
         return [ node ]
 
