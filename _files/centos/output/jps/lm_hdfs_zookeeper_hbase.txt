@@ -1,0 +1,7 @@
+592761 org.apache.hadoop.hbase.regionserver.HRegionServer start
+589561 org.apache.hadoop.hdfs.server.datanode.DataNode
+592472 org.apache.hadoop.hbase.master.HMaster start
+589903 org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+498601 org.apache.zookeeper.server.quorum.QuorumPeerMain /opt/zookeeper/bin/../conf/zoo.cfg
+589318 org.apache.hadoop.hdfs.server.namenode.NameNode
+593430 sun.tools.jps.Jps -lm
