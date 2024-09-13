@@ -25,6 +25,7 @@ pacman -S ${MINGW_PACKAGE_PREFIX}-python-pip
 ## Build from sources
 
 ::::{plat} centos
+:vers: CentOS 8.5
 
 Download sources:
 
