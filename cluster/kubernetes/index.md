@@ -8,6 +8,7 @@ Kubernetes, also known as K8s, is an open source system for automating deploymen
 
 :::{toctree}
 :maxdepth: 1
+install
 deploy
 usage
 :::

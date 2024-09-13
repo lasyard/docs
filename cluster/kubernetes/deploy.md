@@ -19,6 +19,8 @@ Disable SELinux on all nodes, see [SELinux](project:/os/centos/misc.md#disable-s
 
 Disable swap on all nodes, see [Set swap off](project:/os/centos/misc.md#set-swap-off).
 
+Install packages on each node according their roles. See "<project:install.md>".
+
 ## Configure networking
 
 ```sh
@@ -47,36 +49,6 @@ sysctl net.ipv4.ip_forward
 ```ini
 net.ipv4.ip_forward = 1
 ```
-
-## Install packages
-
-Add the Kubernetes repository to the system:
-
-```sh
-sudo vi /etc/yum.repos.d/kubernetes.repo
-```
-
-:::{literalinclude} /_files/centos/etc/yum.repos.d/kubernetes.repo
-:language: ini
-:class: file-content
-:::
-
-The `exclude` line is to prevent these packages from being changed accidentally by `dnf upgrade`.
-
-```sh
-sudo dnf install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-```
-
-Show the version:
-
-```sh
-kubeadm version -o yaml
-```
-
-:::{literalinclude} /_files/centos/output/kubeadm/version.yaml
-:language: yaml
-:class: cli-output
-:::
 
 ## Configure containerd
 
