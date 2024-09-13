@@ -1,0 +1,5 @@
+==> In environment base
+==> 1 root specs
+ -  gcc
+
+==> 0 installed packages

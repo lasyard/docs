@@ -1,0 +1,10 @@
+Spack v0.22.1 - python@3.10
+
+[FAIL] Core Functionalities
+  [B] MISSING "clingo": required to concretize specs
+
+[FAIL] Binary packages
+  [B] MISSING "patchelf": required to relocate binaries
+
+
+Spack will take care of bootstrapping any missing dependency marked as [B]. Dependencies marked as [-] are instead required to be found on the system.

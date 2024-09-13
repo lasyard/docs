@@ -1,0 +1,4 @@
+==> In environment base
+==> No root specs
+
+==> 0 installed packages
