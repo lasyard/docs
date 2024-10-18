@@ -124,6 +124,14 @@ The toolchain used:
 
 See "<project:/devel/cpp/install.md>" for how to install build tools on Ubuntu/Debian.
 
+Install mariadb development first:
+
+```sh
+sudo apt install libmariadb-dev
+```
+
+Extract and build:
+
 ```sh
 tar -xjf slurm-24.05.1.tar.bz2
 cd slurm-24.05.1/

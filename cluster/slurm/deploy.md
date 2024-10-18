@@ -140,6 +140,14 @@ Start `slurmdbd` first if it is configured (for `slurmctld`):
 sudo systemctl enable slurmdbd --now
 ```
 
+:::{tip}
+Before start `slurmdbd`, create user and grant previleges for slurmdbd in the `mysql` database used:
+
+```sql
+CREATE USER slurmdbd IDENTIFIED BY 'slurmdbd';
+GRANT ALL on `slurm_acct_db`.* TO `slurmdbd`@`%`;
+```
+
 For controller nodes:
 
 ```sh

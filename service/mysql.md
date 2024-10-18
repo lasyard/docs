@@ -19,3 +19,13 @@ mysql_secure_installation
 ```
 
 :::
+
+## Usage
+
+### Show users
+
+In mysql client:
+
+```sql
+SELECT user FROM mysql.user;
+```
