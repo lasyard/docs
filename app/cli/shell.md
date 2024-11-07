@@ -21,6 +21,9 @@ zsh 5.8.1 (x86_64-apple-darwin21.0)
 
 ### Date
 
+:::{plat} macos
+:vers: macOS Monterey
+
 Translate from unix timestamp to ymdhms:
 
 ```sh
@@ -33,6 +36,8 @@ Translate from ymdhms (2002.02.02 02:02:02) to unix timestamp:
 ```sh
 date -j -f "%y%m%d%H%M%S" "+%s" 020202020202
 ```
+
+:::
 
 ### Remove executable flags recursively
 
