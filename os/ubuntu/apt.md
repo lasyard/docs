@@ -29,7 +29,13 @@ dpkg-query -L libopenmpi-dev
 List files in a deb package:
 
 ```sh
-dpkg-deb -c slurm-smd_24.05.1-1_amd64.deb
+dpkg-deb -c slurm-smd_24.05.4-1_amd64.deb
+```
+
+Show info of a deb package:
+
+```sh
+dpkg-deb -f slurm-smd-client_24.05.4-1_amd64.deb
 ```
 
 Find the package which contains a file:
