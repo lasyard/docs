@@ -32,6 +32,7 @@ git config -l
 
 ```sh
 git config --global init.defaultBranch main
+git config --global submodule.recurse true
 git config --global push.recurseSubmodules check
 git config --global url.git@github.com:.insteadOf https://github.com/
 git config --global url.https://github.com/.insteadOf git@github.com:
