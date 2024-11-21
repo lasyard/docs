@@ -1,2 +1,2 @@
-==> Created environment base in: /home/xxxx/opt/software/spack/environments/base
-==> Activate with: spack env activate base
+==> Created environment default in: /home/xxxx/opt/spack-trunk/environments/default
+==> Activate with: spack env activate default

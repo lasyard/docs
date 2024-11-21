@@ -1,1 +1,1 @@
-==> Using spack.yaml in current directory: /home/xxxx/opt/software/spack/environments/base
+==> In environment default

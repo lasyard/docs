@@ -1,4 +1,4 @@
-Spack v0.22.1 - python@3.10
+Spack v0.22.2 - python@3.10
 
 [FAIL] Core Functionalities
   [B] MISSING "clingo": required to concretize specs

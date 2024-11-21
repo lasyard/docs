@@ -25,7 +25,37 @@ spack -V
 {.cli-output}
 
 ```sh
-0.22.1
+0.22.2
+```
+
+## Configure
+
+Show configs in section `config`:
+
+```sh
+spack config get config
+```
+
+:::{literalinclude} /_files/ubuntu/output/spack/config_get_config.yaml
+:language: yaml
+:class: cli-output
+:::
+
+Use `curl` to fetch packages:
+
+```sh
+spack config add config:url_fetch_method:curl
+```
+
+A config file `~/.spack/config.yaml` is generated for the current user, and its contents are merged with the default config as the final configuration.
+
+Change some important paths out of spack installation dir:
+
+```sh
+spack config add config:install_tree:root:~/opt/spack-trunk/tree
+spack config add config:license_dir:~/opt/spack-trunk/licenses
+spack config add config:source_cache:~/opt/spack-trunk/sources
+spack config add config:environments_root:~/opt/spack-trunk/environments
 ```
 
 ## Bootstrap
@@ -44,7 +74,7 @@ spack config get bootstrap
 Change bootstrap root dir:
 
 ```sh
-spack config add bootstrap:root:~/opt/software/spack/bootstrap
+spack config add bootstrap:root:~/opt/spack-trunk/bootstrap
 ```
 
 A config file `~/.spack/bootstrap.yaml` is generated for the current user, and its contents are merged with the default config as the final configuration.
@@ -58,7 +88,7 @@ spack bootstrap root
 {.cli-output}
 
 ```text
-/home/xxxx/opt/software/spack/bootstrap
+/home/xxxx/opt/spack-trunk/bootstrap
 ```
 
 This is where the bootstrap softwares are installed.
@@ -102,36 +132,6 @@ spack -b find
 :class: cli-output
 :::
 
-## Configure
-
-Show configs in section `config`:
-
-```sh
-spack config get config
-```
-
-:::{literalinclude} /_files/ubuntu/output/spack/config_get_config.yaml
-:language: yaml
-:class: cli-output
-:::
-
-Use `curl` to fetch packages:
-
-```sh
-spack config add config:url_fetch_method:curl
-```
-
-A config file `~/.spack/config.yaml` is generated for the current user, and its contents are merged with the default config as the final configuration.
-
-Change some important paths out of spack installation dir:
-
-```sh
-spack config add config:install_tree:root:~/opt/software/spack/tree
-spack config add config:license_dir:~/opt/software/spack/licenses
-spack config add config:source_cache:~/opt/software/spack/sources
-spack config add config:environments_root:~/opt/software/spack/environments
-```
-
 ## Env
 
 List environments:
@@ -146,10 +146,10 @@ spack env list
 ==> No environments
 ```
 
-Create an environment `base`:
+Create an environment `default`:
 
 ```sh
-spack env create base
+spack env create default
 ```
 
 :::{literalinclude} /_files/ubuntu/output/spack/env_create.txt
@@ -180,16 +180,16 @@ spack env status
 ==> No active environment
 ```
 
-Activate the environment `base`:
+Activate the environment `default`:
 
 ```sh
-spack env activate base
+spack env activate default
 ```
 
 or:
 
 ```sh
-spacktivate base
+spacktivate default
 ```
 
 Now check the evironments status again:
@@ -290,14 +290,13 @@ spack versions gcc
 Add packages to the current environment:
 
 ```sh
-spack add gcc
+spack add lmod miniconda3 ninja
 ```
 
-{.cli-output}
-
-```sh
-==> Adding gcc to environment base
-```
+:::{literalinclude} /_files/ubuntu/output/spack/add_lmod_miniconda3_ninja.txt
+:language: text
+:class: cli-output
+:::
 
 Now, redo finding packages:
 
@@ -325,18 +324,35 @@ Start to install:
 spack install
 ```
 
+If you want to remove software from specs:
+
+```sh
+spack remove
+```
+
+Start to install:
+
+```sh
+spack install
+```
+
+After installed successfully, run `spack find` again, you will see:
+
+:::{literalinclude} /_files/ubuntu/output/spack/find_2.txt
+:language: text
+:class: cli-output
+:::
+
 ## modules
 
 Configure the dir to put module files:
 
 ```sh
-spack config add modules:default:roots:lmod:~/opt/software/spack/modules
-spack config add modules:default:roots:tcl:~/opt/software/spack/modules
+spack config add modules:default:roots:lmod:~/opt/spack-trunk/modules
+spack config add modules:default:roots:tcl:~/opt/spack-trunk/modules
 spack config add modules:default:enable:lmod
 spack config remove modules:default:enable:tcl
 ```
-
-These configs will be put in `spack.yaml` of the current environment.
 
 Generate module files:
 
@@ -347,7 +363,7 @@ spack module lmod refresh
 Then the modules can be used:
 
 ```sh
-module use ~/opt/software/spack/modules/linux-ubuntu22.04-x86_64/Core
+module use ~/opt/spack-trunk/modules/linux-ubuntu22.04-x86_64/Core
 ```
 
 ### Anonymous env
@@ -370,3 +386,54 @@ spack env activate .
 mkdir ~/workspace/spack-mirror
 spack mirror create -d ~/workspace/spack-mirror --all
 ```
+
+### Build Cache
+
+Spack buildcache is almost the same as mirror, but contains only prebuilt binaries.
+
+Add a mirror:
+
+```sh
+spack mirror add --unsigned --oci-username lasyard --oci-password ${TOKEN} github oci://ghcr.io/lasyard/spack-built
+```
+
+Show mirrors:
+
+```sh
+spack mirror list
+```
+
+:::{literalinclude} /_files/ubuntu/output/spack/mirror_list.txt
+:language: text
+:class: cli-output
+:::
+
+Push to mirror `github` the prebuilt binaries:
+
+```sh
+spack buildcache push --update-index github
+```
+
+:::{literalinclude} /_files/ubuntu/output/spack/buildcache_push.txt
+:language: text
+:class: cli-output
+:::
+
+If `--update-index` is omitted in the above command, you can do:
+
+```sh
+spack buildcache update-index github
+```
+
+Then you can check the content of the buildcache:
+
+```sh
+spack buildcache list
+```
+
+In fact, Spack will create the oci image, and put each software to an unique version of the image and tag it by the software name, version and hash.
+
+:::{note}
+
+You must be in an environment to push, also the prebuilt being pushed must be already installed. So you'd better do pushing before `spcak gc`, which will uninstall unnecessary packages.
+:::

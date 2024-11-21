@@ -1,5 +1,5 @@
-==> In environment base
-==> 1 root specs
- -  gcc
+==> In environment default
+==> 3 root specs
+ -  lmod   -  miniconda3   -  ninja
 
 ==> 0 installed packages

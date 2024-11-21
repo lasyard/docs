@@ -1,0 +1,5 @@
+==> Selected 42 specs to push to oci://ghcr.io/lasyard/spack-built
+==> Checking for existing specs in the buildcache
+==> 42 specs need to be pushed to ghcr.io/lasyard/spack-built
+
+......

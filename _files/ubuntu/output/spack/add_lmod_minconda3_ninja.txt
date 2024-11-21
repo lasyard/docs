@@ -1,0 +1,3 @@
+==> Adding lmod to environment default
+==> Adding miniconda3 to environment default
+==> Adding ninja to environment default

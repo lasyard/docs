@@ -1,4 +1,4 @@
-==> Added 1 new compiler to /home/xxxx/opt/software/spack/environments/base/spack.yaml
+==> Added 1 new compiler to /home/xxxx/.spack/linux/compilers.yaml
     gcc@11.4.0
 ==> Compilers are defined in the following files:
-    /home/xxxx/opt/software/spack/environments/base/spack.yaml
+    /home/xxxx/.spack/linux/compilers.yaml

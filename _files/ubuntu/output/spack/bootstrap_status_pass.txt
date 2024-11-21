@@ -1,7 +1,5 @@
-Spack v0.22.1 - python@3.10
+Spack v0.22.2 - python@3.10
 
 [PASS] Core Functionalities
 
 [PASS] Binary packages
-
-

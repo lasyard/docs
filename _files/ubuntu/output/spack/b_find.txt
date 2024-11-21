@@ -1,3 +1,7 @@
--- linux-centos7-x86_64 / gcc@10.2.1 ----------------------------
-bison@3.0.4  clingo-bootstrap@spack  cmake@3.27.6  patchelf@0.18.0  python@3.10.13
-==> 5 installed packages
+-- linux-ubuntu22.04-broadwell / gcc@11.4.0 ---------------------
+berkeley-db@18.1.40  ca-certificates-mozilla@2023-05-30  curl@8.7.1      gdbm@1.23      ncurses@6.5     openssl@3.3.0  pkgconf@2.2.0  readline@8.2
+bzip2@1.0.8          cmake@3.27.9                        diffutils@3.10  libiconv@1.17  nghttp2@1.57.0  perl@5.38.0    re2c@2.2       zlib-ng@2.1.6
+
+-- linux-ubuntu22.04-x86_64 / gcc@11.4.0 ------------------------
+bison@3.8.2  clingo-bootstrap@spack  gmake@4.4.1  libsigsegv@2.14  m4@1.4.19  patchelf@0.17.2  python@3.10.13  python-venv@1.0
+==> 24 installed packages

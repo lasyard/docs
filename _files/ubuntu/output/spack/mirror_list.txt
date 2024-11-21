@@ -1,0 +1,2 @@
+github       [sb] oci://ghcr.io/lasyard/spack-built
+spack-public [s ] https://mirror.spack.io
