@@ -27,7 +27,6 @@ language = 'en'
 extensions = [
     'myst_parser',
     'sphinx_copybutton',
-    'sphinx_prompt', # not working well with sphinx_copybutton
     'sphinx_rtd_theme',
     'sphinxcontrib.mermaid',
 ]
@@ -35,6 +34,9 @@ extensions = [
 extensions += [
     'plat'
 ]
+
+copybutton_prompt_is_regexp = True
+copybutton_prompt_text = r"^\$ |^# |^% "
 
 myst_enable_extensions = [
     'attrs_block',

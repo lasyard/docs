@@ -9,6 +9,19 @@
     background-color: #e7f2fa;
 }
 
+.highlight-console .highlight {
+    color: #edf0f2;
+    background-color: #343131;
+}
+
+.highlight-console .highlight span.gp {
+    color: green;
+}
+
+.highlight-console .highlight span.go {
+    color: #edf0f2;
+}
+
 .rst-content .plat {
     background-color: #edf0f2;
     border: 2px solid #6666ff;
