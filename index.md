@@ -8,5 +8,6 @@ app/index
 devel/index
 cluster/index
 bigdata/index
+hardware/index
 misc/index
 :::
