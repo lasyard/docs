@@ -1,4 +1,4 @@
-# Operating Systems
+# Hardware
 
 :::{toctree}
 :maxdepth: 2
