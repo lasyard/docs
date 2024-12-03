@@ -1,0 +1,19 @@
+$ k9s info
+ ____  __.________
+|    |/ _/   __   \______
+|      < \____    /  ___/
+|    |  \   /    /\___ \
+|____|__ \ /____//____  >
+        \/            \/
+
+Version:           v0.32.7
+Config:            /Users/xxxx/Library/Application Support/k9s/config.yaml
+Custom Views:      /Users/xxxx/Library/Application Support/k9s/views.yaml
+Plugins:           /Users/xxxx/Library/Application Support/k9s/plugins.yaml
+Hotkeys:           /Users/xxxx/Library/Application Support/k9s/hotkeys.yaml
+Aliases:           /Users/xxxx/Library/Application Support/k9s/aliases.yaml
+Skins:             /Users/xxxx/Library/Application Support/k9s/skins
+Context Configs:   /Users/xxxx/Library/Application Support/k9s/clusters
+Logs:              /Users/xxxx/Library/Application Support/k9s/k9s.log
+Benchmarks:        /Users/xxxx/Library/Application Support/k9s/benchmarks
+ScreenDumps:       /Users/xxxx/Library/Application Support/k9s/screen-dumps

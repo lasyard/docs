@@ -35,3 +35,15 @@ Cleanup cache:
 ```sh
 brew cleanup -s
 ```
+
+Pin a package:
+
+```sh
+brew pin openssl@3
+```
+
+List pinned packages:
+
+```sh
+brew list --pinned
+```
