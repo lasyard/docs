@@ -1,0 +1,3 @@
+$ cat /proc/swaps
+Filename                                Type        Size    Used    Priority
+/dev/dm-1                               partition   8269820 0       -2
