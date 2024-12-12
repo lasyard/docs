@@ -1,0 +1,4 @@
+$ chronyc sources
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^* las0                          2  10   377   709    -58us[  -79us] +/- 9075us

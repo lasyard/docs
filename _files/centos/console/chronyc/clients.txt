@@ -1,0 +1,6 @@
+$ sudo chronyc clients
+Hostname                      NTP   Drop Int IntL Last     Cmd   Drop Int  Last
+===============================================================================
+las1                           52      0  10   -   810       0      0   -     -
+las2                           64      0  10   -   958       0      0   -     -
+localhost                       0      0   -   -     -       6      0   5    14
