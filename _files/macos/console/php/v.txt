@@ -1,0 +1,4 @@
+$ php -v
+PHP 8.3.11 (cli) (built: Aug 30 2024 16:34:18) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.3.11, Copyright (c) Zend Technologies

@@ -1,0 +1,5 @@
+$ php --ini
+Configuration File (php.ini) Path: /usr/local/etc/php/8.3
+Loaded Configuration File:         /usr/local/etc/php/8.3/php.ini
+Scan for additional .ini files in: /usr/local/etc/php/8.3/conf.d
+Additional .ini files parsed:      /usr/local/etc/php/8.3/conf.d/ext-opcache.ini
