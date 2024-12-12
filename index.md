@@ -4,4 +4,5 @@
 :maxdepth: 2
 os/index
 app/index
+devel/index
 :::
