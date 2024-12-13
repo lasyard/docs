@@ -7,4 +7,5 @@ app/index
 service/index
 cluster/index
 devel/index
+hardware/index
 :::
