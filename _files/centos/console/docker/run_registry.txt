@@ -1,0 +1,11 @@
+$ docker run -d -p 5000:5000 --restart=always --name registry -v /opt/docker_images:/var/lib/registry registry:2
+Unable to find image 'registry:2' locally
+2: Pulling from library/registry
+dc0decf4841d: Pull complete
+6cb0aa443e23: Pull complete
+813676e291ef: Pull complete
+dc2fb7dcec61: Pull complete
+916205650bfe: Pull complete
+Digest: sha256:543dade69668e02e5768d7ea2b0aa4fae6aa7384c9a5a8dbecc2be5136079ddb
+Status: Downloaded newer image for registry:2
+3c273d0fde19fbbdbeb027c03b10cde5ae2ea3775744d825f9fce376f8f72409

@@ -1,0 +1,4 @@
+$ ls /opt/docker_images/docker/registry/v2/
+blobs  repositories
+$ ls /opt/docker_images/docker/registry/v2/repositories/
+busybox

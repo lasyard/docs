@@ -1,0 +1,6 @@
+$ docker pull ubuntu:22.04
+22.04: Pulling from library/ubuntu
+6414378b6477: Pull complete
+Digest: sha256:0e5e4a57c2499249aafc3b40fcd541e9a456aab7296681a3994d631587203f97
+Status: Downloaded newer image for ubuntu:22.04
+docker.io/library/ubuntu:22.04

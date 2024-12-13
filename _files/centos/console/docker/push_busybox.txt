@@ -1,0 +1,6 @@
+$ docker tag busybox las0:5000/busybox
+$ docker push las0:5000/busybox
+Using default tag: latest
+The push refers to repository [las0:5000/busybox]
+59654b79daad: Pushed
+latest: digest: sha256:9307d4acaeed71c4c6ba84494aef0464ffc446a5d91f0a7c196fa8eda1bf0590 size: 527

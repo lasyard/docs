@@ -1,0 +1,3 @@
+$ docker ps
+CONTAINER ID   IMAGE        COMMAND                   CREATED         STATUS         PORTS                                       NAMES
+3c273d0fde19   registry:2   "/entrypoint.sh /etc…"   3 minutes ago   Up 3 minutes   0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   registry
