@@ -1,0 +1,28 @@
+$ kubectl describe configmap slurm-config
+Name:         slurm-config
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+SlurmctldPort:
+----
+6817
+ClusterName:
+----
+las
+SlurmUser:
+----
+slurm
+SlurmUserId:
+----
+999
+SlurmctldHost:
+----
+las0
+
+BinaryData
+====
+
+Events:  <none>

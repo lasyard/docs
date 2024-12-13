@@ -1,0 +1,12 @@
+$ sudo crictl ps
+CONTAINER           IMAGE               CREATED             STATE               NAME                        ATTEMPT             POD ID              POD
+f1724077bd558       c69fa2e9cbf5f       About an hour ago   Running             coredns                     0                   2e84c9f4dc725       coredns-cb4864fb5-cthk5
+0bc9f0fff5f22       c69fa2e9cbf5f       About an hour ago   Running             coredns                     0                   9b6bbedd00da4       coredns-cb4864fb5-wfplt
+2679fc51c8ac7       0f80feca743f4       About an hour ago   Running             csi-node-driver-registrar   0                   b134d41ee0792       csi-node-driver-npzdl
+f9980475da399       1a094aeaf1521       About an hour ago   Running             calico-csi                  0                   b134d41ee0792       csi-node-driver-npzdl
+6e7d3a2f1641f       4e42b6f329bc1       About an hour ago   Running             calico-node                 0                   80151410f6d25       calico-node-mh5wr
+9ea4d0a6afd8c       a0bf559e280cf       24 hours ago        Running             kube-proxy                  0                   10435ee5f7771       kube-proxy-s78fz
+f0579e7be735c       c7aad43836fa5       24 hours ago        Running             kube-controller-manager     0                   806b61d48c26f       kube-controller-manager-las0
+6e2b69d27779e       2e96e5913fc06       24 hours ago        Running             etcd                        0                   becab9f0c5828       etcd-las0
+8af7a82c4d988       259c8277fcbbc       24 hours ago        Running             kube-scheduler              0                   6d5ada1ec6bee       kube-scheduler-las0
+4593b3d6a4d7b       c42f13656d0b2       24 hours ago        Running             kube-apiserver              0                   b0c44520be1ac       kube-apiserver-las0

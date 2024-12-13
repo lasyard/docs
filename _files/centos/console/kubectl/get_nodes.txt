@@ -1,0 +1,5 @@
+$ kubectl get nodes
+NAME   STATUS   ROLES           AGE   VERSION
+las0   Ready    control-plane   23h   v1.30.8
+las1   Ready    <none>          22h   v1.30.8
+las2   Ready    <none>          22h   v1.30.8

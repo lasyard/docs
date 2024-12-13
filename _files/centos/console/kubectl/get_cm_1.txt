@@ -1,0 +1,16 @@
+$ kubectl get configmap slurm-config -o yaml
+apiVersion: v1
+data:
+  slurm.properties: |
+    ClusterName=las
+    SlurmctldHost=las0
+    SlurmctldPort=6817
+    SlurmUser=slurm
+    SlurmUserId=999
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-12-13T02:33:34Z"
+  name: slurm-config
+  namespace: default
+  resourceVersion: "132129"
+  uid: dc0d286e-40e9-49b5-91fa-7ca4a202d207

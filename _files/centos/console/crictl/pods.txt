@@ -1,0 +1,11 @@
+$ sudo crictl pods
+POD ID              CREATED             STATE               NAME                           NAMESPACE           ATTEMPT             RUNTIME
+2e84c9f4dc725       About an hour ago   Ready               coredns-cb4864fb5-cthk5        kube-system         1                   (default)
+9b6bbedd00da4       About an hour ago   Ready               coredns-cb4864fb5-wfplt        kube-system         1                   (default)
+b134d41ee0792       About an hour ago   Ready               csi-node-driver-npzdl          calico-system       1                   (default)
+80151410f6d25       About an hour ago   Ready               calico-node-mh5wr              calico-system       0                   (default)
+10435ee5f7771       24 hours ago        Ready               kube-proxy-s78fz               kube-system         0                   (default)
+6d5ada1ec6bee       24 hours ago        Ready               kube-scheduler-las0            kube-system         0                   (default)
+806b61d48c26f       24 hours ago        Ready               kube-controller-manager-las0   kube-system         0                   (default)
+becab9f0c5828       24 hours ago        Ready               etcd-las0                      kube-system         0                   (default)
+b0c44520be1ac       24 hours ago        Ready               kube-apiserver-las0            kube-system         0                   (default)

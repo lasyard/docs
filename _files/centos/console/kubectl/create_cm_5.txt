@@ -1,0 +1,2 @@
+$ kubectl create configmap slurm-config --from-env-file=slurm.properties
+configmap/slurm-config created

@@ -1,0 +1,3 @@
+$ kubectl get clusterinfo
+NAME      CREATED AT
+default   2024-12-13T01:38:05Z

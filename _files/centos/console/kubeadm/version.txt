@@ -1,0 +1,11 @@
+$ kubeadm version -o yaml
+clientVersion:
+  buildDate: "2024-12-10T11:29:55Z"
+  compiler: gc
+  gitCommit: 354eac776046f4268e9989b21f8d1bba06033379
+  gitTreeState: clean
+  gitVersion: v1.30.8
+  goVersion: go1.22.9
+  major: "1"
+  minor: "30"
+  platform: linux/amd64

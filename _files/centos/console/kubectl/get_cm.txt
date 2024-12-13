@@ -1,0 +1,4 @@
+$ kubectl get configmaps
+NAME               DATA   AGE
+kube-root-ca.crt   1      24h
+slurm-config       1      104s

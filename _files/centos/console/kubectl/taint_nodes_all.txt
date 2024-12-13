@@ -1,0 +1,4 @@
+$ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+node/las0 untainted
+taint "node-role.kubernetes.io/control-plane" not found
+taint "node-role.kubernetes.io/control-plane" not found
