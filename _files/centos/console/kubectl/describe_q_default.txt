@@ -1,0 +1,23 @@
+$ kubectl describe q default
+Name:         default
+Namespace:
+Labels:       <none>
+Annotations:  <none>
+API Version:  scheduling.volcano.sh/v1beta1
+Kind:         Queue
+Metadata:
+  Creation Timestamp:  2024-12-16T07:01:23Z
+  Generation:          1
+  Resource Version:    683622
+  UID:                 5ef808f5-f6ec-483f-8316-7d205aa074da
+Spec:
+  Guarantee:
+  Reclaimable:  true
+  Weight:       1
+Status:
+  Allocated:
+    Cpu:     0
+    Memory:  0
+  Reservation:
+  State:  Open
+Events:   <none>

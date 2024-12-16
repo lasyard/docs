@@ -32,7 +32,7 @@ Create a new token with a 24-hour expiration and print the `join` command:
 kubeadm token create --print-join-command --ttl 24h
 ```
 
-## ConfigMap
+## Config Map
 
 Create a properties file:
 
@@ -45,19 +45,23 @@ vi slurm.properties
 :class: file-content
 :::
 
-Create a ConfigMap from it:
+Create a config map from it:
 
 :::{literalinclude} /_files/centos/console/kubectl/create_cm.txt
 :language: console
 :::
 
-Show ConfigMaps:
+:::{tip}
+Shortname of `configmap` is `cm`.
+:::
+
+Show config maps:
 
 :::{literalinclude} /_files/centos/console/kubectl/get_cm.txt
 :language: console
 :::
 
-See the details of the new ConfigMap:
+See the details of the new config map:
 
 :::{literalinclude} /_files/centos/console/kubectl/describe_cm_1.txt
 :language: console
@@ -69,13 +73,13 @@ Alternatively, you can check the data by:
 :language: console
 :::
 
-Remove the ConfigMap:
+Remove the config map:
 
 :::{literalinclude} /_files/centos/console/kubectl/delete_cm.txt
 :language: console
 :::
 
-If you want to break the content of `.properties` file into multiple ConfigMap keys, you can use:
+If you want to break the content of `.properties` file into multiple config map keys, you can use:
 
 :::{literalinclude} /_files/centos/console/kubectl/create_cm_5.txt
 :language: console
@@ -146,6 +150,12 @@ Show containers:
 :language: console
 :::
 
+Delete an image:
+
+```sh
+sudo crictl rmi xxxx-image
+```
+
 ## ctr
 
 :::{note}
@@ -162,7 +172,7 @@ ctr containerd.io 1.6.32
 Import an image:
 
 ```sh
-ctr -n k8s.io image import slurm-worker.tar
+sudo ctr -n k8s.io image import slurm-worker.tar
 ```
 
 ## List API vesions

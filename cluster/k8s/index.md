@@ -8,4 +8,5 @@ install
 deploy
 dashboard
 usage
+volcano
 :::

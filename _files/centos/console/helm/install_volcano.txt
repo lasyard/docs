@@ -1,0 +1,16 @@
+$ helm repo add volcano-sh https://volcano-sh.github.io/helm-charts
+"volcano-sh" has been added to your repositories
+$ helm install --set basic.image_pull_policy=IfNotPresent volcano volcano-sh/volcano -n volcano-system --create-namespace
+NAME: volcano
+LAST DEPLOYED: Mon Dec 16 15:01:05 2024
+NAMESPACE: volcano-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Thank you for installing volcano.
+
+Your release is named volcano.
+
+For more information on volcano, visit:
+https://volcano.sh/
