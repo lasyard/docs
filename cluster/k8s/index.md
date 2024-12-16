@@ -6,5 +6,6 @@
 :maxdepth: 1
 install
 deploy
+dashboard
 usage
 :::

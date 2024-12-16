@@ -164,3 +164,19 @@ Import an image:
 ```sh
 ctr -n k8s.io image import slurm-worker.tar
 ```
+
+## List API vesions
+
+:::{literalinclude} /_files/centos/console/kubectl/api-versions.txt
+:language: console
+:::
+
+## List resources
+
+:::{literalinclude} /_files/centos/console/kubectl/api-resources-no-group.txt
+:language: console
+:::
+
+:::{literalinclude} /_files/centos/console/kubectl/api-resources-apps.txt
+:language: console
+:::

@@ -1,0 +1,7 @@
+$ kubectl get services -n kubernetes-dashboard
+NAME                                   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+kubernetes-dashboard-api               ClusterIP   10.98.10.128   <none>        8000/TCP   60m
+kubernetes-dashboard-auth              ClusterIP   10.100.95.48   <none>        8000/TCP   60m
+kubernetes-dashboard-kong-proxy        ClusterIP   10.96.227.10   <none>        443/TCP    60m
+kubernetes-dashboard-metrics-scraper   ClusterIP   10.109.84.82   <none>        8000/TCP   60m
+kubernetes-dashboard-web               ClusterIP   10.99.115.21   <none>        8000/TCP   60m
