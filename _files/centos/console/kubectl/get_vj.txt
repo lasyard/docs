@@ -1,0 +1,8 @@
+$ kubectl get vj
+NAME        STATUS    MINAVAILABLE   RUNNINGS   AGE
+sleep-job   Running   1              3          3s
+$ kubectl get pod
+NAME                     READY   STATUS    RESTARTS   AGE
+sleep-job-sleep-task-0   1/1     Running   0          7s
+sleep-job-sleep-task-1   1/1     Running   0          7s
+sleep-job-sleep-task-2   1/1     Running   0          7s

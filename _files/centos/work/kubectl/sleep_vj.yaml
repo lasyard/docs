@@ -1,0 +1,30 @@
+apiVersion: batch.volcano.sh/v1alpha1
+kind: Job
+metadata:
+  name: sleep-job
+spec:
+  minAvailable: 1
+  schedulerName: volcano
+  queue: default
+  policies:
+  - event: PodEvicted
+    action: RestartJob
+  tasks:
+    - replicas: 3
+      name: sleep-task
+      policies:
+      - event: TaskCompleted
+        action: CompleteJob
+      template:
+        spec:
+          containers:
+          - image: busybox
+            imagePullPolicy: IfNotPresent
+            name: sleep
+            command: [ "sleep", "10s" ]
+            resources:
+              requests:
+                cpu: 1
+              limits:
+                cpu: 1
+          restartPolicy: Never

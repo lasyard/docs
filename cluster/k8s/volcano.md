@@ -43,3 +43,36 @@ Then create the queue:
 $ kubectl apply -f test_q.yaml
 queue.scheduling.volcano.sh/test created
 ```
+
+## Job
+
+Create a job configuration file, like this:
+
+:::{literalinclude} /_files/centos/work/kubectl/sleep_vj.yaml
+:language: yaml
+:class: file-content
+:::
+
+Then create the job:
+
+```console
+$ kubectl create -f sleep_vj.yaml
+job.batch.volcano.sh/sleep-job created
+```
+
+Show the job and the pods:
+
+:::{literalinclude} /_files/centos/console/kubectl/get_vj.txt
+:language: console
+:::
+
+Delete the job:
+
+```console
+$ k delete vj sleep-job
+job.batch.volcano.sh "sleep-job" deleted
+```
+
+:::{note}
+Delete the job will also delete all task pods.
+:::
