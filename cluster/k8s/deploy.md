@@ -8,8 +8,15 @@ Roles of the nodes:
 :Control-plane: las0
 :Nodes: las0, las1, las2
 
+:::{note}
+Linux kernel 4.18 is not supported by kubernetes 1.32.
+:::
+
+::::
+
 ## Prerequisites
 
+::::{plat} centos
 Add repository for `containerd.io`:
 
 ```sh
@@ -27,6 +34,7 @@ Disable SELinux on all nodes, see [SELinux](project:/os/centos/misc.md#disable-s
 Disable swap on all nodes, see [Set swap off](project:/os/centos/misc.md#set-swap-off).
 
 Install packages on each node according their roles. See "<project:install.md>".
+::::
 
 ## Configure networking
 
@@ -164,7 +172,11 @@ Check the cluster version:
 :language: console
 :::
 
-::::
+Remove the taints on the control plane so that you can schedule pods on it:
+
+:::{literalinclude} /_files/centos/console/kubectl/taint_nodes_all.txt
+:language: console
+:::
 
 ## Install networking
 
@@ -181,12 +193,6 @@ Wait until all these pods are in the "Running" state:
 ```sh
 watch kubectl get pods -n calico-system
 ```
-
-Remove the taints on the control plane so that you can schedule pods on it:
-
-:::{literalinclude} /_files/centos/console/kubectl/taint_nodes_all.txt
-:language: console
-:::
 
 ## Join the worker nodes
 
