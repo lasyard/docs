@@ -1,0 +1,3 @@
+$ vcctl queue list
+Name                     Weight  State   Inqueue Pending Running Unknown
+default                  1       Open    0       0       0       0

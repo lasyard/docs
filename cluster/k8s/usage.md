@@ -156,6 +156,12 @@ Delete an image:
 sudo crictl rmi xxxx-image
 ```
 
+Remove all unused images:
+
+```sh
+sudo crictl rmi -q
+```
+
 ## ctr
 
 :::{note}
@@ -172,7 +178,7 @@ ctr containerd.io 1.6.32
 Import an image:
 
 ```sh
-sudo ctr -n k8s.io image import slurm-worker.tar
+sudo ctr -n k8s.io image import busybox.tar
 ```
 
 ## List API vesions

@@ -1,0 +1,3 @@
+$ vcctl job list
+Name        Creation       Phase       JobType     Replicas    Min   Pending   Running   Succeeded   Failed    Unknown     RetryCount
+sleep-job   2024-12-19     Running     Batch       3           1     0         3         0           0         0           0

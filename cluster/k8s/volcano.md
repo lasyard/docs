@@ -60,6 +60,10 @@ $ kubectl create -f sleep_vj.yaml
 job.batch.volcano.sh/sleep-job created
 ```
 
+:::{note}
+The job will be in `PENDING` state if the underlying pods were not running succcessfuly, which may not caused by lack of resources.
+:::
+
 Show the job and the pods:
 
 :::{literalinclude} /_files/centos/console/kubectl/get_vj.txt
@@ -75,4 +79,24 @@ job.batch.volcano.sh "sleep-job" deleted
 
 :::{note}
 Delete the job will also delete all task pods.
+:::
+
+## vcctl
+
+```sh
+git clone -b v1.10.0 git@github.com:volcano-sh/volcano.git
+make vcctl
+cp _output/bin/vcctl ${HOME}/bin
+```
+
+Show queue list:
+
+:::{literalinclude} /_files/centos/console/vcctl/queue_list.txt
+:language: console
+:::
+
+Show job list:
+
+:::{literalinclude} /_files/centos/console/vcctl/job_list.txt
+:language: console
 :::
