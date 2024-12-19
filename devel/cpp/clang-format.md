@@ -5,7 +5,7 @@
 ::::{plat} macos
 :vers: macOS Monterey
 
-`clang-format` is installed along with `llvm`, see <project:llvm>.
+`clang-format` is installed along with `llvm`, see <project:llvm.md>.
 
 Check the version:
 
