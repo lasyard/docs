@@ -2,13 +2,11 @@
 
 ## Check version
 
-:::{literalinclude} /_files/ubuntu/console/cat/version.txt
+:::{literalinclude} /_files/ubuntu/console/cat/release.txt
 :language: console
 :::
 
-## Usage
-
-### User management
+## User management
 
 Add a new user:
 
