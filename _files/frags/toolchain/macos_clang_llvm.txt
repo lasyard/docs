@@ -1,0 +1,9 @@
+Toolchain info:
+
+:::{literalinclude} /_files/macos/console/clang/v_llvm.txt
+:language: console
+:::
+
+:::{literalinclude} /_files/macos/console/make/v.txt
+:language: console
+:::

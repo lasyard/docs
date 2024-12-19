@@ -1,0 +1,9 @@
+Toolchain info:
+
+:::{literalinclude} /_files/centos/console/gcc/v_11.txt
+:language: console
+:::
+
+:::{literalinclude} /_files/centos/console/make/v.txt
+:language: console
+:::
