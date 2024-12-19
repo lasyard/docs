@@ -84,3 +84,9 @@ Clean:
 ```sh
 sudo dnf clean all
 ```
+
+Disable a repo:
+
+```sh
+sudo dnf config-manager --disable docker-ce-stable
+```

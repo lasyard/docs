@@ -36,7 +36,11 @@ This version is quite old, so you may want ot install a newer version manually.
 ::::{plat} linux
 :vers: CentOS 8.5
 
-First, download the latest binary distribution from <https://cmake.org/download/>.
+First, download the binary package:
+
+```sh
+wget https://cmake.org/files/v3.27/cmake-3.27.7-linux-x86_64.tar.gz
+```
 
 Uncompress it:
 
@@ -54,17 +58,34 @@ Check the version:
 
 ### Build from sources
 
+Download the sources:
+
+```sh
+wget https://cmake.org/files/v3.27/cmake-3.27.7.tar.gz
+```
+
 ::::{plat} centos
 :vers: CentOS 8.5
 
 :::{include} /_files/frags/toolchain/centos_gcc_11.txt
 :::
 
-Download the source, then build and install it:
+Install some dependencies:
 
 ```sh
-tar -xzf cmake-3.27.7.tar.gz
-cd cmake-3.27.7/
+sudo dnf install openssl-devel
+```
+
+Extract the sources:
+
+```sh
+tar -C ~/workspace/devel -xzf cmake-3.27.7.tar.gz
+cd ~/workspace/devel/cmake-3.27.7/
+```
+
+Build and install it:
+
+```sh
 ./bootstrap
 make
 sudo make install

@@ -41,7 +41,7 @@ make uninstall PREFIX=~
 Show the version:
 
 ```console
-cryptest.exe V
+$ cryptest.exe V
 8.9.0
 ```
 

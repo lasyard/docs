@@ -1,3 +1,5 @@
+$ type cmake
+cmake is /usr/local/bin/cmake
 $ cmake --version
 cmake version 3.30.3
 

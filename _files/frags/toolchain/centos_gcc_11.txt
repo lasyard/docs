@@ -7,3 +7,7 @@ Toolchain info:
 :::{literalinclude} /_files/centos/console/make/v.txt
 :language: console
 :::
+
+:::{literalinclude} /_files/centos/console/cmake/version.txt
+:language: console
+:::
