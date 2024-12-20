@@ -1,0 +1,5 @@
+$ curl https://server.teleport.xxxx/webapi/find | jq '.server_version'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   619  100   619    0     0   7917      0 --:--:-- --:--:-- --:--:--  7935
+"16.1.8"
