@@ -12,7 +12,7 @@ wget https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.6/wxWidgets-3
 
 ::::{plat} macos
 
-:::{include} /_files/frags/toolchain/macos_clang_llvm.txt
+:::{include} /_files/frags/toolchain/macos_clang_14.txt
 :::
 
 Extract sources:

@@ -140,7 +140,7 @@ docker attach adoring_driscoll
 The container will stop if you exit the shell, and can be started and attached by
 
 ```sh
-docker start -ai  adoring_driscoll
+docker start -ai adoring_driscoll
 ```
 
 :::

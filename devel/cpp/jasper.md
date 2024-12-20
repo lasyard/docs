@@ -13,7 +13,7 @@ wget https://github.com/jasper-software/jasper/releases/download/version-4.2.4/j
 ::::{plat} macos
 :vers: macOS Monterey
 
-:::{include} /_files/frags/toolchain/macos_clang_llvm.txt
+:::{include} /_files/frags/toolchain/macos_clang_14.txt
 :::
 
 Extract sources:
@@ -26,8 +26,8 @@ cd ~/workspace/devel/jasper-4.2.4
 ### Debug
 
 ```sh
-cmake -S . -B ../build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel
-cd ../build-x86_64-darwin-debug
+cmake -S . -B ../jasper-4.2.4-build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel
+cd ../jasper-4.2.4-build-x86_64-darwin-debug
 cmake --build . --target install
 ```
 

@@ -1,6 +1,6 @@
 Toolchain info:
 
-:::{literalinclude} /_files/macos/console/clang/v_llvm.txt
+:::{literalinclude} /_files/macos/console/clang/v.txt
 :language: console
 :::
 

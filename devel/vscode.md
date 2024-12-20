@@ -118,5 +118,6 @@ Install clangd plugin in VSCode, then set:
 {
     "clangd.path": "/usr/bin/clangd"
 }
+```
 
 :::

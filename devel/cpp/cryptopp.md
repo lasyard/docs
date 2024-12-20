@@ -10,7 +10,7 @@ wget https://cryptopp.com/cryptopp890.zip
 
 ::::{plat} macos
 
-:::{include} /_files/frags/toolchain/macos_clang_llvm.txt
+:::{include} /_files/frags/toolchain/macos_clang_14.txt
 :::
 
 ### Release
@@ -21,7 +21,7 @@ cd ~/workspace/devel/cryptopp890-x86_64-darwin-release
 ```
 
 ```sh
-make all
+make -j all
 make install PREFIX=~
 ```
 
@@ -57,8 +57,8 @@ cd ~/workspace/devel/cryptopp890-x86_64-darwin-debug
 ```
 
 ```sh
-export CXXFLAGS="-DDEBUG -g -O0"
-make all
+export CXXFLAGS="${CXXFLAGS} -DDEBUG -g -O0"
+make -j all
 make install PREFIX=~/workspace/devel
 ```
 
