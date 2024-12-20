@@ -48,3 +48,9 @@ Check status in the node you logged in:
 ```sh
 teleport status
 ```
+
+Copy files:
+
+```sh
+tsh scp volcano-1.10.0.tgz root@xxxx-node:
+```
