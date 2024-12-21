@@ -1,0 +1,6 @@
+$ cat /sys/devices/virtual/dmi/id/sys_vendor
+Red Hat
+$ cat /sys/devices/virtual/dmi/id/product_name
+KVM
+$ cat /sys/devices/virtual/dmi/id/product_version
+RHEL 7.4.0 PC (i440FX + PIIX, 1996)

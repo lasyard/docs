@@ -1,0 +1,6 @@
+$ sudo dmidecode -s system-manufacturer
+Red Hat
+$ sudo dmidecode -s system-product-name
+KVM
+$ sudo dmidecode -s system-version
+RHEL 7.4.0 PC (i440FX + PIIX, 1996)
