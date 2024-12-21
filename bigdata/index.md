@@ -1,10 +1,7 @@
-# java
-
-<https://www.java.com/>
+# Big Data
 
 :::{toctree}
 :maxdepth: 1
 :glob:
-install
 *
 :::

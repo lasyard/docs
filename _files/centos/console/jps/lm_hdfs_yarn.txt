@@ -1,0 +1,7 @@
+$ sudo jps -lm
+2546919 org.apache.hadoop.yarn.server.nodemanager.NodeManager
+2545093 org.apache.hadoop.hdfs.server.datanode.DataNode
+2544894 org.apache.hadoop.hdfs.server.namenode.NameNode
+2545372 org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+2546732 org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
+2547320 sun.tools.jps.Jps -lm
