@@ -44,6 +44,13 @@ Install the java packages on each node:
 install_java_bin hadoop hadoop-3.4.1.tar.gz /opt
 ```
 
+Set environment variables on each node:
+
+```sh
+echo "export HADOOP_HOME=\"/opt/hadoop\"" | sudo tee -a /etc/profile.d/hadoop.sh
+echo "export HADOOP_CLASSPATH=\"\$(\${HADOOP_HOME}/bin/hadoop classpath)\"" | sudo tee -a /etc/profile.d/hadoop.sh
+```
+
 ### Configure
 
 ```sh
@@ -68,13 +75,6 @@ Create the directory of `${hadoop.tmp.dir}` on each node:
 
 ```sh
 sudo mkdir -p /opt/tmp/hadoop
-```
-
-Set environment variables on each node:
-
-```sh
-echo "export HADOOP_HOME=\"/opt/hadoop\"" | sudo tee -a /etc/profile.d/hadoop.sh
-echo "export HADOOP_CLASSPATH=\"\$(\${HADOOP_HOME}/bin/hadoop classpath)\"" | sudo tee -a /etc/profile.d/hadoop.sh
 ```
 
 ```sh
@@ -154,10 +154,6 @@ sudo /opt/hadoop/sbin/start-yarn.sh
 ```
 
 Show java processes:
-
-```sh
-sudo jps -lm
-```
 
 :::{literalinclude} /_files/centos/console/jps/lm_hdfs_yarn.txt
 :language: console

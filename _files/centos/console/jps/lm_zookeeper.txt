@@ -1,0 +1,3 @@
+$ sudo jps -lm
+2582220 sun.tools.jps.Jps -lm
+2580488 org.apache.zookeeper.server.quorum.QuorumPeerMain /opt/zookeeper/bin/../conf/zoo.cfg

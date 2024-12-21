@@ -1,0 +1,4 @@
+$ zkServer.sh version
+ZooKeeper JMX enabled by default
+Using config: /opt/zookeeper/bin/../conf/zoo.cfg
+Apache ZooKeeper, version 3.9.3 2024-10-17 23:21 UTC
