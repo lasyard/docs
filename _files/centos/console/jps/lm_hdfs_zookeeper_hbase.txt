@@ -1,0 +1,8 @@
+$ sudo jps -lm
+2584583 org.apache.zookeeper.server.quorum.QuorumPeerMain /opt/zookeeper/bin/../conf/zoo.cfg
+3009740 org.apache.hadoop.hdfs.server.namenode.NameNode
+3010252 org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+3009935 org.apache.hadoop.hdfs.server.datanode.DataNode
+3012153 sun.tools.jps.Jps -lm
+3010872 org.apache.hadoop.hbase.master.HMaster start
+3011114 org.apache.hadoop.hbase.regionserver.HRegionServer start

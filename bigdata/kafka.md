@@ -77,9 +77,7 @@ Start the services on each node:
 sudo /opt/kafka/bin/kafka-server-start.sh -daemon /opt/kafka/config/server.properties
 ```
 
-```sh
-sudo jps -lm
-```
+Show java processes:
 
 :::{literalinclude} /_files/centos/console/jps/lm_zookeeper_kafka.txt
 :language: console
