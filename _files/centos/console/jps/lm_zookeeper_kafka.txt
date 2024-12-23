@@ -1,0 +1,4 @@
+$ sudo jps -lm
+2584583 org.apache.zookeeper.server.quorum.QuorumPeerMain /opt/zookeeper/bin/../conf/zoo.cfg
+3000714 sun.tools.jps.Jps -lm
+3000567 kafka.Kafka /opt/kafka/config/server.properties

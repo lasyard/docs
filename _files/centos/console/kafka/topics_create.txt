@@ -1,0 +1,9 @@
+$ kafka-topics.sh --bootstrap-server localhost:9092 --create --topic xxxx --partitions 3 --replication-factor 1
+Created topic xxxx.
+$ kafka-topics.sh --bootstrap-server localhost:9092 --list
+xxxx
+$ kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic xxxx
+Topic: xxxx	TopicId: XenxsDuGRWiDRvqdi86rJQ	PartitionCount: 3	ReplicationFactor: 1	Configs:
+	Topic: xxxx	Partition: 0	Leader: 1	Replicas: 1	Isr: 1	Elr: N/A	LastKnownElr: N/A
+	Topic: xxxx	Partition: 1	Leader: 0	Replicas: 0	Isr: 0	Elr: N/A	LastKnownElr: N/A
+	Topic: xxxx	Partition: 2	Leader: 2	Replicas: 2	Isr: 2	Elr: N/A	LastKnownElr: N/A
