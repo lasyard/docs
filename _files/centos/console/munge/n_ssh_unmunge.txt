@@ -1,0 +1,12 @@
+$ munge -n -t 10 | ssh las1 unmunge
+STATUS:           Success (0)
+ENCODE_HOST:      las0 (172.20.3.73)
+ENCODE_TIME:      2024-12-23 15:27:27 +0800 (1734938847)
+DECODE_TIME:      2024-12-23 15:27:27 +0800 (1734938847)
+TTL:              10
+CIPHER:           aes128 (4)
+MAC:              sha256 (5)
+ZIP:              none (0)
+UID:              xxxx (1000)
+GID:              xxxx (1000)
+LENGTH:           0

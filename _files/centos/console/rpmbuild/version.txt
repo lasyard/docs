@@ -1,0 +1,2 @@
+$ rpmbuild --version
+RPM 版本 4.14.3
