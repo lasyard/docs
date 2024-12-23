@@ -1,0 +1,4 @@
+$ sudo jps -lm
+3062905 sun.tools.jps.Jps -lm
+3061763 org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://las0:7077
+3061616 org.apache.spark.deploy.master.Master --host las0 --port 7077 --webui-port 8080

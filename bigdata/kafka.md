@@ -10,7 +10,7 @@
 
 Install JDK on each node, see <project:/devel/java/install.md>.
 
-Get shell scripts [`install_java_bin`](https://github.com/lasyard/coding/blob/main/shell/install_java_bin.sh).
+Get shell script [`install_java_bin`](https://github.com/lasyard/coding/blob/main/shell/install_java_bin.sh).
 
 Download java binary packages:
 
