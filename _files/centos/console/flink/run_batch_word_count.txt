@@ -1,0 +1,5 @@
+(alice,3)
+(betty,2)
+(cindy,1)
+(doris,2)
+(emily,2)
