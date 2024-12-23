@@ -11,3 +11,7 @@ Toolchain info:
 :::{literalinclude} /_files/centos/console/cmake/version.txt
 :language: console
 :::
+
+:::{literalinclude} /_files/centos/console/rpmbuild/version.txt
+:language: console
+:::
