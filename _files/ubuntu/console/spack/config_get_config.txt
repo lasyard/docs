@@ -1,0 +1,77 @@
+config:
+  install_tree:
+    root: $spack/opt/spack
+    projections:
+      all: '{architecture}/{compiler.name}-{compiler.version}/{name}-{version}-{hash}'
+    # install_tree can include an optional padded length (int or boolean)
+    # default is False (do not pad)
+    # if padded_length is True, Spack will pad as close to the system max path
+    # length as possible
+    # if padded_length is an integer, Spack will pad to that many characters,
+    # assuming it is higher than the length of the install_tree root.
+    # padded_length: 128
+
+
+  # Locations where templates should be found
+  template_dirs:
+  - $spack/share/spack/templates
+
+  # Directory where licenses should be located
+  license_dir: $spack/etc/spack/licenses
+  build_stage:
+  - $tempdir/$user/spack-stage
+  - $user_cache_path/stage
+  test_stage: $user_cache_path/test
+  source_cache: $spack/var/spack/cache
+  misc_cache: $user_cache_path/cache
+  connect_timeout: 10
+  verify_ssl: true
+  ssl_certs: $SSL_CERT_FILE
+  suppress_gpg_warnings: false
+  checksum: true
+  deprecated: false
+  dirty: false
+  build_language: C
+  locks: true
+  url_fetch_method: urllib
+  ccache: false
+  db_lock_timeout: 60
+  package_lock_timeout: null
+  shared_linking:
+    # Spack automatically embeds runtime search paths in ELF binaries for their
+    # dependencies. Their type can either be "rpath" or "runpath". For glibc, rpath is
+    # inherited and has precedence over LD_LIBRARY_PATH; runpath is not inherited
+    # and of lower precedence. DO NOT MIX these within the same install tree.
+    type: rpath
+
+
+    # (Experimental) Embed absolute paths of dependent libraries directly in ELF
+    # binaries to avoid runtime search. This can improve startup time of
+    # executables with many dependencies, in particular on slow filesystems.
+    bind: false
+
+    # Controls the handling of missing dynamic libraries after installation.
+    # Options are ignore (default), warn, or error. If set to error, the
+    # installation fails if installed binaries reference dynamic libraries that
+    # are not found in their specified rpaths.
+    missing_library_policy: ignore
+
+
+  # Set to 'false' to allow installation on filesystems that doesn't allow setgid bit
+  # manipulation by unprivileged user (e.g. AFS)
+  allow_sgid: true
+  install_status: true
+  binary_index_ttl: 600
+  flags:
+    # Whether to keep -Werror flags active in package builds.
+    keep_werror: none
+
+  # A mapping of aliases that can be used to define new commands. For instance,
+  # `sp: spec -I` will define a new command `sp` that will execute `spec` with
+  # the `-I` argument. Aliases cannot override existing commands.
+  aliases:
+    concretise: concretize
+    containerise: containerize
+    rm: remove
+  debug: false
+  build_jobs: 16

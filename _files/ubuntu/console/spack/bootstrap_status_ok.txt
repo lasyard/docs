@@ -1,0 +1,6 @@
+$ spack bootstrap status
+Spack v0.24.0.dev0 - python@3.10
+
+[PASS] Core Functionalities
+
+[PASS] Binary packages

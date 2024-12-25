@@ -1,0 +1,7 @@
+$ spack find
+==> In environment default
+==> 2 root specs
+ -  lmod   -  ninja
+
+==> 0 installed packages
+==> 0 concretized packages to be installed (show with `spack find -c`)
