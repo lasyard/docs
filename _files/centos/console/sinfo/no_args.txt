@@ -1,0 +1,4 @@
+$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+normal*      up   infinite      3   idle las[0-2]
+high         up   infinite      3   idle las[0-2]

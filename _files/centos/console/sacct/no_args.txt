@@ -1,0 +1,5 @@
+$ sacct
+JobID           JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+1              hostname     normal                     3  COMPLETED      0:0
+1.0            hostname                                3  COMPLETED      0:0

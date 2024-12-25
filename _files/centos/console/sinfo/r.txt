@@ -1,0 +1,9 @@
+$ sinfo -R
+REASON               USER      TIMESTAMP           NODELIST
+Not responding       slurm     2024-12-24T16:00:14 las2
+$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+normal*      up   infinite      1  down* las2
+normal*      up   infinite      2   idle las[0-1]
+high         up   infinite      1  down* las2
+high         up   infinite      2   idle las[0-1]

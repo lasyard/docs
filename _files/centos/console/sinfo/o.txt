@@ -1,0 +1,3 @@
+$ sinfo -o "%20N %10c %10m %25f %G"
+NODELIST             CPUS       MEMORY     AVAIL_FEATURES            GRES
+las[0-2]             8          15831      (null)                    (null)

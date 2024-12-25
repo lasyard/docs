@@ -1,0 +1,4 @@
+$ sudo dnf config-manager --set-enabled powertools
+$ dnf repolist powertools
+仓库 id                                                         仓库名称                                                                          状态
+powertools                                                      CentOS Linux 8 - PowerTools                                                       启用

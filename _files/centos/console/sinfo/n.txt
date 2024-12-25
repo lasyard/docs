@@ -1,0 +1,8 @@
+$ sinfo -N
+NODELIST   NODES PARTITION STATE
+las0           1   normal* idle
+las0           1      high idle
+las1           1   normal* idle
+las1           1      high idle
+las2           1   normal* idle
+las2           1      high idle

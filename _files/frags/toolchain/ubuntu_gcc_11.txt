@@ -4,10 +4,10 @@ Toolchain info:
 :language: console
 :::
 
-:::{literalinclude} /_files/centos/console/make/v.txt
+:::{literalinclude} /_files/ubuntu/console/make/v.txt
 :language: console
 :::
 
-:::{literalinclude} /_files/centos/console/debuild/version.txt
+:::{literalinclude} /_files/ubuntu/console/debuild/version.txt
 :language: console
 :::
