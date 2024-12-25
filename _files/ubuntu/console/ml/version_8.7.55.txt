@@ -1,0 +1,4 @@
+$ ml --version
+
+Modules based on Lua: Version 8.7.55 2024-12-13 12:24 -07:00
+    by Robert McLay mclay@tacc.utexas.edu
