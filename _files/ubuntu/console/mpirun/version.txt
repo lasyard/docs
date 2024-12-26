@@ -1,0 +1,4 @@
+$ mpirun --version
+mpirun (Open MPI) 4.1.2
+
+Report bugs to http://www.open-mpi.org/community/help/
