@@ -1,0 +1,8 @@
+$ kubectl get pg -owide
+NAME                                            STATUS    MINMEMBER   RUNNINGS   AGE   QUEUE
+sleep-vj-bbd09848-dff7-46d6-9170-27e31bd25b23   Running   3           3          64s   test
+$ kubectl get po -owide
+NAME                    READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+sleep-vj-sleep-task-0   1/1     Running   0          59s   192.168.100.183   las0   <none>           <none>
+sleep-vj-sleep-task-1   1/1     Running   0          59s   192.168.100.185   las0   <none>           <none>
+sleep-vj-sleep-task-2   1/1     Running   0          59s   192.168.100.184   las0   <none>           <none>

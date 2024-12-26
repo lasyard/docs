@@ -1,0 +1,5 @@
+$ kubectl get po -owide
+NAME                READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+sleep-job-0-hn8fr   1/1     Running   0          7s    192.168.221.184   las1   <none>           <none>
+sleep-job-1-2ndtq   1/1     Running   0          7s    192.168.67.154    las2   <none>           <none>
+sleep-job-2-9nx8v   1/1     Running   0          7s    192.168.100.179   las0   <none>           <none>

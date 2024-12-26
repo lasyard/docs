@@ -1,0 +1,8 @@
+$ kubectl get po sleep-po -owide -w
+NAME       READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+sleep-po   1/1     Running   0          2s    192.168.221.182   las1   <none>           <none>
+sleep-po   0/1     Completed   0          61s   192.168.221.182   las1   <none>           <none>
+sleep-po   0/1     Completed   0          62s   192.168.221.182   las1   <none>           <none>
+sleep-po   0/1     Completed   0          62s   192.168.221.182   las1   <none>           <none>
+sleep-po   0/1     Terminating   0          2m3s   192.168.221.182   las1   <none>           <none>
+sleep-po   0/1     Terminating   0          2m3s   192.168.221.182   las1   <none>           <none>

@@ -1,0 +1,31 @@
+apiVersion: batch.volcano.sh/v1alpha1
+kind: Job
+metadata:
+  name: sleep-vj
+spec:
+  minAvailable: 3
+  schedulerName: volcano
+  priorityClassName: high-priority
+  queue: test
+  policies:
+  - event: PodEvicted
+    action: RestartJob
+  tasks:
+    - replicas: 3
+      name: sleep-task
+      policies:
+      - event: TaskCompleted
+        action: CompleteJob
+      template:
+        spec:
+          containers:
+          - image: busybox
+            imagePullPolicy: IfNotPresent
+            name: busybox-sleep
+            command: ['sh', '-c', 'trap exit INT TERM; sleep 1m & wait']
+            resources:
+              requests:
+                cpu: 1
+              limits:
+                cpu: 1
+          restartPolicy: Never

@@ -1,0 +1,13 @@
+$ kubectl get pc
+NAME                      VALUE        GLOBAL-DEFAULT   AGE
+high-priority             10000        false            63s
+system-cluster-critical   2000000000   false            8d
+system-node-critical      2000001000   false            8d
+$ kubectl describe pc high-priority
+Name:              high-priority
+Value:             10000
+GlobalDefault:     false
+PreemptionPolicy:  PreemptLowerPriority
+Description:       Priority 10000
+Annotations:       <none>
+Events:            <none>

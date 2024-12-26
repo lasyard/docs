@@ -1,0 +1,10 @@
+$ kubectl get job sleep-job -owide -w
+NAME        STATUS    COMPLETIONS   DURATION   AGE   CONTAINERS      IMAGES    SELECTOR
+sleep-job   Running   0/3           2s         2s    busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03
+sleep-job   Running   0/3           3s         3s    busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03
+sleep-job   Running   0/3           4s         4s    busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03
+sleep-job   Running   0/3           63s        63s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03
+sleep-job   Running   2/3           64s        64s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03
+sleep-job   Running   3/3           65s        65s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03
+sleep-job   Complete   3/3           65s        65s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03
+sleep-job   Complete   3/3           65s        76s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=beda8c45-ae6a-4f3f-bb1d-87897a73fe03

@@ -9,4 +9,5 @@ deploy
 dashboard
 usage
 volcano
+res/index
 :::
