@@ -22,6 +22,6 @@ Watch events:
 
 If we list the podgroups and pods when the job was running:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_pg_po_vj_sleep.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_pg_po_owide_vj_sleep.txt
 :language: console
 :::

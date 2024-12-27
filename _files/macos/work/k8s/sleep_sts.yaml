@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sleep-sts
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sleep
+  podManagementPolicy: Parallel
+  template:
+    metadata:
+      labels:
+        app: sleep
+    spec:
+      containers:
+      - image: busybox
+        imagePullPolicy: IfNotPresent
+        name: busybox-sleep
+        command: ['sh', '-c', 'trap exit INT TERM; sleep 1m & wait']
+        resources:
+          requests:
+            cpu: 1
+          limits:
+            cpu: 1
+      restartPolicy: Always
