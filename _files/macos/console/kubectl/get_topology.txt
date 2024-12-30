@@ -1,0 +1,3 @@
+$ kubectl get topology -owide
+NAME      AGE
+default   12s

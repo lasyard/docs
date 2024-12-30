@@ -133,3 +133,38 @@ sudo ctr -n k8s.io image import busybox.tar
 :::{literalinclude} /_files/centos/console/kubectl/api-resources-apps.txt
 :language: console
 :::
+
+## Node label
+
+Add label:
+
+```console
+$ kubectl label node las0 node-group=default
+node/las0 labeled
+```
+
+Modify label:
+
+```console
+$ kubectl label --overwrite node las0 node-group=test
+node/las0 labeled
+```
+
+Remove label:
+
+```console
+$ kubectl label node las0 node-group-
+node/las0 unlabeled
+```
+
+Show labels:
+
+```sh
+kubectl get node --show-labels
+```
+
+or:
+
+```sh
+kubectl label --list node las0
+```

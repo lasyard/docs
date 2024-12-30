@@ -1,6 +1,6 @@
 # ResourceFlavor
 
-Install kueue first, see <https://kueue.sigs.k8s.io/>.
+Create a topology first, see <project:topology.md>.
 
 ```sh
 vi default_rf.yaml
@@ -9,6 +9,10 @@ vi default_rf.yaml
 :::{literalinclude} /_files/macos/work/k8s/default_rf.yaml
 :language: yaml
 :class: file-content
+:::
+
+:::{note}
+At least one of `nodeLabels` is required if `topologyName` is set.
 :::
 
 ```console
