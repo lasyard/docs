@@ -1,0 +1,3 @@
+$ kubectl get cq -o wide
+NAME      COHORT   STRATEGY         PENDING WORKLOADS   ADMITTED WORKLOADS
+test-cq            BestEffortFIFO   0                   0

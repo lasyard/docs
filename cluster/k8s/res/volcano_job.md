@@ -1,5 +1,7 @@
 # Volcano Job
 
+Create a volcano queue first, see <project:queue.md>.
+
 ```sh
 vi sleep_vj.yaml
 ```

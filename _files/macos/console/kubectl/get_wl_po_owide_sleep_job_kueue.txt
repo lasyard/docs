@@ -1,0 +1,9 @@
+$ kubectl get wl
+NAME                        QUEUE     RESERVED IN   ADMITTED   FINISHED   AGE
+job-sleep-job-jr5qs-3e868   test-lq   test-cq       True                  25s
+job-sleep-job-lmvzz-0ac8d   test-lq                                       23s
+$ kubectl get po -owide
+NAME                      READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+sleep-job-jr5qs-0-9sn24   1/1     Running   0          31s   192.168.221.141   las1   <none>           <none>
+sleep-job-jr5qs-1-47m2t   1/1     Running   0          31s   192.168.67.169    las2   <none>           <none>
+sleep-job-jr5qs-2-4br2n   1/1     Running   0          31s   192.168.100.141   las0   <none>           <none>

@@ -1,0 +1,3 @@
+$ kubectl get rf
+NAME      AGE
+default   46s
