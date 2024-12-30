@@ -35,8 +35,8 @@ exiftool -ext jpg -if 'not ${DateTimeOriginal}' '-AllDates<FileModifyDate' −ov
 Set time to a specified time:
 
 ```sh
-exiftool -ext jpg '-AllDates=2020:02:02 20:00:00' −overwrite_original *
-exiftool -ext jpg "-AllDates=$(date -j -f "%s" "+%Y:%m:%d %H:%M:%S" 1012586522)" −overwrite_original *
+exiftool -ext jpg '-AllDates=2025:01:01 00:00:00' −overwrite_original *
+exiftool -ext jpg "-AllDates=$(date -j -f "%s" "+%Y:%m:%d %H:%M:%S" 1735660800)" −overwrite_original *
 ```
 
 Set time to one day before the original time:
