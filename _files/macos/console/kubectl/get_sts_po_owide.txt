@@ -1,0 +1,8 @@
+$ kubectl get sts,po -owide
+NAME                         READY   AGE   CONTAINERS      IMAGES
+statefulset.apps/sleep-sts   3/3     22s   busybox-sleep   busybox
+
+NAME              READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+pod/sleep-sts-0   1/1     Running   0          22s   192.168.221.157   las1   <none>           <none>
+pod/sleep-sts-1   1/1     Running   0          22s   192.168.100.161   las0   <none>           <none>
+pod/sleep-sts-2   1/1     Running   0          22s   192.168.67.184    las2   <none>           <none>

@@ -20,7 +20,7 @@ The default value of `spec.restartPolicy` is `Always`, which makes the pod resta
 
 Watch events:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_po_sleep_owide_w.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_po_owide_w.txt
 :language: console
 :::
 

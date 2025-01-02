@@ -18,7 +18,7 @@ job.batch/sleep-job created
 
 Watch events:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_job_sleep_owide_w.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_job_owide_w.txt
 :language: console
 :::
 
@@ -26,15 +26,15 @@ Watch events:
 Delete job do not produce events for the job.
 :::
 
-If we list the pods when the job was running:
+If we list the resources when the job was running:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_po_job_sleep.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_job_po_owide.txt
 :language: console
 :::
 
 ## Using kueue
 
-Create a local queue first, see <project:localqueue.md>.
+Create a local queue first, see <project:topology_rf_cq_lq.md>.
 
 ```sh
 vi sleep_job_kueue.yaml
@@ -45,18 +45,21 @@ vi sleep_job_kueue.yaml
 :class: file-content
 :::
 
-:::{literalinclude} /_files/macos/console/kubectl/create_sleep_job_kueue.txt
-:language: console
-:::
+```console
+$ kubectl create -f sleep_job_kueue.yaml
+job.batch/sleep-job-g4s2l created
+$ kubectl create -f sleep_job_kueue.yaml
+job.batch/sleep-job-c8cmm created
+```
 
 Show events:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_job_sleep_kueue_owide_w.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_job_owide_w_kueue.txt
 :language: console
 :::
 
-Show workloads and pods:
+Show resources:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_wl_po_owide_sleep_job_kueue.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_job_wl_po_kueue.txt
 :language: console
 :::

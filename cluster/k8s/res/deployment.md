@@ -23,12 +23,12 @@ deployment.apps/sleep-deploy created
 
 Watch events:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_deploy_sleep_owide_w.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_deploy_owide_w.txt
 :language: console
 :::
 
-If we list the pods when the deployment was 3/3 ready:
+If we list the resources when the deployment was 3/3 ready:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_po_owide_deploy_sleep.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_deploy_rs_po_owide.txt
 :language: console
 :::

@@ -1,3 +1,0 @@
-$ kubectl get lq
-NAME      CLUSTERQUEUE   PENDING WORKLOADS   ADMITTED WORKLOADS
-test-lq   test-cq        0                   0

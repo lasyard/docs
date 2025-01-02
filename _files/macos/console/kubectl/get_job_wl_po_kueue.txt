@@ -1,0 +1,13 @@
+$ kubectl get job,wl,po -owide
+NAME                        STATUS      COMPLETIONS   DURATION   AGE   CONTAINERS      IMAGES    SELECTOR
+job.batch/sleep-job-c8cmm   Suspended   0/3                      51s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+job.batch/sleep-job-g4s2l   Running     0/3           52s        52s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=deaa2bc3-6b02-4c0b-b50b-adc6d874b6a5
+
+NAME                                                QUEUE     RESERVED IN   ADMITTED   FINISHED   AGE
+workload.kueue.x-k8s.io/job-sleep-job-c8cmm-3ad3a   test-lq                                       51s
+workload.kueue.x-k8s.io/job-sleep-job-g4s2l-1c493   test-lq   test-cq       True                  52s
+
+NAME                          READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+pod/sleep-job-g4s2l-0-d6c4f   1/1     Running   0          52s   192.168.221.160   las1   <none>           <none>
+pod/sleep-job-g4s2l-1-2t7hs   1/1     Running   0          52s   192.168.67.187    las2   <none>           <none>
+pod/sleep-job-g4s2l-2-4h86x   1/1     Running   0          52s   192.168.100.167   las0   <none>           <none>

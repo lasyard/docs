@@ -1,0 +1,12 @@
+$ kubectl get topology,rf,cq,lq -owide
+NAME                              AGE
+topology.kueue.x-k8s.io/default   45s
+
+NAME                                    AGE
+resourceflavor.kueue.x-k8s.io/default   45s
+
+NAME                                  COHORT   STRATEGY         PENDING WORKLOADS   ADMITTED WORKLOADS
+clusterqueue.kueue.x-k8s.io/test-cq            BestEffortFIFO   0                   0
+
+NAME                                CLUSTERQUEUE   PENDING WORKLOADS   ADMITTED WORKLOADS
+localqueue.kueue.x-k8s.io/test-lq   test-cq        0                   0

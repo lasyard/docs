@@ -23,12 +23,12 @@ statefulset.apps/sleep-sts created
 
 Watch events:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_sts_sleep_owide_w.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_sts_owide_w.txt
 :language: console
 :::
 
-If we list the pods when the statefulset was 3/3 ready:
+If we list the resources when the statefulset was 3/3 ready:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_po_owide_sts_sleep.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_sts_po_owide.txt
 :language: console
 :::

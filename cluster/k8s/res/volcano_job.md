@@ -18,12 +18,12 @@ job.batch.volcano.sh/sleep-vj created
 
 Watch events:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_vj_sleep_owide_w.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_vj_owide_w.txt
 :language: console
 :::
 
-If we list the podgroups and pods when the job was running:
+If we list the resources when the job was running:
 
-:::{literalinclude} /_files/macos/console/kubectl/get_pg_po_owide_vj_sleep.txt
+:::{literalinclude} /_files/macos/console/kubectl/get_vj_pg_po.txt
 :language: console
 :::

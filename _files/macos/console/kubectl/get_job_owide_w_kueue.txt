@@ -1,0 +1,15 @@
+$ kubectl get job -owide -w
+NAME              STATUS      COMPLETIONS   DURATION   AGE   CONTAINERS      IMAGES    SELECTOR
+sleep-job-c8cmm   Suspended   0/3                      9s    busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+sleep-job-g4s2l   Running     0/3           10s        10s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=deaa2bc3-6b02-4c0b-b50b-adc6d874b6a5
+sleep-job-g4s2l   Running     0/3           62s        62s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=deaa2bc3-6b02-4c0b-b50b-adc6d874b6a5
+sleep-job-g4s2l   Running     1/3           63s        63s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=deaa2bc3-6b02-4c0b-b50b-adc6d874b6a5
+sleep-job-g4s2l   Running     3/3           64s        64s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=deaa2bc3-6b02-4c0b-b50b-adc6d874b6a5
+sleep-job-g4s2l   Complete    3/3           64s        64s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=deaa2bc3-6b02-4c0b-b50b-adc6d874b6a5
+sleep-job-c8cmm   Suspended   0/3                      63s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+sleep-job-c8cmm   Running     0/3           0s         63s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+sleep-job-c8cmm   Running     0/3           2s         65s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+sleep-job-c8cmm   Running     0/3           62s        2m5s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+sleep-job-c8cmm   Running     1/3           63s        2m6s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+sleep-job-c8cmm   Running     3/3           64s        2m7s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8
+sleep-job-c8cmm   Complete    3/3           64s        2m7s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=30519360-9ec7-414d-9b5e-bf90e74c75a8

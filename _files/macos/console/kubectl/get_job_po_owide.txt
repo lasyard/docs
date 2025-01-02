@@ -1,0 +1,8 @@
+$ kubectl get job,po -owide
+NAME                  STATUS    COMPLETIONS   DURATION   AGE   CONTAINERS      IMAGES    SELECTOR
+job.batch/sleep-job   Running   0/3           16s        16s   busybox-sleep   busybox   batch.kubernetes.io/controller-uid=35b8d921-792e-4cbd-bc23-2896f95b5760
+
+NAME                    READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+pod/sleep-job-0-gjjl2   1/1     Running   0          16s   192.168.221.155   las1   <none>           <none>
+pod/sleep-job-1-49l9d   1/1     Running   0          16s   192.168.67.182    las2   <none>           <none>
+pod/sleep-job-2-vwvw2   1/1     Running   0          16s   192.168.100.158   las0   <none>           <none>

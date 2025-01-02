@@ -1,0 +1,11 @@
+$ kubectl get deploy,rs,po -owide
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS      IMAGES    SELECTOR
+deployment.apps/sleep-deploy   3/3     3            3           42s   busybox-sleep   busybox   app=sleep
+
+NAME                                      DESIRED   CURRENT   READY   AGE   CONTAINERS      IMAGES    SELECTOR
+replicaset.apps/sleep-deploy-77549b4ff4   3         3         3       42s   busybox-sleep   busybox   app=sleep,pod-template-hash=77549b4ff4
+
+NAME                                READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+pod/sleep-deploy-77549b4ff4-6x7gd   1/1     Running   0          42s   192.168.67.180    las2   <none>           <none>
+pod/sleep-deploy-77549b4ff4-76v2v   1/1     Running   0          42s   192.168.100.157   las0   <none>           <none>
+pod/sleep-deploy-77549b4ff4-drf2t   1/1     Running   0          42s   192.168.221.153   las1   <none>           <none>

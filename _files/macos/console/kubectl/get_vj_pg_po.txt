@@ -1,0 +1,11 @@
+$ kubectl get vj,pg,po -owide
+NAME                            STATUS    MINAVAILABLE   RUNNINGS   AGE   QUEUE
+job.batch.volcano.sh/sleep-vj   Running   3              3          6s    test
+
+NAME                                                                           STATUS    MINMEMBER   RUNNINGS   AGE   QUEUE
+podgroup.scheduling.volcano.sh/sleep-vj-82eb6bc0-e292-4199-a714-8999c790f0e7   Running   3           3          6s    test
+
+NAME                        READY   STATUS    RESTARTS   AGE   IP                NODE   NOMINATED NODE   READINESS GATES
+pod/sleep-vj-sleep-task-0   1/1     Running   0          6s    192.168.100.162   las0   <none>           <none>
+pod/sleep-vj-sleep-task-1   1/1     Running   0          6s    192.168.100.163   las0   <none>           <none>
+pod/sleep-vj-sleep-task-2   1/1     Running   0          6s    192.168.100.165   las0   <none>           <none>

@@ -1,4 +1,0 @@
-$ kubectl create -f sleep_job_kueue.yaml
-job.batch/sleep-job-jr5qs created
-$ kubectl create -f sleep_job_kueue.yaml
-job.batch/sleep-job-lmvzz created
