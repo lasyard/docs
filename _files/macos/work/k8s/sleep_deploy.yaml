@@ -13,13 +13,13 @@ spec:
         app: sleep
     spec:
       containers:
-      - image: busybox
-        imagePullPolicy: IfNotPresent
-        name: busybox-sleep
-        command: ['sh', '-c', 'trap exit INT TERM; sleep 1m & wait']
-        resources:
-          requests:
-            cpu: 1
-          limits:
-            cpu: 1
+        - image: busybox
+          imagePullPolicy: IfNotPresent
+          name: busybox-sleep
+          command: ["sh", "-c", "trap exit INT TERM; sleep 1m & wait"]
+          resources:
+            requests:
+              cpu: 1
+            limits:
+              cpu: 1
       restartPolicy: Always

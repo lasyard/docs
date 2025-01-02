@@ -10,8 +10,6 @@ Using `helm` to install:
 :language: console
 :::
 
-## Queue
-
 A default queue has been created after installation:
 
 ```console
@@ -24,61 +22,15 @@ default   31m
 Shortname of `queue` is `q`.
 :::
 
-Show details abount queue default:
+Show details about queue default:
 
 :::{literalinclude} /_files/centos/console/kubectl/describe_q_default.txt
 :language: console
 :::
 
-Create a queue configuration file, like this:
+:::{seealso}
 
-:::{literalinclude} /_files/centos/work/kubectl/test_q.yaml
-:language: yaml
-:class: file-content
-:::
-
-Then create the queue:
-
-```console
-$ kubectl apply -f test_q.yaml
-queue.scheduling.volcano.sh/test created
-```
-
-## Job
-
-Create a job configuration file, like this:
-
-:::{literalinclude} /_files/centos/work/kubectl/sleep_vj.yaml
-:language: yaml
-:class: file-content
-:::
-
-Then create the job:
-
-```console
-$ kubectl create -f sleep_vj.yaml
-job.batch.volcano.sh/sleep-job created
-```
-
-:::{note}
-The job will be in `PENDING` state if the underlying pods were not running succcessfuly, which may not caused by lack of resources.
-:::
-
-Show the job and the pods:
-
-:::{literalinclude} /_files/centos/console/kubectl/get_vj.txt
-:language: console
-:::
-
-Delete the job:
-
-```console
-$ k delete vj sleep-job
-job.batch.volcano.sh "sleep-job" deleted
-```
-
-:::{note}
-Delete the job will also delete all task pods.
+See <project:res/queue.md> and <project:res/volcano_job.md>.
 :::
 
 ## vcctl
