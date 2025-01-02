@@ -206,7 +206,7 @@ Check all nodes are in the "Ready" status:
 
 Check deployed services:
 
-:::{literalinclude} /_files/centos/console/kubectl/get_services_all.txt
+:::{literalinclude} /_files/centos/console/kubectl/get_svc_all.txt
 :language: console
 :::
 

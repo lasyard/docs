@@ -10,7 +10,7 @@ List all tokens:
 
 The tokens can be seen also by running:
 
-:::{literalinclude} /_files/centos/console/kubectl/get_secrets_kube_system.txt
+:::{literalinclude} /_files/centos/console/kubectl/get_secret_kube_system.txt
 :language: console
 :::
 
