@@ -11,9 +11,13 @@ secret/xxxx-habor created
 :language: console
 :::
 
-The `.dockerconfigjson` field is just base64 encoded docker config file, see:
+The `data.dockerconfigjson` field is just base64 encoded docker config file, see:
 
 ```console
 $ kubectl get secret xxxx-habor -o "jsonpath={.data.\.dockerconfigjson}" | base64 --decode
 {"auths":{"habor.xxxx.org":{"username":"xxxx","password":"xxxxxxxx","auth":"eHh4eDp4eHh4eHh4eA=="}}}
 ```
+
+:::{tip}
+The `auth` field for the site is just base64 encoded string of `{username}:{password}`.
+:::
