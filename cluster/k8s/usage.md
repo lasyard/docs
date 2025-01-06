@@ -174,3 +174,9 @@ kubectl label --list node las0
 ```sh
 kubectl api-resources --namespaced -o name | grep -v events | xargs -n 1 kubectl get --ignore-not-found --show-kind
 ```
+
+## Batch delete resources
+
+```sh
+kubectl get job -o name | xargs -n 1 kubectl delete
+```

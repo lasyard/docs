@@ -49,6 +49,12 @@ git config --global url.https://github.com/.insteadOf git@github.com:
 git config --global pull.ff only
 ```
 
+If you want to show unicode characters in filename:
+
+```sh
+git config core.quotePath false
+```
+
 ### Unset config
 
 ```sh
