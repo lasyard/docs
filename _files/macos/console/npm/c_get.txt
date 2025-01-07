@@ -1,0 +1,8 @@
+$ npm config get
+; node bin location = /Users/jyg/.nvm/versions/node/v23.5.0/bin/node
+; node version = v23.5.0
+; npm local prefix = /Users/jyg/workspace/home-accounts
+; npm version = 10.9.2
+; cwd = /Users/jyg/workspace/home-accounts
+; HOME = /Users/jyg
+; Run `npm config ls -l` to show all defaults.

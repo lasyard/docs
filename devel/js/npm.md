@@ -51,3 +51,17 @@ Uninstall a package:
 ```sh
 npm uninstall @rjsf/core --force
 ```
+
+Show configurations:
+
+:::{literalinclude} /_files/macos/console/npm/c_get.txt
+:console:
+:::
+
+Set registry mirror:
+
+```sh
+npm config set registry https://mirrors.cloud.tencent.com/npm/
+```
+
+The configuration is saved in `~/.npmrc`.
