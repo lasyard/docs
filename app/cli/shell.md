@@ -22,15 +22,15 @@ zsh 5.8.1 (x86_64-apple-darwin21.0)
 Translate from unix timestamp to ymdhms:
 
 ```console
-$ date -j -f "%s" "+%Y-%m-%d %H:%M:%S" 1735660800
-2025-01-01 00:00:00
+$ date -j -f "%s" "+%Y-%m-%d %H:%M:%S" 1737000000
+2025-01-16 12:00:00
 ```
 
 Translate from ymdhms to unix timestamp:
 
 ```console
-$ date -j -f "%Y-%m-%d %H:%M:%S" "+%s" "2025-01-01 00:00:00"
-1735660800
+$ date -j -f "%Y-%m-%d %H:%M:%S" "+%s" "2025-01-16 12:00:00"
+1737000000
 ```
 
 :::
