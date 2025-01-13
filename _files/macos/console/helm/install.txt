@@ -1,0 +1,7 @@
+$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+$ chmod +x get_helm.sh
+$ ./get_helm.sh
+Downloading https://get.helm.sh/helm-v3.16.4-darwin-amd64.tar.gz
+Verifying checksum... Done.
+Preparing to install helm into /usr/local/bin
+helm installed into /usr/local/bin/helm

@@ -23,6 +23,21 @@ Check the version:
 
 ::::
 
+::::{plat} macos
+:vers: macOS Monterey
+
+:::{literalinclude} /_files/macos/console/helm/install.txt
+:language: console
+:::
+
+Check the version:
+
+:::{literalinclude} /_files/macos/console/helm/version.txt
+:language: console
+:::
+
+::::
+
 ## Usage
 
 Add a repository:
