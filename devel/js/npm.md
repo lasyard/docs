@@ -55,7 +55,7 @@ npm uninstall @rjsf/core --force
 Show configurations:
 
 :::{literalinclude} /_files/macos/console/npm/c_get.txt
-:console:
+:language: console
 :::
 
 Set registry mirror:
