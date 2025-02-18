@@ -19,4 +19,12 @@ Trace kernel messages:
 sudo dmesg -kw
 ```
 
+## strace
+
+Trace the syscalls:
+
+```sh
+strace cat /dev/null
+```
+
 ::::
