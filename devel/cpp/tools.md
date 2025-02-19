@@ -11,14 +11,6 @@ Print shared object dependencies, for example:
 :language: console
 :::
 
-## dmesg
-
-Trace kernel messages:
-
-```sh
-sudo dmesg -kw
-```
-
 ## strace
 
 Trace the syscalls:

@@ -86,6 +86,30 @@ sudo apt satisfy equivs
 
 ::::
 
+::::{plat} macos
+:vers: macOS Monterey
+
+macOS has `clang` installed, but you can install a new version by:
+
+```sh
+brew install llvm
+```
+
+If `gcc` is required:
+
+```sh
+brew install gcc
+```
+
+You need to create symbol links manually:
+
+```sh
+ln -snf gcc-14 /usr/local/bin/gcc
+ln -snf g++-14 /usr/local/bin/g++
+```
+
+::::
+
 ::::{plat} msys2
 
 ```sh
