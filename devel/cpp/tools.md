@@ -19,4 +19,20 @@ Trace the syscalls:
 strace cat /dev/null
 ```
 
+## journalctl
+
+See messages:
+
+```sh
+journalctl -f
+```
+
+If you have admin previlege, you can see the kernel messages.
+
+See only kernel messages:
+
+```sh
+sudo journalctl -k -f
+```
+
 ::::
