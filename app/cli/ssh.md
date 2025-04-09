@@ -2,6 +2,14 @@
 
 ## Usage
 
+### Generate key
+
+`rsa` type is depracated, so:
+
+```sh
+ssh-keygen -t ed25519 -C "<comment>"
+```
+
 ### Generate pub key from private key
 
 ```sh
