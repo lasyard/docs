@@ -9,4 +9,5 @@ bigdata/index
 cluster/index
 devel/index
 hardware/index
+note/index
 :::
