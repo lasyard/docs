@@ -1,0 +1,14 @@
+/* The colors is set to be consistent with sphinx_rtd_theme */
+
+.highlight-console .highlight {
+    color: #edf0f2;
+    background-color: #343131;
+}
+
+.highlight-console .highlight span.gp {
+    color: green;
+}
+
+.highlight-console .highlight span.go {
+    color: #b7c3cb;
+}
