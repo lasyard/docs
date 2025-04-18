@@ -4,6 +4,7 @@
 :maxdepth: 2
 app/index
 os/index
+cluster/index
 devel/index
 notes/index
 :::
