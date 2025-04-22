@@ -8,5 +8,6 @@
 install
 deploy
 helm
+nvidia
 volcano
 :::
