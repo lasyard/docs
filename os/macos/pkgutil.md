@@ -1,7 +1,5 @@
 # pkgutil
 
-## Usage
-
 List all installed packages:
 
 ```console

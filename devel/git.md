@@ -2,10 +2,22 @@
 
 <https://git-scm.com/>
 
-## Install
+## Install git
 
 ::::{tabs}
-:::{tab} CentOS
+:::{tab} Ubuntu 22.04
+
+```console
+$ sudo apt install -y git
+```
+
+```console
+$ git --version
+git version 2.34.1
+```
+
+:::
+:::{tab} CentOS 8.5
 
 ```console
 $ sudo dnf install git
@@ -17,15 +29,16 @@ git version 2.27.0
 ```
 
 :::
-:::{tab} macOS
+:::{tab} macOS Monterey
 
-`git` is pre-installed on macOS.
+`git` is pre-installed on macOS Monterey.
 
 ```console
 $ git --version
 git version 2.37.1 (Apple Git-137.1)
 ```
 
+:::
 ::::
 
 ## Usage

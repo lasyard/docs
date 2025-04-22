@@ -7,4 +7,6 @@
 :numbered:
 install
 deploy
+helm
+volcano
 :::

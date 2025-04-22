@@ -1,15 +1,13 @@
 # ip
 
-## Usage
-
-Show version:
+## Show version
 
 ```console
 $ ip -V
 ip utility, iproute2-5.15.0, libbpf 0.5.0
 ```
 
-Show links (MAC addr):
+## Show links (MAC addr)
 
 ```console
 $ ip link
@@ -20,7 +18,7 @@ $ ip link
     altname enp0s3
 ```
 
-Show ip addresses:
+## Show ip addresses
 
 ```console
 $ ip addr

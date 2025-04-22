@@ -2,16 +2,14 @@
 
 <https://exiftool.org/>
 
-## Usage
-
-### Show version
+## Show version
 
 ```console
 $ exiftool -ver
 12.85
 ```
 
-### Rename files
+## Rename files
 
 Rename `jpg` files according to its taken time:
 
@@ -19,7 +17,7 @@ Rename `jpg` files according to its taken time:
 $ exiftool -fast2 -ext jpg -if '${DateTimeOriginal}' "-Filename<IMG_\${DateTimeOriginal#;DateFmt('%Y%m%d_%H%M%S')}%+3c.jpg" *
 ```
 
-### Modify time
+## Modify time
 
 Set time to the file modification time if no time is set in EXIF:
 
@@ -39,7 +37,7 @@ Set time to one day before the original time:
 $ exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' −overwrite_original *
 ```
 
-### Modify Camera Model
+## Modify Camera Model
 
 Set camera model to `UNKNOWN` if it is not set in EXIF:
 
@@ -53,7 +51,7 @@ Some cameras write `Software` instead of `Model`, so set camera model accordingl
 $ exiftool -ext jpg -if 'not ${Model}' -if '${Software}' '-Model<${Software;$_=substr($_, 0, 8)}' -overwrite_original *
 ```
 
-### Copy tags
+## Copy tags
 
 For example, copy `Model`:
 
@@ -61,7 +59,7 @@ For example, copy `Model`:
 $ exiftool -TagsFromFile source.jpg -Model -overwrite_original target.jpg
 ```
 
-### Remove thumbnail image
+## Remove thumbnail image
 
 ```console
 $ exiftool -ext jpg -if '${ThumbnailImage}' -ThumbnailImage= -overwrite_original -R .

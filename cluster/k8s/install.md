@@ -3,7 +3,7 @@
 ## By package manager
 
 ::::{tabs}
-:::{tab} Ubuntu
+:::{tab} Ubuntu 22.04
 Add the Kubernetes repository:
 
 ```console

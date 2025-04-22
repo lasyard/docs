@@ -2,10 +2,8 @@
 
 ## By package manager
 
-On Ubuntu:
-
 ::::{tabs}
-:::{tab} Ubuntu
+:::{tab} Ubuntu 22.04
 
 ```console
 $ sudo apt install python3 python3-pip
@@ -31,7 +29,7 @@ $ curl -LO https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
 ```
 
 ::::{tabs}
-:::{tab} CentOS
+:::{tab} CentOS 8.5
 
 Extract files:
 

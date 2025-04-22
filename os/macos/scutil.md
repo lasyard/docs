@@ -1,9 +1,5 @@
 # scutil
 
-## Usage
-
-### Hostname
-
 Get hostname:
 
 ```console

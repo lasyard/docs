@@ -10,7 +10,7 @@ Install packages on each node according their roles. See "<project:install.md>".
 
 ### Install containerd
 
-`containerd.io` is released by docker, see "<project:../docker/install.md#add-docker-repository>" for how to add docker repository.
+`containerd.io` is released by docker, see "<project:/cluster/docker/install.md#add-docker-repository>" for how to add docker repository.
 
 After adding the repository and `apt update`, install:
 
@@ -166,6 +166,16 @@ This node has joined the cluster:
 
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
+
+:::{note}
+If the token is expired, you can generate a new one and get the join command by:
+
+```console
+$ kubeadm token create --print-join-command --ttl 24h
+```
+
+The expiration time is set to 24 hours as above.
+:::
 
 ## Install networking
 

@@ -7,7 +7,7 @@ See <https://support.apple.com/en-us/101578> to create a bootable USB drive.
 ## Create a bootable installer
 
 ::::{tabs}
-:::{tab} Monterey
+:::{group-tab} Monterey
 Insert a removable disk, then create the bootable installer:
 
 ```console
@@ -20,4 +20,8 @@ $ sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinsta
 
 ## Install
 
+::::{tabs}
+:::{group-tab} Monterey
 Turn on the computer and hold the {kbd}`Option`/{kbd}`Alt` key to see the boot menu.
+:::
+::::
