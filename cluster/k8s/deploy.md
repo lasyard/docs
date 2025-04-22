@@ -66,9 +66,15 @@ Edit the config again:
 :diff: /_files/ubuntu/etc/containerd/config.toml.dump
 :::
 
-Create file `docker.io/hosts.toml` in path `/etc/containerd/certs.d/` to enable registry mirror:
+Create file `docker.io/hosts.toml` in path `/etc/containerd/certs.d/` to enable docker registry mirror:
 
 :::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/docker.io/hosts.toml
+:language: toml
+:::
+
+Create file `registry.k8s.io/hosts.toml` in path `/etc/containerd/certs.d/` to enable k8s registry mirror:
+
+:::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/registry.k8s.io/hosts.toml
 :language: toml
 :::
 
