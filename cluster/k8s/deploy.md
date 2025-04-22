@@ -10,7 +10,7 @@ Install packages on each node according their roles. See "<project:install.md>".
 
 ### Install containerd
 
-`containerd.io` is released by docker, see <project:../docker#install> for how to add docker repository.
+`containerd.io` is released by docker, see "<project:../docker/install.md#add-docker-repository>" for how to add docker repository.
 
 After adding the repository and `apt update`, install:
 

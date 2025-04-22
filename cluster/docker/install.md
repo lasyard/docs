@@ -1,18 +1,22 @@
 # Install Docker
 
-## By package manager
+## Add docker repository
 
 ::::{tabs}
-:::{tab} Ubuntu
-
-Add docker repository first:
+:::{group-tab} Ubuntu
 
 ```console
 $ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 $ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
-Then install:
+:::
+::::
+
+## install
+
+::::{tabs}
+:::{group-tab} Ubuntu
 
 ```console
 $ sudo apt update
