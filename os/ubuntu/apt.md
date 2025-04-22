@@ -49,7 +49,7 @@ $ dpkg -S $(which file)
 ### Networking
 
 ```console
-$ sudo apt install iputils-ping iproute2
+$ sudo apt install iputils-ping iproute2 inetutils-traceroute
 ```
 
 ### File

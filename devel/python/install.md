@@ -27,7 +27,7 @@ $ pacman -S ${MINGW_PACKAGE_PREFIX}-python-pip
 Download sources:
 
 ```console
-$ wget https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
+$ curl -LO https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
 ```
 
 ::::{tabs}

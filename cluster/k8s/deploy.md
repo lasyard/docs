@@ -10,14 +10,9 @@ Install packages on each node according their roles. See "<project:install.md>".
 
 ### Install containerd
 
-`containerd.io` is released by docker, so add docker repository first:
+`containerd.io` is released by docker, see <project:../docker#install> for how to add docker repository.
 
-```console
-$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | sudo tee /etc/apt/sources.list.d/docker.list
-```
-
-Install:
+After adding the repository and `apt update`, install:
 
 ```console
 $ sudo apt install -y containerd.io
