@@ -6,5 +6,6 @@ app/index
 os/index
 cluster/index
 devel/index
+hardware/index
 notes/index
 :::
