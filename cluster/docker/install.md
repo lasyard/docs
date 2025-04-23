@@ -76,11 +76,11 @@ Client: Docker Engine - Community
     Path:     /usr/libexec/docker/cli-plugins/docker-compose
 
 Server:
- Containers: 10
-  Running: 0
+ Containers: 1
+  Running: 1
   Paused: 0
-  Stopped: 10
- Images: 12
+  Stopped: 0
+ Images: 9
  Server Version: 28.0.4
  Storage Driver: overlay2
   Backing Filesystem: extfs
@@ -96,7 +96,7 @@ Server:
   Network: bridge host ipvlan macvlan null overlay
   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
  Swarm: inactive
- Runtimes: io.containerd.runc.v2 nvidia runc
+ Runtimes: io.containerd.runc.v2 runc
  Default Runtime: runc
  Init Binary: docker-init
  containerd version: 05044ec0a9a75232cad458027ca83437aae3f4da
@@ -113,7 +113,7 @@ Server:
  Architecture: x86_64
  CPUs: 8
  Total Memory: 7.749GiB
- Name: gpu
+ Name: k8gpu
  ID: 26673a31-3df0-437f-b4b4-43b3713e85b1
  Docker Root Dir: /var/lib/docker
  Debug Mode: false
@@ -121,10 +121,16 @@ Server:
  Insecure Registries:
   ::1/128
   127.0.0.0/8
- Registry Mirrors:
-  https://docker.m.daocloud.io/
  Live Restore Enabled: false
 ```
+
+## Set mirror
+
+Create file `/etc/docker/daemon.json` to set docker mirrors:
+
+:::{literalinclude} /_files/ubuntu/etc/docker/daemon.json.orig
+:language: json
+:::
 
 ## Run hello-world
 

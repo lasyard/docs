@@ -1,0 +1,8 @@
+{
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io"
+    ],
+    "insecure-registries": [
+        "k8gpu:5000"
+    ]
+}
