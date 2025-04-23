@@ -4,11 +4,11 @@
 
 :::{toctree}
 :maxdepth: 1
+:glob:
 :numbered:
 install
 deploy
 usage
 helm
-nvidia
-volcano
+*
 :::
