@@ -7,6 +7,7 @@
 :numbered:
 install
 deploy
+usage
 helm
 nvidia
 volcano
