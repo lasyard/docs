@@ -5,4 +5,5 @@
 pod
 deployment
 statefulset
+job
 :::
