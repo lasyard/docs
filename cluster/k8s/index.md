@@ -10,5 +10,6 @@ install
 deploy
 usage
 helm
+res/index
 *
 :::

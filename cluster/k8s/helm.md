@@ -61,12 +61,27 @@ NAME        URL
 volcano-sh  https://volcano-sh.github.io/helm-charts
 ```
 
+Pull charts:
+
+```console
+$ helm pull volcano-sh/volcano
+$ ls *.tgz
+volcano-1.11.1.tgz
+```
+
 List (deployed) releases in all namespaces:
 
 ```console
 $ helm list -A
 NAME    NAMESPACE       REVISION    UPDATED                                 STATUS      CHART           APP VERSION
 volcano volcano-system  1           2025-04-22 03:47:04.391250411 +0000 UTC deployed    volcano-1.11.1  1.11.1
+```
+
+Uninstall a release:
+
+```console
+$ helm uninstall volcano -n volcano-system
+release "volcano" uninstalled
 ```
 
 Get manifest files of a release:
