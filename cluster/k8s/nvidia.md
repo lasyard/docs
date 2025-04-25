@@ -15,6 +15,18 @@ $ helm install gpu-operator -n gpu-operator --create-namespace nvidia/gpu-operat
 
 :::{note}
 Nvidia driver is already installed on the gpu node, that is why `driver.enabled=false` is set.
+
+If some pods of gpu-operator report error: "failed to get sandbox runtime: no runtime for "nvidia" is configured", you may need to config `containerd` by (generally the operator do this for you):
+
+```console
+$ sudo nvidia-ctk runtime configure --runtime=containerd
+INFO[0000] Using config version 2                       
+INFO[0000] Using CRI runtime plugin name "io.containerd.grpc.v1.cri" 
+INFO[0000] Wrote updated config to /etc/containerd/config.toml 
+INFO[0000] It is recommended that containerd daemon be restarted.
+$ sudo systemctl restart containerd
+```
+
 :::
 
 Now see the gpu node:

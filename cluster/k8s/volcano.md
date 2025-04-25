@@ -35,12 +35,6 @@ NAME    NAMESPACE       REVISION    UPDATED                                 STAT
 volcano volcano-system  1           2025-04-22 03:47:04.391250411 +0000 UTC deployed    volcano-1.11.1  1.11.1
 ```
 
-Disable `volcano-admission` service while installing if troubles raise related to it:
-
-```console
-$ helm install volcano volcano-sh/volcano -n volcano-system --create-namespace --set custom.admission_enable=false --set basic.image_pull_policy=IfNotPresent
-```
-
 Show the created `queue`s:
 
 ```console
@@ -48,4 +42,10 @@ $ kubectl get q
 NAME      AGE
 default   2s
 root      2s
+```
+
+If you don't want to pull images while installing:
+
+```console
+$ helm install volcano volcano-sh/volcano -n volcano-system --create-namespace --set basic.image_pull_policy=IfNotPresent
 ```
