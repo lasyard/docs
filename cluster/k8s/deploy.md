@@ -146,8 +146,10 @@ In case of failure, reset the node before retrying:
 $ sudo kubeadm reset
 ```
 
+See <project:teardown.md> to see how to completely remove a cluster.
+
 :::{tip}
-This command can also clear the kubelet's configuration and certificates on the worker nodes if you want to do `join` again.
+This command can also be used to reset the worker nodes if you want to do `join` again.
 :::
 
 ## Join worker nodes
@@ -258,6 +260,13 @@ k8ctl    Ready    control-plane   125m   v1.32.3
 Without installing network, the status of node would be `NotReady`.
 
 ## Ready
+
+If you want to schedule pod to the control-plane node, you need to remove the taint:
+
+```console
+$ kubectl taint node k8ctl node-role.kubernetes.io/control-plane-
+node/k8ctl untainted
+```
 
 Check the cluster version:
 

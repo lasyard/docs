@@ -8,6 +8,7 @@
 :numbered:
 install
 deploy
+teardown
 usage
 helm
 res/index

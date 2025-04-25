@@ -85,3 +85,31 @@ $ sudo visudo
 :::{note}
 Make sure the owner of `/etc/sudoers` is `root:root` and its mode is `0440`, or `sudo` will refuse to run.
 :::
+
+## Clear iptables
+
+Delete all rules in all chains:
+
+```console
+$ sudo iptables -F
+```
+
+Delete all chains (except the default ones):
+
+```console
+$ sudo iptables -X
+```
+
+List rules:
+
+```console
+$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination 
+```
