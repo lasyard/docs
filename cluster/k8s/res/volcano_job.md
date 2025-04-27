@@ -79,7 +79,7 @@ pod/sleep-sleep-task-2   1/1     Running   0          13s   192.168.135.16   k8c
 Delete the job:
 
 ```console
-$ kubectl delete vj sleep-job
+$ kubectl delete vj sleep
 job.batch.volcano.sh "sleep" deleted
 ```
 
