@@ -1,12 +1,17 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: sleep
+  generateName: sleep-
+  labels:
+    kueue.x-k8s.io/queue-name: test
 spec:
   completions: 3
   completionMode: Indexed
   parallelism: 3
   template:
+    metadata:
+      annotations:
+        kueue.x-k8s.io/podset-required-topology: kubernetes.io/hostname
     spec:
       restartPolicy: OnFailure
       containers:
