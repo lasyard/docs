@@ -4,9 +4,9 @@ metadata:
   name: default
 spec:
   levels:
-  - nodeLabel: topology-block
-  - nodeLabel: topology-rack
-  - nodeLabel: kubernetes.io/hostname
+    - nodeLabel: topology-block
+    - nodeLabel: topology-rack
+    - nodeLabel: kubernetes.io/hostname
 ---
 apiVersion: kueue.x-k8s.io/v1beta1
 kind: ResourceFlavor
@@ -24,19 +24,19 @@ metadata:
 spec:
   namespaceSelector: {} # match all.
   resourceGroups:
-  - coveredResources:
-    - cpu
-    - memory
-    - pods
-    flavors:
-    - name: default
-      resources:
-      - name: cpu
-        nominalQuota: 8
-      - name: memory
-        nominalQuota: 64Gi
-      - name: pods
-        nominalQuota: 4
+    - coveredResources:
+        - cpu
+        - memory
+        - pods
+      flavors:
+        - name: default
+          resources:
+            - name: cpu
+              nominalQuota: 8
+            - name: memory
+              nominalQuota: 64Gi
+            - name: pods
+              nominalQuota: 4
 ---
 apiVersion: kueue.x-k8s.io/v1beta1
 kind: LocalQueue

@@ -5,16 +5,16 @@ metadata:
 spec:
   restartPolicy: OnFailure
   containers:
-  - image: ubuntu:22.04
-    imagePullPolicy: IfNotPresent
-    name: gpu-ubuntu
-    command: ["bash", "-c", "nvidia-smi"]
-    resources:
-      requests:
-        cpu: "1"
-        memory: 1Gi
-        nvidia.com/gpu: "1"
-      limits:
-        cpu: "1"
-        memory: 1Gi
-        nvidia.com/gpu: "1"
+    - image: ubuntu:22.04
+      imagePullPolicy: IfNotPresent
+      name: gpu-ubuntu
+      command: ["bash", "-c", "nvidia-smi"]
+      resources:
+        requests:
+          cpu: "1"
+          memory: 1Gi
+          nvidia.com/gpu: "1"
+        limits:
+          cpu: "1"
+          memory: 1Gi
+          nvidia.com/gpu: "1"

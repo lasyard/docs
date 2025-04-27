@@ -5,14 +5,14 @@ metadata:
 spec:
   restartPolicy: OnFailure
   containers:
-  - image: busybox:1.37.0-glibc
-    imagePullPolicy: IfNotPresent
-    name: sleep-busybox
-    command: ["sh", "-c", "trap exit INT TERM; sleep 1m & wait"]
-    resources:
-      requests:
-        cpu: "1"
-        memory: 100Mi
-      limits:
-        cpu: "1"
-        memory: 100Mi
+    - image: busybox:1.37.0-glibc
+      imagePullPolicy: IfNotPresent
+      name: sleep-busybox
+      command: ["sh", "-c", "trap exit INT TERM; sleep 1m & wait"]
+      resources:
+        requests:
+          cpu: "1"
+          memory: 100Mi
+        limits:
+          cpu: "1"
+          memory: 100Mi

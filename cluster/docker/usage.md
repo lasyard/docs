@@ -185,6 +185,17 @@ Edit file `/etc/docker/daemon.json` to set our registry as in-secure:
 :diff: /_files/ubuntu/etc/docker/daemon.json.orig
 :::
 
+::::{tip}
+If you want to use the registry in `containerd`, create a file `k8gpu:5000/hosts.toml` in dir `/etc/containerd/certs.d/`:
+
+:::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/k8gpu:5000/hosts.toml
+:language: toml
+:::
+
+See "<project:/cluster/k8s/deploy.md#configure-containerd>".
+
+::::
+
 Restart `docker` service to make the config effective:
 
 ```console
