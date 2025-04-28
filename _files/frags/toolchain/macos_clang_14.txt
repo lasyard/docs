@@ -1,0 +1,5 @@
+Toolchain:
+
+- Apple clang version 14.0.0 (clang-1400.0.29.202)
+- GNU Make 3.81
+- cmake version 3.30.3
