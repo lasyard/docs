@@ -38,10 +38,10 @@ Set `im-select` as the input method switching command in VSCode:
 
 ```json
 {
-    "vim.autoSwitchInputMethod.enable": true,
-    "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
-    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
-    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}"
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}"
 }
 ```
 
@@ -87,7 +87,7 @@ Configure VSCode to use `shfmt` for formatting shell scripts:
 
 ```json
 {
-    "shellformat.path": "/usr/local/bin/shfmt"
+  "shellformat.path": "/usr/local/bin/shfmt"
 }
 ```
 
@@ -116,7 +116,7 @@ Install clangd plugin in VSCode, then set:
 
 ```json
 {
-    "clangd.path": "/usr/bin/clangd"
+  "clangd.path": "/usr/bin/clangd"
 }
 ```
 
@@ -139,3 +139,11 @@ bear -- make
 ```
 
 If you have a simple project, a `compile_flags.txt` file can be used to set compile flags mannually.
+
+For `ms-vscode.cpptools` plugin, the `.clang-format` file can be put outside the project. You need to set the correct path of this file, for example:
+
+```json
+{
+  "C_Cpp.clang_format_style": "file:~/workspace/.clang-format"
+}
+```

@@ -5,22 +5,40 @@
 ::::{tabs}
 :::{tab} CentOS 8.5
 
-Install Go using `dnf` (The version is quite old, so it is not recommended):
+Install Go by `dnf`:
 
 ```console
 $ sudo dnf install go-toolset
 ```
 
 :::
+:::{tab} Ubuntu 22.04
+
+Install Go by `apt`:
+
+```console
+$ sudo apt install -y golang
+```
+
+Show the version:
+
+```console
+$ go version
+go version go1.18.1 linux/amd64
+```
+
+:::
 ::::
 
-## By release tar ball
+The packaged version is quite old, so it is not recommended.
+
+## By release tar balls
 
 Donwload and install Go manually:
 
 ```console
-$ curl -LO https://go.dev/dl/go1.22.1.linux-amd64.tar.gz
+$ curl -LO https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
 $ sudo rm -rf /usr/local/go
-$ sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
 $ echo "PATH=\"/usr/local/go/bin:\${PATH}\"" | sudo tee /etc/profile.d/go.sh
 ```
