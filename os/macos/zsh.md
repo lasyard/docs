@@ -22,6 +22,10 @@ Edit startup scripts `~/.zshrc`:
 :class: file-content
 :::
 
+:::{note}
+The last lines are added during installation of `nvm`, see "<project:/devel/js/node.md#using-nvm>". Do not edit it mannully.
+:::
+
 Mannully update:
 
 ```console
