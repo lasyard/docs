@@ -1,6 +1,6 @@
 # crictl
 
-Check the version:
+`crictl` is installed along with Kubernetes. Check the version:
 
 ```console
 $ crictl --version

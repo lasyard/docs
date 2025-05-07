@@ -5,6 +5,7 @@
 app/index
 service/index
 os/index
+bigdata/index
 cluster/index
 devel/index
 hardware/index
