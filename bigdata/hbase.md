@@ -120,13 +120,12 @@ running master, logging to /opt/hbase/bin/../logs/hbase-ubuntu-master-k8ctl.out
 stopping master..
 ```
 
-to stop the master and each region server one by one.
 :::
 
 ## Usage
 
-```sh
-hbase shell
+```console
+$ hbase shell
 ```
 
 In hbase shell:
