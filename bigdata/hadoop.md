@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-Install JDK on each node, see <project:/devel/java/install.md>.
+Install JDK on each node, see "<project:/devel/java/install.md>".
 
 Get shell script [`install_java_bin`](https://github.com/lasyard/coding/blob/main/shell/install_java_bin.sh).
 
@@ -208,8 +208,8 @@ A freshly started/restarted NameNode is in safe mode temporarily. It will leave 
 
 If you want to clear the hdfs data, stop hdfs and run the following commands on each node:
 
-```sh
-rm -rf /opt/tmp/hadoop/dfs/*
+```console
+$ rm -rf /opt/tmp/hadoop/dfs/*
 ```
 
 ### yarn
