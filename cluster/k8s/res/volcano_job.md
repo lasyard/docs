@@ -71,9 +71,9 @@ NAME                                                                        STAT
 podgroup.scheduling.volcano.sh/sleep-d6693086-b400-43c7-a0d9-baf606ff3479   Running   3           3          13s   test
 
 NAME                     READY   STATUS    RESTARTS   AGE   IP               NODE     NOMINATED NODE   READINESS GATES
-pod/sleep-sleep-task-0   1/1     Running   0          13s   192.168.5.203    k8cpu1   <none>           <none>
-pod/sleep-sleep-task-1   1/1     Running   0          13s   192.168.135.17   k8cpu0   <none>           <none>
-pod/sleep-sleep-task-2   1/1     Running   0          13s   192.168.135.16   k8cpu0   <none>           <none>
+pod/sleep-sleep-task-0   1/1     Running   0          13s   192.168.5.203    las2     <none>           <none>
+pod/sleep-sleep-task-1   1/1     Running   0          13s   192.168.135.17   las1     <none>           <none>
+pod/sleep-sleep-task-2   1/1     Running   0          13s   192.168.135.16   las1     <none>           <none>
 ```
 
 Delete the job:

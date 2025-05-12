@@ -252,9 +252,9 @@ Check the node status:
 ```console
 $ kubectl get nodes
 NAME     STATUS   ROLES           AGE    VERSION
-k8cpu0   Ready    <none>          96m    v1.32.3
-k8cpu1   Ready    <none>          67m    v1.32.3
-k8ctl    Ready    control-plane   125m   v1.32.3
+las1     Ready    <none>          96m    v1.32.3
+las2     Ready    <none>          67m    v1.32.3
+las0     Ready    control-plane   125m   v1.32.3
 ```
 
 Without installing network, the status of node would be `NotReady`.
@@ -264,8 +264,8 @@ Without installing network, the status of node would be `NotReady`.
 If you want to schedule pod to the control-plane node, you need to remove the taint:
 
 ```console
-$ kubectl taint node k8ctl node-role.kubernetes.io/control-plane-
-node/k8ctl untainted
+$ kubectl taint node las0 node-role.kubernetes.io/control-plane-
+node/las0 untainted
 ```
 
 Check the cluster version:

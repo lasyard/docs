@@ -35,7 +35,7 @@ NAME              STATUS    COMPLETIONS   DURATION   AGE   CONTAINERS      IMAGE
 job.batch/sleep   Running   0/3           37s        37s   busybox-sleep   busybox:1.37.0-glibc   batch.kubernetes.io/controller-uid=4b31a55e-d6b4-450f-ab0b-79b0689efc52
 
 NAME                READY   STATUS    RESTARTS   AGE   IP               NODE     NOMINATED NODE   READINESS GATES
-pod/sleep-0-hnf55   1/1     Running   0          37s   192.168.135.15   k8cpu0   <none>           <none>
-pod/sleep-1-vkj5r   1/1     Running   0          37s   192.168.5.219    k8cpu1   <none>           <none>
-pod/sleep-2-6x526   1/1     Running   0          37s   192.168.5.220    k8cpu1   <none>           <none>
+pod/sleep-0-hnf55   1/1     Running   0          37s   192.168.135.15   las1     <none>           <none>
+pod/sleep-1-vkj5r   1/1     Running   0          37s   192.168.5.219    las2     <none>           <none>
+pod/sleep-2-6x526   1/1     Running   0          37s   192.168.5.220    las2     <none>           <none>
 ```

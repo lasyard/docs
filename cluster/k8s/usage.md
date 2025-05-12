@@ -121,36 +121,36 @@ statefulsets          sts          apps/v1      true         StatefulSet
 Add a label to a node:
 
 ```console
-$ kubectl label node k8ctl node-group=default
-node/k8ctl labeled
+$ kubectl label node las0 node-group=default
+node/las0 labeled
 ```
 
 Show the specified labels:
 
 ```console
-$ kubectl get node k8ctl -L node-group
+$ kubectl get node las0 -L node-group
 NAME    STATUS   ROLES           AGE    VERSION   NODE-GROUP
-k8ctl   Ready    control-plane   5d1h   v1.32.3   default
+las0    Ready    control-plane   5d1h   v1.32.3   default
 ```
 
 Modify the label:
 
 ```console
-$ kubectl label --overwrite node k8ctl node-group=test
-node/k8ctl labeled
-$ kubectl get node k8ctl -L node-group
+$ kubectl label --overwrite node las0 node-group=test
+node/las0 labeled
+$ kubectl get node las0 -L node-group
 NAME    STATUS   ROLES           AGE    VERSION   NODE-GROUP
-k8ctl   Ready    control-plane   5d1h   v1.32.3   test
+las0    Ready    control-plane   5d1h   v1.32.3   test
 ```
 
 Remove label:
 
 ```console
-$ kubectl label node k8ctl node-group-
-node/k8ctl unlabeled
-$ kubectl get node k8ctl -L node-group
+$ kubectl label node las0 node-group-
+node/las0 unlabeled
+$ kubectl get node las0 -L node-group
 NAME    STATUS   ROLES           AGE    VERSION   NODE-GROUP
-k8ctl   Ready    control-plane   5d1h   v1.32.3   
+las0    Ready    control-plane   5d1h   v1.32.3
 ```
 
 Show all labels of nodes:
@@ -162,5 +162,5 @@ $ kubectl get node --show-labels
 or:
 
 ```console
-$ kubectl label --list node k8ctl
+$ kubectl label --list node las0
 ```

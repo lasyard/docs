@@ -32,7 +32,7 @@ $ sudo systemctl restart containerd
 Now see the gpu node:
 
 ```console
-$ kubectl describe no k8gpu
+$ kubectl describe no las3
 ...
 Capacity:
   cpu:                8
@@ -63,7 +63,7 @@ Check the pod is assigned to gpu node:
 ```console
 $ kubectl get po gpu -owide 
 NAME   READY   STATUS      RESTARTS   AGE    IP               NODE    NOMINATED NODE   READINESS GATES
-gpu    0/1     Completed   0          104s   192.168.182.14   k8gpu   <none>           <none>
+gpu    0/1     Completed   0          104s   192.168.182.14   las3    <none>           <none>
 ```
 
 See output of the pod:

@@ -81,10 +81,10 @@ Start hbase:
 ```console
 $ start-hbase.sh
 ...
-running master, logging to /opt/hbase/bin/../logs/hbase-ubuntu-master-k8ctl.out
-las2: running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-k8cpu1.out
-las0: running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-k8ctl.out
-las1: running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-k8cpu0.out
+running master, logging to /opt/hbase/bin/../logs/hbase-ubuntu-master-las0.out
+las2: running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-las2.out
+las0: running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-las0.out
+las1: running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-las1.out
 ```
 
 Show java processes:
@@ -113,10 +113,10 @@ If the command above does not work, try these commands:
 
 ```console
 $ hbase-daemon.sh stop regionserver
-running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-k8ctl.out
+running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-las0.out
 stopping regionserver.
 $ hbase-daemon.sh stop master
-running master, logging to /opt/hbase/bin/../logs/hbase-ubuntu-master-k8ctl.out
+running master, logging to /opt/hbase/bin/../logs/hbase-ubuntu-master-las0.out
 stopping master..
 ```
 

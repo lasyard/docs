@@ -50,7 +50,7 @@ NAME                               DESIRED   CURRENT   READY   AGE   CONTAINERS 
 replicaset.apps/sleep-84fddfd8d6   3         3         3       13s   sleep-busybox   busybox:1.37.0-glibc   app=sleep,pod-template-hash=84fddfd8d6
 
 NAME                         READY   STATUS    RESTARTS   AGE   IP               NODE     NOMINATED NODE   READINESS GATES
-pod/sleep-84fddfd8d6-9w8s2   1/1     Running   0          13s   192.168.135.7    k8cpu0   <none>           <none>
-pod/sleep-84fddfd8d6-mvpjk   1/1     Running   0          13s   192.168.182.25   k8gpu    <none>           <none>
-pod/sleep-84fddfd8d6-zjpgp   1/1     Running   0          13s   192.168.5.213    k8cpu1   <none>           <none>
+pod/sleep-84fddfd8d6-9w8s2   1/1     Running   0          13s   192.168.135.7    las1     <none>           <none>
+pod/sleep-84fddfd8d6-mvpjk   1/1     Running   0          13s   192.168.182.25   las3     <none>           <none>
+pod/sleep-84fddfd8d6-zjpgp   1/1     Running   0          13s   192.168.5.213    las2     <none>           <none>
 ```

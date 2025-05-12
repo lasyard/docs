@@ -82,10 +82,10 @@ Run the following command on the node of JobManager to start the cluster:
 ```console
 $ start-cluster.sh 
 Starting cluster.
-Starting standalonesession daemon on host k8ctl.
-Starting taskexecutor daemon on host k8ctl.
-Starting taskexecutor daemon on host k8cpu0.
-Starting taskexecutor daemon on host k8cpu1.
+Starting standalonesession daemon on host las0.
+Starting taskexecutor daemon on host las0.
+Starting taskexecutor daemon on host las1.
+Starting taskexecutor daemon on host las2.
 ```
 
 Show java processes:
@@ -103,10 +103,10 @@ Stop the cluster:
 
 ```console
 $ stop-cluster.sh 
-Stopping taskexecutor daemon (pid: 3365748) on host k8ctl.
-Stopping taskexecutor daemon (pid: 2304551) on host k8cpu0.
-Stopping taskexecutor daemon (pid: 2204138) on host k8cpu1.
-Stopping standalonesession daemon (pid: 3364936) on host k8ctl.
+Stopping taskexecutor daemon (pid: 3365748) on host las0.
+Stopping taskexecutor daemon (pid: 2304551) on host las1.
+Stopping taskexecutor daemon (pid: 2204138) on host las2.
+Stopping standalonesession daemon (pid: 3364936) on host las0.
 ```
 
 ## Usage
@@ -163,7 +163,7 @@ Job Runtime: 518 ms
 The output will append to a `.out` file where the task is running. You can find the host on the Flink dashboard web UI. To monitor it:
 
 ```console
-$ tail -f flink-ubuntu-taskexecutor-0-k8ctl.out
+$ tail -f flink-ubuntu-taskexecutor-0-las0.out
 (alice,1)
 (betty,1)
 (alice,2)

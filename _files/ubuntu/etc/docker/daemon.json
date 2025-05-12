@@ -3,6 +3,6 @@
         "https://docker.m.daocloud.io"
     ],
     "insecure-registries": [
-        "k8gpu:5000"
+        "las3:5000"
     ]
 }

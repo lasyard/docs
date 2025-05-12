@@ -113,7 +113,7 @@ Server:
  Architecture: x86_64
  CPUs: 8
  Total Memory: 7.749GiB
- Name: k8gpu
+ Name: las3
  ID: 26673a31-3df0-437f-b4b4-43b3713e85b1
  Docker Root Dir: /var/lib/docker
  Debug Mode: false

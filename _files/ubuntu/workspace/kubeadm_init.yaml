@@ -15,7 +15,7 @@ nodeRegistration:
   criSocket: unix:///var/run/containerd/containerd.sock
   imagePullPolicy: IfNotPresent
   imagePullSerial: true
-  name: k8ctl
+  name: las0
   taints: null
 timeouts:
   controlPlaneComponentHealthCheck: 4m0s

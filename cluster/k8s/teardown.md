@@ -3,11 +3,11 @@
 For every node do:
 
 ```console
-$ kubectl drain k8cpu0 --delete-emptydir-data --force --ignore-daemonsets
+$ kubectl drain las1 --delete-emptydir-data --force --ignore-daemonsets
 ...
-node/k8cpu0 drained
-$ kubectl delete node k8cpu0
-node "k8cpu0" deleted
+node/las1 drained
+$ kubectl delete node las1
+node "las1" deleted
 ```
 
 You may need to mannully delete/uninstall something like Deployments/Daemonsets.

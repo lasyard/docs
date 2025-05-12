@@ -25,10 +25,10 @@ For `ResourceFlavor`, At least one of `nodeLabels` is required if `topologyName`
 
 ```console
 $ kubectl label node --all node-group=default
-node/k8cpu0 labeled
-node/k8cpu1 labeled
-node/k8ctl labeled
-node/k8gpu labeled
+node/las1 labeled
+node/las2 labeled
+node/las0 labeled
+node/las3 labeled
 ```
 
 :::

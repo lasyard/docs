@@ -48,7 +48,7 @@ NAME                     READY   AGE   CONTAINERS      IMAGES
 statefulset.apps/sleep   3/3     17s   sleep-busybox   busybox:1.37.0-glibc
 
 NAME          READY   STATUS    RESTARTS   AGE   IP               NODE     NOMINATED NODE   READINESS GATES
-pod/sleep-0   1/1     Running   0          17s   192.168.135.12   k8cpu0   <none>           <none>
-pod/sleep-1   1/1     Running   0          17s   192.168.5.217    k8cpu1   <none>           <none>
-pod/sleep-2   1/1     Running   0          17s   192.168.182.29   k8gpu    <none>           <none>
+pod/sleep-0   1/1     Running   0          17s   192.168.135.12   las1     <none>           <none>
+pod/sleep-1   1/1     Running   0          17s   192.168.5.217    las2     <none>           <none>
+pod/sleep-2   1/1     Running   0          17s   192.168.182.29   las3     <none>           <none>
 ```

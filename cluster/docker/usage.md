@@ -171,10 +171,10 @@ f0819ec56c58   registry:2   "/entrypoint.sh /etc…"   About a minute ago   Up A
 Re tag an image and push it to the local registry:
 
 ```console
-$ docker tag busybox:1.37.0-glibc k8gpu:5000/busybox:1.37.0-glibc
-ubuntu@k8gpu:~/workspace$ docker push k8gpu:5000/busybox:1.37.0-glibc
-The push refers to repository [k8gpu:5000/busybox]
-Get "https://k8gpu:5000/v2/": http: server gave HTTP response to HTTPS client
+$ docker tag busybox:1.37.0-glibc las3:5000/busybox:1.37.0-glibc
+ubuntu@las3:~/workspace$ docker push las3:5000/busybox:1.37.0-glibc
+The push refers to repository [las3:5000/busybox]
+Get "https://las3:5000/v2/": http: server gave HTTP response to HTTPS client
 ```
 
 Alas! It seems docker try to access the registry via https, but the registry only support http.
@@ -186,9 +186,9 @@ Edit file `/etc/docker/daemon.json` to set our registry as in-secure:
 :::
 
 ::::{tip}
-If you want to use the registry in `containerd`, create a file `k8gpu:5000/hosts.toml` in dir `/etc/containerd/certs.d/`:
+If you want to use the registry in `containerd`, create a file `las3:5000/hosts.toml` in dir `/etc/containerd/certs.d/`:
 
-:::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/k8gpu:5000/hosts.toml
+:::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/las3:5000/hosts.toml
 :language: toml
 :::
 
@@ -205,8 +205,8 @@ $ sudo systemctl restart docker
 Now do the pushing again:
 
 ```console
-$ docker push k8gpu:5000/busybox:1.37.0-glibc
-The push refers to repository [k8gpu:5000/busybox]
+$ docker push las3:5000/busybox:1.37.0-glibc
+The push refers to repository [las3:5000/busybox]
 068f50152bbc: Pushed 
 1.37.0-glibc: digest: sha256:f2e98ad37e4970f48e85946972ac4acb5574c39f27c624efbd9b17a3a402bfe4 size: 527
 ```

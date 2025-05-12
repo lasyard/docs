@@ -71,10 +71,10 @@ POD ID              CREATED             STATE               NAME                
 625e34f0589da       11 days ago         Ready               calico-typha-85cf5855fb-x9g5x                                 calico-system       0                   (default)
 fda5bab7cb8ac       11 days ago         Ready               tigera-operator-789496d6f5-vqrbn                              tigera-operator     0                   (default)
 bbcdf88c39fe9       11 days ago         Ready               kube-proxy-9frrn                                              kube-system         0                   (default)
-93d7bea5269b3       11 days ago         Ready               kube-apiserver-k8ctl                                          kube-system         0                   (default)
-40864c5524e92       11 days ago         Ready               etcd-k8ctl                                                    kube-system         0                   (default)
-2cde635b9091f       11 days ago         Ready               kube-scheduler-k8ctl                                          kube-system         0                   (default)
-9479349afcd4a       11 days ago         Ready               kube-controller-manager-k8ctl                                 kube-system         0                   (default)
+93d7bea5269b3       11 days ago         Ready               kube-apiserver-las0                                           kube-system         0                   (default)
+40864c5524e92       11 days ago         Ready               etcd-las0                                                     kube-system         0                   (default)
+2cde635b9091f       11 days ago         Ready               kube-scheduler-las0                                           kube-system         0                   (default)
+9479349afcd4a       11 days ago         Ready               kube-controller-manager-las0                                  kube-system         0                   (default)
 ```
 
 Show containers:
@@ -93,10 +93,10 @@ f87095e05e74c       042163432abce       11 days ago         Running             
 22bd2eb8c7af7       bde24a3cb8851       11 days ago         Running             calico-typha                0                   625e34f0589da       calico-typha-85cf5855fb-x9g5x                                 calico-system
 0aa0e1cc9e8a8       e9b19fa62f476       11 days ago         Running             tigera-operator             0                   fda5bab7cb8ac       tigera-operator-789496d6f5-vqrbn                              tigera-operator
 17a191df384a1       040f9f8aac8cd       11 days ago         Running             kube-proxy                  0                   bbcdf88c39fe9       kube-proxy-9frrn                                              kube-system
-847b032a4e570       a9e7e6b294baf       11 days ago         Running             etcd                        16                  40864c5524e92       etcd-k8ctl                                                    kube-system
-ec1a9929161d6       c2e17b8d0f4a3       11 days ago         Running             kube-apiserver              2                   93d7bea5269b3       kube-apiserver-k8ctl                                          kube-system
-e23c08cab9148       8cab3d2a8bd0f       11 days ago         Running             kube-controller-manager     2                   9479349afcd4a       kube-controller-manager-k8ctl                                 kube-system
-1c013cbbdd1e9       a389e107f4ff1       11 days ago         Running             kube-scheduler              16                  2cde635b9091f       kube-scheduler-k8ctl                                          kube-system
+847b032a4e570       a9e7e6b294baf       11 days ago         Running             etcd                        16                  40864c5524e92       etcd-las0                                                    kube-system
+ec1a9929161d6       c2e17b8d0f4a3       11 days ago         Running             kube-apiserver              2                   93d7bea5269b3       kube-apiserver-las0                                          kube-system
+e23c08cab9148       8cab3d2a8bd0f       11 days ago         Running             kube-controller-manager     2                   9479349afcd4a       kube-controller-manager-las0                                 kube-system
+1c013cbbdd1e9       a389e107f4ff1       11 days ago         Running             kube-scheduler              16                  2cde635b9091f       kube-scheduler-las0                                          kube-system
 ```
 
 Delete an image:

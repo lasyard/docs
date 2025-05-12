@@ -14,9 +14,9 @@ Show time sync options:
 
 ```console
 $ timedatectl show-timesync
-SystemNTPServers=k8ctl
+SystemNTPServers=las0
 FallbackNTPServers=ntp.ubuntu.com
-ServerName=k8ctl
+ServerName=las0
 ServerAddress=10.225.4.51
 RootDistanceMaxUSec=5s
 PollIntervalMinUSec=32s
@@ -29,7 +29,7 @@ Show timesync status:
 
 ```console
 $ timedatectl timesync-status
-       Server: 10.225.4.51 (k8ctl)
+       Server: 10.225.4.51 (las0)
 Poll interval: 34min 8s (min: 32s; max 34min 8s)
  Packet count: 0
 ```

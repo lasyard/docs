@@ -29,7 +29,7 @@ Unable to connect to the server: tls: failed to verify certificate: x509: certif
 
 ```console
 $ openssl x509 -noout -text -in /etc/kubernetes/pki/apiserver.crt | grep IP
-                DNS:k8ctl, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:10.96.0.1, IP Address:10.225.4.51
+                DNS:las0, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:10.96.0.1, IP Address:10.225.4.51
 ```
 
 可见认证的 IP 地址不包括我们使用的外部 IP, 这就是失败的原因。
@@ -47,14 +47,14 @@ sudo rm /etc/kubernetes/pki/apiserver.*
 ```console
 $ sudo kubeadm init phase certs apiserver --apiserver-cert-extra-sans 10.220.70.56
 [certs] Generating "apiserver" certificate and key
-[certs] apiserver serving cert is signed for DNS names [k8ctl kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.225.4.51 10.220.70.56]
+[certs] apiserver serving cert is signed for DNS names [las0 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.225.4.51 10.220.70.56]
 ```
 
 再次解析证书可见外部 IP 确实被加进去了：
 
 ```console
 $ openssl x509 -noout -text -in /etc/kubernetes/pki/apiserver.crt | grep IP
-                DNS:k8ctl, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:10.96.0.1, IP Address:10.225.4.51, IP Address:10.220.70.56
+                DNS:las0, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:10.96.0.1, IP Address:10.225.4.51, IP Address:10.220.70.56
 ```
 
 现在可以从外网访问了：

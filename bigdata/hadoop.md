@@ -125,7 +125,7 @@ Start hdfs:
 $ start-dfs.sh
 Starting namenodes on [las0]
 Starting datanodes
-Starting secondary namenodes [k8ctl]
+Starting secondary namenodes [las0]
 ```
 
 Start yarn:
@@ -157,7 +157,7 @@ Stopping resourcemanager
 $ stop-dfs.sh
 Stopping namenodes on [las0]
 Stopping datanodes
-Stopping secondary namenodes [k8ctl]
+Stopping secondary namenodes [las0]
 ```
 
 ## Usage
