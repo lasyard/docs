@@ -46,6 +46,18 @@ See only kernel messages:
 $ sudo journalctl -k -f
 ```
 
+Show full messages of a service(unit):
+
+```console
+$ journalctl -eu slurmd
+```
+
+Show long lines (long lines are truncated by pager):
+
+```console
+$ journalctl -eu slurmd -o cat --no-pager
+```
+
 ## dmesg
 
 Show kernel logs:

@@ -113,3 +113,11 @@ target     prot opt source               destination
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination 
 ```
+
+## List port listening
+
+```console
+$ sudo lsof -i :3306
+COMMAND     PID  USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+mariadbd 200092 mysql   20u  IPv4 1866849      0t0  TCP localhost:mysql (LISTEN)
+```
