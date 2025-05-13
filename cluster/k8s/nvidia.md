@@ -10,7 +10,8 @@ $ helm repo add nvidia https://helm.ngc.nvidia.com/nvidia
 Install:
 
 ```console
-$ helm install gpu-operator -n gpu-operator --create-namespace nvidia/gpu-operator --version=v25.3.0 --set driver.enabled=false
+$ helm pull nvidia/gpu-operator --version=v25.3.0
+$ helm install gpu-operator -n gpu-operator --create-namespace gpu-operator-v25.3.0.tgz --set driver.enabled=false
 ```
 
 :::{note}

@@ -190,7 +190,8 @@ The expiration time is set to 24 hours as above.
 Install the Tigera operator and custom resource definitions:
 
 ```console
-$ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/tigera-operator.yaml
+$ curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/tigera-operator.yaml
+$ kubectl create -f tigera-operator.yaml
 namespace/tigera-operator created
 customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
 customresourcedefinition.apiextensions.k8s.io/bgpfilters.crd.projectcalico.org created
@@ -225,7 +226,8 @@ deployment.apps/tigera-operator created
 Install Calico:
 
 ```console
-$ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/custom-resources.yaml
+$ curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/custom-resources.yaml
+$ kubectl create -f custom-resources.yaml
 installation.operator.tigera.io/default created
 apiserver.operator.tigera.io/default created
 ```

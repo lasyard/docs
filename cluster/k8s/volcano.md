@@ -11,7 +11,8 @@ $ helm repo update
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "volcano-sh" chart repository
 Update Complete. ⎈Happy Helming!⎈
-$ helm install volcano volcano-sh/volcano -n volcano-system --create-namespace
+$ helm pull volcano-sh/volcano
+$ helm install volcano volcano-1.11.2.tgz -n volcano-system --create-namespace
 NAME: volcano
 LAST DEPLOYED: Tue Apr 22 03:47:04 2025
 NAMESPACE: volcano-system
@@ -47,7 +48,7 @@ root      2s
 If you don't want to pull images while installing:
 
 ```console
-$ helm install volcano volcano-sh/volcano -n volcano-system --create-namespace --set basic.image_pull_policy=IfNotPresent
+$ helm install volcano volcano-1.11.2.tgz -n volcano-system --create-namespace --set basic.image_pull_policy=IfNotPresent
 ```
 
 ## vcctl

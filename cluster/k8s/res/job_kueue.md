@@ -3,9 +3,10 @@
 Install kueue first, see <https://kueue.sigs.k8s.io/>. By `helm`:
 
 ```console
-$ helm install kueue oci://registry.k8s.io/kueue/charts/kueue --version=0.11.4 --namespace kueue-system --create-namespace
+$ helm pull oci://registry.k8s.io/kueue/charts/kueue --version=0.11.4
 Pulled: registry.k8s.io/kueue/charts/kueue:0.11.4
 Digest: sha256:0c58ed6e88716c90da94dce0351694b8788552421c63f0c30739ed5bc8bb659c
+$ helm install kueue kueue-0.11.4.tgz --namespace kueue-system --create-namespace
 NAME: kueue
 LAST DEPLOYED: Sun Apr 27 03:49:12 2025
 NAMESPACE: kueue-system
