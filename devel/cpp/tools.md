@@ -30,34 +30,6 @@ openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
 
 In which the `-e openat` filter in only `openat` syscall.
 
-## journalctl
-
-See system logs:
-
-```console
-$ journalctl -f
-```
-
-If you have admin previlege, you can see the kernel messages.
-
-See only kernel messages:
-
-```console
-$ sudo journalctl -k -f
-```
-
-Show full messages of a service(unit):
-
-```console
-$ journalctl -eu slurmd
-```
-
-Show long lines (long lines are truncated by pager):
-
-```console
-$ journalctl -eu slurmd -o cat --no-pager
-```
-
 ## dmesg
 
 Show kernel logs:
