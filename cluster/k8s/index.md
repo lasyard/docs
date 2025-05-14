@@ -11,6 +11,7 @@ deploy
 teardown
 usage
 helm
+dashboard
 res/index
 *
 :::

@@ -45,3 +45,12 @@ Default output style is Go style, which is why `-o yaml` is needed.
 ```console
 $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
 ```
+
+Check the versions:
+
+```console
+$ kubectl version
+Client Version: v1.32.0
+Kustomize Version: v5.5.0
+Server Version: v1.32.0
+```
