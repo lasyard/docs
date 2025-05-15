@@ -46,7 +46,7 @@ $ pip3 install -r requirements.txt --break-system-packages
 $ pip show datasets
 ```
 
-## Updagrade pip
+## Upgrade pip
 
 ```console
 $ sudo pip3 install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
