@@ -47,6 +47,18 @@ Run shell in the pod:
 $ kubectl exec -it xxxx-pod -- /bin/bash
 ```
 
+Show output of a pod:
+
+```console
+$ kubectl logs xxxx-pod
+```
+
+If it contains multiple containers, you can specify one of them:
+
+```console
+$ kubectl logs xxxx-pod -c xxxx-container
+```
+
 ## List API vesions
 
 ```console
