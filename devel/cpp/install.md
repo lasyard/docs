@@ -71,6 +71,7 @@ $ sudo apt satisfy linux-headers-$(uname -r)
 Install other tools:
 
 ```console
+$ sudo apt install automake
 $ sudo apt satisfy fakeroot devscripts
 ```
 

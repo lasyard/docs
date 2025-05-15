@@ -47,7 +47,7 @@ Modules based on Lua: Version 8.7.53 2024-10-12 19:57 -05:00
 ```
 
 ::::
-::::{tab} Ubuntu 22.04
+::::{group-tab} Ubuntu 22.04
 
 ```console
 $ sudo apt install lmod
@@ -67,14 +67,16 @@ Modules based on Lua: Version 6.6  2016-10-13 13:28 -05:00
 
 ### Build from source
 
-::::{tabs}
-:::{group-tab} Ubuntu 22.04
 Download the sources:
 
 ```console
 $ curl -L https://github.com/TACC/Lmod/archive/refs/tags/8.7.60.tar.gz -o Lmod-8.7.60.tar.gz
 ```
 
+::::{tabs}
+:::{group-tab} Ubuntu 22.04
+:::{include} /_files/frags/toolchain/ubuntu_gcc_11.txt
+:::
 Preinstall these packages:
 
 ```console
