@@ -95,7 +95,7 @@ $ sudo make install
 Create/replace the profile script:
 
 ```console
-$ sudo ln -snf /usr/local/lmod/lmod/init/profile /etc/profile.d/lmod.sh
+$ sudo ln -snf /usr/local/lmod/lmod/init/profile /etc/profile.d/z00_lmod.sh
 ```
 
 After re-login, check the version:
