@@ -35,6 +35,7 @@ extensions = [
 ]
 
 extensions += [
+    'ellipsis_to_vertical',
 ]
 
 copybutton_prompt_is_regexp = True

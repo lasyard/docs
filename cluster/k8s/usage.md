@@ -176,3 +176,11 @@ or:
 ```console
 $ kubectl label --list node las0
 ```
+
+## Selector
+
+Get pods on a specified node:
+
+```console
+$ kubectl get po -A --field-selector spec.nodeName=las3
+```
