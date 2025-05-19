@@ -46,7 +46,7 @@ Create file `/etc/slurm/slurm.conf`:
 - `SlurmdUser` (not `SlurmUser`) should be set to `root` (default), or `slurmd` cannot run properly
 - If log file paths are not set, slurm will write logs to syslog
 - `%h` in `SlurmdPidFile`, `SlurmdSpoolDir` and `SlurmdLogFile` is useful when these paths located in a storage shared by all computing node. Using `%n` is worse for it stand for "Node Name", and is not known at the start of `slurmd`
-- The type of GPU must be a substring of the real GPU type, and empty string is not looked on as substring of any other strings
+- The type of GPU must be a substring of the real GPU type, and empty string is not looked on as substring of any other strings (maybe a bug). So a `_` will match most of GPU types
 
 :::
 
