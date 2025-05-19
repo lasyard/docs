@@ -181,9 +181,13 @@ Alas! It seems docker try to access the registry via https, but the registry onl
 
 Edit file `/etc/docker/daemon.json` to set our registry as in-secure:
 
-:::{literalinclude} /_files/ubuntu/etc/docker/daemon.json
-:diff: /_files/ubuntu/etc/docker/daemon.json.orig
-:::
+```json
+{
+    "insecure-registries": [
+        "las3:5000"
+    ]
+}
+```
 
 ::::{tip}
 If you want to use the registry in `containerd`, create a file `las3:5000/hosts.toml` in dir `/etc/containerd/certs.d/`:

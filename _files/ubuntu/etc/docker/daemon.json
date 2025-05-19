@@ -1,8 +1,0 @@
-{
-    "registry-mirrors": [
-        "https://docker.m.daocloud.io"
-    ],
-    "insecure-registries": [
-        "las3:5000"
-    ]
-}

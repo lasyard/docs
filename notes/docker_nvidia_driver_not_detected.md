@@ -103,16 +103,15 @@ INFO[0000] It is recommended that docker daemon be restarted.
 
 实际上在 `/etc/docker/daemon.json` 中增加了以下内容：
 
-```diff
-<     ]
----
->     ],
->     "runtimes": {
->         "nvidia": {
->             "args": [],
->             "path": "nvidia-container-runtime"
->         }
->     }
+```json
+{
+    "runtimes": {
+        "nvidia": {
+            "args": [],
+            "path": "nvidia-container-runtime"
+        }
+    }
+}
 ```
 
 重启 docker 使之生效：

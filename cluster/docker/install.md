@@ -124,11 +124,23 @@ Server:
  Live Restore Enabled: false
 ```
 
-## Set mirror
+## Set mirrors
 
-Create file `/etc/docker/daemon.json` to set docker mirrors:
+Edit file `/etc/docker/daemon.json` to set docker daemon:
 
-:::{literalinclude} /_files/ubuntu/etc/docker/daemon.json.orig
+```json
+{
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io"
+    ]
+}
+```
+
+## Set proxies
+
+Edit file `~/.docker/config.json` to set docker client for the current user:
+
+:::{literalinclude} /_files/ubuntu/home/docker/config.json
 :language: json
 :::
 
