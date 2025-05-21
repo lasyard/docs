@@ -6,7 +6,7 @@ def replace_ellipsis_in_codeblocks(app, doctree, fromdocname):
             replaced = False
             for child in node.traverse(nodes.Text):
                 if '...' in child:
-                    child.parent.replace(child, nodes.Text(child.astext().replace('...', '️⋮')))
+                    child.parent.replace(child, nodes.Text(child.astext().replace('\n...\n', '️\n⋮\n')))
                     replaced = True
             # It seems problematic if the rawsource does not match the text
             if replaced:

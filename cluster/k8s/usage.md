@@ -59,6 +59,58 @@ If it contains multiple containers, you can specify one of them:
 $ kubectl logs xxxx-pod -c xxxx-container
 ```
 
+## Use private image repositories
+
+Create a docker registry accessing secret:
+
+```console
+$ kubectl create secret docker-registry las3-harbor --docker-server=las3:443 --docker-username=admin --docker-password=AdminPassword123
+secret/las3-harbor created
+$ kubectl get secret las3-harbor -oyaml
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJsYXMzOjQ0MyI6eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJBZG1pblBhc3N3b3JkMTIzIiwiYXV0aCI6IllXUnRhVzQ2UVdSdGFXNVFZWE56ZDI5eVpERXlNdz09In19fQ==
+kind: Secret
+metadata:
+  creationTimestamp: "2025-05-22T03:47:42Z"
+  name: las3-harbor
+  namespace: default
+  resourceVersion: "3648752"
+  uid: 608f187d-29ac-4fc4-87ca-1789a1d657f2
+type: kubernetes.io/dockerconfigjson
+```
+
+:::{tip}
+The `data.dockerconfigjson` field is just base64 encoded docker config file, see:
+
+```console
+$ kubectl get secret las3-harbor -o "jsonpath={.data.\.dockerconfigjson}" | base64 --decode | jq
+{
+  "auths": {
+    "las3:443": {
+      "username": "admin",
+      "password": "AdminPassword123",
+      "auth": "YWRtaW46QWRtaW5QYXNzd29yZDEyMw=="
+    }
+  }
+}
+```
+
+The `auth` field in the above output is also base64 encoded. to dig into it, use the following command:
+
+```console
+$ kubectl get secret las3-harbor -o "jsonpath={.data.\.dockerconfigjson}" | base64 --decode | jq -r '.auths."las3:443".auth' | base64 --decode
+admin:AdminPassword123
+```
+
+:::
+
+Then the secret can be used to pull images from a private repository. Modify the pod spec:
+
+:::{literalinclude} /_files/macos/workspace/k8s/sleep_po_private_repo.yaml
+:diff: /_files/macos/workspace/k8s/sleep_po.yaml
+:::
+
 ## List API vesions
 
 ```console

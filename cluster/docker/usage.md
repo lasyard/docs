@@ -222,6 +222,10 @@ $ ls /opt/docker_images/docker/registry/v2/repositories/
 busybox
 ```
 
+:::{tip}
+For more advanced functions, use [Harbor](project:/cluster/harbor.md) instead of this. Before installing Harbor, be sure to remove the container of this for name confliction.
+:::
+
 ### Save images to file
 
 ```console
