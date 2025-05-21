@@ -124,7 +124,7 @@ $ sudo systemctl restart docker
 实际上 `runtimes` 配置并非必须，只是可以允许用 `--runtime` 参数运行其他非 cuda 映像，如：
 
 ```console
-$ sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+$ docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
 
 :::
