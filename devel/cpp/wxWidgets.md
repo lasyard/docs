@@ -5,36 +5,66 @@
 ## Download sources
 
 ```console
-$ curl -LO https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.6/wxWidgets-3.2.6.tar.bz2
+$ curl -LO https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8/wxWidgets-3.2.8.tar.bz2
 ```
 
 ## Build
 
 :::::{tabs}
 ::::{tab} macOS Monterey
-:::{include} /_files/frags/toolchain/macos_clang_14.txt
+:::{include} /_files/frags/toolchain/macos_clang_18.txt
 :::
 
 Extract sources:
 
 ```console
-$ tar -C ~/workspace/devel/ -xjf wxWidgets-3.2.6.tar.bz2
-$ cd ~/workspace/devel/wxWidgets-3.2.6
+$ tar -C ~/workspace/devel/ -xjf wxWidgets-3.2.8.tar.bz2
+$ cd ~/workspace/devel/wxWidgets-3.2.8
 ```
 
 ### Release
 
 ```console
 $ cmake -S . -B build-x86_64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~
+-- The C compiler identification is Clang 18.1.8
+-- The CXX compiler identification is Clang 18.1.8
+-- The OBJCXX compiler identification is Clang 18.1.8
+...
+-- Which libraries should wxWidgets use?
+    wxUSE_STL:        OFF      (use C++ STL classes)
+    wxUSE_REGEX:      builtin  (enable support for wxRegEx class)
+    wxUSE_ZLIB:       sys      (use zlib for LZW compression)
+    wxUSE_EXPAT:      sys      (use expat for XML parsing)
+    wxUSE_LIBJPEG:    builtin  (use libjpeg (JPEG file format))
+    wxUSE_LIBPNG:     builtin  (use libpng (PNG image format))
+    wxUSE_LIBTIFF:    builtin  (use libtiff (TIFF file format))
+    wxUSE_NANOSVG:    builtin  (use NanoSVG for rasterizing SVG)
+    wxUSE_LIBLZMA:    OFF      (use liblzma for LZMA compression)
+    wxUSE_LIBSDL:     OFF      (use SDL for audio on Unix)
+    wxUSE_LIBMSPACK:  OFF      (use libmspack (CHM help files loading))
+
+-- Configured wxWidgets 3.2.8 for Darwin
+    Min OS Version required at runtime:                macOS 10.10 x86_64
+    Which GUI toolkit should wxWidgets use?            osx_cocoa  
+    Should wxWidgets be compiled into single library?  OFF
+    Should wxWidgets be linked as a shared library?    ON
+    Should wxWidgets support Unicode?                  ON
+    What wxWidgets compatibility level should be used? 3.0
+-- Configuring done (53.7s)
+-- Generating done (1.2s)
+-- Build files have been written to: /Users/xxxx/workspace/devel/wxWidgets-3.2.8/build-x86_64-darwin-release
 $ cd build-x86_64-darwin-release
 $ cmake --build . --target install
 ```
 
-Add `RPATH` for `wxrc`:
+:::{note}
+`RPATH` for `wxrc` need to be fixed:
 
 ```console
 $ install_name_tool -add_rpath "@executable_path/../lib" ~/bin/wxrc
 ```
+
+:::
 
 `wx-config` is used by CMake to find wxWidgets on Unix-like system, so set the path:
 
@@ -42,23 +72,28 @@ $ install_name_tool -add_rpath "@executable_path/../lib" ~/bin/wxrc
 export PATH="${PATH}:${HOME}/bin"
 ```
 
+Check the version:
+
+```console
+$ wx-config --version-full
+3.2.8.0
+```
+
+:::{tip}
 To uninstall wxWidgets, run:
 
 ```console
 $ cmake --build . --target uninstall
 ```
 
-Check the version:
-
-```console
-$ wx-config --version-full
-3.2.6.0
-```
+:::
 
 ### Debug
 
 ```console
 $ cmake -S . -B build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel
+...
+-- Build files have been written to: /Users/xxxx/workspace/devel/wxWidgets-3.2.8/build-x86_64-darwin-debug
 $ cd build-x86_64-darwin-debug
 $ cmake --build . --target install
 ```
@@ -69,7 +104,7 @@ $ cmake --build . --target install
 ## Help messages
 
 ```console
-wx-config 
+$ wx-config
 
  wx-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--release] [--version-full]
            [--list] [--selected-config] [--host=HOST] [--toolkit=TOOLKIT]

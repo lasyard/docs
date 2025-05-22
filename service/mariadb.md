@@ -49,6 +49,14 @@ $ sudo mysql_secure_installation
 
 ## Usage
 
+### Show version
+
+In mysql client:
+
+```sql
+SELECT version();
+```
+
 ### Show users
 
 In mysql client:

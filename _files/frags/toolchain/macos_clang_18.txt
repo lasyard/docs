@@ -1,0 +1,5 @@
+Toolchain:
+
+- Homebrew clang version 18.1.8
+- GNU Make 3.81
+- cmake version 3.30.3
