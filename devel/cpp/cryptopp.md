@@ -8,12 +8,12 @@ $ curl -LO https://cryptopp.com/cryptopp890.zip
 
 ## Build
 
+### Release
+
 :::::{tabs}
 ::::{tab} macOS Monterey
 :::{include} /_files/frags/toolchain/macos_clang_14.txt
 :::
-
-### Release
 
 ```console
 $ unzip -d ~/workspace/devel/cryptopp890-x86_64-darwin-release cryptopp890.zip
@@ -31,11 +31,17 @@ Do this to fix dylib id if you do not want to install:
 $ install_name_tool -id $(pwd)/libcryptopp.dylib libcryptopp.dylib
 ```
 
+:::{tip}
 To uninstall:
 
 ```console
 $ make uninstall PREFIX=~
 ```
+
+:::
+
+::::
+:::::
 
 Show the version:
 
@@ -49,6 +55,11 @@ It is strange to have `.exe` suffix executable on macOS.
 :::
 
 ### Debug
+
+:::::{tabs}
+::::{tab} macOS Monterey
+:::{include} /_files/frags/toolchain/macos_clang_14.txt
+:::
 
 ```console
 $ unzip -d ~/workspace/devel/cryptopp890-x86_64-darwin-debug cryptopp890.zip

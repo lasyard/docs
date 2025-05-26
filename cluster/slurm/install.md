@@ -65,17 +65,16 @@ The packages delivered are quite old.
 
 ## Build from sources
 
-Download sources:
-
-```console
-$ curl -LO https://download.schedmd.com/slurm/slurm-24.11.5.tar.bz2
-$ curl -LO https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2
-```
-
 :::::{tabs}
 ::::{group-tab} CentOS 8.5
 :::{include} /_files/frags/toolchain/centos_gcc_11.txt
 :::
+
+Download sources:
+
+```console
+$ curl -LO https://download.schedmd.com/slurm/slurm-24.11.0.tar.bz2
+```
 
 See "<project:/devel/cpp/install.md>" for how to install build tools on CentOS.
 
@@ -111,6 +110,12 @@ Packages installed by `rpm` can be uninstalled by `dnf remove`.
 ::::{group-tab} Ubuntu 22.04
 :::{include} /_files/frags/toolchain/ubuntu_gcc_11.txt
 :::
+
+Download sources:
+
+```console
+$ curl -LO https://download.schedmd.com/slurm/slurm-24.11.5.tar.bz2
+```
 
 See "<project:/devel/cpp/install.md>" for how to install build tools on Ubuntu/Debian.
 

@@ -10,11 +10,6 @@ $ curl -LO https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8/wxWid
 
 ## Build
 
-:::::{tabs}
-::::{tab} macOS Monterey
-:::{include} /_files/frags/toolchain/macos_clang_18.txt
-:::
-
 Extract sources:
 
 ```console
@@ -23,6 +18,11 @@ $ cd ~/workspace/devel/wxWidgets-3.2.8
 ```
 
 ### Release
+
+:::::{tabs}
+::::{tab} macOS Monterey
+:::{include} /_files/frags/toolchain/macos_clang_18.txt
+:::
 
 ```console
 $ cmake -S . -B build-x86_64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~
@@ -87,8 +87,15 @@ $ cmake --build . --target uninstall
 ```
 
 :::
+::::
+:::::
 
 ### Debug
+
+:::::{tabs}
+::::{tab} macOS Monterey
+:::{include} /_files/frags/toolchain/macos_clang_18.txt
+:::
 
 ```console
 $ cmake -S . -B build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel

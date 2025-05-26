@@ -5,8 +5,6 @@
 Download the installer:
 
 ```console
-$ curl -LO https://developer.download.nvidia.com/compute/cuda/12.6.3/local_installers/cuda_12.6.3_560.35.05_linux.run
-$ chmod +x cuda_12.6.3_560.35.05_linux.run
 $ curl -LO https://developer.download.nvidia.com/compute/cuda/12.9.0/local_installers/cuda_12.9.0_575.51.03_linux.run
 $ chmod +x cuda_12.9.0_575.51.03_linux.run
 ```
