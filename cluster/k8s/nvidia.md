@@ -49,7 +49,6 @@ Capacity:
 Create a pod config file `gpu_po.yaml`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/gpu_po.yaml
-:language: yaml
 :::
 
 Apply to the cluster:

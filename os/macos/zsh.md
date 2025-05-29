@@ -19,7 +19,6 @@ Edit startup scripts `~/.zshrc`:
 
 :::{literalinclude} /_files/macos/home/zshrc
 :diff: /_files/macos/home/zshrc.orig
-:class: file-content
 :::
 
 :::{note}

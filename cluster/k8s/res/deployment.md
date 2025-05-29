@@ -3,7 +3,6 @@
 Create file `sleep_deploy.yaml`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/sleep_deploy.yaml
-:language: yaml
 :::
 
 :::{note}

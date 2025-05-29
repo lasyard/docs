@@ -3,7 +3,6 @@
 Create file `sleep_po.yaml`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/sleep_po.yaml
-:language: yaml
 :::
 
 Apply to the cluster:

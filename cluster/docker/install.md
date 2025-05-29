@@ -141,7 +141,6 @@ Edit file `/etc/docker/daemon.json` to set docker daemon:
 Edit file `~/.docker/config.json` to set docker client for the current user:
 
 :::{literalinclude} /_files/ubuntu/home/docker/config.json
-:language: json
 :::
 
 ## Run hello-world

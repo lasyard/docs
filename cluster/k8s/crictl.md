@@ -17,7 +17,6 @@ $ sudo crictl config --set runtime-endpoint=unix:///run/containerd/containerd.so
 Now show the content of file `/etc/crictl.yaml`:
 
 :::{literalinclude} /_files/ubuntu/etc/crictl.yaml
-:language: yaml
 :::
 
 Show config:

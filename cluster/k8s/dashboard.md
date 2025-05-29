@@ -43,9 +43,8 @@ Dashboard will be available at:
 
 Create file `admin_sa.yaml` for the service account and role binding:
 
-```{literalinclude} /_files/macos/workspace/k8s/admin_sa.yaml
-:language: yaml
-```
+:::{literalinclude} /_files/macos/workspace/k8s/admin_sa.yaml
+:::
 
 Apply it:
 

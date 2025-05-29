@@ -76,5 +76,4 @@ $ DSS_QUERY=queries/ ./qgen -v -s 0.01 >tpc_h_query.sql
 The output SQL statments:
 
 :::{literalinclude} /_files/ubuntu/workspace/tpc_h/tpc_h_query.sql
-:language: sql
 :::

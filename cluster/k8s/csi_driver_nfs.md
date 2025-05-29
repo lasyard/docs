@@ -34,7 +34,6 @@ To check CSI NFS Driver pods status, please run:
 Create file `standard_sc.yaml` for a `StorageClass`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/standard_sc.yaml
-:language: yaml
 :::
 
 :::{note}

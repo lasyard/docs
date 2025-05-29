@@ -18,7 +18,6 @@ TEST SUITE: None
 Create file `topology_rf_cq_lq.yaml` for some `kueue` staffs:
 
 :::{literalinclude} /_files/macos/workspace/k8s/topology_rf_cq_lq.yaml
-:language: yaml
 :::
 
 :::{note}
@@ -64,7 +63,6 @@ localqueue.kueue.x-k8s.io/test   test           0                   0
 Now create file `sleep_job_kueue.yaml`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/sleep_job_kueue.yaml
-:language: yaml
 :::
 
 Apply to the cluster:

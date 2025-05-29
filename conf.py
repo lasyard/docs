@@ -36,6 +36,7 @@ extensions = [
 
 extensions += [
     'ellipsis_to_vertical',
+    'auto_lang_literalinclude',
 ]
 
 copybutton_prompt_is_regexp = True

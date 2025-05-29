@@ -133,7 +133,7 @@ GRANT ALL on `slurm_acct_db`.* TO `slurmdbd`@`%`;
 Create `slurmdbd` configuration file `/etc/slurm/slurmdbd.conf`:
 
 :::{literalinclude} /_files/ubuntu/etc/slurm/slurmdbd.conf
-:class: ini
+:language: ini
 :::
 
 :::{note}

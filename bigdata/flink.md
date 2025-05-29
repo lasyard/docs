@@ -116,7 +116,6 @@ Stopping standalonesession daemon (pid: 3364936) on host las0.
 Create a text file `words.txt`:
 
 :::{literalinclude} /_files/ubuntu/workspace/words.txt
-:language: text
 :::
 
 Put the file into hdfs:

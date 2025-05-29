@@ -193,7 +193,6 @@ Edit file `/etc/docker/daemon.json` to set our registry as in-secure:
 If you want to use the registry in `containerd`, create a file `las3:5000/hosts.toml` in dir `/etc/containerd/certs.d/`:
 
 :::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/las3:5000/hosts.toml
-:language: toml
 :::
 
 See "<project:/cluster/k8s/deploy.md#configure-containerd>".

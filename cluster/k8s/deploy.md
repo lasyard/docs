@@ -69,13 +69,11 @@ Edit the config again:
 Create file `docker.io/hosts.toml` in path `/etc/containerd/certs.d/` to enable docker registry mirror:
 
 :::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/docker.io/hosts.toml
-:language: toml
 :::
 
 Create file `registry.k8s.io/hosts.toml` in path `/etc/containerd/certs.d/` to enable k8s registry mirror:
 
 :::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/registry.k8s.io/hosts.toml
-:language: toml
 :::
 
 Then restart the service again to make it effective:

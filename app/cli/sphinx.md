@@ -11,7 +11,6 @@ Install `python3` and `pip3`, see <project:/devel/python/install.md>.
 Edit file `requirements.txt`:
 
 :::{literalinclude} /requirements.txt
-:language: text
 :::
 
 Install the requirements:

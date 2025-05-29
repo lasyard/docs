@@ -3,8 +3,6 @@
 Create file `sleep_sts.yaml`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/sleep_sts.yaml
-:language: yaml
-:class: file-content
 :::
 
 :::{note}

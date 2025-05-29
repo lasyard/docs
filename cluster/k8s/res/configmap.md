@@ -3,7 +3,6 @@
 Create a properties file `girls.properties`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/girls.properties
-:language: properties
 :::
 
 Create a ConfigMap from it:

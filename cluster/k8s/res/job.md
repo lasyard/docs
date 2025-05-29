@@ -3,7 +3,6 @@
 Create file `sleep_job.yaml`
 
 :::{literalinclude} /_files/macos/workspace/k8s/sleep_job.yaml
-:language: yaml
 :::
 
 Apply to the cluster:

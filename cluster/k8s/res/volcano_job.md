@@ -3,7 +3,6 @@
 Create file `test_q.yaml` for a volcano queue:
 
 :::{literalinclude} /_files/macos/workspace/k8s/test_q.yaml
-:language: yaml
 :::
 
 Apply to the cluster:
@@ -16,7 +15,6 @@ queue.scheduling.volcano.sh/test created
 Volcano job use `PriorityClass` to specify priority, so create file `high_pc.yaml` for it:
 
 :::{literalinclude} /_files/macos/workspace/k8s/high_pc.yaml
-:language: yaml
 :::
 
 Apply to the cluster:
@@ -29,7 +27,6 @@ priorityclass.scheduling.k8s.io/high-priority created
 Now create file `sleep_vj.yaml`:
 
 :::{literalinclude} /_files/macos/workspace/k8s/sleep_vj.yaml
-:language: yaml
 :::
 
 Apply to the cluster:
