@@ -35,8 +35,8 @@ extensions = [
 ]
 
 extensions += [
-    'ellipsis_to_vertical',
     'auto_lang_literalinclude',
+    'ellipsis_to_vertical',
 ]
 
 copybutton_prompt_is_regexp = True
@@ -47,10 +47,10 @@ myst_enable_extensions = [
     'attrs_inline',
     'colon_fence',
     'deflist',
+    'dollarmath',
     'fieldlist',
     'substitution',
     'tasklist',
-    'dollarmath',
 ]
 
 myst_dmath_allow_labels=True
@@ -68,12 +68,11 @@ myst_substitutions = {
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-if html_theme == 'sphinx_rtd_theme':
-    html_css_files = ['css/lasy_sphinx_rtd_theme.css']
+# It is generated but not referenced
+html_css_files = [ 'basic.css' ]
 
-html_css_files += [
-    'css/math_eqno.css',
-]
+if html_theme == 'sphinx_rtd_theme':
+    html_css_files += ['css/lasy_sphinx_rtd_theme.css']
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#auto-generated-header-anchors
 
