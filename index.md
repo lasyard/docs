@@ -8,6 +8,8 @@ os/index
 bigdata/index
 cluster/index
 devel/index
-hardware/index
 notes/index
+hardware/index
+physics/index
+maths/index
 :::

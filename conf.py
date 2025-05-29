@@ -50,7 +50,10 @@ myst_enable_extensions = [
     'fieldlist',
     'substitution',
     'tasklist',
+    'dollarmath',
 ]
+
+myst_dmath_allow_labels=True
 
 templates_path = ['_templates']
 exclude_patterns = ['.*', '_*', 'Thumbs.db', 'README.*']
@@ -68,6 +71,9 @@ html_static_path = ['_static']
 if html_theme == 'sphinx_rtd_theme':
     html_css_files = ['css/lasy_sphinx_rtd_theme.css']
 
+html_css_files += [
+    'css/math_eqno.css',
+]
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#auto-generated-header-anchors
 
