@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tabs}
-:::{tab} macOS Monterey
+::::{tab-set}
+:::{tab-item} macOS Monterey
 
 ```console
 $ brew install ffmpeg

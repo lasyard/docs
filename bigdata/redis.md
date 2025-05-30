@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tabs}
-:::{group-tab} Ubuntu 22.04
+::::{tab-set}
+:::{tab-item} Ubuntu 22.04
 
 Add the repository:
 

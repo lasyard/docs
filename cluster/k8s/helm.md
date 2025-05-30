@@ -8,8 +8,8 @@ Install `git` first, see "<project:/devel/git.md#install-git>".
 
 ## Install
 
-::::{tabs}
-:::{tab} Linux
+::::{tab-set}
+:::{tab-item} Linux
 
 ```console
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
@@ -29,7 +29,7 @@ version.BuildInfo{Version:"v3.17.3", GitCommit:"e4da49785aa6e6ee2b86efd5dd9e4340
 ```
 
 :::
-:::{tab} macOS
+:::{tab-item} macOS
 
 ```console
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3

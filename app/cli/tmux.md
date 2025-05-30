@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tabs}
-:::{tab} CentOS 8.5
+::::{tab-set}
+:::{tab-item} CentOS 8.5
 
 ```console
 $ sudo dnf install tmux

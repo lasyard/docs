@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tabs}
-:::{tab} CentOS 8.5
+::::{tab-set}
+:::{tab-item} CentOS 8.5
 
 ```console
 $ sudo dnf install jq
@@ -19,7 +19,7 @@ jq-1.5
 ```
 
 :::
-:::{tab} macOS Monterey
+:::{tab-item} macOS Monterey
 
 ```console
 $ brew install jq
@@ -31,3 +31,6 @@ Check the version:
 $ jq --version
 jq-1.7.1
 ```
+
+:::
+::::

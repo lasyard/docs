@@ -6,8 +6,10 @@
 
 ### By package manager
 
-:::::{tabs}
-::::{group-tab} CentOS 8.5
+:::::{tab-set}
+::::{tab-item} CentOS 8.5
+:sync: centos
+
 Install `tcl` and `lua` first:
 
 ```console
@@ -47,7 +49,8 @@ Modules based on Lua: Version 8.7.53 2024-10-12 19:57 -05:00
 ```
 
 ::::
-::::{group-tab} Ubuntu 22.04
+::::{tab-item} Ubuntu 22.04
+:sync: ubuntu
 
 ```console
 $ sudo apt install lmod
@@ -73,10 +76,13 @@ Download the sources:
 $ curl -L https://github.com/TACC/Lmod/archive/refs/tags/8.7.60.tar.gz -o Lmod-8.7.60.tar.gz
 ```
 
-::::{tabs}
-:::{group-tab} Ubuntu 22.04
+:::::{tab-set}
+::::{tab-item} Ubuntu 22.04
+:sync: ubuntu
+
 :::{include} /_files/frags/toolchain/ubuntu_gcc_11.txt
 :::
+
 Preinstall these packages:
 
 ```console
@@ -107,8 +113,8 @@ Modules based on Lua: Version 8.7.60 2025-04-30 12:50 -05:00
     by Robert McLay mclay@tacc.utexas.edu
 ```
 
-:::
 ::::
+:::::
 
 ## Usage
 

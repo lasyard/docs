@@ -2,15 +2,15 @@
 
 ## By package manager
 
-::::{tabs}
-:::{tab} Ubuntu 22.04
+::::{tab-set}
+:::{tab-item} Ubuntu 22.04
 
 ```console
 $ sudo apt install python3 python3-pip
 ```
 
 :::
-:::{tab} MSYS2
+:::{tab-item} MSYS2
 
 ```console
 $ pacman -S ${MINGW_PACKAGE_PREFIX}-python
@@ -28,8 +28,8 @@ Download sources:
 $ curl -LO https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
 ```
 
-::::{tabs}
-:::{tab} CentOS 8.5
+::::{tab-set}
+:::{tab-item} CentOS 8.5
 
 Extract files:
 

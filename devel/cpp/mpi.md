@@ -4,8 +4,8 @@
 
 ### By package manager
 
-:::::{tabs}
-::::{group-tab} Ubuntu 22.04
+:::::{tab-set}
+::::{tab-item} Ubuntu 22.04
 
 ```console
 $ sudo apt install mpi-default-dev
@@ -57,10 +57,12 @@ $ md5sum openmpi-5.0.7.tar.bz2
 0529027472015810e5f0d749136ca0a3  openmpi-5.0.7.tar.bz2
 ```
 
-:::::{tabs}
-::::{group-tab} Ubuntu 22.04
+:::::{tab-set}
+::::{tab-item} Ubuntu 22.04
+
 :::{include} /_files/frags/toolchain/ubuntu_gcc_11.txt
 :::
+
 Compression is used to transfer data among hosts, so install `zlib` development files before building:
 
 ```console

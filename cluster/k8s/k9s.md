@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tabs}
-:::{tab} macOS Monterey
+::::{tab-set}
+:::{tab-item} macOS Monterey
 
 ```sh
 brew install derailed/k9s/k9s

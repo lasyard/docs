@@ -1,6 +1,6 @@
 Sphinx
 myst-parser
 sphinx-copybutton
+sphinx-design
 sphinx-rtd-theme
-sphinx-tabs
 sphinxcontrib-mermaid

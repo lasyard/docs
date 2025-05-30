@@ -4,9 +4,8 @@
 
 ## Install
 
-::::{tabs}
-:::{tab} macOS Monterey
-Install using `brew`:
+::::{tab-set}
+:::{tab-item} macOS Monterey
 
 ```console
 $ brew install graphviz

@@ -1,22 +1,16 @@
 # Install Docker
 
-## Add docker repository
+::::{tab-set}
+:::{tab-item} Ubuntu 22.04
 
-::::{tabs}
-:::{group-tab} Ubuntu 22.04
+Add docker repository:
 
 ```console
 $ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 $ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
-:::
-::::
-
-## install
-
-::::{tabs}
-:::{group-tab} Ubuntu 22.04
+Install:
 
 ```console
 $ sudo apt update
@@ -26,7 +20,7 @@ $ sudo apt install -y docker-ce
 :::
 ::::
 
-## Check the version
+Check the version:
 
 ```console
 $ docker version

@@ -2,8 +2,8 @@
 
 ## By package manager
 
-::::{tabs}
-:::{tab} CentOS 8.5
+::::{tab-set}
+:::{tab-item} CentOS 8.5
 
 Install Go by `dnf`:
 
@@ -12,7 +12,7 @@ $ sudo dnf install go-toolset
 ```
 
 :::
-:::{tab} Ubuntu 22.04
+:::{tab-item} Ubuntu 22.04
 
 Install Go by `apt`:
 

@@ -4,8 +4,8 @@
 
 ## Install git
 
-::::{tabs}
-:::{tab} Ubuntu 22.04
+::::{tab-set}
+:::{tab-item} Ubuntu 22.04
 
 ```console
 $ sudo apt install -y git
@@ -17,7 +17,7 @@ git version 2.34.1
 ```
 
 :::
-:::{tab} CentOS 8.5
+:::{tab-item} CentOS 8.5
 
 ```console
 $ sudo dnf install git
@@ -29,7 +29,7 @@ git version 2.27.0
 ```
 
 :::
-:::{tab} macOS Monterey
+:::{tab-item} macOS Monterey
 
 `git` is pre-installed on macOS Monterey.
 

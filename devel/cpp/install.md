@@ -1,7 +1,8 @@
 # Install C/C++ Development Environment
 
-::::{tabs}
-:::{tab} CentOS 8.5
+::::{tab-set}
+:::{tab-item} CentOS 8.5
+
 Install the package group:
 
 ```console
@@ -55,7 +56,8 @@ $ sudo dnf install clang-tools-extra
 ```
 
 :::
-:::{tab} Ubuntu 22.04
+:::{tab-item} Ubuntu 22.04
+
 Install build essenstial:
 
 ```console
@@ -82,7 +84,8 @@ $ sudo apt satisfy equivs
 ```
 
 :::
-:::{tab} macOS Monterey
+:::{tab-item} macOS Monterey
+
 macOS has `clang` installed, but you can install a new version by:
 
 ```console
@@ -103,7 +106,7 @@ $ ln -snf g++-14 /usr/local/bin/g++
 ```
 
 :::
-:::{tab} MSYS2
+:::{tab-item} MSYS2
 
 ```console
 $ pacman -S make

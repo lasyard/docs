@@ -29,8 +29,8 @@ html_favicon = '_images/favicon-96x96.png'
 extensions = [
     'myst_parser',
     'sphinx_copybutton',
+    'sphinx_design',
     'sphinx_rtd_theme',
-    'sphinx_tabs.tabs',
     'sphinxcontrib.mermaid',
 ]
 
