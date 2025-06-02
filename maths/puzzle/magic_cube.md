@@ -16,6 +16,7 @@
 
 :::{list-table} 魔方口诀
 :header-rows: 1
+:align: left
 
 - - 口诀
   - 功能
