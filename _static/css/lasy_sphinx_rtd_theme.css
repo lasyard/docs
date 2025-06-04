@@ -4,11 +4,20 @@
 @import url("../basic.css");
 
 nav.wy-nav-side a:visited {
-    color: #caf;
+    color: #e9b9e9;
 }
 
 nav.wy-nav-side a.icon-home {
-    color: #fff;
+    color: #fcfcfc;
+}
+
+.wy-menu-vertical li.toctree-l1.current a:visited {
+    color: #502050;
+}
+
+.wy-menu-vertical li.toctree-l2 a:visited,
+.wy-menu-vertical li.toctree-l3 a:visited {
+    color: #502050;
 }
 
 .rst-content table.align-left,
