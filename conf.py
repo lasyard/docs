@@ -68,11 +68,8 @@ myst_substitutions = {
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-# It is generated but not referenced
-html_css_files = [ 'basic.css' ]
-
 if html_theme == 'sphinx_rtd_theme':
-    html_css_files += ['css/lasy_sphinx_rtd_theme.css']
+    html_css_files = ['css/lasy_sphinx_rtd_theme.css']
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#auto-generated-header-anchors
 

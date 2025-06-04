@@ -2,8 +2,8 @@
 
 ## By package manager
 
-::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::::{tab-set}
+::::{tab-item} Ubuntu 22.04
 
 Add the Kubernetes repository:
 
@@ -18,6 +18,9 @@ Install `kubelet`, `kubeadm` and `kubectl`, and pin their versions:
 $ sudo apt update
 $ sudo apt install -y kubelet kubeadm kubectl
 $ sudo apt-mark hold kubelet kubeadm kubectl
+kubelet set on hold.
+kubeadm set on hold.
+kubectl set on hold.
 ```
 
 ```console
@@ -36,8 +39,20 @@ clientVersion:
 
 Default output style is Go style, which is why `-o yaml` is needed.
 
+:::{tip}
+If you want to upgrade these components, you can unpin them by:
+
+```console
+$ sudo apt-mark unhold kubelet kubeadm kubectl
+Canceled hold on kubelet.
+Canceled hold on kubeadm.
+Canceled hold on kubectl.
+```
+
 :::
+
 ::::
+:::::
 
 ## Dowload kubectl manually
 

@@ -1,5 +1,29 @@
 /* The colors is set to be consistent with sphinx_rtd_theme */
 
+/* It is not referenced in sphinx_rtd_theme */
+@import url("../basic.css");
+
+nav.wy-nav-side a:visited {
+    color: #caf;
+}
+
+nav.wy-nav-side a.icon-home {
+    color: #fff;
+}
+
+.rst-content table.align-left,
+.rst-content table.align-right {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rst-content p>img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .highlight-console .highlight {
     color: #edf0f2;
     background-color: #343131;
