@@ -1,0 +1,6 @@
+ghcr.io/loft-sh/vcluster-oss:0.25.1
+ghcr.io/loft-sh/vcluster-pro:0.25.1
+library/alpine:3.20
+ghcr.io/loft-sh/kubernetes:v1.32.1
+registry.k8s.io/etcd:3.5.21-0
+coredns/coredns:1.11.3
