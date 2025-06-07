@@ -6,4 +6,5 @@
 :maxdepth: 1
 :numbered:
 msys2
+wsl
 :::
