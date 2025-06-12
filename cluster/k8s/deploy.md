@@ -82,6 +82,23 @@ Then restart the service again to make it effective:
 $ sudo systemctl restart containerd
 ```
 
+If you want to pull images via proxy, you can set envs for the service:
+
+```console
+$ sudo systemctl edit --full containerd
+```
+
+:::{literalinclude} /_files/ubuntu/etc/systemd/system/containerd.service
+:diff: /_files/ubuntu/etc/systemd/system/containerd.service.orig
+:::
+
+Do not forget to do this:
+
+```console
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart containerd
+```
+
 :::{note}
 Must apply the same config on each node in the cluster.
 :::
