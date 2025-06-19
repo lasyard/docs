@@ -67,7 +67,7 @@ Push an image to the harbor:
 
 ```console
 $ docker tag busybox:1.37.0-glibc las3\:443/busybox:1.37.0-glibc
-$ docker login las3\:443 -u admin -p admin-password
+$ docker login las3\:443 -u admin -p AdminPassword123
 WARNING! Using --password via the CLI is insecure. Use --password-stdin.
 Login Succeeded
 $ docker push las3\:443/library/busybox:1.37.0-glibc

@@ -57,27 +57,35 @@ Install `shfmt`:
 ::::{tab-set}
 :::{tab-item} macOS Monterey
 
-```console
-$ brew install shfmt
-```
+By Homebrew:
 
 ```console
+$ brew install shfmt
 $ shfmt --version
 3.8.0
 ```
 
-:::
-:::{tab-item} CentOS 8.5
+Download directly:
 
 ```console
-$ curl -LO https://github.com/patrickvane/shfmt/releases/download/master/shfmt_linux_amd64
-$ chmod +x shfmt_linux_amd64
-$ sudo cp shfmt_linux_amd64 /usr/local/bin/shfmt
+$ curl -LO https://github.com/mvdan/sh/releases/download/v3.11.0/shfmt_v3.11.0_darwin_amd64
+$ chmod +x shfmt_v3.11.0_darwin_amd64
+$ cp shfmt_v3.11.0_darwin_amd64 /usr/local/bin/shfmt
+$ shfmt --version
+v3.11.0
 ```
 
+:::
+:::{tab-item} Ubuntu 22.04
+
+Download directly:
+
 ```console
+$ curl -LO https://github.com/mvdan/sh/releases/download/v3.11.0/shfmt_v3.11.0_linux_amd64
+$ chmod +x shfmt_v3.11.0_linux_amd64
+$ sudo cp shfmt_v3.11.0_linux_amd64 /usr/local/bin/shfmt
 $ shfmt --version
-(devel)
+v3.11.0
 ```
 
 :::
