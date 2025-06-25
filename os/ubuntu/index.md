@@ -6,5 +6,6 @@
 :maxdepth: 1
 :numbered:
 apt
+snap
 misc
 :::
