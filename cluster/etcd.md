@@ -83,3 +83,12 @@ $ etcdctl get /registry/namespaces/default
 ```
 
 The output is protobuf-encoded.
+
+Show members of `etcd` cluster:
+
+```console
+$ etcdctl member list
+3540b14486eea6f8, started, las0, https://10.225.4.51:2380, https://10.225.4.51:2379, false
+```
+
+This is a single-node cluster.
