@@ -76,7 +76,7 @@ $ make deploy  IMG=las3:443/lasyard.github.io/app:latest
 cd config/manager && /home/ubuntu/workspace/coding-go/k8app/bin/kustomize edit set image controller=las3:443/lasyard.github.io/app:latest
 /home/ubuntu/workspace/coding-go/k8app/bin/kustomize build config/default | kubectl apply -f -
 namespace/k8app-system created
-customresourcedefinition.apiextensions.k8s.io/apps.lasyard.github.io unchanged
+customresourcedefinition.apiextensions.k8s.io/apps.lasyard.github.io created
 serviceaccount/k8app-controller-manager created
 role.rbac.authorization.k8s.io/k8app-leader-election-role created
 clusterrole.rbac.authorization.k8s.io/k8app-app-admin-role created
@@ -90,6 +90,41 @@ clusterrolebinding.rbac.authorization.k8s.io/k8app-manager-rolebinding created
 clusterrolebinding.rbac.authorization.k8s.io/k8app-metrics-auth-rolebinding created
 service/k8app-controller-manager-metrics-service created
 deployment.apps/k8app-controller-manager created
+```
+
+Show the deployment:
+
+```console
+$ k get all -n k8app-system
+NAME                                            READY   STATUS    RESTARTS   AGE
+pod/k8app-controller-manager-56cf8cdccc-nqwxv   1/1     Running   0          29s
+
+NAME                                               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/k8app-controller-manager-metrics-service   ClusterIP   10.108.42.128   <none>        8443/TCP   29s
+
+NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/k8app-controller-manager   1/1     1            1           29s
+
+NAME                                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/k8app-controller-manager-56cf8cdccc   1         1         1       29s
+```
+
+Create an `App`:
+
+```console
+$ kubectl apply -k config/samples/
+app.lasyard.github.io/app-sample created
+```
+
+Show the logs of the pod:
+
+```console
+$ kubectl logs k8app-controller-manager-56cf8cdccc-nqwxv -n k8app-system
+...
+2025-06-30T10:37:49Z    INFO    Starting Controller {"controller": "app", "controllerGroup": "lasyard.github.io", "controllerKind": "App"}
+2025-06-30T10:37:49Z    INFO    Starting workers    {"controller": "app", "controllerGroup": "lasyard.github.io", "controllerKind": "App", "worker count": 1}
+2025-06-30T10:37:50Z    INFO    controller-runtime.metrics  Serving metrics server  {"bindAddress": ":8443", "secure": true}
+Reconciling App: default/app-sample
 ```
 
 ### Clean up
