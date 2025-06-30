@@ -34,7 +34,7 @@ INFO Update dependencies:
 ### Create an API
 
 ```console
-$ kubebuilder create api --group io.github.lasyard --version v1 --kind App
+$ kubebuilder create api --group app --version v1 --kind App
 INFO Create Resource [y/n]                        
 y
 INFO Create Controller [y/n]                      
@@ -50,4 +50,66 @@ INFO Update dependencies:
 ...
 INFO Running make:
 ...
+```
+
+Generate manifests:
+
+```console
+$ make manifests
+/home/ubuntu/workspace/coding-go/k8app/bin/controller-gen rbac:roleName=manager-role crd webhook paths="./..." output:crd:artifacts:config=config/crd/bases
+```
+
+### Run on cluster
+
+Build the image and push it to a repository:
+
+```console
+$ make docker-build IMG=las3:443/lasyard.github.io/app:latest
+$ make docker-push IMG=las3:443/lasyard.github.io/app:latest
+```
+
+Deploy the controller:
+
+```console
+$ make deploy  IMG=las3:443/lasyard.github.io/app:latest
+/home/ubuntu/workspace/coding-go/k8app/bin/controller-gen rbac:roleName=manager-role crd webhook paths="./..." output:crd:artifacts:config=config/crd/bases
+cd config/manager && /home/ubuntu/workspace/coding-go/k8app/bin/kustomize edit set image controller=las3:443/lasyard.github.io/app:latest
+/home/ubuntu/workspace/coding-go/k8app/bin/kustomize build config/default | kubectl apply -f -
+namespace/k8app-system created
+customresourcedefinition.apiextensions.k8s.io/apps.lasyard.github.io unchanged
+serviceaccount/k8app-controller-manager created
+role.rbac.authorization.k8s.io/k8app-leader-election-role created
+clusterrole.rbac.authorization.k8s.io/k8app-app-admin-role created
+clusterrole.rbac.authorization.k8s.io/k8app-app-editor-role created
+clusterrole.rbac.authorization.k8s.io/k8app-app-viewer-role created
+clusterrole.rbac.authorization.k8s.io/k8app-manager-role created
+clusterrole.rbac.authorization.k8s.io/k8app-metrics-auth-role created
+clusterrole.rbac.authorization.k8s.io/k8app-metrics-reader created
+rolebinding.rbac.authorization.k8s.io/k8app-leader-election-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/k8app-manager-rolebinding created
+clusterrolebinding.rbac.authorization.k8s.io/k8app-metrics-auth-rolebinding created
+service/k8app-controller-manager-metrics-service created
+deployment.apps/k8app-controller-manager created
+```
+
+### Clean up
+
+```console
+$ make undeploy
+/home/ubuntu/workspace/coding-go/k8app/bin/kustomize build config/default | kubectl delete --ignore-not-found=false -f -
+namespace "k8app-system" deleted
+customresourcedefinition.apiextensions.k8s.io "apps.lasyard.github.io" deleted
+serviceaccount "k8app-controller-manager" deleted
+role.rbac.authorization.k8s.io "k8app-leader-election-role" deleted
+clusterrole.rbac.authorization.k8s.io "k8app-app-admin-role" deleted
+clusterrole.rbac.authorization.k8s.io "k8app-app-editor-role" deleted
+clusterrole.rbac.authorization.k8s.io "k8app-app-viewer-role" deleted
+clusterrole.rbac.authorization.k8s.io "k8app-manager-role" deleted
+clusterrole.rbac.authorization.k8s.io "k8app-metrics-auth-role" deleted
+clusterrole.rbac.authorization.k8s.io "k8app-metrics-reader" deleted
+rolebinding.rbac.authorization.k8s.io "k8app-leader-election-rolebinding" deleted
+clusterrolebinding.rbac.authorization.k8s.io "k8app-manager-rolebinding" deleted
+clusterrolebinding.rbac.authorization.k8s.io "k8app-metrics-auth-rolebinding" deleted
+service "k8app-controller-manager-metrics-service" deleted
+deployment.apps "k8app-controller-manager" deleted
 ```
