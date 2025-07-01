@@ -71,7 +71,7 @@ $ make docker-push IMG=las3:443/lasyard.github.io/app:latest
 Deploy the controller:
 
 ```console
-$ make deploy  IMG=las3:443/lasyard.github.io/app:latest
+$ make deploy IMG=las3:443/lasyard.github.io/app:latest
 /home/ubuntu/workspace/coding-go/k8app/bin/controller-gen rbac:roleName=manager-role crd webhook paths="./..." output:crd:artifacts:config=config/crd/bases
 cd config/manager && /home/ubuntu/workspace/coding-go/k8app/bin/kustomize edit set image controller=las3:443/lasyard.github.io/app:latest
 /home/ubuntu/workspace/coding-go/k8app/bin/kustomize build config/default | kubectl apply -f -
