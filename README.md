@@ -3,3 +3,5 @@
 [![Documentation Status](https://readthedocs.org/projects/lasy/badge/?version=latest)](https://lasy.readthedocs.io/?badge=latest)
 
 This project contains documentation work of mine.
+
+MIT License: <http://lasy.great-site.net/mit_license>.
