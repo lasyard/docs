@@ -38,6 +38,14 @@ $ git --version
 git version 2.37.1 (Apple Git-137.1)
 ```
 
+To install a newer version:
+
+```console
+$ brew install git
+$ git --version
+git version 2.46.0
+```
+
 :::
 ::::
 
