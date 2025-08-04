@@ -7,4 +7,5 @@
 :numbered:
 msys2
 wsl
+misc
 :::
