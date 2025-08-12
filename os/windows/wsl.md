@@ -26,10 +26,24 @@ $ wsl --list
 Ubuntu-22.04 (默认值)
 ```
 
+直接输入 `wsl` 进入默认子系统：
+
+```console
+$ wsl
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 4.4.0-19041-Microsoft x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+...
+```
+
 更新：
 
 ```console
 $ wsl --update
+正在检查更新。
+已安装最新版本的适用于 Linux 的 Windows 子系统。
 ```
 
 通过路径 `\\wsl.localhost\Ubuntu-22.04\home\xxxx` 可访问虚拟机中的目录。
