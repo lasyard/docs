@@ -1,8 +1,16 @@
-# Kindle Fire HD 获取 Root 权限
+# Kindle Fire HD 重装操作系统
 
+这个古老设备在 Amazon 不支持之后基本已成砖，不过可以重装非官方系统挽救之。
+
+:::{note}
 本文适用于 Kindle Fire HD (2nd generation). 如何识别设备是 Kindle Fire HD (2nd generation)? 在设置中查看菜单`设备·关于·序列号`的前四位是 `D025`.
 
 以下提到的主机是 Windows 10 系统。
+:::
+
+重装之路的第一步是获取 Root 权限.
+
+## 1. 获取 Root 权限
 
 :::{caution}
 获取 Root 权限过程可能导致设备变砖，请谨慎操作！
@@ -109,3 +117,50 @@ root@android:/ #
 ![supersu_request.png](/_images/hardware/supersu_request.png)
 
 授权后 `adb shell` 的提示符中用户变为 `root`, 可以“为所欲为”了。
+
+不过我们可以先做一些有意义的事情——备份。在 `adb shell` 中并切换为 `root` 用户后：
+
+```console
+$ dd if=/dev/block/mmcblk0boot0 of=/sdcard/boot0block.img
+4096+0 records in
+4096+0 records out
+2097152 bytes transferred in 0.513 secs (4088015 bytes/sec)
+$ dd if=/dev/block/platform/omap/omap_hsmmc.1/by-name/boot of=/sdcard/stock-boot.img
+16384+0 records in
+16384+0 records out
+8388608 bytes transferred in 2.081 secs (4031046 bytes/sec)
+$ dd if=/dev/block/platform/omap/omap_hsmmc.1/by-name/recovery of=/sdcard/stock-recovery.img
+16384+0 records in
+16384+0 records out
+8388608 bytes transferred in 2.025 secs (4142522 bytes/sec)
+$ dd if=/dev/block/platform/omap/omap_hsmmc.1/by-name/system of=/sdcard/stock-system.img
+1814528+0 records in
+1814528+0 records out
+929038336 bytes transferred in 261.382 secs (3554331 bytes/sec)
+```
+
+以上命令将关键数据备份到 `/sdcard` 目录下。然后回到主机命令行，把文件复制回主机：
+
+```console
+$ adb pull /sdcard/boot0block.img
+/sdcard/boot0block.img: 1 file pulled. 3.3 MB/s (2097152 bytes in 0.601s)
+$ adb pull /sdcard/stock-boot.img
+/sdcard/stock-boot.img: 1 file pulled. 3.2 MB/s (8388608 bytes in 2.474s)
+$ adb pull /sdcard/stock-recovery.img
+/sdcard/stock-recovery.img: 1 file pulled. 3.1 MB/s (8388608 bytes in 2.554s)
+$ adb pull /sdcard/stock-system.img # This will take a few minutes
+/sdcard/stock-system.img: 1 file pulled. 3.2 MB/s (929038336 bytes in 280.605s)
+```
+
+:::{tip}
+备份的文件据说可以通过 `fastboot` 烧入设备，完全恢复原来状态：
+
+```console
+$ fastboot -i 0x1949 flash boot stock-boot.img
+$ fastboot -i 0x1949 flash recovery stock-recovery.img
+$ fastboot -i 0x1949 flash system stock-system.img
+$ fastboot -i 0x1949 reboot
+```
+
+没试过不作保证。
+:::
