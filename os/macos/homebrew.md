@@ -100,6 +100,13 @@ List pinned packages:
 $ brew list --pinned
 ```
 
+Sometimes installed Kegs are not linked out from Cellar (maybe for the targets are already there installed by other tools), you can link them mannually by:
+
+```console
+$ brew link python@3.12
+Linking /usr/local/Cellar/python@3.12/3.12.5... 21 symlinks created.
+```
+
 ## TUNA mirror
 
 Set the environments:
