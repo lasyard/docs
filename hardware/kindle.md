@@ -164,3 +164,99 @@ $ fastboot -i 0x1949 reboot
 
 没试过不作保证。
 :::
+
+## 2. 进入 Fastboot 模式
+
+网上所有针对 Android 设备，通过开机时按住某些键进入 Fastboot 模式的方法对本版本的 Kindle File HD 均不生效。唯一有效的办法是使用一根工程线 (Factory Cable). 工程线的电路如下图：
+
+![moto_amazon_fastboot_cable.png](/_images/hardware/moto_amazon_fastboot_cable.png)
+
+通常的 USB 数据线主机一头是 Type-A, 只有 4 个引脚，设备侧是 Micro USB, ID 脚是悬空的（如果是 OTG 线则是接地的）。很难把一根普通数据线改造成工程线，因为这些线的 Micro USB 一头的 ID 脚没有引出线。只能购买有 5 个引出脚的裸 Micro USB 头进行焊接。
+
+将一根普通数据线的设备端剪掉，露出里面的 4 根引线（一般还有一根裸露的屏蔽线连接到插头的金属外壳）。4 根引线的颜色为红、白、绿、蓝，分别对应 `VBUS`, `D-`, `D+`, `GND`, 焊接到 Micro USB 头的对应引脚。Micro USB 的 `ID` 则需要连接到 `VBUS`，保险起见可以用一个 200Ω 左右的电阻限流。
+
+在设备关机状态下，用工程线连接到主机。设备自动开机并进入 Fastboot 模式，屏幕显示：
+
+![kindle_fastboot.jpg](/_images/hardware/kindle_fastboot.jpg)
+
+打开 Windows 的设备管理器，可以看到一个名为 `Tate-PVT-08` 的设备，需要安装驱动。因为之前装过了 Kindle Fire USB Driver, 现在可以直接从列表中选择 `Fire Devices/Android BootLoader Interface` 安装。
+
+这时在主机命令行界面用 `fastboot` 工具应该可以看到设备：
+
+```console
+$ fastboot devices
+4E96000200000001        fastboot
+```
+
+## 3. 烧录 TWRP
+
+TWRP 代表 [TeamWin Recovery Project](https://twrp.me/), 是一个开源的 Android 恢复软件。
+
+从网址 <https://androidfilehost.com/?w=files&flid=34232> 下载以下文件：
+
+- `stack.img`
+- `kfhd7-u-boot-prod-7.2.3.bin.img`
+- `kfhd7-freedom-boot-7.4.6.img`
+- `kfhd7-twrp-2.8.7.0-recovery.img`
+
+先做一些准备工作。正常模式启动设备，使用 `adb` 传输文件 `stack.img` 到设备：
+
+```console
+$ adb push stack.img /sdcard
+stack.img: 1 file pushed. 0.2 MB/s (4096 bytes in 0.016s)
+```
+
+然后打开 `adb shell` 连接并切换到 `root` 用户，使用 `dd` 命令将刚才的文件写入 `system` 分区：
+
+```console
+$ dd if=/sdcard/stack.img of=/dev/block/platform/omap/omap_hsmmc.1/by-name/system bs=6519488 seek=1
+0+1 records in
+0+1 records out
+4096 bytes transferred in 0.003 secs (1365333 bytes/sec)
+```
+
+据说此神秘的 4k 大小的数据写入可以阻止原操作系统恢复原 `boot` 分区。没有更详细的信息，照做就是！
+
+然后是阻止系统更新 `recovery` 分区。同样是在 `root` 用户的 shell 中：
+
+```console
+$ mount -o remount,rw ext4 /system
+$ mv /system/etc/install-recovery.sh /system/etc/install-recovery.sh.bak
+$ mount -o remount,ro ext4 /system
+```
+
+准备完毕，关闭设备并用工程线连接，进入 Fastboot 模式，然后依次烧录 `bootloader`, `boot`, `recovery` 分区并重启设备：
+
+```console
+$ fastboot -i 0x1949 flash bootloader kfhd7-u-boot-prod-7.2.3.bin.img
+target reported max download size of 1006632960 bytes
+sending 'bootloader' (221 KB)...
+OKAY [  0.084s]
+writing 'bootloader'...
+OKAY [  0.047s]
+finished. total time: 0.131s
+$ fastboot -i 0x1949 flash boot kfhd7-freedom-boot-7.4.6.img
+target reported max download size of 1006632960 bytes
+sending 'boot' (8145 KB)...
+OKAY [  2.875s]
+writing 'boot'...
+OKAY [  0.670s]
+finished. total time: 3.576s
+$ fastboot -i 0x1949 flash recovery kfhd7-twrp-2.8.7.0-recovery.img
+target reported max download size of 1006632960 bytes
+sending 'recovery' (8145 KB)...
+OKAY [  2.873s]
+writing 'recovery'...
+OKAY [  0.688s]
+finished. total time: 3.577s
+$ fastboot -i 0x1949 reboot
+rebooting...
+
+finished. total time: -0.000s
+```
+
+重启之后，设备先显示正常的 Kindle 图标，然后显示一个“蓝化”的 Kindle 图标，标志 TWRP 烧录成功了：
+
+![kindle_fire_blue.jpg](/_images/hardware/kindle_fire_blue.jpg)
+
+当以上图标出现时立刻按下音量增加键不放，会出现短暂的花屏，然后进入 TWRP 界面。后续的安装操作系统的任务都可以在这个界面操作完成。

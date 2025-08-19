@@ -40,6 +40,16 @@ $ pip3 install -r requirements.txt --break-system-packages
 
 :::
 
+## List installed packages
+
+```console
+$ pip list -v
+Package Version Location                                Installer
+------- ------- --------------------------------------- ---------
+pip     24.2    /usr/local/lib/python3.12/site-packages pip
+wheel   0.44.0  /usr/local/lib/python3.12/site-packages pip
+```
+
 ## Show info of packages
 
 ```console
