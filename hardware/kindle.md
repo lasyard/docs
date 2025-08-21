@@ -265,7 +265,7 @@ finished. total time: -0.000s
 
 在 TWRP 中，每次安装新的操作系统时可以用 `Wipe` 将旧数据彻底清除，确保新系统中没有旧系统的残留，否则有可能出现新系统启动不了或文件系统权限不对的问题。`Wipe` 时可以选择高级功能并把所有选项都选上，不影响已有的 `bootloader`, `boot` 和 `recovery`.
 
-然后将下载的操作系统 `zip` 包传输到设备的 `/sdcard` 目录下。TWRP 支持 MTP 设备连接，所以这一步无须操作系统也可以进行。最后在 TWRP 中 `Install` 即可。
+然后将下载的操作系统 `zip` 包传输到设备的 `/sdcard` 目录（主机上看是 Internal Storage）下。TWRP 支持 MTP 设备连接，所以这一步无须操作系统也可以进行。最后在 TWRP 中 `Install` 即可。
 
 下面列出一些可用的操作系统。
 
