@@ -351,7 +351,7 @@ crDroid 7.1.2 Main Menu
 
 ```{figure} https://imghost.online/ib/8dDBVmi5Zrjljqm_1755710408.png
 :alt: crDroid 7.1.2 About
-:target: https://imghost.online/en/PqfPWbIydoNW0bt)
+:target: https://imghost.online/en/PqfPWbIydoNW0bt
 
 crDroid 7.1.2 About
 ```
