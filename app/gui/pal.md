@@ -7,3 +7,5 @@
 ```
 
 注意字节序是 little-endian 的，比如值为 `03C5`, 实际写进去的顺序是 `C5 03`.
+
+可以从 <https://www.mediafire.com/folder/v8lz97eahhz9n/DOS> 下载 DOS 版的仙剑奇侠传。

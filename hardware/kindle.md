@@ -1,4 +1,4 @@
-# Kindle Fire HD 重装操作系统
+# Kindle Fire HD 安装第三方操作系统
 
 这个古老设备在 Amazon 不支持之后基本已成砖，不过可以重装非官方系统挽救之。
 
@@ -173,7 +173,7 @@ $ fastboot -i 0x1949 reboot
 
 通常的 USB 数据线主机一头是 Type-A, 只有 4 个引脚，设备侧是 Micro USB, ID 脚是悬空的（如果是 OTG 线则是接地的）。很难把一根普通数据线改造成工程线，因为这些线的 Micro USB 一头的 ID 脚没有引出线。只能购买有 5 个引出脚的裸 Micro USB 头进行焊接。
 
-将一根普通数据线的设备端剪掉，露出里面的 4 根引线（一般还有一根裸露的屏蔽线连接到插头的金属外壳）。4 根引线的颜色为红、白、绿、蓝，分别对应 `VBUS`, `D-`, `D+`, `GND`, 焊接到 Micro USB 头的对应引脚。Micro USB 的 `ID` 则需要连接到 `VBUS`，保险起见可以用一个 200Ω 左右的电阻限流。
+将一根普通数据线的设备端剪掉，露出里面的 4 根引线（一般还有一根裸露的屏蔽线连接到插头的金属外壳）。4 根引线的颜色为红、白、绿、蓝，分别对应 `VBUS`, `D-`, `D+`, `GND`, 焊接到 Micro USB 头的对应引脚。Micro USB 的 `ID` 则需要连接到 `VBUS`，保险起见可以用一个 220Ω 左右的电阻限流。
 
 在设备关机状态下，用工程线连接到主机。设备自动开机并进入 Fastboot 模式，屏幕显示：
 
@@ -192,10 +192,10 @@ $ fastboot devices
 
 TWRP 代表 [TeamWin Recovery Project](https://twrp.me/), 是一个开源的 Android 恢复软件。
 
-从网址 <https://androidfilehost.com/?w=files&flid=34232> 下载以下文件：
+下载以下文件：
 
 - `stack.img`
-- `kfhd7-u-boot-prod-7.2.3.bin.img`
+- `kfhd7-u-boot-prod-7.2.3.img`
 - `kfhd7-freedom-boot-7.4.6.img`
 - `kfhd7-twrp-2.8.7.0-recovery.img`
 
@@ -260,3 +260,153 @@ finished. total time: -0.000s
 ![kindle_fire_blue.jpg](/_images/hardware/kindle_fire_blue.jpg)
 
 当以上图标出现时立刻按下音量增加键不放，会出现短暂的花屏，然后进入 TWRP 界面。后续的安装操作系统的任务都可以在这个界面操作完成。
+
+## 4. 安装操作系统
+
+在 TWRP 中，每次安装新的操作系统时可以用 `Wipe` 将旧数据彻底清除，确保新系统中没有旧系统的残留，否则有可能出现新系统启动不了或文件系统权限不对的问题。`Wipe` 时可以选择高级功能并把所有选项都选上，不影响已有的 `bootloader`, `boot` 和 `recovery`.
+
+然后将下载的操作系统 `zip` 包传输到设备的 `/sdcard` 目录下。TWRP 支持 MTP 设备连接，所以这一步无须操作系统也可以进行。最后在 TWRP 中 `Install` 即可。
+
+下面列出一些可用的操作系统。
+
+### LineageOS 14.1
+
+:安装文件: `lineage-14.1-20180326-UNOFFICIAL-tate.zip`
+:Android 版本: 7.1.2
+:中文支持: 有
+
+界面截图：
+
+```{figure} https://imghost.online/ib/BvRRHLA6votKIae_1755710470.png
+:alt: LineageOS 14.1 Desktop
+:target: https://imghost.online/en/ntaDF9M2rW5jbFe
+
+LineageOS 14.1 Desktop
+```
+
+```{figure} https://imghost.online/ib/Sx5IHmAgsChRycH_1755710470.png
+:alt: LineageOS 14.1 Main Menu
+:target: https://imghost.online/en/6ggFRoj7dZP7VYz
+
+LineageOS 14.1 Main Menu
+```
+
+```{figure} https://imghost.online/ib/gmuVUwWsy65t9NJ_1755710408.png
+:alt: LineageOS 14.1 About
+:target: https://imghost.online/en/MHoN6pXJhHOfJfw
+
+LineageOS 14.1 About
+```
+
+### CyanogenMod 12.1
+
+:安装文件: `cm-12.1-20150602-UNOFFICIAL-tate.zip`
+:Android 版本: 5.1.1
+:中文支持: 有
+
+界面截图：
+
+```{figure} https://imghost.online/ib/AJu9yCpNK61GTsR_1755710408.png
+:alt: CyanogenMod 12.1 Desktop
+:target: https://imghost.online/en/F98gBTkbS7tpQHr
+
+CyanogenMod 12.1 Desktop
+```
+
+```{figure} https://imghost.online/ib/28hifZbd6cyOPaT_1755710408.png
+:alt: CyanogenMod 12.1 Main Menu
+:target: https://imghost.online/en/nNjqGpkmV9cQE1h
+
+CyanogenMod 12.1 Main Menu
+```
+
+```{figure} https://imghost.online/ib/AGt8WgxC29nOS6M_1755710408.png
+:alt: CyanogenMod 12.1 About
+:target: https://imghost.online/en/PYVrj0QtxtDIEyh
+
+CyanogenMod 12.1 About
+```
+
+### crDroid 7.1.2
+
+:安装文件: `crDroidAndroid-7.1.2-20181021-tate-v3.8.9.zip`
+:Android 版本: 5.1.1
+:中文支持: 无
+
+界面截图：
+
+```{figure} https://imghost.online/ib/7knmttVmwBKBdaD_1755710408.png
+:alt: crDroid 7.1.2 Desktop
+:target: https://imghost.online/en/hjOAp6PTqsJKPuW
+
+crDroid 7.1.2 Desktop
+```
+
+```{figure} https://imghost.online/ib/Hv1FHZLbRg2SrUl_1755710408.png
+:alt: crDroid 7.1.2 Main Menu
+:target: https://imghost.online/en/bgplgkMLczGSH6z
+
+crDroid 7.1.2 Main Menu
+```
+
+```{figure} https://imghost.online/ib/8dDBVmi5Zrjljqm_1755710408.png
+:alt: crDroid 7.1.2 About
+:target: https://imghost.online/en/PqfPWbIydoNW0bt)
+
+crDroid 7.1.2 About
+```
+
+### Carbon
+
+:安装文件: `carbon_tate-ota-9c7a2d1d33-patched.zip`
+:Android 版本: 4.4.2
+:中文支持: 无
+
+界面截图：
+
+```{figure} https://imghost.online/ib/wjYoraLtlJaxu9a_1755710408.png
+:alt: Carbon Desktop
+:target: https://imghost.online/en/sSYxTopFDHIbrfc
+
+Carbon Desktop
+```
+
+```{figure} https://imghost.online/ib/ptBNvyYjZhQMHhU_1755710408.png
+:alt: Carbon Main Menu
+:target: https://imghost.online/en/GxKyS8jqHfzDpvk
+
+Carbon Main Menu
+```
+
+```{figure} https://imghost.online/ib/HKcyBfhwmovSGC1_1755710408.png
+:alt: Carbon About
+:target: https://imghost.online/en/4t361C29lojpJXt
+
+Carbon About
+```
+
+:::{tip}
+Android 版本高可以安装较新的应用，缺点是较新的应用在老硬件上卡顿。
+
+老旧 APK 可以从 <https://www.apkmirror.com/> 这个网站下载。
+:::
+
+## 附
+
+本文中的文件可以从 <https://www.mediafire.com/folder/f3hle221i2yaf/kfhd7> 下载。
+
+文件均为搬运而来。下列文件：
+
+- `stack.img`
+- `kfhd7-u-boot-prod-7.2.3.bin.img`
+- `kfhd7-freedom-boot-7.4.6.img`
+- `kfhd7-twrp-2.8.7.0-recovery.img`
+
+从 <https://androidfilehost.com/?w=files&flid=34232> 获得。其中 `kfhd7-u-boot-prod-7.2.3.bin.img` 重命名为 `kfhd7-u-boot-prod-7.2.3.img`, 因为 <https://www.mediafire.com/> 不允许 `.bin.img` 双扩展名。
+
+下列文件：
+
+- `crDroidAndroid-7.1.2-20181021-tate-v3.8.9.zip`
+- `lineage-14.1-20180326-UNOFFICIAL-tate.zip`
+
+从 <https://www.mediafire.com/folder/u7sb7p10ik7v0/tate> 获得。

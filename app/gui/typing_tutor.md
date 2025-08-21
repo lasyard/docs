@@ -8,4 +8,6 @@
 
 另外两个文件 `TTD.EXE`（Dvorak 布局）和 `TTJ.EXE` 也是一样的，只不过修改的地址不同，分别是 `1004` 处和 `0FC0` 处。
 
+可以从 <https://www.mediafire.com/folder/v8lz97eahhz9n/DOS> 下载 Typing Tutor IV, 其中 `TT-y2k.zip` 是有千年虫问题的原版，`TT.zip` 是修改过的版本。
+
 推荐用 [DOSBox](project:dosbox.md) 运行，兼容各种系统。
