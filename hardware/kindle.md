@@ -171,9 +171,11 @@ $ fastboot -i 0x1949 reboot
 
 ![moto_amazon_fastboot_cable.png](/_images/hardware/moto_amazon_fastboot_cable.png)
 
-通常的 USB 数据线主机一头是 Type-A, 只有 4 个引脚，设备侧是 Micro USB, ID 脚是悬空的（如果是 OTG 线则是接地的）。很难把一根普通数据线改造成工程线，因为这些线的 Micro USB 一头的 ID 脚没有引出线。只能购买有 5 个引出脚的裸 Micro USB 头进行焊接。
+通常的 USB 数据线主机一头是 Type-A, 只有 4 个引脚，设备侧是 Micro USB, ID 脚是悬空的（如果是 OTG 线则是接地的）。很难把一根普通数据线改造成工程线，因为这些线的 Micro USB 一头的 ID 脚没有引出线。只能购买有 5 个引出脚的裸 Micro USB 头进行焊接。下图是一种市售的 Micro USB 插头，5 根引脚分布在插头的两侧：
 
-将一根普通数据线的设备端剪掉，露出里面的 4 根引线（一般还有一根裸露的屏蔽线连接到插头的金属外壳）。4 根引线的颜色为红、白、绿、蓝，分别对应 `VBUS`, `D-`, `D+`, `GND`, 焊接到 Micro USB 头的对应引脚。Micro USB 的 `ID` 则需要连接到 `VBUS`，保险起见可以用一个 220Ω 左右的电阻限流。
+![micro_usb_pin.jpg](/_images/hardware/micro_usb_pin.jpg)
+
+将一根普通数据线的设备端剪掉，露出里面的 4 根引线（一般还有一根裸露的屏蔽线连接到插头的金属外壳）。4 根引线的颜色为红、白、绿、黑（或蓝），分别对应 `VBUS`, `D-`, `D+`, `GND`, 焊接到 Micro USB 头的对应引脚。Micro USB 的 `ID` 则需要连接到 `VBUS`，保险起见可以用一个 220Ω 左右的电阻限流。
 
 在设备关机状态下，用工程线连接到主机。设备自动开机并进入 Fastboot 模式，屏幕显示：
 
