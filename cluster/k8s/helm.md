@@ -61,12 +61,23 @@ NAME        URL
 volcano-sh  https://volcano-sh.github.io/helm-charts
 ```
 
+List versions of a chart from repository:
+
+```console
+$ helm search repo volcano-sh/volcano --versions 
+NAME                CHART VERSION   APP VERSION DESCRIPTION
+volcano-sh/volcano  1.12.2          1.12.2      A Helm chart for Volcano
+volcano-sh/volcano  1.12.1          1.12.1      A Helm chart for Volcano
+volcano-sh/volcano  1.12.0          1.12.0      A Helm chart for Volcano
+...
+```
+
 Pull charts:
 
 ```console
 $ helm pull volcano-sh/volcano
-$ ls *.tgz
-volcano-1.11.1.tgz
+$ ls volcano-*.tgz
+volcano-1.12.2.tgz
 ```
 
 List (deployed) releases in all namespaces:
