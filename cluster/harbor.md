@@ -27,7 +27,7 @@ Copy file `harbor.yml.tmpl` to `harbor.yml` and edit it:
 :diff: /_files/ubuntu/workspace/harbor/harbor.yml.tmpl
 :::
 
-The configurations use `HTTPS`, so you may need to "<#configure-https>" first. Then start to install:
+The configurations use `HTTPS`, so you may need to "<project:#configure-https>" first. Then start to install:
 
 ```console
 $ sudo ./install.sh
