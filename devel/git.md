@@ -66,6 +66,7 @@ $ git config --global push.recurseSubmodules check
 $ git config --global url.git@github.com:.insteadOf https://github.com/
 $ git config --global url.https://github.com/.insteadOf git@github.com:
 $ git config --global pull.ff only
+$ git config --global core.editor 'vi'
 ```
 
 If you want to show unicode characters in filename:
