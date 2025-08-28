@@ -10,8 +10,17 @@ $ helm repo add nvidia https://helm.ngc.nvidia.com/nvidia
 Install:
 
 ```console
-$ helm pull nvidia/gpu-operator --version=v25.3.0
-$ helm install gpu-operator -n gpu-operator --create-namespace gpu-operator-v25.3.0.tgz --set driver.enabled=false
+$ helm pull nvidia/gpu-operator --version=v25.3.2
+$ helm install gpu-operator -n gpu-operator --create-namespace gpu-operator-v25.3.2.tgz --set driver.enabled=false
+W0828 11:26:49.734907   75972 warnings.go:70] spec.template.spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution[0].preference.matchExpressions[0].key: node-role.kubernetes.io/master is use "node-role.kubernetes.io/control-plane" instead
+W0828 11:26:49.734838   75972 warnings.go:70] spec.template.spec.affinity.nodeAffinity.preferredDuringSchedulingIgnoredDuringExecution[0].preference.matchExpressions[0].key: node-role.kubernetes.io/master is use "node-role.kubernetes.io/control-plane" instead
+W0828 11:26:49.755071   75972 warnings.go:70] unknown field "spec.dcgmExporter.service"
+NAME: gpu-operator
+LAST DEPLOYED: Thu Aug 28 11:26:49 2025
+NAMESPACE: gpu-operator
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
 ```
 
 :::{note}
@@ -70,22 +79,22 @@ See output of the pod:
 
 ```console
 $ kubectl logs gpu
-Tue Apr 22 10:27:26 2025       
+Thu Aug 28 03:31:47 2025       
 +-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 560.35.05              Driver Version: 560.35.05      CUDA Version: 12.6     |
-|-----------------------------------------+------------------------+----------------------+
+| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
 | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
 |                                         |                        |               MIG M. |
 |=========================================+========================+======================|
-|   0  NVIDIA L40S                    Off |   00000000:00:05.0 Off |                    0 |
-| N/A   26C    P8             23W /  350W |       1MiB /  46068MiB |      0%      Default |
+|   0  Tesla P4                       Off |   00000000:00:05.0 Off |                    0 |
+| N/A   36C    P8              6W /   75W |       0MiB /   7680MiB |      0%      Default |
 |                                         |                        |                  N/A |
 +-----------------------------------------+------------------------+----------------------+
-                                                                                         
+
 +-----------------------------------------------------------------------------------------+
 | Processes:                                                                              |
-|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
 |        ID   ID                                                               Usage      |
 |=========================================================================================|
 |  No running processes found                                                             |
