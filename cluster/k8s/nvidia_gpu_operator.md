@@ -100,3 +100,12 @@ Thu Aug 28 03:31:47 2025
 |  No running processes found                                                             |
 +-----------------------------------------------------------------------------------------+
 ```
+
+GPU operator started two process on the GPU hosts using GPU devices:
+
+```console
+$ sudo lsof /dev/nvidia-uvm
+COMMAND       PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+dcgm-expo 2985974 root   16u   CHR  508,0      0t0  794 /dev/nvidia-uvm
+nvidia-de 2986790 root   16u   CHR  508,0      0t0  794 /dev/nvidia-uvm
+```

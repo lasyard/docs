@@ -9,7 +9,7 @@ $ curl -LO https://developer.download.nvidia.com/compute/cuda/13.0.0/local_insta
 $ chmod +x cuda_13.0.0_580.65.06_linux.run
 ```
 
-Install:
+Before installation, close any program using GPU devices or it ought to fail. Then install:
 
 ```console
 $ sudo ./cuda_13.0.0_580.65.06_linux.run 
