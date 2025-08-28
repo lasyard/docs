@@ -127,7 +127,7 @@ ceph version 19.2.2 (0eceb0defba60152a8182f7bd87d164b639885b8) squid (stable)
 The following command can destroy the `ceph` things installed by `cephadm` on a node:
 
 ```console
-$ sudo cephadm rm-cluster --force --zap-osds --fsid c0accb9e-37c2-11f0-af12-3738f6ab3838
+$ sudo cephadm rm-cluster --force --zap-osds --fsid $(ceph fsid)
 Deleting cluster with fsid: c0accb9e-37c2-11f0-af12-3738f6ab3838
 ...
 ```
