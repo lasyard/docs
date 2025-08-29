@@ -5,7 +5,7 @@
 ## Download sources
 
 ```console
-$ curl -LO https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8/wxWidgets-3.2.8.tar.bz2
+$ curl -LO https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.1/wxWidgets-3.3.1.tar.bz2
 ```
 
 ## Build
@@ -13,8 +13,8 @@ $ curl -LO https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8/wxWid
 Extract sources:
 
 ```console
-$ tar -C ~/workspace/devel/ -xjf wxWidgets-3.2.8.tar.bz2
-$ cd ~/workspace/devel/wxWidgets-3.2.8
+$ tar -C ~/workspace/devel/ -xjf wxWidgets-3.3.1.tar.bz2
+$ cd ~/workspace/devel/wxWidgets-3.3.1
 ```
 
 ### Release
@@ -32,28 +32,28 @@ $ cmake -S . -B build-x86_64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_I
 -- The OBJCXX compiler identification is Clang 18.1.8
 ...
 -- Which libraries should wxWidgets use?
-    wxUSE_STL:        OFF      (use C++ STL classes)
     wxUSE_REGEX:      builtin  (enable support for wxRegEx class)
     wxUSE_ZLIB:       sys      (use zlib for LZW compression)
     wxUSE_EXPAT:      sys      (use expat for XML parsing)
     wxUSE_LIBJPEG:    builtin  (use libjpeg (JPEG file format))
     wxUSE_LIBPNG:     builtin  (use libpng (PNG image format))
     wxUSE_LIBTIFF:    builtin  (use libtiff (TIFF file format))
+    wxUSE_LIBWEBP:    builtin  (use libwebp (WebP file format))
     wxUSE_NANOSVG:    builtin  (use NanoSVG for rasterizing SVG)
     wxUSE_LIBLZMA:    OFF      (use liblzma for LZMA compression)
     wxUSE_LIBSDL:     OFF      (use SDL for audio on Unix)
     wxUSE_LIBMSPACK:  OFF      (use libmspack (CHM help files loading))
+    wxUSE_WEBVIEW:    ON       (enable wxWebview with WebKit)
 
--- Configured wxWidgets 3.2.8 for Darwin
+-- Configured wxWidgets 3.3.1 for Darwin
     Min OS Version required at runtime:                macOS 10.10 x86_64
     Which GUI toolkit should wxWidgets use?            osx_cocoa  
     Should wxWidgets be compiled into single library?  OFF
     Should wxWidgets be linked as a shared library?    ON
-    Should wxWidgets support Unicode?                  ON
-    What wxWidgets compatibility level should be used? 3.0
--- Configuring done (53.7s)
--- Generating done (1.2s)
--- Build files have been written to: /Users/xxxx/workspace/devel/wxWidgets-3.2.8/build-x86_64-darwin-release
+    Which wxWidgets API compatibility should be used?  3.2
+-- Configuring done (60.2s)
+-- Generating done (2.0s)
+-- Build files have been written to: /Users/xxxx/workspace/devel/wxWidgets-3.3.1/build-x86_64-darwin-release
 $ cd build-x86_64-darwin-release
 $ cmake --build . --target install
 ```
@@ -77,7 +77,7 @@ Check the version:
 
 ```console
 $ wx-config --version-full
-3.2.8.0
+3.3.1.0
 ```
 
 :::{tip}
@@ -103,7 +103,7 @@ $ cmake --build . --target uninstall
 ```console
 $ cmake -S . -B build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel
 ...
--- Build files have been written to: /Users/xxxx/workspace/devel/wxWidgets-3.2.8/build-x86_64-darwin-debug
+-- Build files have been written to: /Users/xxxx/workspace/devel/wxWidgets-3.3.1/build-x86_64-darwin-debug
 $ cd build-x86_64-darwin-debug
 $ cmake --build . --target install
 ```
@@ -134,7 +134,8 @@ $ wx-config
 
     NOTE:    Usage of --debug and --query-debugtype are only relevant if you
   have any  versions prior to 2.9 installed  and use the --version option to
-  select an earlier version.
+  select an earlier version.  Similarly, usage of --unicode is only relevant
+  if a version prior to 3.3 is used, as all later ones always use Unicode.
 
     If multiple builds of wxWidgets  are available,  you can use the options
   --prefix, --host, --toolkit,  --unicode, --static, --universal,  --version
@@ -154,4 +155,5 @@ $ wx-config
 
   Available libraries in this build are:
   xrc webview stc richtext ribbon propgrid aui gl media html qa adv core xml net base
+
 ```
