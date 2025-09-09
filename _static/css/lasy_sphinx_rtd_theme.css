@@ -27,6 +27,10 @@ nav.wy-nav-side a.icon-home {
     margin-right: auto;
 }
 
+.rst-content table .text-left {
+    text-align: left;
+}
+
 .rst-content p>img {
     display: block;
     margin-left: auto;
