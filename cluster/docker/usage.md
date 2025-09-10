@@ -230,3 +230,9 @@ For more advanced functions, use [Harbor](project:/cluster/harbor.md) instead of
 ```console
 $ docker image save busybox:1.37.0-glibc -o busybox-1.37.0-glibc.tar
 ```
+
+Or to a compressed tar:
+
+```console
+$ docker image save busybox:1.37.0-glibc | bzip2 > busybox-1.37.0-glibc.tar.bz2
+```
