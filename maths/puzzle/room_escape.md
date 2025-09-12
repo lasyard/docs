@@ -1,6 +1,6 @@
 # 华容道
 
-![room_escape.png](/_images/generated/maths/puzzle/room_escape.png)
+![room_escape.png](/_generated_images/maths/puzzle/room_escape.png)
 
 数字所代表的方块如图所示，箭头表示移动的方向，两个箭头表示移动两格。一个方块移动一次算一步。
 
