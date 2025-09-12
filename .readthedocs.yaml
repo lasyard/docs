@@ -29,4 +29,6 @@ python:
     - requirements: requirements.txt
 
 submodules:
-  exclude: all
+  include:
+    - sphinx-common
+  recursive: false
