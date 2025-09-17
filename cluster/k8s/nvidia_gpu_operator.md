@@ -109,3 +109,37 @@ COMMAND       PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 dcgm-expo 2985974 root   16u   CHR  508,0      0t0  794 /dev/nvidia-uvm
 nvidia-de 2986790 root   16u   CHR  508,0      0t0  794 /dev/nvidia-uvm
 ```
+
+Get MIG configs:
+
+```console
+$ kubectl -n gpu-operator describe configmap/default-mig-parted-config
+Name:         default-mig-parted-config
+Namespace:    gpu-operator
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+config.yaml:
+----
+version: v1
+mig-configs:
+  all-disabled:
+    - devices: all
+      mig-enabled: false
+
+  # A100-40GB, A800-40GB
+  all-1g.5gb:
+    - devices: all
+      mig-enabled: true
+      mig-devices:
+        "1g.5gb": 7
+```
+
+Enable MIG on a node:
+
+```console
+$ kubectl label no xxxx nvidia.com/mig.config=all-1g.10gb --overwrite
+node/xxxx labeled
+```
