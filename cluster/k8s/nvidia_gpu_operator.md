@@ -143,3 +143,7 @@ Enable MIG on a node:
 $ kubectl label no xxxx nvidia.com/mig.config=all-1g.10gb --overwrite
 node/xxxx labeled
 ```
+
+The default MIG strategy is `single`, which means each MIG instance appears as a `nvidia.com/gpu`. It can be changed to `mixed` during installation by `--set mig.strategy=mixed`.
+
+The `mixed` mode means the MIG instances (appearing as `nvidia.com/mig-1g.10gb`) are coexist with the normal GPUs.
