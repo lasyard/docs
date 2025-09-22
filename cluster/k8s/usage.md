@@ -236,3 +236,15 @@ Get pods on a specified node:
 ```console
 $ kubectl get po -A --field-selector spec.nodeName=las3
 ```
+
+## Customize output
+
+Get specified info of all nodes:
+
+```console
+$ kubectl get no -o custom-columns=NAME:.metadata.name,CPU:.status.capacity.cpu,MEMORY:.status.capacity.memory,GPU:.status.capacity.nvidia\\.com/gpu
+```
+
+:::{note}
+There must be double `\` to escape twice.
+:::
