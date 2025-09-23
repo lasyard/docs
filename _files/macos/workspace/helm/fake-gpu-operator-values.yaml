@@ -1,0 +1,34 @@
+devicePlugin:
+  image:
+    pullPolicy: IfNotPresent
+
+statusUpdater:
+  image:
+    pullPolicy: IfNotPresent
+
+topologyServer:
+  image:
+    pullPolicy: IfNotPresent
+
+statusExporter:
+  image:
+    pullPolicy: IfNotPresent
+
+kwokGpuDevicePlugin:
+  image:
+    pullPolicy: IfNotPresent
+
+migFaker:
+  image:
+    pullPolicy: IfNotPresent
+
+topology:
+  nodePools:
+    a100:
+      gpuProduct: A100
+      gpuCount: 8
+      gpuMemory: 83968
+    h100:
+      gpuProduct: H100
+      gpuCount: 8
+      gpuMemory: 83968
