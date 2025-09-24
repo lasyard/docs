@@ -90,3 +90,24 @@ rustc 1.90.0 (1159e78c4 2025-09-14)
 
 :::
 ::::
+
+## rustup
+
+Update rust:
+
+```console
+$ rustup update
+info: syncing channel updates for 'stable-x86_64-apple-darwin'
+info: checking for self-update
+
+  stable-x86_64-apple-darwin unchanged - rustc 1.90.0 (1159e78c4 2025-09-14)
+
+info: cleaning up downloads & tmp directories
+```
+
+To see the book:
+
+```console
+$ rustup doc --book
+Opening docs named `book` in your browser
+```
