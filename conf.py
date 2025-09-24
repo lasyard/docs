@@ -17,8 +17,8 @@ copyright = '%Y, Lasy'
 author = 'Lasy'
 release = 'latest'
 language = 'en'
-html_logo = 'sphinx-common/images/lasydoc.png'
-html_favicon = 'sphinx-common/images/favicon-96x96.png'
+html_logo = '_images/lasydoc.png'
+html_favicon = '_images/favicon-96x96.png'
 
 
 # -- General configuration ---------------------------------------------------

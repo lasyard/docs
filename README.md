@@ -4,4 +4,4 @@
 
 This project contains documentation work of mine.
 
-MIT License: <http://lasy.great-site.net/mit_license>.
+MIT License: <http://lasy.fwh.is/mit_license>.
