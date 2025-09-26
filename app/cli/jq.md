@@ -5,6 +5,20 @@
 ## Install
 
 ::::{tab-set}
+:::{tab-item} Ubuntu 22.04
+
+```console
+$ sudo apt install jq
+```
+
+Check the version:
+
+```console
+$ jq --version
+jq-1.6
+```
+
+:::
 :::{tab-item} CentOS 8.5
 
 ```console
