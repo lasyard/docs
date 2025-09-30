@@ -33,36 +33,49 @@ Use `node` installed in system:
 $ nvm use system
 ```
 
-Install latest `node` by `nvm`:
+List available version:
 
 ```console
-$ nvm install node
-Downloading and installing node v23.11.0...
-Downloading https://nodejs.org/dist/v23.11.0/node-v23.11.0-darwin-x64.tar.xz...
-############################################################################################################################################## 100.0%
+$ nvm ls-remote
+...
+        v24.5.0
+        v24.6.0
+        v24.7.0
+        v24.8.0
+->      v24.9.0
+```
+
+Install a specified version:
+
+```console
+$ nvm install v24.9.0
+Downloading and installing node v24.9.0...
+Downloading https://nodejs.org/dist/v24.9.0/node-v24.9.0-darwin-x64.tar.xz...
+############################################################################################################################################### 100.0%
 Computing checksum with shasum -a 256
 Checksums matched!
-Now using node v23.11.0 (npm v10.9.2)
-Creating default alias: default -> node (-> v23.11.0)
+Now using node v24.9.0 (npm v11.6.0)
 ```
 
 Show the current node version:
 
 ```console
 $ nvm version
-v23.11.0
+v24.9.0
+$ node --version
+v24.9.0
 ```
 
 List all installed `node` versions:
 
 ```console
 $ nvm list
-->     v23.11.0
-default -> node (-> v23.11.0)
+->      v24.9.0
+default -> node (-> v24.9.0)
 iojs -> N/A (default)
 unstable -> N/A (default)
-node -> stable (-> v23.11.0) (default)
-stable -> 23.11 (-> v23.11.0) (default)
+node -> stable (-> v24.9.0) (default)
+stable -> 24.9 (-> v24.9.0) (default)
 lts/* -> lts/jod (-> N/A)
 lts/argon -> v4.9.1 (-> N/A)
 lts/boron -> v6.17.1 (-> N/A)
@@ -72,15 +85,15 @@ lts/erbium -> v12.22.12 (-> N/A)
 lts/fermium -> v14.21.3 (-> N/A)
 lts/gallium -> v16.20.2 (-> N/A)
 lts/hydrogen -> v18.20.8 (-> N/A)
-lts/iron -> v20.19.1 (-> N/A)
-lts/jod -> v22.15.0 (-> N/A)
+lts/iron -> v20.19.5 (-> N/A)
+lts/jod -> v22.20.0 (-> N/A)
 ```
 
 Uninstall a version:
 
 ```console
-$ nvm uninstall 23.11.0
-Uninstalled node v23.11.0
+$ nvm uninstall v24.5.0
+Uninstalled node v24.5.0
 ```
 
 ## Uninstall node
