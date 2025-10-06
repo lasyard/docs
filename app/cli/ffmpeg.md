@@ -45,12 +45,6 @@ $ ffmpeg -i input.mp4 -ss 00:02:22 -to 00:03:33 -c copy out.mp4
 $ ffmpeg -i input.mp4 -vf scale=1920:1080 out.mp4
 ```
 
-### Rotate
-
-```console
-$ ffmpeg -i input.mp4 -c copy -metadata:s:v:0 rotate=90 out.mp4
-```
-
 ### Change FPS
 
 ```console
