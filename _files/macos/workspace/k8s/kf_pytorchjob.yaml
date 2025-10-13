@@ -1,0 +1,41 @@
+apiVersion: kubeflow.org/v1
+kind: PyTorchJob
+metadata:
+  name: pytest
+  namespace: default
+spec:
+  pytorchReplicaSpecs:
+    Master:
+      replicas: 1
+      restartPolicy: OnFailure
+      template:
+        spec:
+          containers:
+            - image: busybox:1.37.0-glibc
+              imagePullPolicy: IfNotPresent
+              name: pytorch # The name is a must
+              command: ["sh", "-c", "trap exit INT TERM; sleep 1m & wait"]
+              ports:
+                - containerPort: 23456
+                  name: pytorchjob-port
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "100Mi"
+    Worker:
+      replicas: 3
+      restartPolicy: OnFailure
+      template:
+        spec:
+          containers:
+            - image: busybox:1.37.0-glibc
+              imagePullPolicy: IfNotPresent
+              name: pytorch # The name is a must
+              command: ["sh", "-c", "trap exit INT TERM; sleep 1m & wait"]
+              ports:
+                - containerPort: 23456
+                  name: pytorchjob-port
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "100Mi"
