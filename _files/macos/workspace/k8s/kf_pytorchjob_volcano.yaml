@@ -12,6 +12,7 @@ spec:
       restartPolicy: OnFailure
       template:
         spec:
+          schedulerName: volcano
           containers:
             - image: busybox:1.37.0-glibc
               imagePullPolicy: IfNotPresent
@@ -26,6 +27,7 @@ spec:
       restartPolicy: OnFailure
       template:
         spec:
+          schedulerName: volcano
           containers:
             - image: busybox:1.37.0-glibc
               imagePullPolicy: IfNotPresent

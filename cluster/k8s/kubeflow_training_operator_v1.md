@@ -72,44 +72,74 @@ pytest           0s
 pytest   Created   0s
 pytest   Running   1s
 pytest   Running   4s
-pytest   Running   4s
-pytest   Succeeded   63s
-pytest   Succeeded   63s
+pytest   Running   5s
+pytest   Running   5s
+pytest   Succeeded   33s
+pytest   Succeeded   33s
 ```
 
 ```console
-$ kubectl get po -owide -w
-NAME              READY   STATUS    RESTARTS   AGE   IP       NODE     NOMINATED NODE   READINESS GATES
-pytest-master-0   0/1     Pending   0          0s    <none>   <none>   <none>           <none>
-pytest-master-0   0/1     Pending   0          0s    <none>   las3     <none>           <none>
-pytest-worker-0   0/1     Pending   0          0s    <none>   <none>   <none>           <none>
-pytest-master-0   0/1     ContainerCreating   0          0s    <none>   las3     <none>           <none>
-pytest-worker-0   0/1     Pending             0          0s    <none>   las2     <none>           <none>
-pytest-worker-1   0/1     Pending             0          0s    <none>   <none>   <none>           <none>
-pytest-worker-1   0/1     Pending             0          0s    <none>   las1     <none>           <none>
-pytest-worker-2   0/1     Pending             0          0s    <none>   <none>   <none>           <none>
-pytest-worker-0   0/1     Init:0/1            0          0s    <none>   las2     <none>           <none>
-pytest-worker-2   0/1     Pending             0          0s    <none>   las3     <none>           <none>
-pytest-worker-1   0/1     Init:0/1            0          0s    <none>   las1     <none>           <none>
-pytest-worker-2   0/1     Init:0/1            0          0s    <none>   las3     <none>           <none>
-pytest-master-0   0/1     ContainerCreating   0          0s    <none>   las3     <none>           <none>
-pytest-worker-2   0/1     Init:0/1            0          0s    <none>   las3     <none>           <none>
-pytest-worker-1   0/1     Init:0/1            0          0s    <none>   las1     <none>           <none>
-pytest-worker-0   0/1     Init:0/1            0          0s    <none>   las2     <none>           <none>
-pytest-worker-2   0/1     Init:0/1            0          1s    192.168.185.36   las3     <none>           <none>
-pytest-master-0   1/1     Running             0          1s    192.168.185.8    las3     <none>           <none>
-pytest-worker-0   0/1     Init:0/1            0          1s    192.168.67.130   las2     <none>           <none>
-pytest-worker-2   0/1     PodInitializing     0          3s    192.168.185.36   las3     <none>           <none>
-pytest-worker-0   0/1     PodInitializing     0          3s    192.168.67.130   las2     <none>           <none>
-pytest-worker-2   1/1     Running             0          4s    192.168.185.36   las3     <none>           <none>
-pytest-worker-0   1/1     Running             0          4s    192.168.67.130   las2     <none>           <none>
-pytest-master-0   0/1     Completed           0          61s   192.168.185.8    las3     <none>           <none>
-pytest-master-0   0/1     Completed           0          62s   192.168.185.8    las3     <none>           <none>
-pytest-master-0   0/1     Completed           0          63s   192.168.185.8    las3     <none>           <none>
-pytest-worker-2   0/1     Completed           0          64s   192.168.185.36   las3     <none>           <none>
-pytest-worker-0   0/1     Completed           0          65s   192.168.67.130   las2     <none>           <none>
-pytest-worker-2   0/1     Completed           0          65s   192.168.185.36   las3     <none>           <none>
-pytest-worker-2   0/1     Completed           0          66s   192.168.185.36   las3     <none>           <none>
-pytest-worker-0   0/1     Completed           0          66s   192.168.67.130   las2     <none>           <none>
-pytest-worker-0   0/1     Completed           0          66s   192.168.67.130   las2     <none>           <none>
+$ kubectl get po -w
+NAME              READY   STATUS    RESTARTS   AGE
+pytest-master-0   0/1     Pending   0          0s
+pytest-master-0   0/1     Pending   0          0s
+pytest-worker-0   0/1     Pending   0          0s
+pytest-master-0   0/1     ContainerCreating   0          0s
+pytest-worker-0   0/1     Pending             0          0s
+pytest-worker-1   0/1     Pending             0          0s
+pytest-worker-1   0/1     Pending             0          0s
+pytest-worker-2   0/1     Pending             0          0s
+pytest-worker-0   0/1     Init:0/1            0          0s
+pytest-worker-2   0/1     Pending             0          0s
+pytest-worker-1   0/1     Init:0/1            0          0s
+pytest-worker-2   0/1     Init:0/1            0          0s
+pytest-master-0   0/1     ContainerCreating   0          0s
+pytest-worker-1   0/1     Init:0/1            0          0s
+pytest-worker-2   0/1     Init:0/1            0          0s
+pytest-worker-0   0/1     Init:0/1            0          0s
+pytest-worker-0   0/1     Init:0/1            0          1s
+pytest-worker-1   0/1     Init:0/1            0          1s
+pytest-master-0   1/1     Running             0          1s
+pytest-worker-2   0/1     Init:0/1            0          1s
+pytest-worker-2   0/1     PodInitializing     0          3s
+pytest-worker-0   0/1     PodInitializing     0          4s
+pytest-worker-1   0/1     PodInitializing     0          4s
+pytest-worker-2   1/1     Running             0          4s
+pytest-worker-0   1/1     Running             0          5s
+pytest-worker-1   1/1     Running             0          5s
+pytest-master-0   0/1     Completed           0          31s
+pytest-master-0   0/1     Completed           0          33s
+pytest-master-0   0/1     Completed           0          33s
+pytest-worker-2   0/1     Completed           0          34s
+pytest-worker-0   0/1     Completed           0          35s
+pytest-worker-1   0/1     Completed           0          35s
+pytest-worker-2   0/1     Completed           0          35s
+pytest-worker-2   0/1     Completed           0          36s
+pytest-worker-0   0/1     Completed           0          36s
+pytest-worker-0   0/1     Completed           0          36s
+pytest-worker-1   0/1     Completed           0          36s
+pytest-worker-1   0/1     Completed           0          36s
+```
+
+## Using volcano scheduler
+
+To use volcano scheduler, `schedulerName` must be specified on each Pod (`template.spec`):
+
+:::{literalinclude} /_files/macos/workspace/k8s/kf_pytorchjob_volcano.yaml
+:diff: /_files/macos/workspace/k8s/kf_pytorchjob.yaml
+:::
+
+Then you can see the podgroup created:
+
+```console
+$ kubectl get podgroup -owide -w
+NAME                                            STATUS    MINMEMBER   RUNNINGS   AGE   QUEUE
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Pending   1                      0s    default
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Running   1                      0s    default
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Running   1           1          2s    default
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Running   1           2          4s    default
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Running   1           4          6s    default
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Running   1           3          33s   default
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Running   1           2          35s   default
+podgroup-ba6f1707-0bad-4b0e-9002-9519e504a87c   Completed   1                      37s   default
 ```
