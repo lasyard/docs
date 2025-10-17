@@ -29,7 +29,7 @@ spec:
           containers:
             - image: busybox:1.37.0-glibc
               imagePullPolicy: IfNotPresent
-              name: pytorch # The name is a must
+              name: pytorch # must be `pytorch`
               command: ["sh", "-c", "trap exit INT TERM; sleep 30s & wait"]
               resources:
                 limits:

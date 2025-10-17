@@ -1,0 +1,15 @@
+$ kubectl get deploy training-operator -n kubeflow -oyaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+...
+spec:
+...
+  template:
+...
+    spec:
+      containers:
+      - command:
+        - /manager
+        - --gang-scheduler-name=volcano
+...
