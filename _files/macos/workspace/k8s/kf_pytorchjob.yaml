@@ -4,8 +4,8 @@ metadata:
   name: pytest
   namespace: default
 spec:
-  elasticPolicy:
-    maxRestarts: 3
+  runPolicy:
+    backoffLimit: 3
   pytorchReplicaSpecs:
     Master:
       replicas: 1 # must be 1
