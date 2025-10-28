@@ -247,4 +247,5 @@ ipx=false
 # Lines in this section will be run at startup.
 # You can put your MOUNT lines here.
 
-mount c ~/DOS
+mount C ~/DOS
+imgmount D ~/Downloads/software/Games/HEROES2/HEROES2.cue -t cdrom

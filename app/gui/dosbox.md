@@ -24,3 +24,11 @@ Edit `%USERPROFILE%\AppData\Local\DOSBox\dosbox-0.74-3.conf`:
 
 ::::
 :::::
+
+## Usage
+
+Hot keys:
+
+- {kbd}`Ctrl+F10` to release mouse
+- {kbd}`Ctrl+F12` to speed up
+- {kbd}`Ctrl+F11` to slow down
