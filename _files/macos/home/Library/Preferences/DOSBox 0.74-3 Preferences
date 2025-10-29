@@ -248,4 +248,5 @@ ipx=false
 # You can put your MOUNT lines here.
 
 mount C ~/DOS
-imgmount D ~/Downloads/software/Games/HEROES2/HEROES2.cue -t cdrom
+# No CD audio for HEROES2
+# imgmount D ~/Downloads/software/Games/HEROES2/HEROES2.cue -t cdrom
