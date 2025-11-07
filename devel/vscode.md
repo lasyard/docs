@@ -16,11 +16,16 @@ Install `im-select` for vim input method switching, See <https://github.com/daip
 
 ::::{tab-set}
 :::{tab-item} macOS Monterey
+:sync: macos
 
 ```console
 $ curl -Ls https://raw.githubusercontent.com/daipeihust/im-select/master/install_mac.sh | sh
 ```
 
+:::
+:::{tab-item} Windows 10
+:sync: windows
+Download the executable from <https://github.com/daipeihust/im-select/raw/refs/heads/master/win/out/x64/im-select.exe>, and put it to, e.g. `C:\app\im-select\`.
 :::
 ::::
 
@@ -35,6 +40,7 @@ Set `im-select` as the input method switching command in VSCode:
 
 ::::{tab-set}
 :::{tab-item} macOS Monterey
+:sync: macos
 
 ```json
 {
@@ -44,6 +50,21 @@ Set `im-select` as the input method switching command in VSCode:
   "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}"
 }
 ```
+
+:::
+:::{tab-item} Windows 10
+:sync: windows
+
+```json
+{
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "1033",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\\\app\\\\im-select\\\\im-select.exe",
+  "vim.autoSwitchInputMethod.switchIMCmd": "C:\\\\app\\\\im-select\\\\im-select.exe {im}"
+}
+```
+
+Don't forget the double back slashes.
 
 :::
 ::::
@@ -56,6 +77,7 @@ Install `shfmt`:
 
 ::::{tab-set}
 :::{tab-item} macOS Monterey
+:sync: macos
 
 By Homebrew:
 
@@ -77,6 +99,7 @@ v3.11.0
 
 :::
 :::{tab-item} Ubuntu 22.04
+:sync: ubuntu
 
 Download directly:
 
@@ -105,6 +128,7 @@ Install `clangd`:
 
 ::::{tab-set}
 :::{tab-item} Ubuntu 22.04
+:sync: ubuntu
 
 ```console
 $ sudo apt install clangd
@@ -132,6 +156,7 @@ Install clangd plugin in VSCode, then set:
 
 ::::{tab-set}
 :::{tab-item} Ubuntu 22.04
+:sync: ubuntu
 
 ```console
 $ sudo apt install bear

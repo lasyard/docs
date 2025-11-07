@@ -10,6 +10,9 @@ $ sudo apt install python3 python3-pip
 ```
 
 :::
+:::{tab-item} Windows 10
+Python 3.13 can be installed from Microsoft Store.
+:::
 :::{tab-item} MSYS2
 
 ```console
