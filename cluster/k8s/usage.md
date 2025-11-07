@@ -1,5 +1,18 @@
 # Use Kubernetes
 
+## Context
+
+```console
+$ kubectl config get-contexts
+CURRENT   NAME                   CLUSTER   AUTHINFO           NAMESPACE
+*         kubernetes-admin@las   las       kubernetes-admin
+```
+
+```console
+$ kubectl config current-context
+kubernetes-admin@las
+```
+
 ## Token management
 
 Create a token with 24h lifespan:
