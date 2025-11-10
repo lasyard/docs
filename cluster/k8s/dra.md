@@ -127,6 +127,18 @@ Spec:
 
 可以看到生成了名为 `gpu-*` 的设备（实际上每个节点上有 8 个）。
 
+:::{note}
+ResourceSlices are not deleted after the driver is uninstalled. Delete them by:
+
+```console
+$ kubectl delete resourceslice --field-selector spec.driver=gpu.example.com
+resourceslice.resource.k8s.io "las1-gpu.example.com-n297b" deleted
+resourceslice.resource.k8s.io "las2-gpu.example.com-tpwcb" deleted
+resourceslice.resource.k8s.io "las3-gpu.example.com-m4zn4" deleted
+```
+
+:::
+
 ### 测试
 
 在集群内创建一个 ResourceClaimTemplate:
