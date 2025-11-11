@@ -36,10 +36,10 @@ Homebrew/homebrew-core will be tapped during this install run.
 Press RETURN/ENTER to continue or any other key to abort:
 ==> /usr/bin/sudo /bin/mkdir -p /usr/local/var/homebrew/linked /usr/local/Cellar /usr/local/Caskroom /usr/local/Frameworks
 ==> /usr/bin/sudo /bin/chmod ug=rwx /usr/local/var/homebrew/linked /usr/local/Cellar /usr/local/Caskroom /usr/local/Frameworks
-==> /usr/bin/sudo /usr/sbin/chown jyg /usr/local/var/homebrew/linked /usr/local/Cellar /usr/local/Caskroom /usr/local/Frameworks
+==> /usr/bin/sudo /usr/sbin/chown xxxx /usr/local/var/homebrew/linked /usr/local/Cellar /usr/local/Caskroom /usr/local/Frameworks
 ==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/var/homebrew/linked /usr/local/Cellar /usr/local/Caskroom /usr/local/Frameworks
 ==> /usr/bin/sudo /bin/mkdir -p /usr/local/Homebrew
-==> /usr/bin/sudo /usr/sbin/chown -R jyg:admin /usr/local/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown -R xxxx:admin /usr/local/Homebrew
 ==> Downloading and installing Homebrew...
 ...
 ==> Installation successful!
@@ -54,8 +54,8 @@ No analytics data has been sent yet (nor will any be during this install run).
 
 ==> Next steps:
 - Run these commands in your terminal to add Homebrew to your PATH:
-    echo >> /Users/jyg/.zprofile
-    echo 'eval "$(/usr/local/bin/brew shellenv)"' >> /Users/jyg/.zprofile
+    echo >> /Users/xxxx/.zprofile
+    echo 'eval "$(/usr/local/bin/brew shellenv)"' >> /Users/xxxx/.zprofile
     eval "$(/usr/local/bin/brew shellenv)"
 - Run brew help to get started
 - Further documentation:

@@ -18,7 +18,7 @@ Run the project:
 
 ```console
 $ cargo run
-   Compiling hello-rust v0.1.0 (/Users/jyg/workspace/coding/rust/hello-rust)
+   Compiling hello-rust v0.1.0 (/Users/xxxx/workspace/coding/rust/hello-rust)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.84s
      Running `target/debug/hello-rust`
 Hello, world!
@@ -64,7 +64,7 @@ $ cargo build
    Compiling regex-automata v0.4.10
    Compiling regex v1.11.2
    Compiling ferris-says v0.3.2
-   Compiling hello-rust v0.1.0 (/Users/jyg/workspace/coding/rust/hello-rust)
+   Compiling hello-rust v0.1.0 (/Users/xxxx/workspace/coding/rust/hello-rust)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 13.92s
 ```
 
@@ -84,7 +84,7 @@ Run it to see the output:
 
 ```console
 $ cargo run        
-   Compiling hello-rust v0.1.0 (/Users/jyg/workspace/coding/rust/hello-rust)
+   Compiling hello-rust v0.1.0 (/Users/xxxx/workspace/coding/rust/hello-rust)
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.05s
      Running `target/debug/hello-rust`
  _______________

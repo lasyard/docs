@@ -15,26 +15,26 @@ programming language, and its package manager, Cargo.
 Rustup metadata and toolchains will be installed into the Rustup
 home directory, located at:
 
-  /Users/jyg/.rustup
+  /Users/xxxx/.rustup
 
 This can be modified with the RUSTUP_HOME environment variable.
 
 The Cargo home directory is located at:
 
-  /Users/jyg/.cargo
+  /Users/xxxx/.cargo
 
 This can be modified with the CARGO_HOME environment variable.
 
 The cargo, rustc, rustup and other commands will be added to
 Cargo's bin directory, located at:
 
-  /Users/jyg/.cargo/bin
+  /Users/xxxx/.cargo/bin
 
 This path will then be added to your PATH environment variable by
 modifying the profile files located at:
 
-  /Users/jyg/.profile
-  /Users/jyg/.zshenv
+  /Users/xxxx/.profile
+  /Users/xxxx/.zshenv
 
 You can uninstall at any time with rustup self uninstall and
 these changes will be reverted.

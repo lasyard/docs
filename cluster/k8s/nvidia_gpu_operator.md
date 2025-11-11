@@ -110,6 +110,8 @@ dcgm-expo 2985974 root   16u   CHR  508,0      0t0  794 /dev/nvidia-uvm
 nvidia-de 2986790 root   16u   CHR  508,0      0t0  794 /dev/nvidia-uvm
 ```
 
+## MIG
+
 Get MIG configs:
 
 ```console
@@ -147,3 +149,18 @@ node/xxxx labeled
 The default MIG strategy is `single`, which means each MIG instance appears as a `nvidia.com/gpu`. It can be changed to `mixed` during installation by `--set mig.strategy=mixed`.
 
 The `mixed` mode means the MIG instances (appearing as `nvidia.com/mig-1g.10gb`) are coexist with the normal GPUs.
+
+## DRA
+
+```console
+helm pull nvidia/nvidia-dra-driver-gpu --create-namespace
+helm install nvidia-dra-driver-gpu nvidia-dra-driver-gpu-25.8.0.tgz --create-namespace --namespace nvidia-dra-driver-gpu --set resources.gpus.enabled=false
+NAME: nvidia-dra-driver-gpu
+LAST DEPLOYED: Mon Nov 10 18:04:27 2025
+NAMESPACE: nvidia-dra-driver-gpu
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+```
+
+Minimum required version: 570.158.01
