@@ -100,3 +100,9 @@ Get manifest files of a release:
 ```console
 $ helm get manifest xxxx-release
 ```
+
+Show values:
+
+```console
+$ helm show values nvidia-dra-driver-gpu-25.8.0.tgz
+```

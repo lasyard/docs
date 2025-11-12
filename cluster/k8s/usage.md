@@ -261,3 +261,11 @@ $ kubectl get no -o custom-columns=NAME:.metadata.name,CPU:.status.capacity.cpu,
 :::{note}
 There must be double `\` to escape twice.
 :::
+
+## kubelet config of nodes
+
+Access kube API directly:
+
+```console
+$ kubectl get --raw "/api/v1/nodes/las1/proxy/configz" | jq
+```
