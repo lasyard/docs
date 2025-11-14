@@ -169,7 +169,7 @@ $ fastboot -i 0x1949 reboot
 
 网上所有针对 Android 设备，通过开机时按住某些键进入 Fastboot 模式的方法对本版本的 Kindle File HD 均不生效。唯一有效的办法是使用一根工程线 (Factory Cable). 工程线的电路如下图：
 
-![moto_amazon_fastboot_cable.png](/_images/hardware/moto_amazon_fastboot_cable.png)
+![kingle_factory_cable.png](/_images/hardware/kindle_factory_cable.png)
 
 通常的 USB 数据线主机一头是 Type-A, 只有 4 个引脚，设备侧是 Micro USB, ID 脚是悬空的（如果是 OTG 线则是接地的）。很难把一根普通数据线改造成工程线，因为这些线的 Micro USB 一头的 ID 脚没有引出线。只能购买有 5 个引出脚的裸 Micro USB 头进行焊接。下图是一种市售的 Micro USB 插头，5 根引脚分布在插头的两侧：
 
