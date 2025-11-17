@@ -20,8 +20,8 @@ After=network.target local-fs.target dbus.service
 [Service]
 #uncomment to enable the experimental sbservice (sandboxed) version of containerd/cri integration
 #Environment="ENABLE_CRI_SANDBOXES=sandboxed"
-Environment="HTTP_PROXY=http://hproxy.it.zetyun.cn:1080"
-Environment="HTTPS_PROXY=http://hproxy.it.zetyun.cn:1080"
+Environment="HTTP_PROXY=http://proxy.server:1080"
+Environment="HTTPS_PROXY=http://proxy.server:1080"
 Environment="NO_PROXY=localhost,127.0.0.1,10.220.70.0/24,10.225.4.0/24,10.96.0.0/12,192.168.0.0/16"
 ExecStartPre=-/sbin/modprobe overlay
 ExecStart=/usr/bin/containerd

@@ -5,7 +5,6 @@
 :::{toctree}
 :maxdepth: 1
 :glob:
-:numbered:
 install
 deploy
 teardown

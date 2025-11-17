@@ -128,7 +128,7 @@ Spec:
 可以看到生成了名为 `gpu-*` 的设备（实际上每个节点上有 8 个）。
 
 :::{note}
-ResourceSlices are not deleted after the driver is uninstalled. Delete them by:
+驱动卸载时没有删除 ResourceSlices. 用以下命令删除：
 
 ```console
 $ kubectl delete resourceslice --field-selector spec.driver=gpu.example.com
@@ -172,3 +172,55 @@ example-claim-example-4cb2t   pending              63s
 ```
 
 这种自动生成的 ResourceClaim 的所有者是这个 Pod, 当 Pod 被删除时它也被删除。
+
+## Kubernetes 1.34
+
+把集群升级到 1.34:
+
+```console
+$ kubectl get no
+NAME   STATUS   ROLES           AGE    VERSION
+las0   Ready    control-plane   189d   v1.34.2
+las1   Ready    <none>          189d   v1.34.2
+las2   Ready    <none>          189d   v1.34.2
+las3   Ready    <none>          185d   v1.34.2
+```
+
+`DynamicResourceAllocation` 特性在 Kubernetes 1.34 上默认启用，所以之前的额外参数可以去掉，但别忘了升级服务映像的版本：
+
+1. `/etc/kubernetes/manifests/kube-apiserver.yaml`
+
+   :::{literalinclude} /_files/ubuntu/etc/kubernetes/manifests/kube-apiserver_1.34.yaml
+   :diff: /_files/ubuntu/etc/kubernetes/manifests/kube-apiserver.yaml.orig
+   :::
+
+2. `/etc/kubernetes/manifests/kube-controller-manager.yaml`
+
+   :::{literalinclude} /_files/ubuntu/etc/kubernetes/manifests/kube-controller-manager_1.34.yaml
+   :diff: /_files/ubuntu/etc/kubernetes/manifests/kube-controller-manager.yaml.orig
+   :::
+
+3. `/etc/kubernetes/manifests/kube-scheduler.yaml`
+
+   :::{literalinclude} /_files/ubuntu/etc/kubernetes/manifests/kube-scheduler_1.34.yaml
+   :diff: /_files/ubuntu/etc/kubernetes/manifests/kube-scheduler.yaml.orig
+   :::
+
+检查 API 版本以确认：
+
+```console
+$ kubectl api-versions | grep resource.k8s.io
+resource.k8s.io/v1
+```
+
+重新安装 dra-example-driver.
+
+ResourceClaimTemplate 需要修改：
+
+:::{literalinclude} /_files/macos/workspace/k8s/dra/example_resourceclaimtemplate_1.34.yaml
+:diff: /_files/macos/workspace/k8s/dra/example_resourceclaimtemplate.yaml
+:::
+
+原来的对应字段被挪到了 `exactly` 下面。`exactly` 可以变为 `firstAvailable`, 其下可以放置一个列表以提供备选。
+
+Pod 的定义不需要任何修改。
