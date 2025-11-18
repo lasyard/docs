@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gpu
+spec:
+  completions: 2
+  completionMode: Indexed
+  parallelism: 2
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - image: ubuntu:22.04
+          imagePullPolicy: IfNotPresent
+          name: gpu-ubuntu
+          command: ["sh", "-c", "trap exit INT TERM; sleep 60s & wait"]
+          resources:
+            requests:
+              cpu: "1"
+              memory: 1Gi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+            claims:
+              - name: gpu
+      resourceClaims:
+        - name: gpu
+          resourceClaimName: gpu
