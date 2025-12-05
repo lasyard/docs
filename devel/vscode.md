@@ -69,6 +69,16 @@ Don't forget the double back slashes.
 :::
 ::::
 
+## Word wrapping
+
+For chinese characters, the soft wrapping exceeds the max width of view. To fix that, you need to change wrapping strategy from `simple` to `advanced`:
+
+```json
+{
+  "editor.wrappingStrategy": "advanced"
+}
+```
+
 ## Code Formatting
 
 ### shell
