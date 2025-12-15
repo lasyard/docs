@@ -37,6 +37,12 @@ Set time to one day before the original time:
 $ exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' −overwrite_original *
 ```
 
+Sometimes the digitized time is earlier than the taken time:
+
+```console
+$ exiftool -ext jpg -if '${CreateDate} lt ${DateTimeOriginal}' '-DateTimeOriginal<CreateDate' --overwrite-original *.jpg
+```
+
 ## Modify Camera Model
 
 Set camera model to `UNKNOWN` if it is not set in EXIF:
