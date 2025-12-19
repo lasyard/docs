@@ -40,7 +40,7 @@ $ exiftool -ext jpg -if '${DateTimeOriginal}' -DateTimeOriginal-='1 00:00:00' âˆ
 Sometimes the digitized time is earlier than the taken time:
 
 ```console
-$ exiftool -ext jpg -if '${CreateDate} lt ${DateTimeOriginal}' '-DateTimeOriginal<CreateDate' --overwrite-original *.jpg
+$ exiftool -ext jpg -if '${CreateDate} lt ${DateTimeOriginal}' '-DateTimeOriginal<CreateDate' -overwrite-original *
 ```
 
 ## Modify Camera Model
