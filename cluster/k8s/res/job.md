@@ -38,3 +38,21 @@ pod/sleep-0-hnf55   1/1     Running   0          37s   192.168.135.15   las1    
 pod/sleep-1-vkj5r   1/1     Running   0          37s   192.168.5.219    las2     <none>           <none>
 pod/sleep-2-6x526   1/1     Running   0          37s   192.168.5.220    las2     <none>           <none>
 ```
+
+## Schedule to the same node using pod affinity
+
+Change the job spec:
+
+:::{literalinclude} /_files/macos/workspace/k8s/sleep_job_pod_affinity.yaml
+:diff: /_files/macos/workspace/k8s/sleep_job.yaml
+:::
+
+After submitting, all pods are scheduled to the same node:
+
+```console
+$ kubectl get po -owide
+NAME            READY   STATUS    RESTARTS   AGE   IP               NODE   NOMINATED NODE   READINESS GATES
+sleep-0-zvz88   1/1     Running   0          4s    192.168.185.26   las3   <none>           <none>
+sleep-1-sd5v5   1/1     Running   0          4s    192.168.185.35   las3   <none>           <none>
+sleep-2-mbms6   1/1     Running   0          4s    192.168.185.54   las3   <none>           <none>
+```

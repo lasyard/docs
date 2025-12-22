@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sleep
+spec:
+  completions: 3
+  completionMode: Indexed
+  parallelism: 3
+  template:
+    spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: job-name
+                    operator: In
+                    values:
+                      - sleep
+              topologyKey: "kubernetes.io/hostname"
+      restartPolicy: OnFailure
+      containers:
+        - image: busybox:1.37.0-glibc
+          imagePullPolicy: IfNotPresent
+          name: sleep-busybox
+          command: ["sh", "-c", "trap exit INT TERM; sleep 1m & wait"]
+          resources:
+            requests:
+              cpu: "1"
+              memory: 100Mi
+            limits:
+              cpu: "1"
+              memory: 100Mi
