@@ -1,9 +1,10 @@
-# macOS
+# Debian
 
 <https://support.apple.com/macos>
 
 :::{toctree}
 :maxdepth: 1
 :numbered:
-grub.md
+grub
+misc
 :::
