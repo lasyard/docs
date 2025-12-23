@@ -2,10 +2,11 @@
 
 <https://httpd.apache.org/>
 
-This document is applicable to macOS Monterey.
-
 ## Install
 
+::::{tab-set}
+:::{tab-item} macOS Monterey
+:sync: macos
 `apache2` is pre-installed on macOS Monterey as `httpd`.
 
 Check the version:
@@ -41,8 +42,44 @@ Make it start at boot:
 $ sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
+:::
+:::{tab-item} Debian 12
+:sync: debian
+
+```console
+$ sudo apt install apache2
+```
+
+```console
+$ sudo apache2 -v
+Server version: Apache/2.4.65 (Debian)
+Server built:   2025-07-29T20:18:46
+```
+
+```console
+$ systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2025-12-23 03:42:21 CST; 31s ago
+       Docs: https://httpd.apache.org/docs/2.4/
+   Main PID: 1500 (apache2)
+      Tasks: 55 (limit: 2236)
+     Memory: 11.1M
+        CPU: 135ms
+     CGroup: /system.slice/apache2.service
+             ├─1500 /usr/sbin/apache2 -k start
+             ├─1501 /usr/sbin/apache2 -k start
+             └─1502 /usr/sbin/apache2 -k start
+```
+
+:::
+::::
+
 ## Enable php
 
+:::::{tab-set}
+::::{tab-item} macOS Monetery
+:sync: macos
 You need install `php` mannually for php is deprecated in macOS Monterey.
 
 Code signing is required on new macOS versions, so a certificate authority (CA) is needed to sign the php library. See [How to create Certificate Authority for Code Signing in macOS](https://www.simplified.guide/macos/keychain-ca-code-signing-create) to create a CA.
@@ -79,9 +116,22 @@ Edit apache config file `/etc/apache2/httpd.conf`:
 :::{note}
 CA Name is appended to the LoadModule line for `php`.
 :::
+::::
+::::{tab-item} Debian 12
+:sync: debian
+
+```console
+$ sudo apt install php
+```
+
+::::
+:::::
 
 ### Enable user directory access
 
+:::::{tab-set}
+::::{tab-item} macOS Monterey
+:sync: macos
 Edit apache config file `/etc/apache2/extra/httpd-userdir.conf`:
 
 :::{literalinclude} /_files/macos/etc/apache2/extra/httpd-userdir.conf
@@ -116,3 +166,6 @@ See this URL:
 ```console
 open http://localhost/~xxxx/
 ```
+
+::::
+:::::
