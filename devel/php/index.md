@@ -6,5 +6,6 @@
 :maxdepth: 1
 :numbered:
 install
+xdebug
 composer
 :::

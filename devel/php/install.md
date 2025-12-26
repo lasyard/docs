@@ -1,6 +1,10 @@
 # Install PHP Development Evironment
 
-## Install on macOS Monterey
+## Install
+
+::::{tab-set}
+:::{tab-item} macOS Monterey
+:sync: macos
 
 ```console
 $ brew install php
@@ -15,7 +19,24 @@ Copyright (c) The PHP Group
 Zend Engine v4.3.11, Copyright (c) Zend Technologies
 ```
 
+:::
+:::{tab-item} Debian 12
+
+```console
+$ sudo apt install php
+$ sudo apt install php-mysql
+$ sudo apt install php-mbstring
+$ sudo apt install php-xml
+```
+
+:::
+::::
+
 ## Configure
+
+:::::{tab-set}
+::::{tab-item} macOS Monterey
+:sync: macos
 
 See where to find `ini` configuration:
 
@@ -32,3 +53,5 @@ For macOS Monterey, you need to disable loading opcache, for there is no way to 
 :::{literalinclude} /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini
 :diff: /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini.orig
 :::
+::::
+:::::

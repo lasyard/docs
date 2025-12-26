@@ -72,6 +72,15 @@ $ systemctl status apache2
              └─1502 /usr/sbin/apache2 -k start
 ```
 
+Enable modules:
+
+```console
+$ sudo a2enmod rewrite
+Enabling module rewrite.
+To activate the new configuration, you need to run:
+  systemctl restart apache2
+```
+
 :::
 ::::
 
@@ -120,9 +129,7 @@ CA Name is appended to the LoadModule line for `php`.
 ::::{tab-item} Debian 12
 :sync: debian
 
-```console
-$ sudo apt install php
-```
+See <project:/devel/php/install.md>.
 
 ::::
 :::::
