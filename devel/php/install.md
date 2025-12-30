@@ -27,6 +27,8 @@ $ sudo apt install php
 $ sudo apt install php-mysql
 $ sudo apt install php-mbstring
 $ sudo apt install php-xml
+$ sudo apt install php-gd
+$ sudo apt install php-imagick
 ```
 
 :::
@@ -53,5 +55,21 @@ For macOS Monterey, you need to disable loading opcache, for there is no way to 
 :::{literalinclude} /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini
 :diff: /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini.orig
 :::
+::::
+::::{tab-item} Debian 12
+
+Use development config:
+
+```console
+$ sudo ln -snvf php.ini-development /etc/php/8.2/apache2/php.ini 
+'/etc/php/8.2/apache2/php.ini' -> 'php.ini-development'
+```
+
+Set mod to access session dir:
+
+```console
+$ sudo chmod a+r /var/lib/php/sessions/
+```
+
 ::::
 :::::
