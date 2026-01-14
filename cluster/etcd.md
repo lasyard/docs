@@ -84,6 +84,13 @@ $ etcdctl get /registry/namespaces/default
 
 The output is protobuf-encoded.
 
+Delete a key:
+
+```console
+$ etcdctl del /registry/kueue.x-k8s.io/clusterqueues/test
+1
+```
+
 Show members of `etcd` cluster:
 
 ```console
