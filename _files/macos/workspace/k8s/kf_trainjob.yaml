@@ -1,0 +1,21 @@
+apiVersion: trainer.kubeflow.org/v1alpha1
+kind: TrainJob
+metadata:
+  name: test
+  labels:
+    kueue.x-k8s.io/queue-name: test
+spec:
+  runtimeRef:
+    name: torch-distributed
+  trainer:
+    numNodes: 3
+    image: busybox:1.37.0-glibc
+    command: ["sh", "-c", "trap exit INT TERM; sleep 30s & wait"]
+    numProcPerNode: 1
+    resourcesPerNode:
+      requests:
+        cpu: "1"
+        memory: "128Mi"
+      limits:
+        cpu: "1"
+        memory: "128Mi"

@@ -4,6 +4,7 @@
 
 :::::{tab-set}
 ::::{tab-item} Ubuntu 22.04
+:sync: ubuntu
 
 Add the Kubernetes repository:
 
@@ -58,9 +59,16 @@ Canceled hold on kubectl.
 
 `kubectl` can be installed anywhere to access k8s system.
 
+::::{tab-set}
+:::{tab-item} macOS Monterey
+:sync: macos
+
 ```console
 $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
 ```
+
+:::
+::::
 
 Check the versions:
 
