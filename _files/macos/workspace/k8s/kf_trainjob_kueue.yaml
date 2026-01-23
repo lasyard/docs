@@ -2,6 +2,8 @@ apiVersion: trainer.kubeflow.org/v1alpha1
 kind: TrainJob
 metadata:
   name: test
+  labels:
+    kueue.x-k8s.io/queue-name: test
 spec:
   runtimeRef:
     name: torch-distributed

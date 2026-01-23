@@ -137,3 +137,11 @@ pod/test-node-0-0-bxjmh   1/1     Running   0          20s   192.168.185.5     l
 pod/test-node-0-1-xjszt   1/1     Running   0          20s   192.168.67.135    las2   <none>           <none>
 pod/test-node-0-2-bgvx4   1/1     Running   0          20s   192.168.221.136   las1   <none>           <none>
 ```
+
+## Integrate with Kueue
+
+Kueue support TrainJob by default, just add the label:
+
+:::{literalinclude} /_files/macos/workspace/k8s/kf_trainjob_kueue.yaml
+:diff: /_files/macos/workspace/k8s/kf_trainjob.yaml
+:::
