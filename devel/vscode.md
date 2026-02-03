@@ -190,3 +190,12 @@ For `ms-vscode.cpptools` plugin, the `.clang-format` file can be put outside the
   "C_Cpp.clang_format_style": "file:~/workspace/.clang-format"
 }
 ```
+
+## File Operations Paticipants
+
+Sometimes the participants are doing time-consuming things, halting file operations like creating, renaming and deleting. Measure in `ms`, set to 0 to disable them.
+
+```json
+{
+  "files.participants.timeout": 500
+}
