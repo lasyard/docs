@@ -4,8 +4,29 @@
 
 ## Install vCluster CLI command
 
+::::{tab-set}
+:::{tab-item} latest
+
 ```console
-$ curl -LO https://github.com/loft-sh/vcluster/releases/download/v0.25.1-rc.3/vcluster-linux-amd64
+$ curl -LO "https://github.com/loft-sh/vcluster/releases/latest/download/vcluster-linux-amd64"
+```
+
+```console
+$ sudo install -c -m 0755 vcluster-linux-amd64 /usr/local/bin/vcluster
+```
+
+Check the version:
+
+```console
+$ vcluster --version
+vcluster version 0.31.0
+```
+
+:::
+:::{tab-item} v0.25.1
+
+```console
+$ curl -LO https://github.com/loft-sh/vcluster/releases/download/v0.25.1/vcluster-linux-amd64
 ```
 
 ```console
@@ -19,8 +40,13 @@ $ vcluster --version
 vcluster version 0.25.1
 ```
 
+:::
+::::
+
 ## Deploy a vcluster
 
+:::::{tab-set}
+::::{tab-item} v0.25.1
 Before deployment, dowload this file to see which images are required:
 
 ```console
@@ -41,8 +67,17 @@ Image is up to date for sha256:0fec489cb9567ea62da1e369e2d4704836ae2c3f15c1a1a75
 ```
 
 :::
+::::
+:::::
+
+:::{note}
+A default StorageClass in the host cluster is needed to provision data volumes for vcluster pod.
+:::
 
 Deploy a vcluster:
+
+::::{tab-set}
+:::{tab-item} v0.25.1
 
 ```console
 $ vcluster create my-vcluster --namespace team-x
@@ -61,6 +96,9 @@ Handling connection for 12893
 - Use CTRL+C to return to your previous kube context
 - Use `kubectl get namespaces` in another terminal to access the vcluster
 ```
+
+:::
+::::
 
 If the above command exits, you can redo port-forwarding by:
 
