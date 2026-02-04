@@ -1,6 +1,18 @@
 # Use Kubernetes
 
-## Context
+## Kubectl config
+
+```console
+$ kubectl config get-clusters
+NAME
+las
+```
+
+```console
+$ kubectl config get-users
+NAME
+kubernetes-admin
+```
 
 ```console
 $ kubectl config get-contexts
@@ -11,6 +23,12 @@ CURRENT   NAME                   CLUSTER   AUTHINFO           NAMESPACE
 ```console
 $ kubectl config current-context
 kubernetes-admin@las
+```
+
+Combine two config files:
+
+```console
+$ KUBECONFIG=${HOME}/.kube/config:another_config kubectl config view --flatten > new_config
 ```
 
 ## Token management
