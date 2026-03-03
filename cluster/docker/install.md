@@ -118,7 +118,7 @@ Server:
  Live Restore Enabled: false
 ```
 
-## Set mirrors
+## Daemon config
 
 Edit file `/etc/docker/daemon.json` to set docker daemon:
 
@@ -126,16 +126,13 @@ Edit file `/etc/docker/daemon.json` to set docker daemon:
 {
     "registry-mirrors": [
         "https://docker.m.daocloud.io"
-    ]
+    ],
+    "proxies": {
+        "http-proxy": "http://hproxy.it.zetyun.cn:1080",
+        "https-proxy": "http://hproxy.it.zetyun.cn:1080"
+    }
 }
 ```
-
-## Set proxies
-
-Edit file `~/.docker/config.json` to set docker client for the current user:
-
-:::{literalinclude} /_files/ubuntu/home/docker/config.json
-:::
 
 ## Run hello-world
 
