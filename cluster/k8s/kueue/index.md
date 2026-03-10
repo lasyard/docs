@@ -5,6 +5,6 @@
 :::{toctree}
 :maxdepth: 1
 :glob:
-kueue
+kueue_install
 *
 :::

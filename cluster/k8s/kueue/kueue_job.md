@@ -89,6 +89,10 @@ sleep-normal-1-bfjt2   default
 sleep-normal-2-2k8d8   default
 ```
 
+:::{tip}
+Kueue 0.16.2 中 ResourceFlavor 定义已支持不设 nodeLabels.
+:::
+
 查看其中一个 Pod 的事件：
 
 ```console

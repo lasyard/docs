@@ -1,6 +1,4 @@
-# Kueue
-
-## Installation
+# 安装 Kueue
 
 By `helm`:
 

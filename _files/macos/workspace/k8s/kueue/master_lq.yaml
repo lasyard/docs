@@ -1,0 +1,36 @@
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: ResourceFlavor
+metadata:
+  name: default
+---
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: ClusterQueue
+metadata:
+  name: to-worker1
+spec:
+  namespaceSelector: {} # match all.
+  admissionChecksStrategy:
+    admissionChecks:
+      - name: worker1-admission-check
+  resourceGroups:
+    - coveredResources:
+        - cpu
+        - memory
+        - pods
+      flavors:
+        - name: default
+          resources:
+            - name: cpu
+              nominalQuota: 8
+            - name: memory
+              nominalQuota: 8Gi
+            - name: pods
+              nominalQuota: 8
+---
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: LocalQueue
+metadata:
+  namespace: default
+  name: test
+spec:
+  clusterQueue: to-worker1
