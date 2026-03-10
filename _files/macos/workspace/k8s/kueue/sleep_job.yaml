@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sleep-normal
+spec:
+  completions: 3
+  completionMode: Indexed
+  parallelism: 3
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - image: busybox
+          imagePullPolicy: IfNotPresent
+          name: busybox-sleep
+          command: ["sh", "-c", "trap exit INT TERM; sleep 30s & wait"]
+          resources:
+            requests:
+              cpu: "1"
+            limits:
+              cpu: "1"

@@ -1,0 +1,50 @@
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: Topology
+metadata:
+  name: "default"
+spec:
+  levels:
+    - nodeLabel: "datacanvas.io/region"
+    - nodeLabel: "datacanvas.io/rack"
+    - nodeLabel: "kubernetes.io/hostname"
+---
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: ResourceFlavor
+metadata:
+  name: default
+spec:
+  topologyName: "default"
+  nodeLabels:
+    node-group: "tas"
+---
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: ClusterQueue
+metadata:
+  name: test
+spec:
+  namespaceSelector: {} # match all.
+  resourceGroups:
+    - coveredResources:
+        - cpu
+        - memory
+        - pods
+        - nvidia.com/gpu
+      flavors:
+        - name: default
+          resources:
+            - name: cpu
+              nominalQuota: 4
+            - name: memory
+              nominalQuota: 64Gi
+            - name: pods
+              nominalQuota: 4
+            - name: nvidia.com/gpu
+              nominalQuota: 24
+---
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: LocalQueue
+metadata:
+  namespace: default
+  name: test
+spec:
+  clusterQueue: test

@@ -12,5 +12,6 @@ usage
 helm
 dashboard
 res/index
+*/index
 *
 :::

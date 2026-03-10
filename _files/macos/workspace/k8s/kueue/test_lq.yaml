@@ -1,0 +1,36 @@
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: ResourceFlavor
+metadata:
+  name: default
+spec:
+  nodeLabels:
+    node-group: default
+---
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: ClusterQueue
+metadata:
+  name: test
+spec:
+  namespaceSelector: {} # match all.
+  resourceGroups:
+    - coveredResources:
+        - cpu
+        - memory
+        - pods
+      flavors:
+        - name: default
+          resources:
+            - name: cpu
+              nominalQuota: 4
+            - name: memory
+              nominalQuota: 64Gi
+            - name: pods
+              nominalQuota: 4
+---
+apiVersion: kueue.x-k8s.io/v1beta2
+kind: LocalQueue
+metadata:
+  namespace: default
+  name: test
+spec:
+  clusterQueue: test

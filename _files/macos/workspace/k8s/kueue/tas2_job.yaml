@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tas
+  labels:
+    kueue.x-k8s.io/queue-name: test
+spec:
+  completions: 3
+  completionMode: Indexed
+  parallelism: 3
+  template:
+    metadata:
+      annotations:
+        kueue.x-k8s.io/podset-preferred-topology: "kubernetes.io/hostname"
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - image: busybox
+          imagePullPolicy: IfNotPresent
+          name: busybox-sleep
+          command: ["sh", "-c", "trap exit INT TERM; sleep 30s & wait"]
+          resources:
+            requests:
+              cpu: "1"
+              memory: "100Mi"
+              nvidia.com/gpu: "4"
+            limits:
+              cpu: "1"
+              memory: "100Mi"
+              nvidia.com/gpu: "4"

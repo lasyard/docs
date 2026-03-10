@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test2
+  labels:
+    kueue.x-k8s.io/queue-name: test2
+spec:
+  completions: 2
+  completionMode: Indexed
+  parallelism: 2
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - image: busybox
+          imagePullPolicy: IfNotPresent
+          name: busybox-sleep
+          command: ["sh", "-c", "trap exit INT TERM; sleep 30s & wait"]
+          resources:
+            requests:
+              cpu: "1"
+            limits:
+              cpu: "1"
