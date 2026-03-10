@@ -66,3 +66,24 @@ topologies                                       kueue.x-k8s.io/v1beta2   false 
 workloadpriorityclasses                          kueue.x-k8s.io/v1beta2   false        WorkloadPriorityClass
 workloads                    wl                  kueue.x-k8s.io/v1beta2   true         Workload
 ```
+
+## 与 Pod 集成
+
+Kueue 的默认配置不处理 Pod, 需要修改配置进行添加：
+
+```console
+$ kubectl edit cm kueue-manager-config -n kueue-system
+```
+
+修改内容如下：
+
+:::{literalinclude} /_files/macos/console/kubectl/get_cm_kueue_manager_pod.txt
+:diff: /_files/macos/console/kubectl/get_cm_kueue_manager.txt
+:::
+
+修改后重启控制器生效：
+
+```console
+$ kubectl rollout restart deploy kueue-controller-manager -n kueue-system
+deployment.apps/kueue-controller-manager restarted
+```
