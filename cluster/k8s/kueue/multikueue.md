@@ -1,6 +1,14 @@
 # 使用 MultiKueue 特性分发作业到多集群
 
-利用 Kueue 的 MultiKueue 特性可以将作业从管理集群分发到工作集群。
+利用 Kueue 的 MultiKueue 特性可以将作业从管理集群分发到工作集群，基本过程如下：
+
+1. 用户提交作业到管理集群
+2. 管理集群的 Kueue 控制器拦截作业，并向工作集群提交相同的作业
+3. 工作集群按正常流程处理和运行作业
+
+![multikueue.png](/_generated_images/cluster/k8s/kueue/multikueue.png)
+
+相同的作业在两个集群都要提交一次，因此作业所在的命名空间和队列必须在两个集群中都存在。
 
 目前 Kueue 0.16.2 不支持向管理集群自身分发作业。
 
@@ -26,7 +34,7 @@ MultikueueConfig }o--|{ MultikueueCluster : ""
 MultikueueCluster }o--|| Secret : ""
 ```
 
-可见增加的属性经过多层引用后最终指向了一个 Secret, 这个 Secret 存放着工作集群的 kubeconfig. 这是管理集群中的 Kueue 访问工作集群的基础。
+可见增加的属性经过多层引用后最终指向了一个 Secret, 这个 Secret 存放着工作集群的 kubeconfig. 这是管理集群中的 Kueue 访问工作集群的依据。
 
 ## 配置
 
