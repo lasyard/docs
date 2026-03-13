@@ -8,6 +8,7 @@ os/index
 bigdata/index
 cluster/index
 devel/index
+ai/index
 notes/index
 hardware/index
 physics/index
