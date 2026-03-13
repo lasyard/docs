@@ -77,7 +77,7 @@ torchtune-qwen2.5-1.5b   78s
 
 The definition of `torch-distributed`:
 
-````console
+```console
 $ kubectl get clustertrainingruntimes torch-distributed -oyaml
 apiVersion: trainer.kubeflow.org/v1alpha1
 kind: ClusterTrainingRuntime
@@ -116,7 +116,7 @@ spec:
 
 Submit a TrainJob:
 
-:::{literalinclude} /_files/macos/workspace/k8s/kf_trainjob.yaml
+:::{literalinclude} /_files/macos/workspace/k8s/kubeflow/trainjob.yaml
 :::
 
 Show running workloads:
@@ -142,6 +142,6 @@ pod/test-node-0-2-bgvx4   1/1     Running   0          20s   192.168.221.136   l
 
 Kueue support TrainJob by default, just add the label:
 
-:::{literalinclude} /_files/macos/workspace/k8s/kf_trainjob_kueue.yaml
-:diff: /_files/macos/workspace/k8s/kf_trainjob.yaml
+:::{literalinclude} /_files/macos/workspace/k8s/kubeflow/trainjob_kueue.yaml
+:diff: /_files/macos/workspace/k8s/kubeflow/trainjob.yaml
 :::

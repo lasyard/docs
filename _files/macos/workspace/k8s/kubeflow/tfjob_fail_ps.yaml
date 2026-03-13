@@ -1,0 +1,37 @@
+apiVersion: kubeflow.org/v1
+kind: TFJob
+metadata:
+  name: tftest
+  namespace: default
+spec:
+  runPolicy:
+    backoffLimit: 3
+  tfReplicaSpecs:
+    PS:
+      replicas: 1
+      restartPolicy: Always
+      template:
+        spec:
+          containers:
+            - image: busybox:1.37.0-glibc
+              imagePullPolicy: IfNotPresent
+              name: tensorflow # must be `tensorflow`
+              command: ["sh", "-c", "trap exit INT TERM; sleep 15s & wait && exit 1"]
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "100Mi"
+    Worker:
+      replicas: 3
+      restartPolicy: OnFailure
+      template:
+        spec:
+          containers:
+            - image: busybox:1.37.0-glibc
+              imagePullPolicy: IfNotPresent
+              name: tensorflow # must be `tensorflow`
+              command: ["sh", "-c", "trap exit INT TERM; sleep 30s & wait"]
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "100Mi"

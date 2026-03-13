@@ -1,0 +1,13 @@
+$ kubectl get q default -oyaml
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: Queue
+metadata:
+...
+spec:
+  capability:
+    cpu: 2
+  guarantee: {}
+  parent: root
+  reclaimable: true
+  weight: 1
+...

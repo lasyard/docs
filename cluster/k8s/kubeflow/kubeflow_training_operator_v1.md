@@ -51,15 +51,15 @@ xgboostjobs.kubeflow.org                              2025-10-13T08:27:16Z
 
 ## Testing
 
-Edit file `kf_pytorchjob.yaml`:
+Edit file `pytorchjob.yaml`:
 
-:::{literalinclude} /_files/macos/workspace/k8s/kf_pytorchjob.yaml
+:::{literalinclude} /_files/macos/workspace/k8s/kubeflow/pytorchjob.yaml
 :::
 
 Apply to the cluster:
 
 ```console
-$ kubectl apply -f kf_pytorchjob.yaml 
+$ kubectl apply -f pytorchjob.yaml 
 pytorchjob.kubeflow.org/pytest created
 ```
 

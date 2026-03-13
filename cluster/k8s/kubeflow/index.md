@@ -1,4 +1,4 @@
-# Kueue
+# Kubeflow
 
 <https://www.kubeflow.org/>
 
