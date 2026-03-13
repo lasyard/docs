@@ -1,0 +1,52 @@
+apiVersion: kubeflow.org/v1
+kind: TFJob
+metadata:
+  name: tftest
+  namespace: default
+spec:
+  runPolicy:
+    backoffLimit: 3
+  tfReplicaSpecs:
+    PS:
+      replicas: 1
+      restartPolicy: Always
+      template:
+        spec:
+          containers:
+            - image: busybox:1.37.0-glibc
+              imagePullPolicy: IfNotPresent
+              name: tensorflow # must be `tensorflow`
+              command: ["sh", "-c", "trap exit INT TERM; sleep 30s & wait"]
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "100Mi"
+    Worker:
+      replicas: 3
+      restartPolicy: ExitCode
+      template:
+        spec:
+          containers:
+            - image: busybox:1.37.0-glibc
+              imagePullPolicy: IfNotPresent
+              name: tensorflow # must be `tensorflow`
+              env:
+                - name: POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.name
+              command:
+                - "sh"
+                - "-c"
+                - |
+                  trap exit INT TERM
+                  if [ "${POD_NAME}" = "tftest-worker-0" ]; then
+                    sleep 10s & wait
+                    exit 138
+                  else
+                    sleep 30s & wait
+                  fi
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "100Mi"
