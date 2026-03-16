@@ -1,0 +1,16 @@
+$ kubectl get q a2 -oyaml
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: Queue
+...
+spec:
+  deserved:
+    cpu: 2
+  parent: a
+  reclaimable: true
+  weight: 1
+status:
+  allocated:
+    cpu: "0"
+    memory: "0"
+  reservation: {}
+  state: Open

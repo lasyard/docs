@@ -1,0 +1,33 @@
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: Queue
+metadata:
+  name: a
+spec:
+  reclaimable: true
+  capability:
+    cpu: 4
+  deserved:
+    cpu: 4
+  guarantee:
+    resource:
+      cpu: 4
+---
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: Queue
+metadata:
+  name: a1
+spec:
+  reclaimable: true
+  parent: a
+  deserved:
+    cpu: 2
+---
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: Queue
+metadata:
+  name: a2
+spec:
+  reclaimable: true
+  parent: a
+  deserved:
+    cpu: 2

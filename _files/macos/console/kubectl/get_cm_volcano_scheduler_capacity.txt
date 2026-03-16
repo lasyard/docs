@@ -1,0 +1,22 @@
+$ kubectl get cm volcano-scheduler-configmap -n volcano-system -oyaml
+apiVersion: v1
+data:
+  volcano-scheduler.conf: |
+    actions: "enqueue, allocate, backfill, preempt, reclaim"
+    tiers:
+    - plugins:
+      - name: priority
+      - name: overcommit
+      - name: gang
+        enablePreemptable: false
+      - name: conformance
+    - plugins:
+      - name: drf
+        enablePreemptable: false
+      - name: predicates
+      - name: capacity
+        enableHierarchy: true
+      - name: nodeorder
+      - name: binpack
+kind: ConfigMap
+...
