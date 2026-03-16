@@ -128,8 +128,8 @@ Edit file `/etc/docker/daemon.json` to set docker daemon:
         "https://docker.m.daocloud.io"
     ],
     "proxies": {
-        "http-proxy": "http://hproxy.it.zetyun.cn:1080",
-        "https-proxy": "http://hproxy.it.zetyun.cn:1080"
+        "http-proxy": "http://proxy:1088",
+        "https-proxy": "https://proxy:1088"
     }
 }
 ```

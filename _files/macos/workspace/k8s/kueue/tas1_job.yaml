@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       annotations:
-        kueue.x-k8s.io/podset-required-topology: "datacanvas.io/rack"
+        kueue.x-k8s.io/podset-required-topology: "lasyard.io/rack"
     spec:
       restartPolicy: OnFailure
       containers:

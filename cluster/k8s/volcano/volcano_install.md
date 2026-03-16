@@ -110,5 +110,5 @@ basic:
 安装时可以通过 `--set` 参数改变默认值，例如：
 
 ```console
-$ helm install volcano volcano-1.12.2.tgz -n volcano-system --create-namespace --set basic.image_pull_policy=IfNotPresent --set basic.image_registry=harbor.hd-03.zetyun.cn
+$ helm install volcano volcano-1.12.2.tgz -n volcano-system --create-namespace --set basic.image_pull_policy=IfNotPresent --set basic.image_registry=harbor.address
 ```

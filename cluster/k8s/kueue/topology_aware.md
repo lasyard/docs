@@ -15,9 +15,9 @@
 
 ```console
 $ kubectl label node --all node-group=tas --overwrite
-$ kubectl label node --all datacanvas.io/region=region0
-$ kubectl label node las0 las1 datacanvas.io/rack=rack0
-$ kubectl label node las2 las3 datacanvas.io/rack=rack1
+$ kubectl label node --all lasyard.io/region=region0
+$ kubectl label node las0 las1 lasyard.io/rack=rack0
+$ kubectl label node las2 las3 lasyard.io/rack=rack1
 ```
 
 通过以上标签设置，形成了下图所示的节点拓扑：
