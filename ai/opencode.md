@@ -9,7 +9,7 @@ $ curl -fsSL https://opencode.ai/install | bash
 
 Installing opencode version: 1.2.25
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 100%
-Successfully added opencode to $PATH in /Users/jyg/.zshrc
+Successfully added opencode to $PATH in /Users/xxxx/.zshrc
 
                                  ▄     
 █▀▀█ █▀▀█ █▀▀█ █▀▀▄ █▀▀▀ █▀▀█ █▀▀█ █▀▀█
