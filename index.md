@@ -2,6 +2,7 @@
 
 :::{toctree}
 :maxdepth: 2
+:glob:
 app/index
 service/index
 os/index
@@ -10,7 +11,5 @@ cluster/index
 devel/index
 ai/index
 notes/index
-hardware/index
-physics/index
-maths/index
+*/index
 :::

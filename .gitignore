@@ -18,3 +18,8 @@ _build/
 # Compiled Python files
 __pycache__/
 *.pyc
+
+# Special files
+/work
+/_images/work
+/_generated_images/work
