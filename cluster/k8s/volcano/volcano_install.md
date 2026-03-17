@@ -68,6 +68,24 @@ default   16h
 root      16h
 ```
 
+## 说明
+
+- volcano 调度器安装成功后会建立两个默认的队列：`root` 和 `default`. `root` 代表调度器可以使用的全部资源，`default` 是 `root` 的子队列。新建的队列如果不指定则父队列为 `root`
+- `root` 队列的容量不可以修改，但 `default` 队列的容量可以通过 `kubectl edit` 修改
+- `root` 和 `default` 队列不能删除
+- 非 volcano 系的 Workload (例如 Pod) 可以指定调度器为 volcano, 但是因为其 Spec 不支持 `queue` 字段，所以不能指定队列，这时消耗的是 `default` 队列的资源
+
+队列的资源设置：
+
+```yaml
+spec:
+  capability: 队列的资源上限
+  deserved: 队列保留的资源数量，空闲时可以借用给其他队列，但本队列的任务优先使用
+  guarantee:
+    resource: 队列独占的资源数量，即使空闲也不能被其他队列借用，注意其定义多一层 resource
+  reclaimable: 如果设置为 true, 当本队列有任务提交但是资源被其他队列借用导致资源不够时，可以强制退出其他队列的任务以释放资源；如果为 false, 只能等待其他队列任务主动退出
+```
+
 ## 配置
 
 安装成功后修改调度器配置：
