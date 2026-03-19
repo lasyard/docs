@@ -1,0 +1,5 @@
+prometheus-node-exporter:
+  service:
+    port: 19100
+    targetPort: 19100
+  containerPort: 19100
