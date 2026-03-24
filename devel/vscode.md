@@ -199,3 +199,12 @@ Sometimes the participants are doing time-consuming things, halting file operati
 {
   "files.participants.timeout": 500
 }
+```
+
+## Install `code` command
+
+Press {kbd}`Command+Shift+P` to open the command panel, then search and execute the following command:
+
+```text
+Shell Command: Install 'code' command in PATH
+```
