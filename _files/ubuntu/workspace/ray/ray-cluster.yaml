@@ -1,0 +1,21 @@
+cluster_name: las
+
+provider:
+  type: local
+  head_ip: 10.225.4.51
+  worker_ips:
+    - 10.225.4.52
+    - 10.225.4.53
+    - 10.225.4.54
+
+auth:
+  ssh_user: ubuntu
+  ssh_private_key: ~/.ssh/id_ed25519
+
+head_start_ray_commands:
+  - ray stop
+  - ray start --head --port=6379 --dashboard-host=0.0.0.0 --autoscaling-config=~/workspace/ray-cluster.yaml
+
+worker_start_ray_commands:
+  - ray stop
+  - ray start --address=$RAY_HEAD_IP:6379
