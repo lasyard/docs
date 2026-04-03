@@ -3,6 +3,7 @@
 !.gitattributes
 !.gitmodules
 !.editorconfig
+!.github/
 
 *.log
 
