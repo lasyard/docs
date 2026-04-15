@@ -236,3 +236,46 @@ Or to a compressed tar:
 ```console
 $ docker image save busybox:1.37.0-glibc | bzip2 > busybox-1.37.0-glibc.tar.bz2
 ```
+
+### Clean used storage
+
+```console
+$ docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          48        5         10.62GB   2.915GB (27%)
+Containers      8         8         32.97kB   0B (0%)
+Local Volumes   26        1         662B      430B (64%)
+Build Cache     471       0         30.84GB   29.73GB
+```
+
+Clean unused images:
+
+```console
+$ docker image prune -a
+WARNING! This will remove all images without at least one container associated to them.
+Are you sure you want to continue? [y/N] y
+Deleted Images:
+...
+Total reclaimed space: 5.764GB
+```
+
+Clean a lot of things:
+
+```console
+$ docker system prune -a --volumes
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all anonymous volumes not used by at least one container
+  - all images without at least one container associated to them
+  - all build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Networks:
+...
+Deleted Volumes:
+...
+Deleted build cache objects:
+...
+Total reclaimed space: 30.84GB
+```
