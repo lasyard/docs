@@ -15,3 +15,5 @@ Resume a session (show a list to choose):
 ```console
 $ copilot --resume
 ```
+
+Session states are stored in `~/.copilot/session-state`.

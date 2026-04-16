@@ -34,7 +34,7 @@ Created symlink /etc/systemd/system/x11-common.service → /dev/null.
 List masked services:
 
 ```console
-$  systemctl list-unit-files --state=masked
+$ systemctl list-unit-files --state=masked
 UNIT FILE                                                            STATE  VENDOR PRESET
 cryptdisks-early.service                                             masked enabled      
 cryptdisks.service                                                   masked enabled      
