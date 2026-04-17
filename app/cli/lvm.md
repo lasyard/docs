@@ -98,7 +98,7 @@ $ sudo vgremove ceph-0
 Use all free space on a volume group to create a logical volumes:
 
 ```console
-$ lvcreate -n ceph-osd-0 -l 100%FREE ceph-0
+$ sudo lvcreate -n ceph-osd-0 -l 100%FREE ceph-0
   Logical volume "ceph-osd-0" created.
 ```
 
@@ -130,6 +130,13 @@ $ sudo lvdisplay
   Read ahead sectors     auto
   - currently set to     256
   Block device           253:0
+```
+
+The device of the logical volume is created:
+
+```console
+$ ls -l /dev/ceph-0/ceph-osd-0 
+lrwxrwxrwx 1 root root 7 Apr 16 17:54 /dev/ceph-0/ceph-osd-0 -> ../dm-0
 ```
 
 Remove all logical volumes on a volume group:
