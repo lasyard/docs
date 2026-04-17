@@ -2,11 +2,15 @@
 
 <https://chrony-project.org/>
 
-`chrony` is NTP server and client on CentOS 8.5.
+`chrony` is NTP server and client.
 
 ## Install
 
-```sh
+::::{tab-set}
+:::{tab-item} CentOS 8.5
+:sync: centos
+
+```console
 $ sudo dnf install chrony
 ```
 
@@ -15,22 +19,57 @@ Check the version:
 ```console
 $ chronyd --version
 chronyd (chrony) version 4.1 (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +NTS +SECHASH +IPV6 +DEBUG)
-```
-
-```console
 $ chronyc --version
 chronyc (chrony) version 4.1 (+READLINE +SECHASH +IPV6 +DEBUG)
 ```
 
+:::
+:::{tab-item} Ubuntu 22.04
+:sync: ubuntu
+
+```console
+$ sudo apt install chrony
+```
+
+This will remove the original `systemd-timesyncd`.
+
+Check the version:
+
+```console
+$ chronyd --version
+chronyd (chrony) version 4.2 (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +NTS +SECHASH +IPV6 -DEBUG)
+ubuntu@las0:~$ chronyc --version
+chronyc (chrony) version 4.2 (+READLINE +SECHASH +IPV6 -DEBUG)
+```
+
+:::
+::::
+
 ## Configure
 
 ### Server
+
+:::::{tab-set}
+::::{tab-item} CentOS 8.5
+:sync: centos
 
 Edit file `/etc/chrony.conf`:
 
 :::{literalinclude} /_files/centos/etc/chrony.conf.server
 :diff: /_files/centos/etc/chrony.conf.orig
 :::
+
+::::
+::::{tab-item} Ubuntu 22.04
+:sync: ubuntu
+
+Edit file `/etc/chrony/chrony.conf`:
+
+:::{literalinclude} /_files/ubuntu/etc/chrony/chrony.conf
+:diff: /_files/ubuntu/etc/chrony/chrony.conf.orig
+:::
+
+::::
 
 ### Client
 
