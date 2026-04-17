@@ -1,0 +1,5 @@
+service_type: node-exporter
+placement:
+  host_pattern: "*"
+spec:
+  port: 29100
