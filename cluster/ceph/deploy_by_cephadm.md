@@ -2,7 +2,7 @@
 
 ## Bootstrap a new cluster
 
-`cephadm` uses docker to run services, so [install docker](project:docker/install.md) first on each host.
+`cephadm` uses docker to run services, so [install docker](project:/cluster/docker/install.md) first on each host.
 
 Bootstrap a cluster:
 
@@ -144,7 +144,7 @@ Created osd(s) 0 on host 'las3'
 
 See the new created OSD:
 
-```cosnole
+```console
 $ ceph osd ls
 0
 $ ceph osd tree
