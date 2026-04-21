@@ -59,3 +59,19 @@ Features: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerbe
 那么安装 `curl` 会不会受到这个错误的困扰？会的，死循环了是不是？
 
 解决的方法之一是暴力重试，有一定的概率不出错。
+
+---
+
+后来在 macOS Tahoe 上安装 `brew` 依然碰到了这个问题，一看 `curl` 果然还是那个版本。我承认，暴力重试的方法是不负责任的。解决的办法是通过其他途径安装 `curl`.
+
+实际上，问题的发生是因为在终端里使用 `HTTPS_PROXY`, 如果设置了系统的全局代理，问题自然解决。
+
+Tahoe 上安装以后的版本，注意 CPU 架构也变了：
+
+```console
+$ curl --version
+curl 8.19.0 (aarch64-apple-darwin25.3.0) libcurl/8.19.0 OpenSSL/3.6.2 zlib/1.2.12 brotli/1.2.0 zstd/1.5.7 AppleIDN libssh2/1.11.1 nghttp2/1.69.0 ngtcp2/1.22.1 nghttp3/1.15.0 mit-krb5/1.7-prerelease OpenLDAP/2.4.28/Apple
+Release-Date: 2026-03-11
+Protocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns ldap ldaps mqtt mqtts pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp ws wss
+Features: alt-svc AppleSecTrust AsynchDNS brotli GSS-API HSTS HTTP2 HTTP3 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd
+```

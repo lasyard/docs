@@ -15,11 +15,17 @@ $ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 Install `im-select` for vim input method switching, See <https://github.com/daipeihust/im-select>:
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS Monterey/Tahoe
 :sync: macos
 
 ```console
-$ curl -Ls https://raw.githubusercontent.com/daipeihust/im-select/master/install_mac.sh | sh
+$ curl -Ls https://raw.githubusercontent.com/daipeihust/im-select/master/install_mac.sh | sudo sh
+* Downloading im-select...
+* im-select is installed!
+*
+*
+*
+* now run "im-select" in your terminal!
 ```
 
 :::
@@ -39,7 +45,7 @@ $ which im-select
 Set `im-select` as the input method switching command in VSCode:
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS Monterey/Tahoe
 :sync: macos
 
 ```json
@@ -105,6 +111,17 @@ $ chmod +x shfmt_v3.11.0_darwin_amd64
 $ cp shfmt_v3.11.0_darwin_amd64 /usr/local/bin/shfmt
 $ shfmt --version
 v3.11.0
+```
+
+:::
+:::{tab-item} macOS Tahoe
+
+```console
+$ curl -LO https://github.com/mvdan/sh/releases/download/v3.13.1/shfmt_v3.13.1_darwin_arm64
+$ chmod +x shfmt_v3.13.1_darwin_arm64
+$ sudo cp shfmt_v3.13.1_darwin_arm64 /usr/local/bin/shfmt
+$ shfmt --version
+v3.13.1
 ```
 
 :::
@@ -201,7 +218,7 @@ Sometimes the participants are doing time-consuming things, halting file operati
 }
 ```
 
-## Install `code` command
+## Install code command
 
 Press {kbd}`Command+Shift+P` to open the command panel, then search and execute the following command:
 

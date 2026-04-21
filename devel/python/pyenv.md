@@ -26,7 +26,7 @@ pyenv 2.4.11
 Add the following code to your shell startup file (for zsh, it is `.zshrc`):
 
 ```sh
-if which pyenv > /dev/null; then
+if command -v pyenv > /dev/null; then
     eval "$(pyenv init -)"
 fi
 ```

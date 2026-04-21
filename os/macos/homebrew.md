@@ -2,7 +2,12 @@
 
 <https://brew.sh/>
 
+Homebrew is a package manager on macOS.
+
 ## Install
+
+::::{tab-set}
+:::{tab-item} macOS Monterey
 
 ```console
 $ curl -LO https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
@@ -61,6 +66,53 @@ No analytics data has been sent yet (nor will any be during this install run).
 - Further documentation:
     https://docs.brew.sh
 ```
+
+:::
+:::{tab-item} macOS Tahoe
+
+```console
+==> Checking for `sudo` access (which may request your password)...
+Password:
+==> This script will install:
+/opt/homebrew/bin/brew
+/opt/homebrew/share/doc/homebrew
+/opt/homebrew/share/man/man1/brew.1
+/opt/homebrew/share/zsh/site-functions/_brew
+/opt/homebrew/etc/bash_completion.d/brew
+/opt/homebrew
+/etc/paths.d/homebrew
+
+Press RETURN/ENTER to continue or any other key to abort:
+==> /usr/bin/sudo /usr/sbin/chown -R jyg:admin /opt/homebrew
+==> Downloading and installing Homebrew...
+==> /usr/bin/sudo /bin/mkdir -p /etc/paths.d
+==> /usr/bin/sudo tee /etc/paths.d/homebrew
+/opt/homebrew/bin
+==> /usr/bin/sudo /usr/sbin/chown root:wheel /etc/paths.d/homebrew
+==> /usr/bin/sudo /bin/chmod a+r /etc/paths.d/homebrew
+==> Updating Homebrew...
+==> Installation successful!
+
+==> Homebrew has enabled anonymous aggregate formulae and cask analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics
+No analytics data has been sent yet (nor will any be during this install run).
+
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+
+==> Next steps:
+- Run these commands in your terminal to add Homebrew to your PATH:
+    echo >> /Users/jyg/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> /Users/jyg/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh
+```
+
+:::
+::::
 
 ## Usage
 
