@@ -14,6 +14,14 @@ $ systemctl status
    CGroup: /
 ```
 
+Show failed services:
+
+```console
+$ systemctl --failed
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+0 loaded units listed.
+```
+
 ## Reset failed
 
 After remove(disable) the failed services, need to reset the failed status:
