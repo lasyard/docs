@@ -51,7 +51,6 @@ Canceled hold on kubectl.
 ```
 
 :::
-
 ::::
 :::::
 
@@ -68,7 +67,18 @@ $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/sta
 ```
 
 :::
+:::{tab-item} macOS Tahoe
+
+```console
+$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"
+```
+
 ::::
+
+```console
+$ chmod +x kubectl
+$ sudo mv kubectl /usr/local/bin
+```
 
 Check the versions:
 
