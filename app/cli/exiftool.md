@@ -2,7 +2,20 @@
 
 <https://exiftool.org/>
 
-## Show version
+## Install
+
+::::{tab-set}
+:::{tab-item} macOS Tahoe
+:sync: macos
+
+```console
+$ brew install exiftool
+```
+
+:::
+::::
+
+Show the version:
 
 ```console
 $ exiftool -ver
