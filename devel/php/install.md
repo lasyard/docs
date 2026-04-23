@@ -21,6 +21,7 @@ Zend Engine v4.3.11, Copyright (c) Zend Technologies
 
 :::
 :::{tab-item} Debian 12
+:sync: debian
 
 ```console
 $ sudo apt install php
@@ -57,6 +58,7 @@ For macOS Monterey, you need to disable loading opcache, for there is no way to 
 :::
 ::::
 ::::{tab-item} Debian 12
+:sync: debian
 
 Use development config:
 

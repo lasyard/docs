@@ -2,6 +2,10 @@
 
 下载 [Heroes of Might and Magic Millennium Edition](https://archive.org/details/HeroesOfMightMagicMillenniumEditionUSA).
 
+:::{note}
+这是受版权保护的软件，能够获得不代表可以随意使用，请在试用后立刻删除。
+:::
+
 文件是多音轨的 .CUE 格式。AFAIK, [Alcohol](https://www.alcohol-soft.com/alcohol_portable.php) 是支持多音轨 CD 的（唯一）虚拟光驱软件。
 
 Windows XP 下运行需要兼容模式，右键单击程序本身或快捷方式进行设置：

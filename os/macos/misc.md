@@ -22,10 +22,18 @@ Open a dialog for installation of the command line developer tools:
 $ xcode-select --install
 ```
 
-## Create disk image
+## hdiutil
+
+Create a disk image:
 
 ```console
 $ hdiutil makehybrid -o "dir.udf" -udf "dir/"
+```
+
+Mount a ISO image:
+
+```console
+$ hdiutil mount xxxx.iso
 ```
 
 ## Manage Spotlight indexes
