@@ -227,22 +227,24 @@ $ ceph fs subvolume authorized_list cephfs ceph-vol ceph-sg
         "xxxx": "rw"
     }
 ]
+$ ceph auth get client.xxxx | sudo tee /etc/ceph/ceph.client.xxxx.keyring
+[client.xxxx]
+    key = AQCS9OlpUNWZFxAAn6EWmjHRjVRP1FmxhmOISw==
+    caps mds = "allow rw path=/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0"
+    caps mon = "allow r"
+    caps osd = "allow rw pool=cephfs.cephfs.data"
 ```
 
-where `xxxx` is the auth id.
-
-:::{note}
-`ceph fs subvolume authorize` grants subvolume access to an existing auth id. If the auth id does not exist yet, it only writes authorization metadata for the subvolume and does not create the CephX user.
-:::
-
-If you want to create a brand-new CephX user for one subvolume, it is clearer to use the subvolume path together with `ceph fs authorize`:
+This command create a new user `xxxx` with `rw` capabilities to the subvolume. Some meta data is written into the volume for help. Another way to create/update a user is (can apply to any directory):
 
 ```console
-$ sudo ceph fs authorize cephfs client.xxxx /volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 rw -o /etc/ceph/ceph.client.xxxx.keyring
+$ sudo ceph fs authorize cephfs client.xxxx $(ceph fs subvolume getpath cephfs ceph-vol ceph-sg) rw -o /etc/ceph/ceph.client.xxxx.keyring
 ```
 
+In this way there are no meta data written, so the client cannot be deauthorized by `ceph fs subvolume authorize`.
+
 :::{caution}
-If there is a client with this name existing and its caps settings are exactly same as this command would set, the output will be nothing so clear the `keyring` file.
+If the client is existing and the command make no modifications to it the output will be empty and clear the keyring file. So better not use `-o` option.
 :::
 
 Then the new user can be used to mount the subvolume:
@@ -264,7 +266,7 @@ The `mount` command complains that it cannot find keyring or key files in severa
 If the client machine does not have a usable `ceph.conf`, specify monitor addresses explicitly:
 
 ```console
-$ sudo mount -t ceph xxxx@.cephfs=/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 /mnt/cephfs -o mon_addr=10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789,secret=AQCP8+Vpy4hhCRAA8/EZC8lIBE2c4rtdPRsq9g==
+$ sudo mount -t ceph xxxx@.cephfs=/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 /mnt/cephfs -o mon_addr=10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789,secret=AQCS9OlpUNWZFxAAn6EWmjHRjVRP1FmxhmOISw==
 ```
 
 This time we use the key directly in the command line.
@@ -273,7 +275,7 @@ This time we use the key directly in the command line.
 The legacy format of this command is:
 
 ```console
-$ sudo mount -t ceph 10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789:/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 /mnt/cephfs -o name=xxxx,secret=AQCP8+Vpy4hhCRAA8/EZC8lIBE2c4rtdPRsq9g==
+$ sudo mount -t ceph 10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789:/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 /mnt/cephfs -o name=xxxx,secret=AQCS9OlpUNWZFxAAn6EWmjHRjVRP1FmxhmOISw==
 ```
 
 :::
@@ -282,8 +284,14 @@ $ sudo mount -t ceph 10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789:/volumes
 The above command will leak the key via shell history. Do not use it.
 :::
 
-:::{hint}
-For manual administration, `ceph fs authorize` is the simplest way to create a new user restricted to one subvolume path. If the CephX user already exists and you only need to add or change subvolume-level access, use `ceph fs subvolume authorize`.
+Deauthroize the client (delete the client, too):
+
+```console
+$ ceph fs subvolume deauthorize cephfs ceph-vol --group-name ceph-sg xxxx
+```
+
+:::{note}
+Even the client is not existing, the mounted file system can still be accessed.
 :::
 
 ### Remove
