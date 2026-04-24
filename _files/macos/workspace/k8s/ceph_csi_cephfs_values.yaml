@@ -1,0 +1,22 @@
+csiConfig:
+  - clusterID: "990b5070-3964-11f1-8888-476de7d3e05c"
+    monitors:
+      - "10.225.4.54:6789"
+      - "10.225.4.53:6789"
+      - "10.225.4.52:6789"
+    cephFS:
+      subvolumeGroup: "csi"
+
+storageClass:
+  create: true
+  clusterID: "990b5070-3964-11f1-8888-476de7d3e05c"
+  fsName: "cephfs"
+
+# Mount the host /etc/selinux inside pods to support
+# selinux-enabled filesystems
+selinuxMount: false
+
+secret:
+  create: true
+  userID: "csi"
+  userKey: "AQDe6epp9PNxNhAAxNMCkbqfwUzfhSu9+rsmdg=="

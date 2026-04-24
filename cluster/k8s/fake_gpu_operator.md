@@ -19,9 +19,9 @@ $ helm uninstall gpu-operator -n gpu-operator
 release "gpu-operator" uninstalled
 ```
 
-Create file `fake-gpu-operator-values.yaml` to override the default values:
+Create file `fake_gpu_operator_values.yaml` to override the default values:
 
-:::{literalinclude} /_files/macos/workspace/helm/fake-gpu-operator-values.yaml
+:::{literalinclude} /_files/macos/workspace/k8s/fake_gpu_operator_values.yaml
 :::
 
 Here we created two `topology.nodePools` named `h100` and `a100`. There is also a `default` pool in the default values files.
@@ -40,7 +40,7 @@ node/las3 labeled
 Then install the Fake GPU Operator:
 
 ```console
-$ helm upgrade -i gpu-operator fake-gpu-operator-0.0.63.tgz --namespace gpu-operator --create-namespace -f fake-gpu-operator-values.yaml
+$ helm upgrade -i gpu-operator fake-gpu-operator-0.0.63.tgz --namespace gpu-operator --create-namespace -f fake_gpu_operator_values.yaml
 Release "gpu-operator" does not exist. Installing it now.
 NAME: gpu-operator
 LAST DEPLOYED: Tue Sep 23 13:56:11 2025

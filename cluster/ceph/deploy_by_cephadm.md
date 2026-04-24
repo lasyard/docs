@@ -60,6 +60,11 @@ $ sudo chmod g+r /etc/ceph/ceph.client.admin.keyring
 $ sudo usermod -aG ceph ubuntu
 ```
 
+Another file in this directory is:
+
+:::{literalinclude} /_files/ubuntu/etc/ceph/ceph.conf
+:::
+
 Show the version using `ceph`:
 
 ```console
