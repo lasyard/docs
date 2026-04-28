@@ -278,6 +278,18 @@ The legacy format of this command is:
 $ sudo mount -t ceph 10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789:/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 /mnt/cephfs -o name=xxxx,secret=AQCS9OlpUNWZFxAAn6EWmjHRjVRP1FmxhmOISw==
 ```
 
+常用的 `-o` 选项：
+
+| 选项                 | 功能                                                                                           |
+| -------------------- | ---------------------------------------------------------------------------------------------- |
+| rw                   | 以读写方式挂载                                                                                 |
+| acl                  | 启用 POSIX ACL（更细粒度权限控制，比如给特定用户/组额外权限）                                  |
+| relatime             | 相对时间更新访问时间（atime），只有在文件被修改后或距离上次更新时间较久时才更新，减少写放大    |
+| noatime              | 完全不更新访问时间（atime），进一步减少元数据写入                                              |
+| _netdev              | 告诉系统这是网络文件系统，启动/关机时按网络设备处理（例如等网络就绪再挂载，常用于 /etc/fstab） |
+| name=xxxx            | CephX 客户端用户名                                                                             |
+| mds_namespace=cephfs | 指定要挂载的 CephFS 命名空间/文件系统（多 CephFS 场景下用来选具体 FS）                         |
+
 :::
 
 :::{caution}

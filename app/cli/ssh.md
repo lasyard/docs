@@ -19,3 +19,9 @@ ssh-keygen -y -f id_rsa > id_rsa.pub
 ```sh
 ssh-copy-id xxxx-host
 ```
+
+## Show keys stored in ssh-agent
+
+```sh
+ssh-add -l
+```

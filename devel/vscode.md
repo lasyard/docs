@@ -225,3 +225,26 @@ Press {kbd}`Command+Shift+P` to open the command panel, then search and execute 
 ```text
 Shell Command: Install 'code' command in PATH
 ```
+
+## Font ligatures
+
+In Maple fonts, the following words surrounded by brackets are rendered into badges, if font ligature is turned on:
+
+- [TRACE]
+- [DEBUG]
+- [INFO]
+- [WARN]
+- [ERROR]
+- [FATAL]
+- [TODO]
+- [FIXME]
+- [NOTE]
+- [HACK]
+- [MARK]
+- [EROR]
+- [WARNING]
+
+There are two words with no brackes, but two right parenthesises:
+
+- todo))
+- fixme))
