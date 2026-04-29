@@ -3,7 +3,8 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install nfs-kernel-server
@@ -45,7 +46,8 @@ $ sudo exportfs -v
 On a client, you need to install the NFS tools:
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install nfs-common

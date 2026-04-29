@@ -7,8 +7,8 @@
 Download the packages:
 
 :::::{tab-set}
-
 ::::{tab-item} macOS
+:sync: macos
 
 ```console
 $ curl -LO https://cdn.teleport.dev/tsh-16.1.0.pkg
@@ -26,6 +26,7 @@ Then select "Install tsh in PATH" on the top-right ellipsis button.
 
 ::::
 ::::{tab-item} Linux
+:sync: linux
 
 ```console
 $ curl -LO https://cdn.teleport.dev/teleport-v16.1.0-linux-amd64-bin.tar.gz

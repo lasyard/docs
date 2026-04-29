@@ -5,7 +5,8 @@
 ## Configure
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
+:sync: macos
 
 Edit `~/Library/Preferences/"DOSBox 0.74-3 Preferences"`:
 
@@ -14,7 +15,8 @@ Edit `~/Library/Preferences/"DOSBox 0.74-3 Preferences"`:
 :::
 
 ::::
-::::{tab-item} Windows 10
+::::{tab-item} Windows
+:sync: windows
 
 Edit `%USERPROFILE%\AppData\Local\DOSBox\dosbox-0.74-3.conf`:
 

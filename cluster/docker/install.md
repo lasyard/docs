@@ -1,7 +1,8 @@
 # Install Docker
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 Add docker repository:
 

@@ -2,7 +2,11 @@
 
 <https://getcomposer.org/>
 
-## Install on macOS Monterey
+## Install
+
+:::::{tab-set}
+::::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install composer
@@ -11,6 +15,9 @@ $ brew install composer
 :::{tip}
 PHP is also installed as a dependency.
 :::
+
+::::
+:::::
 
 Check the version:
 

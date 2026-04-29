@@ -5,7 +5,7 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -36,7 +36,7 @@ $ minikube config set driver vmware
 Start a minikube cluster:
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
 :sync: macos
 
 ```console

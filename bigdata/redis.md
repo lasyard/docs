@@ -5,7 +5,8 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 Add the repository:
 
@@ -22,15 +23,15 @@ $ sudo apt update
 $ sudo apt install redis
 ```
 
+:::
+::::
+
 Check the version:
 
 ```console
 $ redis-cli -v
 redis-cli 8.0.1
 ```
-
-:::
-::::
 
 ## Configure
 

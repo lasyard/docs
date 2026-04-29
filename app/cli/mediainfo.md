@@ -5,11 +5,15 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install mediainfo
 ```
+
+:::
+::::
 
 Check the version:
 
@@ -18,6 +22,3 @@ $ mediainfo --version
 MediaInfo Command line, 
 MediaInfoLib - v24.06
 ```
-
-:::
-::::

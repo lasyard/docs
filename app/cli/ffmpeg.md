@@ -5,11 +5,15 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:macos:
 
 ```console
 $ brew install ffmpeg
 ```
+
+:::
+::::
 
 Check the version:
 
@@ -27,9 +31,6 @@ libswscale      8.  1.100 /  8.  1.100
 libswresample   5.  1.100 /  5.  1.100
 libpostproc    58.  1.100 / 58.  1.100
 ```
-
-:::
-::::
 
 ## Usage
 

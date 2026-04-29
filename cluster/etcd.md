@@ -5,7 +5,8 @@
 ## Install etcd client
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 By `snap`:
 

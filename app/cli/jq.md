@@ -5,7 +5,8 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install jq
@@ -19,7 +20,8 @@ jq-1.6
 ```
 
 :::
-:::{tab-item} CentOS 8.5
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo dnf install jq
@@ -33,7 +35,8 @@ jq-1.5
 ```
 
 :::
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install jq

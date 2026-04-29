@@ -5,7 +5,8 @@
 ## By package manager
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install cmake
@@ -21,7 +22,8 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
 :::
-:::{tab-item} CentOS 8.5
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo dnf install cmake

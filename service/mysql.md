@@ -3,7 +3,8 @@
 <https://www.mysql.com/>
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo dnf install mysql-server

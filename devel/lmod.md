@@ -7,8 +7,8 @@
 ### By package manager
 
 :::::{tab-set}
-::::{tab-item} CentOS 8.5
-:sync: centos
+::::{tab-item} CentOS 8
+:sync: centos8
 
 Install `tcl` and `lua` first:
 
@@ -49,7 +49,7 @@ Modules based on Lua: Version 8.7.53 2024-10-12 19:57 -05:00
 ```
 
 ::::
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -77,7 +77,7 @@ $ curl -L https://github.com/TACC/Lmod/archive/refs/tags/8.7.60.tar.gz -o Lmod-8
 ```
 
 :::::{tab-set}
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 :::{include} /_files/frags/toolchain/ubuntu_gcc_11.txt

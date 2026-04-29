@@ -1,9 +1,6 @@
 # WSL
 
-::::{tab-set}
-:::{tab-item} Windows 10
-
-启用系统组件“虚拟机平台”和“适用于 Linux 的 Windows 子系统”：
+在 Windows 10 上，启用系统组件“虚拟机平台”和“适用于 Linux 的 Windows 子系统”：
 
 ![wsl.png](/_images/os/windows/wsl.png)
 

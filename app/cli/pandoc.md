@@ -5,11 +5,15 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install pandoc
 ```
+
+:::
+::::
 
 Check the version:
 
@@ -23,9 +27,6 @@ Copyright (C) 2006-2024 John MacFarlane. Web: https://pandoc.org
 This is free software; see the source for copying conditions. There is no
 warranty, not even for merchantability or fitness for a particular purpose.
 ```
-
-:::
-::::
 
 To get the latest version, download installer packages from the official website.
 

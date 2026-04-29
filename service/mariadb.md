@@ -5,7 +5,8 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo dnf install mariadb-server
@@ -25,7 +26,8 @@ $ sudo systemctl enable mariadb --now
 ```
 
 :::
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install mariadb-server

@@ -3,8 +3,8 @@
 ## By Package Manager
 
 :::::{tab-set}
-::::{tab-item} CentOS 8.5
-:sync: centos
+::::{tab-item} CentOS 8
+:sync: centos8
 
 Enable repo "PowerTools":
 
@@ -53,7 +53,7 @@ $ sudo dnf install slurm-devel
 ```
 
 ::::
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Package of slurm client is standalone on Ubuntu, install it with:
@@ -70,8 +70,8 @@ The packages delivered are quite old.
 ## Build from sources
 
 :::::{tab-set}
-::::{tab-item} CentOS 8.5
-:sync: centos
+::::{tab-item} CentOS 8
+:sync: centos8
 
 :::{include} /_files/frags/toolchain/centos_gcc_11.txt
 :::
@@ -114,7 +114,7 @@ Packages installed by `rpm` can be uninstalled by `dnf remove`.
 :::
 
 ::::
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 :::{include} /_files/frags/toolchain/ubuntu_gcc_11.txt

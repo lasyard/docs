@@ -5,11 +5,15 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:macos:
 
 ```console
 $ brew install lame
 ```
+
+:::
+::::
 
 Check the version:
 
@@ -36,9 +40,6 @@ You should have received a copy of the GNU Library General Public
 License along with this program. If not, see
 <http://www.gnu.org/licenses/>.
 ```
-
-:::
-::::
 
 ## Usage
 

@@ -11,7 +11,8 @@ $ curl -LO https://cryptopp.com/cryptopp890.zip
 ### Release
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
+:sync: macos
 
 :::{include} /_files/frags/toolchain/macos_clang_14.txt
 :::
@@ -58,7 +59,8 @@ It is strange to have `.exe` suffix executable on macOS.
 ### Debug
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
+:sync: macos
 
 :::{include} /_files/frags/toolchain/macos_clang_14.txt
 :::

@@ -5,7 +5,8 @@
 ### By package manager
 
 :::::{tab-set}
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install mpi-default-dev
@@ -58,7 +59,8 @@ $ md5sum openmpi-5.0.7.tar.bz2
 ```
 
 :::::{tab-set}
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
+:sync: ubuntu
 
 :::{include} /_files/frags/toolchain/ubuntu_gcc_11.txt
 :::

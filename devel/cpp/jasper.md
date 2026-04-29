@@ -20,7 +20,8 @@ $ cd ~/workspace/devel/jasper-4.2.4
 ### Debug
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
+:sync: macos
 
 :::{include} /_files/frags/toolchain/macos_clang_14.txt
 :::

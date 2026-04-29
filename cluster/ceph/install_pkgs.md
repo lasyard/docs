@@ -3,7 +3,7 @@
 ## Install cephadm
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -11,6 +11,7 @@ $ sudo apt install cephadm
 ```
 
 This one is too old to have a working `version` command. Use a new one in `ceph`'s own repository.
+
 :::
 ::::
 
@@ -66,12 +67,15 @@ ceph version 19.2.3 (c92aebb279828e9c3c1f5d24613efca272649e62) squid (stable)
 You can also use the package manager to install it from the repository for your platform:
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
 $ sudo apt install ceph-common
 ```
+
+:::
+::::
 
 Show ceph client version:
 
@@ -79,6 +83,3 @@ Show ceph client version:
 $ ceph --version
 ceph version 17.2.9 (69bf48f20731a4b0d742613f6c6335ccb54dd217) quincy (stable)
 ```
-
-:::
-::::

@@ -3,7 +3,7 @@
 ## By package manager
 
 :::::{tab-set}
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Add the Kubernetes repository:
@@ -59,15 +59,16 @@ Canceled hold on kubectl.
 `kubectl` can be installed anywhere to access k8s system.
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
 :sync: macos
+
+For Intel silicon:
 
 ```console
 $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
 ```
 
-:::
-:::{tab-item} macOS Tahoe
+For Apple silicon:
 
 ```console
 $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"

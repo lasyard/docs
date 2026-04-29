@@ -5,8 +5,8 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
-:sync: centos
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo dnf install munge
@@ -20,7 +20,7 @@ munge-0.5.13 (2017-09-26)
 ```
 
 :::
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -42,15 +42,15 @@ munge-0.5.14 (2020-01-14)
 On one node:
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
-:sync: centos
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo create-munge-key
 ```
 
 :::
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -65,15 +65,15 @@ The generated key file is `/etc/munge/munge.key` by default. Copy it to all node
 ## Run
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
-:sync: centos
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo systemctl enable munge --now
 ```
 
 :::
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 Restart the service after the key is re-generated:

@@ -5,7 +5,7 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Tahoe
+:::{tab-item} macOS
 :sync: macos
 
 ```console

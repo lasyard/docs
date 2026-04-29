@@ -5,11 +5,15 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install gpg
 ```
+
+:::
+::::
 
 Check the version:
 
@@ -30,9 +34,6 @@ Home: /Users/xxxx/.gnupg
 散列： SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
 压缩：  不压缩, ZIP, ZLIB, BZIP2
 ```
-
-:::
-::::
 
 ## Usage
 

@@ -3,17 +3,22 @@
 ## By package manager
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install python3 python3-pip python-is-python3
 ```
 
 :::
-:::{tab-item} Windows 10
+:::{tab-item} Windows
+:sync: windows
+
 Python 3.13 can be installed from Microsoft Store.
+
 :::
 :::{tab-item} MSYS2
+:sync: msys2
 
 ```console
 $ pacman -S ${MINGW_PACKAGE_PREFIX}-python
@@ -32,7 +37,8 @@ $ curl -LO https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
 ```
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
+:::{tab-item} CentOS 8
+:sync: centos8
 
 Extract files:
 

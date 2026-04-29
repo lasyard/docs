@@ -5,7 +5,8 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 Install using `brew`:
 
@@ -13,15 +14,15 @@ Install using `brew`:
 $ brew install pyenv
 ```
 
+:::
+::::
+
 Show the version:
 
 ```console
 $ pyenv --version 
 pyenv 2.4.11
 ```
-
-:::
-::::
 
 Add the following code to your shell startup file (for zsh, it is `.zshrc`):
 

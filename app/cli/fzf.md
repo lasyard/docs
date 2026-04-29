@@ -7,7 +7,7 @@
 By package manager:
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
 :sync: macos
 
 ```console

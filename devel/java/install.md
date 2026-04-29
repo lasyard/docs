@@ -1,7 +1,8 @@
 # Install Java Development Environment
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
+:::{tab-item} CentOS 8
+:sync: centos8
 
 Install JDK:
 
@@ -13,7 +14,8 @@ $ sudo dnf install java-1.8.0-openjdk-devel
 The latter is needed for `jps` command.
 
 :::
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install openjdk-8-jdk

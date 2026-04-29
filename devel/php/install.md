@@ -3,7 +3,7 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -20,7 +20,7 @@ Zend Engine v4.3.11, Copyright (c) Zend Technologies
 ```
 
 :::
-:::{tab-item} Debian 12
+:::{tab-item} Debian
 :sync: debian
 
 ```console
@@ -38,7 +38,7 @@ $ sudo apt install php-imagick
 ## Configure
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
 :sync: macos
 
 See where to find `ini` configuration:
@@ -56,8 +56,9 @@ For macOS Monterey, you need to disable loading opcache, for there is no way to 
 :::{literalinclude} /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini
 :diff: /_files/macos/etc/php/8.3/conf.d/ext-opcache.ini.orig
 :::
+
 ::::
-::::{tab-item} Debian 12
+::::{tab-item} Debian
 :sync: debian
 
 Use development config:

@@ -5,11 +5,15 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:macos:
 
 ```console
 $ brew install graphviz
 ```
+
+:::
+::::
 
 Check the version:
 
@@ -17,9 +21,6 @@ Check the version:
 $ dot -V
 dot - graphviz version 12.1.0 (20240811.2233)
 ```
-
-:::
-::::
 
 ## Usage
 

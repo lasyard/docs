@@ -5,11 +5,15 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install yq
 ```
+
+:::
+::::
 
 Check the version:
 
@@ -17,6 +21,3 @@ Check the version:
 $ yq --version
 yq (https://github.com/mikefarah/yq/) version v4.44.3
 ```
-
-:::
-::::

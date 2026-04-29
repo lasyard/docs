@@ -7,8 +7,8 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
-:sync: centos
+:::{tab-item} CentOS 8
+:sync: centos8
 
 ```console
 $ sudo dnf install chrony
@@ -24,7 +24,7 @@ chronyc (chrony) version 4.1 (+READLINE +SECHASH +IPV6 +DEBUG)
 ```
 
 :::
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -50,8 +50,8 @@ chronyc (chrony) version 4.2 (+READLINE +SECHASH +IPV6 -DEBUG)
 ### Server
 
 :::::{tab-set}
-::::{tab-item} CentOS 8.5
-:sync: centos
+::::{tab-item} CentOS 8
+:sync: centos8
 
 Edit file `/etc/chrony.conf`:
 
@@ -60,7 +60,7 @@ Edit file `/etc/chrony.conf`:
 :::
 
 ::::
-::::{tab-item} Ubuntu 22.04
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Edit file `/etc/chrony/chrony.conf`:

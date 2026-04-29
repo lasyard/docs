@@ -5,7 +5,8 @@
 ## Install
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
+:sync: macos
 
 ```console
 $ brew install llvm

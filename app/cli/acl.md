@@ -5,7 +5,7 @@ POSIX ACL(Access Control List) 是对 Unix/Linux 文件系统权限的扩展。
 安装 ACL 工具：
 
 ::::{tab-set}
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console

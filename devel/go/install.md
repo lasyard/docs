@@ -3,7 +3,8 @@
 ## By package manager
 
 ::::{tab-set}
-:::{tab-item} CentOS 8.5
+:::{tab-item} CentOS 8
+:sync: centos8
 
 Install Go by `dnf`:
 
@@ -12,7 +13,8 @@ $ sudo dnf install go-toolset
 ```
 
 :::
-:::{tab-item} Ubuntu 22.04
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 Install Go by `apt`:
 
@@ -38,6 +40,7 @@ Donwload and install Go manually:
 
 ::::{tab-set}
 :::{tab-item} Linux
+:sync: linux
 
 ```console
 $ curl -LO https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
@@ -55,6 +58,7 @@ go version go1.24.2 linux/amd64
 
 :::
 :::{tab-item} macOS
+:sync: macos
 
 ```console
 $ curl -LO https://go.dev/dl/go1.24.4.darwin-amd64.pkg

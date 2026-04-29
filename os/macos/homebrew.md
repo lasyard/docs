@@ -6,8 +6,7 @@ Homebrew is a package manager on macOS.
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS Monterey
+On macOS Monterey of Intel silicon:
 
 ```console
 $ curl -LO https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
@@ -67,8 +66,7 @@ No analytics data has been sent yet (nor will any be during this install run).
     https://docs.brew.sh
 ```
 
-:::
-:::{tab-item} macOS Tahoe
+On macOS Tahoe of Apple silicon:
 
 ```console
 ==> Checking for `sudo` access (which may request your password)...

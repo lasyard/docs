@@ -20,7 +20,8 @@ $ cd ~/workspace/devel/wxWidgets-3.3.1
 ### Release
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
+:sync: macos
 
 :::{include} /_files/frags/toolchain/macos_clang_18.txt
 :::
@@ -95,7 +96,8 @@ $ cmake --build . --target uninstall
 ### Debug
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
+:sync: macos
 
 :::{include} /_files/frags/toolchain/macos_clang_18.txt
 :::

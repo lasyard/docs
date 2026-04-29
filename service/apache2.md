@@ -5,8 +5,9 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
 :sync: macos
+
 `apache2` is pre-installed on macOS Monterey as `httpd`.
 
 Check the version:
@@ -43,7 +44,7 @@ $ sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
 :::
-:::{tab-item} Debian 12
+:::{tab-item} Debian
 :sync: debian
 
 ```console
@@ -87,9 +88,10 @@ To activate the new configuration, you need to run:
 ## Enable php
 
 :::::{tab-set}
-::::{tab-item} macOS Monetery
+::::{tab-item} macOS
 :sync: macos
-You need install `php` mannually for php is deprecated in macOS Monterey.
+
+On macOS after Monterey, you need to install php mannually for it is deprecated.
 
 Code signing is required on new macOS versions, so a certificate authority (CA) is needed to sign the php library. See [How to create Certificate Authority for Code Signing in macOS](https://www.simplified.guide/macos/keychain-ca-code-signing-create) to create a CA.
 
@@ -97,7 +99,7 @@ Code signing is required on new macOS versions, so a certificate authority (CA) 
 Certificates are stored in `~/Library/Application Support/Certificate Authority/`.
 :::
 
-Then sign the `php` lib:
+Then sign the php lib (for Homebrew installed php on macOS Monterey):
 
 ```console
 $ codesign --sign 'XXXX' --force --keychain ~/Library/Keychains/login.keychain-db /usr/local/opt/php/lib/httpd/modules/libphp.so
@@ -107,6 +109,15 @@ Check the signature:
 
 ```console
 $ codesign -dv --verbose=4 /usr/local/opt/php/lib/httpd/modules/libphp.so 2>&1 | grep Authority=
+Authority=XXXX's CA
+```
+
+On macOS Tahoe, the Homebrew installed packages are located in `/opt/homebrew`, so:
+
+```console
+$ codesign --sign 'XXXX' --force --keychain ~/Library/Keychains/login.keychain-db /opt/homebrew/opt/php/lib/httpd/modules/libphp.so
+/opt/homebrew/opt/php/lib/httpd/modules/libphp.so: replacing existing signature
+$ codesign -dv --verbose=4 /opt/homebrew/opt/php/lib/httpd/modules/libphp.so 2>&1 | grep Authority=
 Authority=XXXX's CA
 ```
 

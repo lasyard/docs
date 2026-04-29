@@ -5,7 +5,7 @@
 ## Install
 
 ::::{tab-set}
-:::{tab-item} Debian 12
+:::{tab-item} Debian
 :sync: debian
 
 ```console
@@ -29,7 +29,7 @@ Zend Engine v4.2.29, Copyright (c) Zend Technologies
 ## Configure
 
 :::::{tab-set}
-::::{tab-item} Debian 12
+::::{tab-item} Debian
 :sync: debian
 
 Edit file `/etc/php/8.2/apache2/conf.d/20-xdebug.ini`:

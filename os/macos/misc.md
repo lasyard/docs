@@ -76,3 +76,23 @@ Add hidden flag:
 ```console
 $ chflags hidden .msdb
 ```
+
+## dscl
+
+Show all groups and their members:
+
+```sh
+sudo dscl . -list /groups GroupMembership
+```
+
+Add user `_www` to group `staff`:
+
+```sh
+sudo dscl . -append /Groups/staff GroupMembership _www
+```
+
+Delete user `_www` from group `staff`:
+
+```sh
+sudo dscl . -delete /Groups/staff GroupMembership _www
+```

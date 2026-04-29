@@ -3,7 +3,8 @@
 ## Show version
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
+:sync: macos
 
 ```console
 $ ${SHELL} --version
@@ -16,7 +17,7 @@ zsh 5.8.1 (x86_64-apple-darwin21.0)
 ## Date
 
 ::::{tab-set}
-:::{tab-item} macOS Monterey
+:::{tab-item} macOS
 
 Translate from unix timestamp to `ymdhms`:
 

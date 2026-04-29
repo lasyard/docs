@@ -56,6 +56,9 @@ Installed plugin: krew
 /
 ```
 
+:::
+::::
+
 Show the version:
 
 ```console
@@ -70,9 +73,6 @@ InstallPath       /Users/xxxx/.krew/store
 BinPath           /Users/xxxx/.krew/bin
 DetectedPlatform  darwin/amd64
 ```
-
-:::
-::::
 
 ## Usage
 
