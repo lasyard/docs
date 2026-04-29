@@ -6,7 +6,7 @@
 
 ::::{tab-set}
 :::{tab-item} macOS
-:macos:
+:sync: macos
 
 ```console
 $ brew install graphviz
