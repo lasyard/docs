@@ -5,6 +5,46 @@
 ## Install
 
 ::::{tab-set}
+:::{tab-item} macOS
+:sync: macos
+
+```console
+$ brew install mariadb
+...
+==> Caveats
+==> mariadb
+A "/etc/my.cnf" from another install may interfere with a Homebrew-built
+server starting up correctly.
+
+MySQL is configured to only allow connections from localhost by default
+
+To start mariadb now and restart at login:
+  brew services start mariadb
+Or, if you don't want/need a background service you can just run:
+  /opt/homebrew/opt/mariadb/bin/mariadbd-safe --datadir\=/opt/homebrew/var/mysql
+```
+
+Show the version:
+
+```console
+$ mysql --version
+mysql from 12.2.2-MariaDB, client 15.2 for osx10.21 (arm64) using  EditLine wrapper
+```
+
+Initialize for production use:
+
+```console
+$ sudo mariadb-secure-installation
+```
+
+Start the service:
+
+```console
+$ brew services start mariadb
+==> Successfully started `mariadb` (label: homebrew.mxcl.mariadb)
+```
+
+:::
 :::{tab-item} CentOS 8
 :sync: centos8
 
