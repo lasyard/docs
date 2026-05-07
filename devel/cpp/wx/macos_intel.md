@@ -1,14 +1,13 @@
-# wxWidgets
+# Build on macOS Monterey (Intel silicon)
 
-<https://www.wxwidgets.org/>
+:::{include} /_files/frags/toolchain/macos_clang_18.txt
+:::
 
-## Download sources
+Download sources:
 
 ```console
 $ curl -LO https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.1/wxWidgets-3.3.1.tar.bz2
 ```
-
-## Build
 
 Extract sources:
 
@@ -17,14 +16,7 @@ $ tar -C ~/workspace/devel/ -xjf wxWidgets-3.3.1.tar.bz2
 $ cd ~/workspace/devel/wxWidgets-3.3.1
 ```
 
-### Release
-
-:::::{tab-set}
-::::{tab-item} macOS
-:sync: macos
-
-:::{include} /_files/frags/toolchain/macos_clang_18.txt
-:::
+## Release
 
 ```console
 $ cmake -S . -B build-x86_64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~
@@ -90,17 +82,7 @@ $ cmake --build . --target uninstall
 
 :::
 
-::::
-:::::
-
-### Debug
-
-:::::{tab-set}
-::::{tab-item} macOS
-:sync: macos
-
-:::{include} /_files/frags/toolchain/macos_clang_18.txt
-:::
+## Debug
 
 ```console
 $ cmake -S . -B build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/workspace/devel
@@ -109,9 +91,6 @@ $ cmake -S . -B build-x86_64-darwin-debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTA
 $ cd build-x86_64-darwin-debug
 $ cmake --build . --target install
 ```
-
-::::
-:::::
 
 ## Help messages
 

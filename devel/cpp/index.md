@@ -6,5 +6,6 @@
 install
 cmake
 tools
+*/index
 *
 :::

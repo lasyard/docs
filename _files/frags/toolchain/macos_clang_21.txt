@@ -1,0 +1,5 @@
+**Toolchains for building**:
+
+- Apple clang version 21.0.0 (clang-2100.0.123.102)
+- GNU Make 3.81
+- cmake version 4.3.2
