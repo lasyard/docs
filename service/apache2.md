@@ -136,8 +136,9 @@ Edit apache config file `/etc/apache2/httpd.conf`:
 :::{note}
 CA Name is appended to the LoadModule line for `php`.
 :::
+
 ::::
-::::{tab-item} Debian 12
+::::{tab-item} Debian
 :sync: debian
 
 See <project:/devel/php/install.md>.
@@ -148,8 +149,9 @@ See <project:/devel/php/install.md>.
 ### Enable user directory access
 
 :::::{tab-set}
-::::{tab-item} macOS Monterey
+::::{tab-item} macOS
 :sync: macos
+
 Edit apache config file `/etc/apache2/extra/httpd-userdir.conf`:
 
 :::{literalinclude} /_files/macos/etc/apache2/extra/httpd-userdir.conf

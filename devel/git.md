@@ -109,3 +109,9 @@ $ git stash -u
 ```console
 $ git clean -dxf
 ```
+
+### Find the common base of two branches
+
+```console
+$ git merge-base develop main
+```
