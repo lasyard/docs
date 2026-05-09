@@ -6,6 +6,7 @@
 
 ::::{tab-set}
 :::{tab-item} macOS
+:sync: macos
 
 ```sh
 (
@@ -23,16 +24,15 @@ The output:
 
 ```console
 ...
-./krew-darwin_amd64 install krew
 Adding "default" plugin index from https://github.com/kubernetes-sigs/krew-index.git.
 Updated the local copy of plugin index.
 Installing plugin: krew
 Installed plugin: krew
 \
  | Use this plugin:
- | 	kubectl krew
+ |  kubectl krew
  | Documentation:
- | 	https://krew.sigs.k8s.io/
+ |  https://krew.sigs.k8s.io/
  | Caveats:
  | \
  |  | krew is now installed! To start using kubectl plugins, you need to add
@@ -55,6 +55,12 @@ Installed plugin: krew
  | /
 /
 ```
+
+:::
+::: Ubuntu
+:sync: ubuntu
+
+The same as on macOS.
 
 :::
 ::::

@@ -27,6 +27,13 @@ To set up shell integration, add this to your shell configuration file:
 ```
 
 :::
+::: Ubuntu
+
+```console
+$ sudo apt install fzf
+```
+
+:::
 ::::
 
 Use binary release:

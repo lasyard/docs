@@ -9,9 +9,9 @@ Installing plugin: ctx
 Installed plugin: ctx
 \
  | Use this plugin:
- | 	kubectl ctx
+ |  kubectl ctx
  | Documentation:
- | 	https://github.com/ahmetb/kubectx
+ |  https://github.com/ahmetb/kubectx
  | Caveats:
  | \
  |  | If fzf is installed on your machine, you can interactively choose
@@ -32,9 +32,9 @@ Installing plugin: ns
 Installed plugin: ns
 \
  | Use this plugin:
- | 	kubectl ns
+ |  kubectl ns
  | Documentation:
- | 	https://github.com/ahmetb/kubectx
+ |  https://github.com/ahmetb/kubectx
  | Caveats:
  | \
  |  | If fzf is installed on your machine, you can interactively choose
