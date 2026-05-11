@@ -30,13 +30,12 @@ You will notice that the defaut context is totally useless for the endpoint does
 :::{note}
 当你把 Docker context 切到远端主机后，执行 docker build 时：
 
-1. 你的本地客户端会先收集本地构建上下文
-2. 把这个上下文传给远端 Docker Engine 或 BuildKit
-3. 远端再根据 Dockerfile 执行构建
-4. Dockerfile 里的 COPY 是从这份已上传的构建上下文里取文件，不是从远端主机磁盘随便读文件
-5. 被 .dockerignore 排除的文件不会上传，所以 COPY 不到
-
-但运行容器时的挂载和端口则完全不同，那些是发生在远端主机上的。
+- 你的本地客户端会先收集本地构建上下文，把这个上下文传给远端 Docker Engine 或 BuildKit, 远端再根据 Dockerfile 执行构建
+- Dockerfile 里的 COPY 是从这份已上传的构建上下文里取文件，不是从远端主机读文件
+- 被 .dockerignore 排除的文件不会上传，所以 COPY 不到
+- 构建产生的映像在远端，执行 `docker images` 列出的也是远端的映像
+- `docker save` 保存映像产生的文件在本地
+- `docker run` 挂载的文件在远端
 :::
 
 See the versions:
