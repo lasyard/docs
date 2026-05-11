@@ -27,7 +27,8 @@ To set up shell integration, add this to your shell configuration file:
 ```
 
 :::
-::: Ubuntu
+:::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ sudo apt install fzf

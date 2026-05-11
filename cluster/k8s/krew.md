@@ -57,7 +57,7 @@ Installed plugin: krew
 ```
 
 :::
-::: Ubuntu
+:::{tab-item} Ubuntu
 :sync: ubuntu
 
 The same as on macOS.

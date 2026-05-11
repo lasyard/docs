@@ -1,6 +1,18 @@
 # Install Docker
 
 ::::{tab-set}
+:::{tab-item} macOS
+:sync: macos
+
+Use brew:
+
+```console
+$ brew install docker
+```
+
+This is only a client of docker. To avoid installing the cumbersome and license problematic Docker Desktop, you can use the Docker Engine already installed on your remote server. See <project:docker_context.md>.
+
+:::
 :::{tab-item} Ubuntu
 :sync: ubuntu
 
@@ -16,6 +28,12 @@ Install:
 ```console
 $ sudo apt update
 $ sudo apt install -y docker-ce
+```
+
+Add the current user to `docker` group to use the docker engine directly:
+
+```console
+$ sudo usermod -aG docker ubuntu
 ```
 
 :::
