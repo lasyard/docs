@@ -47,7 +47,7 @@ $ cmake -S . -B build-arm64-darwin-release -DCMAKE_BUILD_TYPE=Release -DCMAKE_IN
     Which wxWidgets API compatibility should be used?  3.2
 -- Configuring done (11.1s)
 -- Generating done (0.2s)
--- Build files have been written to: /Users/jyg/workspace/devel/wxWidgets-3.3.2/build-arm64-darwin-release
+-- Build files have been written to: /Users/xxxx/workspace/devel/wxWidgets-3.3.2/build-arm64-darwin-release
 $ cd build-arm64-darwin-release
 $ cmake --build . --target install
 ```

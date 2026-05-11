@@ -81,7 +81,7 @@ Password:
 /etc/paths.d/homebrew
 
 Press RETURN/ENTER to continue or any other key to abort:
-==> /usr/bin/sudo /usr/sbin/chown -R jyg:admin /opt/homebrew
+==> /usr/bin/sudo /usr/sbin/chown -R xxxx:admin /opt/homebrew
 ==> Downloading and installing Homebrew...
 ==> /usr/bin/sudo /bin/mkdir -p /etc/paths.d
 ==> /usr/bin/sudo tee /etc/paths.d/homebrew
@@ -101,8 +101,8 @@ No analytics data has been sent yet (nor will any be during this install run).
 
 ==> Next steps:
 - Run these commands in your terminal to add Homebrew to your PATH:
-    echo >> /Users/jyg/.zprofile
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> /Users/jyg/.zprofile
+    echo >> /Users/xxxx/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> /Users/xxxx/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 - Run brew help to get started
 - Further documentation:
