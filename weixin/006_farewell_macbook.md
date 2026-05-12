@@ -1,4 +1,4 @@
-# 告别俺的老 Macbook
+# 告别老 Macbook
 
 2016 年因工作需要购入一台 Macbook Pro, 正式入了 macOS（当时还叫 OSX）的坑。
 
@@ -17,6 +17,8 @@ Macbook 的颜值还是不错的。
 ![macbook_fix.jpg](/_images/weixin/macbook_fix.jpg)
 
 被苹果抛弃以后，虽然有些新的软件装不了，但日常使用没问题。差不多 10 年过去了，性能并没有明显地下降，仍然可以再战。
+
+![macbook_new.jpg](/_images/weixin/macbook_new.jpg)
 
 但终于还是换成了新的 Macbook, 版本被封印的软件又可以更新。只不过由于 CPU 架构从 X86_64 变成了 ARM64, 有些软件又不支持了，好在有 Rosseta 还可以顶一下，但据说将来的 macOS 版本将不再支持 Rosseta...
 
