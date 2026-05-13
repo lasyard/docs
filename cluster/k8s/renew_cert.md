@@ -52,7 +52,7 @@ Done renewing certificates. You must restart the kube-apiserver, kube-controller
 
 For we can't access the cluster, so we can't restart the services. But we can restart `kubelet`:
 
-```cosnole
+```console
 $ sudo systemctl restart kubelet
 ```
 
