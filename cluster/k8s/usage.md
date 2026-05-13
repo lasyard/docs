@@ -288,7 +288,7 @@ Access kube API directly:
 $ kubectl get --raw "/api/v1/nodes/las1/proxy/configz" | jq
 ```
 
-## Rollout Restart
+## Rollout restart
 
 ```console
 $ kubectl rollout restart deploy volcano-scheduler -n volcano-system
