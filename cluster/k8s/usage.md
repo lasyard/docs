@@ -31,6 +31,25 @@ Combine two config files:
 $ KUBECONFIG=${HOME}/.kube/config:another_config kubectl config view --flatten > new_config
 ```
 
+## Authorization
+
+You can change the user name in kube config, in case there are duplicated user names in different clusters. But the real user name is stored in the cluster:
+
+```console
+$ kubectl auth whoami
+ATTRIBUTE                                           VALUE
+Username                                            kubernetes-admin
+Groups                                              [kubeadm:cluster-admins system:authenticated]
+Extra: authentication.kubernetes.io/credential-id   [X509SHA256=4be438876a852b1500661ad5ba47a7d81c60e4f96eaa7e3b8bdf83077a155d0f]
+```
+
+You can check the privileges further:
+
+```console
+$ kubectl auth can-i list pod
+yes
+```
+
 ## Token management
 
 Create a token with 24h lifespan:
