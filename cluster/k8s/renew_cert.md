@@ -65,3 +65,12 @@ $ sudo KUBECONFIG=/etc/kubernetes/admin.conf:${HOME}/.kube/config kubectl config
 ```
 
 Note the values in the former file will take precedence over the later.
+
+In case there are some static pods in namespace `kube-system` not restarted, we need to manually do restarting. The best way is to modify the manifest files and wait for `kubelet` to recocile them:
+
+```console
+$ mkdir backup
+$ sudo mv /etc/kubernetes/manifests/{etcd,kube-apiserver,kube-controller-manager,kube-scheduler}.yaml backup/
+$ sudo mv backup/*.yaml /etc/kubernetes/manifests/
+$ rmdir backup
+```
