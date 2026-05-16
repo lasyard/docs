@@ -14,12 +14,16 @@ Macbook 的颜值还是不错的。
 
 ![jd_macbook_battery.jpg](/_images/weixin/jd_macbook_battery.jpg)
 
+用卖家送的星形螺丝刀打开后盖，用除胶剂取掉旧电池（最难搞的一步，需要温柔的暴力），再换上新电池，基本就满血复活了。
+
 ![macbook_fix.jpg](/_images/weixin/macbook_fix.jpg)
 
 被苹果抛弃以后，虽然有些新的软件装不了，但日常使用没问题。差不多 10 年过去了，性能并没有明显地下降，仍然可以再战。
 
+但终于还是换成了新的 Macbook.
+
 ![macbook_new.jpg](/_images/weixin/macbook_new.jpg)
 
-但终于还是换成了新的 Macbook, 版本被封印的软件又可以更新。只不过由于 CPU 架构从 X86_64 变成了 ARM64, 有些软件又不支持了，好在有 Rosseta 还可以顶一下，但据说将来的 macOS 版本将不再支持 Rosseta...
+版本被封印的软件又可以更新。只不过由于 CPU 架构从 X86_64 变成了 ARM64, 有些软件又不支持了，好在有 Rosseta 还可以顶一下，但据说将来的 macOS 版本将不再支持 Rosseta...
 
 该来的总是要来的，该放弃的就让它去吧。
