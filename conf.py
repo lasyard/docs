@@ -30,7 +30,3 @@ html_theme = 'sphinx_rtd_theme'
 
 if html_theme == 'sphinx_rtd_theme':
     html_css_files = ['lasyard_sphinx_rtd_theme.css']
-
-# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#auto-generated-header-anchors
-
-myst_heading_anchors = 3
