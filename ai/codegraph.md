@@ -36,6 +36,19 @@ Ok to proceed? (y) y
 └  Done! Restart your agent to use CodeGraph.
 ```
 
+In the installation above, we configured it for [opencode](project:opencode.md). Check the mcps of opencode:
+
+```console
+$ opencode mcp list
+
+┌  MCP Servers
+│
+●  ✓ codegraph connected
+│      codegraph serve --mcp
+│
+└  1 server(s)
+```
+
 ## Usage
 
 Do as the "Quick start" says. A sqlite3 db will be create in `.codegraph`.
