@@ -209,6 +209,26 @@ For `ms-vscode.cpptools` plugin, the `.clang-format` file can be put outside the
 }
 ```
 
+### protobuf
+
+Proto Tools use `clang-format` to format protobuf, so it may be needed, along with `protoc`:
+
+::::{tab-set}
+:::{tab-item} Ubuntu
+:sync: ubuntu
+
+```console
+$ sudo apt install protobuf-compiler
+$ protoc --version
+libprotoc 3.12.4
+$ sudo apt install clang-format
+$ clang-format --version
+Ubuntu clang-format version 14.0.0-1ubuntu1.1
+```
+
+:::
+::::
+
 ## File Operations Paticipants
 
 Sometimes the participants are doing time-consuming things, halting file operations like creating, renaming and deleting. Measure in `ms`, set to 0 to disable them.
