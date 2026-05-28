@@ -34,7 +34,7 @@ go version go1.18.1 linux/amd64
 
 The packaged version is quite old, so it is not recommended.
 
-## By release tar balls
+## By release tar balls/pkgs
 
 Donwload and install Go manually:
 
@@ -60,6 +60,8 @@ go version go1.24.2 linux/amd64
 :::{tab-item} macOS
 :sync: macos
 
+For Intel silicon:
+
 ```console
 $ curl -LO https://go.dev/dl/go1.24.4.darwin-amd64.pkg
 $ open go1.24.4.darwin-amd64.pkg
@@ -70,6 +72,24 @@ Open a new console:
 ```console
 $ go version  
 go version go1.24.4 darwin/amd64
+```
+
+For Apple silicon:
+
+```console
+$ curl -LO https://dl.google.com/go/go1.26.3.darwin-arm64.pkg
+$ open go1.26.3.darwin-arm64.pkg
+```
+
+Open a new console:
+
+```console
+$ go version
+go version go1.26.3 darwin/arm64
+$ which go
+/usr/local/go/bin/go
+$ go env GOPATH  
+/Users/xxxx/go
 ```
 
 :::
