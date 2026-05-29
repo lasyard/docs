@@ -12,6 +12,24 @@ $ brew install docker
 
 This is only a client of docker. To avoid installing the cumbersome and license problematic Docker Desktop, you can use the Docker Engine already installed on your remote server. See <project:docker_context.md>.
 
+Also need to install `buildx`:
+
+```console
+$ brew install docker-buildx
+==> Fetching downloads for: docker-buildx
+...
+==> Pouring docker-buildx--0.34.1.arm64_tahoe.bottle.tar.gz
+==> Caveats
+docker-buildx is a Docker plugin. For Docker to find the plugin, add "cliPluginsExtraDirs" to ~/.docker/config.json:
+  "cliPluginsExtraDirs": [
+      "/opt/homebrew/lib/docker/cli-plugins"
+  ]
+==> Summary
+🍺  /opt/homebrew/Cellar/docker-buildx/0.34.1: 46 files, 61.5MB
+```
+
+Note the Caveats in the output.
+
 :::
 :::{tab-item} Ubuntu
 :sync: ubuntu
