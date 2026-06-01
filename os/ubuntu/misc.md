@@ -83,7 +83,7 @@ $ sudo visudo
 :::
 
 :::{note}
-Make sure the owner of `/etc/sudoers` is `root:root` and its mode is `0440`, or `sudo` will refuse to run.
+Make sure the owner of `/etc/sudoers` is `root:root` and its mode is `0440`, or `sudo` will refuse to run. Also, the rule is for `sudo` group, so the current user must be in this group.
 :::
 
 ## Clear iptables

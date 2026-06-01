@@ -10,4 +10,7 @@
 
 可以从 <https://www.mediafire.com/folder/v8lz97eahhz9n/DOS> 下载 DOS 版的仙剑奇侠传。
 
+:::{include} /_files/frags/copyright_warn.txt
+:::
+
 推荐用 [DOSBox](project:dosbox.md) 运行，兼容各种系统。

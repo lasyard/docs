@@ -9,7 +9,7 @@
 :sync: macos
 
 ```console
-$ brew install mediainfo
+$ brew install media-info
 ```
 
 :::
@@ -20,5 +20,5 @@ Check the version:
 ```console
 $ mediainfo --version
 MediaInfo Command line, 
-MediaInfoLib - v24.06
+MediaInfoLib - v26.05
 ```
