@@ -1,0 +1,9 @@
+splitter horizontal style=thin
+ playback-controls
+ splitter vertical style=thin
+  splitter horizontal style=thin
+   refacets
+   tabs
+    albumart type="front cover" tab-name="Front"
+    albumart type="back cover" tab-name="Back"
+  playlist
