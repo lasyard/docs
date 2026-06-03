@@ -1,11 +1,19 @@
 # Install Ingress-Nginx Controller
 
+<https://kubernetes.github.io/ingress-nginx/>
+
+> [!NOTE]
+> This project has retired and is no longer maintained.
+
 Using `helm`:
 
 ```console
 $ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 "ingress-nginx" has been added to your repositories
 $ helm pull ingress-nginx/ingress-nginx
+```
+
+```console
 $ helm upgrade --install ingress-nginx ingress-nginx-4.12.3.tgz --namespace ingress-nginx --create-namespace
 Release "ingress-nginx" does not exist. Installing it now.
 NAME: ingress-nginx
@@ -83,4 +91,9 @@ NAME    CONTROLLER             PARAMETERS   AGE
 nginx   k8s.io/ingress-nginx   <none>       62m
 ```
 
-Now you can create `Ingress` using this class by specify `{"spec": {"ingressClassName": "nginx"}}`.
+Now you can create `Ingress` using this class by specify `{"spec": {"ingressClassName": "nginx"}}`. Or, we can make it the default ingress class:
+
+```console
+$ kubectl annotate ingressclass nginx ingressclass.kubernetes.io/is-default-class=true
+ingressclass.networking.k8s.io/nginx annotated
+```
