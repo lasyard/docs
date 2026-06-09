@@ -3,7 +3,9 @@ splitter horizontal style=thin
  splitter vertical style=thin
   splitter horizontal style=thin
    refacets
-   tabs
-    albumart type="front cover" tab-name="Front"
-    albumart type="back cover" tab-name="Back"
+   splitter vertical style=thin
+    playlist-manager
+    tabs
+     albumart type="front cover" tab-name="Front"
+     albumart type="back cover" tab-name="Back"
   playlist
