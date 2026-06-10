@@ -313,3 +313,18 @@ $ kubectl get --raw "/api/v1/nodes/las1/proxy/configz" | jq
 $ kubectl rollout restart deploy volcano-scheduler -n volcano-system
 deployment.apps/volcano-scheduler restarted
 ```
+
+## Set default StorageClass
+
+To set a StorageClass as default:
+
+```console
+$ kubectl annotate sc csi-cephfs-sc storageclass.kubernetes.io/is-default-class=true
+storageclass.storage.k8s.io/csi-cephfs-sc annotated
+```
+
+```console
+$ kubectl get sc csi-cephfs-sc
+NAME                      PROVISIONER           RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+csi-cephfs-sc (default)   cephfs.csi.ceph.com   Delete          Immediate           true                   26d
+```

@@ -19,7 +19,7 @@ $ vcluster --version
 vcluster version 0.25.1
 ```
 
-## Deploy a vcluster
+## Deploy a vcluster using CLI command
 
 Before deployment, dowload this file to see which images are required:
 
@@ -132,4 +132,106 @@ $ vcluster delete my-vcluster --namespace team-x
 09:41:02 done Successfully deleted virtual cluster namespace team-x
 09:41:02 info Waiting for virtual cluster to be deleted...
 09:41:14 done Virtual Cluster is deleted
+```
+
+## Manage vcluster by helm
+
+Add the repository:
+
+```console
+$ helm repo add vcluster https://charts.loft.sh
+$ helm repo update
+```
+
+Get the chart:
+
+```console
+$ helm pull vcluster/vcluster --version 0.30.0
+```
+
+Install a new vcluster:
+
+```console
+$ helm upgrade --install my-vcluster vcluster-0.30.0.tgz --namespace team-x --create-namespace
+Release "my-vcluster" does not exist. Installing it now.
+NAME: my-vcluster
+LAST DEPLOYED: Tue Jun  9 11:27:57 2026
+NAMESPACE: team-x
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+```
+
+> [!NOTE]
+> Need a default StorageClass to provision pv for etcd storage.
+
+Show the workloads:
+
+```console
+$ kubectl get all -n team-x
+NAME                                                     READY   STATUS    RESTARTS   AGE
+pod/coredns-75bb76df-xpxdh-x-kube-system-x-my-vcluster   1/1     Running   0          42s
+pod/my-vcluster-0                                        1/1     Running   0          13m
+
+NAME                                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns-x-kube-system-x-my-vcluster   ClusterIP   10.96.99.177     <none>        53/UDP,53/TCP,9153/TCP   42s
+service/my-vcluster                            ClusterIP   10.100.32.158    <none>        443/TCP,10250/TCP        13m
+service/my-vcluster-headless                   ClusterIP   None             <none>        443/TCP                  13m
+service/my-vcluster-node-las1                  ClusterIP   10.106.189.191   <none>        10250/TCP                42s
+
+NAME                           READY   AGE
+statefulset.apps/my-vcluster   1/1     13m
+```
+
+A secret stores the kubeconfig to access the vcluster:
+
+```console
+$ kubectl get secret vc-my-vcluster -n team-x
+NAME             TYPE     DATA   AGE
+vc-my-vcluster   Opaque   5      5m1s
+```
+
+Get the kubeconfig:
+
+```console
+$ kubectl get secret vc-my-vcluster -n team-x -ojsonpath='{.data.config}' | base64 -D
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: ...
+    server: https://localhost:8443
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-super-admin
+  name: kubernetes-super-admin@kubernetes
+current-context: kubernetes-super-admin@kubernetes
+kind: Config
+users:
+- name: kubernetes-super-admin
+  user:
+    client-certificate-data: ...
+    client-key-data: ...
+```
+
+Save the output to a file, named to `kubeconfig`. Port forwarding the Kube API service to the server address in the kubeconfig:
+
+```console
+$ kubectl port-forward service/my-vcluster 8443:443 -n team-x
+Forwarding from 127.0.0.1:8443 -> 8443
+Forwarding from [::1]:8443 -> 8443
+```
+
+Show cluster info:
+
+```console
+$ KUBECONFIG=kubeconfig kubectl cluster-info
+Kubernetes control plane is running at https://localhost:8443
+CoreDNS is running at https://localhost:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+$ KUBECONFIG=kubeconfig kubectl get no -owide
+NAME   STATUS   ROLES    AGE     VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION      CONTAINER-RUNTIME
+las1   Ready    <none>   4h45m   v1.34.0   10.106.189.191   <none>        Fake Kubernetes Image   4.19.76-fakelinux   docker://19.3.12
 ```
