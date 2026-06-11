@@ -251,4 +251,4 @@ Name it to `my_vcluster.yaml`, install a new vcluster by:
 $ helm upgrade --install my-vcluster vcluster-0.30.0.tgz --namespace team-x --create-namespace -f my_vcluster.yaml
 ```
 
-By adjust the startup command args, we turn on debug logs for `api-server`, `controller-manager`, `scheduler` and `kine`.
+By adjust the startup command args, we turn on debug logs for `api-server`, `controller-manager` and `scheduler`.

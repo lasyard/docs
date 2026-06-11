@@ -106,3 +106,21 @@ Show values:
 ```console
 $ helm show values nvidia-dra-driver-gpu-25.8.0.tgz
 ```
+
+## Secret
+
+`helm` stores the manifest of a release in a Secret in the same namespace, for example:
+
+```console
+$ kget secret --field-selector type=helm.sh/release.v1
+NAME                          TYPE                 DATA   AGE
+sh.helm.release.v1.kueue.v1   helm.sh/release.v1   1      100d
+sh.helm.release.v1.kueue.v2   helm.sh/release.v1   1      85d
+sh.helm.release.v1.kueue.v3   helm.sh/release.v1   1      85d
+```
+
+One for each release version. You can get the whole manifest by:
+
+```console
+$ kubectl get secret sh.helm.release.v1.kueue.v3 -o jsonpath='{.data.release}' | base64 -D | base64 -D | gzip -d | yq -r '.manifest'
+```
