@@ -266,6 +266,28 @@ At the URL provided above, you can find a figure to illustrate the app:
 
 ![argocd_upload_app.png)](/_images/cluster/k8s/argocd_upload_app.png)
 
+Actually, the app itself is a resource in namespace `argocd`:
+
+```console
+$ kubectl get app -n argocd
+NAME     SYNC STATUS   HEALTH STATUS
+upload   Synced        Healthy
+```
+
+You can even create an app by create an app resource resource directly. Write the `yaml` file like:
+
+:::{literalinclude} /_files/macos/workspace/argocd/upload_app.yaml
+:::
+
+Then apply it:
+
+```console
+$ kubectl apply -f upload_app.yaml
+application.argoproj.io/upload created
+```
+
+For we set it to sync automatically, manual sync is not needed this time.
+
 ### SSO
 
 Through Dex-based SSO, you can login with LDAP:
