@@ -1,0 +1,18 @@
+controlPlane:
+  distro:
+    k8s:
+      apiServer:
+        extraArgs:
+          - --v=1
+      controllerManager:
+        extraArgs:
+          - --leader-elect=false
+          - --v=1
+      scheduler:
+        extraArgs:
+          - --v=1
+  backingStore:
+    database:
+      embedded:
+        extraArgs:
+          - --debug=false

@@ -235,3 +235,20 @@ $ KUBECONFIG=kubeconfig kubectl get no -owide
 NAME   STATUS   ROLES    AGE     VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION      CONTAINER-RUNTIME
 las1   Ready    <none>   4h45m   v1.34.0   10.106.189.191   <none>        Fake Kubernetes Image   4.19.76-fakelinux   docker://19.3.12
 ```
+
+## Customization
+
+By setting values when installing with helm, we can customize the new vcluster. But many features are restricted by licenses.
+
+An example of value file:
+
+:::{literalinclude} /_files/macos/workspace/vcluster/my_vcluster.yaml
+:::
+
+Name it to `my_vcluster.yaml`, install a new vcluster by:
+
+```console
+$ helm upgrade --install my-vcluster vcluster-0.30.0.tgz --namespace team-x --create-namespace -f my_vcluster.yaml
+```
+
+By adjust the startup command args, we turn on debug logs for `api-server`, `controller-manager`, `scheduler` and `kine`.
