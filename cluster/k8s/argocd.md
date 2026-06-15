@@ -288,6 +288,12 @@ application.argoproj.io/upload created
 
 For we set it to sync automatically, manual sync is not needed this time.
 
+The sources are cached, do force refreshing:
+
+```console
+$ argocd app get upload --hard-refresh
+```
+
 ### SSO
 
 Through Dex-based SSO, you can login with LDAP:

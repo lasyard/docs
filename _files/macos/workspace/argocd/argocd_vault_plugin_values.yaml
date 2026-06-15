@@ -1,0 +1,25 @@
+repoServer:
+  extraContainers:
+    - name: argocd-vault-plugin
+      command:
+        - "/var/run/argocd/argocd-cmp-server"
+      image: ghcr.io/lasyard/argocd-vault-plugin:v1.18.1
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 999
+      volumeMounts:
+        - mountPath: /var/run/argocd
+          name: var-files
+        - mountPath: /home/argocd/cmp-server/plugins
+          name: plugins
+        - mountPath: /tmp
+          name: cmp-tmp
+        - mountPath: /home/argocd/cmp-server/config/plugin.yaml
+          subPath: plugin.yaml
+          name: cmp-plugin
+  volumes:
+    - name: cmp-tmp
+      emptyDir: {}
+    - name: cmp-plugin
+      configMap:
+        name: argocd-vault-plugin-config

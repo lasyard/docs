@@ -1,0 +1,7 @@
+FROM alpine:3.18
+
+COPY argocd-vault-plugin /usr/local/bin/argocd-vault-plugin
+
+RUN chmod +x /usr/local/bin/argocd-vault-plugin
+
+USER 999
