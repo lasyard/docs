@@ -252,3 +252,21 @@ $ helm upgrade --install my-vcluster vcluster-0.30.0.tgz --namespace team-x --cr
 ```
 
 By adjust the startup command args, we turn on debug logs for `api-server`, `controller-manager` and `scheduler`.
+
+vCluster config is stored in a Secret:
+
+```console
+$ kubectl get secret vc-config-my-vcluster -n team-x -ojsonpath='{.data.config\.yaml}'  | base64 -D
+controlPlane:
+  advanced:
+    cloudControllerManager:
+      enabled: true
+...
+```
+
+You can modify it, but must do base64 decoding and encoding:
+
+```console
+$ kubectl patch secret vc-config-my-vcluster -n team-x --type='json' \
+  -p="[{\"op\": \"replace\", \"path\": \"/data/config.yaml\", \"value\": \"$(base64 -i config.yaml)\"}]"
+```
