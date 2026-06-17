@@ -2,5 +2,6 @@
     "markdownlint.config": {
         "MD014": false
     },
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "python.defaultInterpreterPath": "${env:HOME}/.venv/bin/python"
 }

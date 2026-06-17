@@ -1,6 +1,6 @@
 # PyEnv
 
-<https://pyenv.net/>
+<https://github.com/pyenv/pyenv>
 
 ## Install
 
@@ -14,6 +14,42 @@ Install using `brew`:
 $ brew install pyenv
 ```
 
+Add the following code to your shell startup file (for zsh, it is `.zshrc`):
+
+```sh
+if command -v pyenv > /dev/null; then
+    eval "$(pyenv init -)"
+fi
+```
+
+:::
+:::{tab-item} Linux
+
+```console
+$ curl -fsSL https://pyenv.run | bash
+Cloning into '/home/ubuntu/.pyenv'...
+...
+WARNING: seems you still have not added 'pyenv' to the load path.
+
+# Load pyenv automatically by appending
+# the following to 
+# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+# and ~/.bashrc (for interactive shells) :
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+# Restart your shell for the changes to take effect.
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+
+eval "$(pyenv virtualenv-init -)"
+```
+
+Add the scripts mentioned above to `.bashrc` (Generally, `.profile` would call `.bashrc` on Ubuntu).
+
 :::
 ::::
 
@@ -22,14 +58,6 @@ Show the version:
 ```console
 $ pyenv --version 
 pyenv 2.4.11
-```
-
-Add the following code to your shell startup file (for zsh, it is `.zshrc`):
-
-```sh
-if command -v pyenv > /dev/null; then
-    eval "$(pyenv init -)"
-fi
 ```
 
 ## Usage
