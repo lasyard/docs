@@ -279,26 +279,26 @@ finished. total time: -0.000s
 
 界面截图：
 
-```{figure} https://imghost.online/ib/BvRRHLA6votKIae_1755710470.png
+:::{figure} https://imghost.online/ib/BvRRHLA6votKIae_1755710470.png
 :alt: LineageOS 14.1 Desktop
 :target: https://imghost.online/en/ntaDF9M2rW5jbFe
 
 LineageOS 14.1 Desktop
-```
+:::
 
-```{figure} https://imghost.online/ib/Sx5IHmAgsChRycH_1755710470.png
+:::{figure} https://imghost.online/ib/Sx5IHmAgsChRycH_1755710470.png
 :alt: LineageOS 14.1 Main Menu
 :target: https://imghost.online/en/6ggFRoj7dZP7VYz
 
 LineageOS 14.1 Main Menu
-```
+:::
 
-```{figure} https://imghost.online/ib/gmuVUwWsy65t9NJ_1755710408.png
+:::{figure} https://imghost.online/ib/gmuVUwWsy65t9NJ_1755710408.png
 :alt: LineageOS 14.1 About
 :target: https://imghost.online/en/MHoN6pXJhHOfJfw
 
 LineageOS 14.1 About
-```
+:::
 
 ### CyanogenMod 12.1
 
@@ -308,26 +308,26 @@ LineageOS 14.1 About
 
 界面截图：
 
-```{figure} https://imghost.online/ib/AJu9yCpNK61GTsR_1755710408.png
+:::{figure} https://imghost.online/ib/AJu9yCpNK61GTsR_1755710408.png
 :alt: CyanogenMod 12.1 Desktop
 :target: https://imghost.online/en/F98gBTkbS7tpQHr
 
 CyanogenMod 12.1 Desktop
-```
+:::
 
-```{figure} https://imghost.online/ib/28hifZbd6cyOPaT_1755710408.png
+:::{figure} https://imghost.online/ib/28hifZbd6cyOPaT_1755710408.png
 :alt: CyanogenMod 12.1 Main Menu
 :target: https://imghost.online/en/nNjqGpkmV9cQE1h
 
 CyanogenMod 12.1 Main Menu
-```
+:::
 
-```{figure} https://imghost.online/ib/AGt8WgxC29nOS6M_1755710408.png
+:::{figure} https://imghost.online/ib/AGt8WgxC29nOS6M_1755710408.png
 :alt: CyanogenMod 12.1 About
 :target: https://imghost.online/en/PYVrj0QtxtDIEyh
 
 CyanogenMod 12.1 About
-```
+:::
 
 ### crDroid 7.1.2
 
@@ -337,26 +337,26 @@ CyanogenMod 12.1 About
 
 界面截图：
 
-```{figure} https://imghost.online/ib/7knmttVmwBKBdaD_1755710408.png
+:::{figure} https://imghost.online/ib/7knmttVmwBKBdaD_1755710408.png
 :alt: crDroid 7.1.2 Desktop
 :target: https://imghost.online/en/hjOAp6PTqsJKPuW
 
 crDroid 7.1.2 Desktop
-```
+:::
 
-```{figure} https://imghost.online/ib/Hv1FHZLbRg2SrUl_1755710408.png
+:::{figure} https://imghost.online/ib/Hv1FHZLbRg2SrUl_1755710408.png
 :alt: crDroid 7.1.2 Main Menu
 :target: https://imghost.online/en/bgplgkMLczGSH6z
 
 crDroid 7.1.2 Main Menu
-```
+:::
 
-```{figure} https://imghost.online/ib/8dDBVmi5Zrjljqm_1755710408.png
+:::{figure} https://imghost.online/ib/8dDBVmi5Zrjljqm_1755710408.png
 :alt: crDroid 7.1.2 About
 :target: https://imghost.online/en/PqfPWbIydoNW0bt
 
 crDroid 7.1.2 About
-```
+:::
 
 ### Carbon
 
@@ -366,26 +366,26 @@ crDroid 7.1.2 About
 
 界面截图：
 
-```{figure} https://imghost.online/ib/wjYoraLtlJaxu9a_1755710408.png
+:::{figure} https://imghost.online/ib/wjYoraLtlJaxu9a_1755710408.png
 :alt: Carbon Desktop
 :target: https://imghost.online/en/sSYxTopFDHIbrfc
 
 Carbon Desktop
-```
+:::
 
-```{figure} https://imghost.online/ib/ptBNvyYjZhQMHhU_1755710408.png
+:::{figure} https://imghost.online/ib/ptBNvyYjZhQMHhU_1755710408.png
 :alt: Carbon Main Menu
 :target: https://imghost.online/en/GxKyS8jqHfzDpvk
 
 Carbon Main Menu
-```
+:::
 
-```{figure} https://imghost.online/ib/HKcyBfhwmovSGC1_1755710408.png
+:::{figure} https://imghost.online/ib/HKcyBfhwmovSGC1_1755710408.png
 :alt: Carbon About
 :target: https://imghost.online/en/4t361C29lojpJXt
 
 Carbon About
-```
+:::
 
 :::{tip}
 Android 版本高可以安装较新的应用，缺点是较新的应用在老硬件上卡顿。

@@ -14,7 +14,7 @@
 
 工作集群的队列设置与使用 MultiKueue 之前相同，不需要特殊设置，以下是实体关系图（没有使用 Topology）：
 
-```{mermaid}
+```mermaid
 erDiagram
 
 LocalQueue }o--|| ClusterQueue: ""
@@ -23,7 +23,7 @@ ClusterQueue }o--|{ ResourceFlavor: ""
 
 管理集群的 ClusterQueue 需要增加一个特殊的 AdmissionCheck 属性，以下为其实体关系图：
 
-```{mermaid}
+```mermaid
 erDiagram
 
 LocalQueue }o--|| ClusterQueue: ""

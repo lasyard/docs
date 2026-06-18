@@ -2,10 +2,10 @@
 myst:
   substitutions:
     hf: |
-      ```{image} /_images/icons/huggingface_logo-noborder.svg
+      :::{image} /_images/icons/huggingface_logo-noborder.svg
       :alt: HuggingFace
       :height: 16px
-      ```
+      :::
 ---
 # Draw Things
 

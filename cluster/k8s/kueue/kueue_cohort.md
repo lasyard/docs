@@ -9,8 +9,9 @@
 
 Cohort 本身定义的额度是内部所有队列之外的，因此 Cohort 内的额度分配如下图：
 
-```{mermaid}
+```mermaid
 pie showData title Cohort 额度分配
+
 "队列 test1": 1
 "队列 test2": 1
 "额外": 2
