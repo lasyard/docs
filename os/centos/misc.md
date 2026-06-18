@@ -84,9 +84,8 @@ This is effective only in current shell and any child processes. To make it perm
 
 The modification will take effect after a re-login.
 
-:::{note}
-If there are files in `/etc/security/limits.d`, the values may be overridden by those files.
-:::
+> [!NOTE]
+> If there are files in `/etc/security/limits.d`, the values may be overridden by those files.
 
 The limits are applied by a per-process manner. You can check the limits for process 1 (i.e. the init process):
 

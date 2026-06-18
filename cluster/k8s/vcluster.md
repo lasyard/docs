@@ -32,7 +32,6 @@ The contents of this file:
 :::{literalinclude} /_files/macos/workspace/vcluster/vcluster-images-k8s-1.32.txt
 :::
 
-:::{tip}
 You may need to prepare these images on each node in advance to accelerate the deployment, for example:
 
 ```console
@@ -40,9 +39,8 @@ $ sudo crictl pull ghcr.io/loft-sh/vcluster-pro:0.25.1
 Image is up to date for sha256:0fec489cb9567ea62da1e369e2d4704836ae2c3f15c1a1a758e542a352977dae
 ```
 
-:::{note}
-A default StorageClass in the host cluster is needed to provision data volumes for vcluster pod.
-:::
+> [!NOTE]
+> A default StorageClass in the host cluster is needed to provision data volumes for vcluster pod.
 
 Deploy a vcluster:
 
@@ -78,9 +76,8 @@ Handling connection for 10880
 - Use `kubectl get namespaces` in another terminal to access the vcluster
 ```
 
-:::{note}
-The `.kube/config` is also altered on the host where the above command runs.
-:::
+> [!NOTE]
+> The `.kube/config` is also altered on the host where the above command runs.
 
 List vclusters:
 

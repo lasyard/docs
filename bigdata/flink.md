@@ -52,9 +52,8 @@ Edit file `/opt/flink/conf/workers`:
 
 These files need to be copied to all nodes to the same path.
 
-:::{important}
-Edit file `/opt/flink/conf/config.yaml` to set the config `taskmanager.host` to the hostname of each node respectively.
-:::
+> [!IMPORTANT]
+> Edit file `/opt/flink/conf/config.yaml` to set the config `taskmanager.host` to the hostname of each node respectively.
 
 Create the directory of `${io.tmp.dirs}` on each node:
 
@@ -190,8 +189,7 @@ JobManager Web Interface: http://las2:36373
 
 The last lines of the output expose the Flink dashboard URL and the commands to stop the cluster.
 
-:::{note}
-TaskManager will be allocated dynamically based on the running jobs.
-:::
+> [!NOTE]
+> TaskManager will be allocated dynamically based on the running jobs.
 
 Now jobs can be submitted to the cluster.

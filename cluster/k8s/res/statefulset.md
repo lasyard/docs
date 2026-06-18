@@ -5,12 +5,10 @@ Create file `sleep_sts.yaml`:
 :::{literalinclude} /_files/macos/workspace/k8s/sleep_sts.yaml
 :::
 
-:::{note}
-
-- `restartPolicy` must be `Always`, the default value
-- `selector` must be set and match the labels of template
-
-:::
+> [!NOTE]
+>
+> - `restartPolicy` must be `Always`, the default value
+> - `selector` must be set and match the labels of template
 
 Apply to the cluster:
 

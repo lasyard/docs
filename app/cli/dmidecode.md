@@ -32,9 +32,7 @@ $ sudo cat /sys/devices/virtual/dmi/id/product_uuid
 4b16a34c-d5a8-4edb-934a-0cef51bf0fe1
 ```
 
-:::{tip}
-
-- You can tell if the host is a virtual machine or physical machine
-- UUID is often used to identify the host
-
-:::
+> [!TIP]
+>
+> - You can tell if the host is a virtual machine or physical machine
+> - UUID is often used to identify the host

@@ -55,9 +55,8 @@ queue.scheduling.volcano.sh/test created
 
 将名称改为了 `sleep-high` 并使用了高优先级。
 
-:::{note}
-高优先级的定义 `priorityClassName: high-priority` 必须在 `Job` 和 `Pod` 两个层级同时出现，这一点对后面的运行时抢占十分重要。
-:::
+> [!NOTE]
+> 高优先级的定义 `priorityClassName: high-priority` 必须在 `Job` 和 `Pod` 两个层级同时出现，这一点对后面的运行时抢占十分重要。
 
 先后提交作业 `sleep-normal` 和 `sleep-high`:
 
@@ -167,9 +166,8 @@ configmap/volcano-scheduler-configmap edited
 :diff: /_files/macos/console/kubectl/get_cm_volcano_scheduler.txt
 :::
 
-:::{note}
-这里特别要注意把 `overcommit` 插件挪到 `gang` 的前面。
-:::
+> [!NOTE]
+> 这里特别要注意把 `overcommit` 插件挪到 `gang` 的前面。
 
 ### 实验三、高优先作业抢占运行中的低优先级作业
 

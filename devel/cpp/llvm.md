@@ -27,16 +27,14 @@ Thread model: posix
 InstalledDir: /usr/local/opt/llvm/bin
 ```
 
-:::{note}
-Environment variables must set for the build system (such as CMake) to detect the compiler:
-
-```sh
-export PATH=/usr/local/opt/llvm/bin:${PATH}
-export CC=clang
-export CXX=clang++
-```
-
-:::
+> [!NOTE]
+> Environment variables must set for the build system (such as CMake) to detect the compiler:
+>
+> ```sh
+> export PATH=/usr/local/opt/llvm/bin:${PATH}
+> export CC=clang
+> export CXX=clang++
+> ```
 
 ::::
 :::::

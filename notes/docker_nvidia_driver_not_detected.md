@@ -120,14 +120,12 @@ INFO[0000] It is recommended that docker daemon be restarted.
 $ sudo systemctl restart docker
 ```
 
-:::{tip}
-实际上 `runtimes` 配置并非必须，只是可以允许用 `--runtime` 参数运行其他非 cuda 映像，如：
-
-```console
-$ docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
-```
-
-:::
+> [!TIP]
+> 实际上 `runtimes` 配置并非必须，只是可以允许用 `--runtime` 参数运行其他非 cuda 映像，如：
+>
+> ```console
+> $ docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
+> ```
 
 再次运行镜像，并添加 `--gpus all` 参数会发现错误信息消失了：
 

@@ -120,9 +120,8 @@ $ kubectl get secret csi-cephfs-secret -n ceph-csi-cephfs -ojsonpath='{.data.use
 csi
 ```
 
-:::{tip}
-We can restore the information needed to mount a CephFS volume if we can touch the ceph CSI driver in kubernetes.
-:::
+> [!TIP]
+> We can restore the information needed to mount a CephFS volume if we can touch the ceph CSI driver in kubernetes.
 
 ## Allocate PVs
 
@@ -218,9 +217,8 @@ Then the `pvc` and Pod (show the diff from the dynamic one):
 :diff: /_files/macos/workspace/k8s/dynamic_ceph_pv_po.yaml
 :::
 
-:::{note}
-We do not need a StorageClass for this, so the empty string is needed here. Because if it is ommited, the default StorageClass will be used if there is.
-:::
+> [!NOTE]
+> We do not need a StorageClass for this, so the empty string is needed here. Because if it is ommited, the default StorageClass will be used if there is.
 
 After delete the Pod, show the status of the `pv`:
 

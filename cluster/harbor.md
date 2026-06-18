@@ -78,13 +78,10 @@ $ docker logout las3\:443
 Removing login credentials for las3:443
 ```
 
-:::{note}
-You need always put the port number after your simple hostname, for `docker` try to add `docker.io` prefix before your hostname, which is awful design.
-:::
-
-:::{caution}
-The project `library` is public, which means anyone can pull from it.
-:::
+> [!CAUTION]
+>
+> - You need always put the port number after your simple hostname, for `docker` try to add `docker.io` prefix before your hostname, which is awful design.
+> - The project `library` is public, which means anyone can pull from it.
 
 ## Configure HTTPS
 
@@ -164,20 +161,15 @@ Anyway, the `docker` daemon need to be restarted:
 $ sudo systemctl restart docker
 ```
 
-:::{tip}
-Harbor containers were stopped during restarting of docker, start them by:
-
-```console
-$ docker start $(docker ps -a | grep goharbor | cut -d' ' -f1)
-```
-
-:::
-
-:::{important}
-To make a kubernetes cluster trust the self signed CA, it need to be added to the system before restarting the container runtime service, e.g. `containerd`:
-
-```console
-$ sudo systemctl restart containerd
-```
-
-:::
+> [!TIP]
+> Harbor containers were stopped during restarting of docker, start them by:
+>
+> ```console
+> $ docker start $(docker ps -a | grep goharbor | cut -d' ' -f1)
+> ```
+>
+> To make a kubernetes cluster trust the self signed CA, it need to be added to the system before restarting the container runtime service, e.g. `containerd`:
+>
+> ```console
+> $ sudo systemctl restart containerd
+> ```

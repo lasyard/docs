@@ -25,16 +25,14 @@ Updating package list...
 Completed adding repo.
 ```
 
-:::{tip}
-The repo can be removed by:
-
-```console
-$ sudo cephadm rm-repo
-Removing repo GPG key /etc/apt/trusted.gpg.d/ceph.release.gpg...
-Removing repo at /etc/apt/sources.list.d/ceph.list...
-```
-
-:::
+> [!TIP]
+> The repo can be removed by:
+>
+> ```console
+> $ sudo cephadm rm-repo
+> Removing repo GPG key /etc/apt/trusted.gpg.d/ceph.release.gpg...
+> Removing repo at /etc/apt/sources.list.d/ceph.list...
+> ```
 
 Then update `cephadm` itself:
 

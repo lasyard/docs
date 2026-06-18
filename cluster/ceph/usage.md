@@ -195,9 +195,8 @@ $ ceph fs subvolume info cephfs ceph-vol ceph-sg
 }
 ```
 
-:::{note}
-The order of the parameters is `<volume-name> <subvolume-name> <group-name>`, or you can explicitly use `--group-name <group-name>`.
-:::
+> [!NOTE]
+> The order of the parameters is `<volume-name> <subvolume-name> <group-name>`, or you can explicitly use `--group-name <group-name>`.
 
 Show the path of a subvolume:
 
@@ -243,9 +242,8 @@ $ sudo ceph fs authorize cephfs client.xxxx $(ceph fs subvolume getpath cephfs c
 
 In this way there are no meta data written, so the client cannot be deauthorized by `ceph fs subvolume authorize`.
 
-:::{caution}
-If the client is existing and the command make no modifications to it the output will be empty and clear the keyring file. So better not use `-o` option.
-:::
+> [!CAUTION]
+> If the client is existing and the command make no modifications to it the output will be empty and clear the keyring file. So better not use `-o` option.
 
 Then the new user can be used to mount the subvolume:
 
@@ -271,30 +269,26 @@ $ sudo mount -t ceph xxxx@.cephfs=/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a
 
 This time we use the key directly in the command line.
 
-:::{tip}
-The legacy format of this command is:
-
-```console
-$ sudo mount -t ceph 10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789:/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 /mnt/cephfs -o name=xxxx,secret=AQCS9OlpUNWZFxAAn6EWmjHRjVRP1FmxhmOISw==
-```
-
-常用的 `-o` 选项：
-
-| 选项                 | 功能                                                                                           |
-| -------------------- | ---------------------------------------------------------------------------------------------- |
-| rw                   | 以读写方式挂载                                                                                 |
-| acl                  | 启用 POSIX ACL（更细粒度权限控制，比如给特定用户/组额外权限）                                  |
-| relatime             | 相对时间更新访问时间（atime），只有在文件被修改后或距离上次更新时间较久时才更新，减少写放大    |
-| noatime              | 完全不更新访问时间（atime），进一步减少元数据写入                                              |
-| _netdev              | 告诉系统这是网络文件系统，启动/关机时按网络设备处理（例如等网络就绪再挂载，常用于 /etc/fstab） |
-| name=xxxx            | CephX 客户端用户名                                                                             |
-| mds_namespace=cephfs | 指定要挂载的 CephFS 命名空间/文件系统（多 CephFS 场景下用来选具体 FS）                         |
-
-:::
-
-:::{caution}
-The above command will leak the key via shell history. Do not use it.
-:::
+> [!TIP]
+> The legacy format of this command is:
+>
+> ```console
+> $ sudo mount -t ceph 10.225.4.52:6789/10.225.4.53:6789/10.225.4.54:6789:/volumes/ceph-sg/ceph-vol/8956fb8b-5a7c-48e7-a5fb-28ad8a0747c0 /mnt/cephfs -o name=xxxx,secret=AQCS9OlpUNWZFxAAn6EWmjHRjVRP1FmxhmOISw==
+> ```
+>
+> The above command will leak the key via shell history. Do not use it.
+>
+> 常用的 `-o` 选项：
+>
+> | 选项                 | 功能                                                                                           |
+> | :------------------- | :--------------------------------------------------------------------------------------------- |
+> | rw                   | 以读写方式挂载                                                                                 |
+> | acl                  | 启用 POSIX ACL（更细粒度权限控制，比如给特定用户/组额外权限）                                  |
+> | relatime             | 相对时间更新访问时间（atime），只有在文件被修改后或距离上次更新时间较久时才更新，减少写放大    |
+> | noatime              | 完全不更新访问时间（atime），进一步减少元数据写入                                              |
+> | _netdev              | 告诉系统这是网络文件系统，启动/关机时按网络设备处理（例如等网络就绪再挂载，常用于 /etc/fstab） |
+> | name=xxxx            | CephX 客户端用户名                                                                             |
+> | mds_namespace=cephfs | 指定要挂载的 CephFS 命名空间/文件系统（多 CephFS 场景下用来选具体 FS）                         |
 
 Deauthroize the client (delete the client, too):
 
@@ -302,9 +296,8 @@ Deauthroize the client (delete the client, too):
 $ ceph fs subvolume deauthorize cephfs ceph-vol --group-name ceph-sg xxxx
 ```
 
-:::{note}
-Even the client is not existing, the mounted file system can still be accessed.
-:::
+> [!NOTE]
+> Even the client is not existing, the mounted file system can still be accessed.
 
 ### Remove
 

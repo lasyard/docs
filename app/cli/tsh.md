@@ -14,15 +14,14 @@ Download the packages:
 $ curl -LO https://cdn.teleport.dev/tsh-16.1.0.pkg
 ```
 
-:::{tip}
-You can install the desktop GUI version first:
-
-```console
-$ curl -LO https://cdn.teleport.dev/Teleport%20Connect-16.1.8.dmg
-```
-
-Then select "Install tsh in PATH" on the top-right ellipsis button.
-:::
+> [!TIP]
+> You can install the desktop GUI version first:
+>
+> ```console
+> $ curl -LO https://cdn.teleport.dev/Teleport%20Connect-16.1.8.dmg
+> ```
+>
+> Then select "Install tsh in PATH" on the top-right ellipsis button.
 
 ::::
 ::::{tab-item} Linux

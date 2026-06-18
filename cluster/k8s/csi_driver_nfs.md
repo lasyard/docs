@@ -36,9 +36,8 @@ Create file `standard_sc.yaml` for a `StorageClass`:
 :::{literalinclude} /_files/macos/workspace/k8s/standard_sc.yaml
 :::
 
-:::{note}
-This class is set as default in the cluster.
-:::
+> [!NOTE]
+> This class is set as default in the cluster.
 
 Apply to the cluster:
 

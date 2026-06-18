@@ -76,9 +76,8 @@ This code is running on a remote worker!
 The square is 1764
 ```
 
-:::{tip}
-Beam Client will submit all `.py` files in the current working directory, so better make a new directory for a new app.
-:::
+> [!TIP]
+> Beam Client will submit all `.py` files in the current working directory, so better make a new directory for a new app.
 
 Create another Python app to check GPU:
 
@@ -157,9 +156,8 @@ $ kubectl create namespace beta9
 namespace/beta9 created
 ```
 
-:::{note}
-Why this is needed? For the workers need to create in namespace `beta9`, which seems to be hard coded. Then the `redis` must be in the same namespace, and the `localstack`.
-:::
+> [!NOTE]
+> Why this is needed? For the workers need to create in namespace `beta9`, which seems to be hard coded. Then the `redis` must be in the same namespace, and the `localstack`.
 
 ### Deploy localstack
 
@@ -281,9 +279,8 @@ Management Commands:
   worker      Manage workers.
 ```
 
-:::{note}
-The gateway address and port are vital, but the token can be left empty.
-:::
+> [!NOTE]
+> The gateway address and port are vital, but the token can be left empty.
 
 Show the configs:
 
@@ -331,12 +328,11 @@ The square is None
 Error occured. Don't know why.
 :::
 
-:::{tip}
-Copy the beta9 config to beam:
-
-```console
-$ cp ~/.beta9/config.ini ~/.beam/config.ini
-```
-
-Then you can run the program using `beam`. The output is just the same.
-:::
+> [!TIP]
+> Copy the beta9 config to beam:
+>
+> ```console
+> $ cp ~/.beta9/config.ini ~/.beam/config.ini
+> ```
+>
+> Then you can run the program using `beam`. The output is just the same.

@@ -64,9 +64,8 @@ $ ffmpeg -v error -i input.mp4 -f null
 $ ffmpeg -i input.mkv -c:a copy -c:v copy -f mp4 out.mp4
 ```
 
-:::{note}
-`mp4` cannot contain `ass` subtitles.
-:::
+> [!NOTE]
+> `mp4` cannot contain `ass` subtitles.
 
 ### Extract subtitle
 

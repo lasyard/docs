@@ -33,14 +33,12 @@ Do this to fix dylib id if you do not want to install:
 $ install_name_tool -id $(pwd)/libcryptopp.dylib libcryptopp.dylib
 ```
 
-:::{tip}
-To uninstall:
-
-```console
-$ make uninstall PREFIX=~
-```
-
-:::
+> [!TIP]
+> To uninstall:
+>
+> ```console
+> $ make uninstall PREFIX=~
+> ```
 
 ::::
 :::::
@@ -52,9 +50,8 @@ $ cryptest.exe V
 8.9.0
 ```
 
-:::{note}
-It is strange to have `.exe` suffix executable on macOS.
-:::
+> [!NOTE]
+> It is strange to have `.exe` suffix executable on macOS.
 
 ### Debug
 

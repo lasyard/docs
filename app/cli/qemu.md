@@ -78,16 +78,15 @@ $ qemu-system-x86_64 -name install -accel tcg -machine pc -cpu qemu64 -smp 1 -m 
   -rtc base=localtime
 ```
 
-:::{important}
-After the installation program started, press {kbd}`F5` when there is a message of "Press F6 ...":
-
-![winxp_qemu_install_1.png](/_images/app/cli/winxp_qemu_install_1.png)
-
-Then a screen like this is shown:
-
-![winxp_qemu_install_2.png](/_images/app/cli/winxp_qemu_install_2.png)
-
-Choose "Standard PC ..." to continue.
-:::
+> [!IMPORTANT]
+> After the installation program started, press {kbd}`F5` when there is a message of "Press F6 ...":
+>
+> ![winxp_qemu_install_1.png](/_images/app/cli/winxp_qemu_install_1.png)
+>
+> Then a screen like this is shown:
+>
+> ![winxp_qemu_install_2.png](/_images/app/cli/winxp_qemu_install_2.png)
+>
+> Choose "Standard PC ..." to continue.
 
 Currently no working audio is available for Windows XP on macOS Tahoe.

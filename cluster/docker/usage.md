@@ -21,9 +21,8 @@ Run it interactively:
 $ docker run -it busybox:1.37.0-glibc
 ```
 
-:::{note}
-If the tag `1.37.0-glibc` is omitted, the default `latest` is used.
-:::
+> [!NOTE]
+> If the tag `1.37.0-glibc` is omitted, the default `latest` is used.
 
 In shell of the container, press {kbd}`Ctrl+P`, {kbd}`Ctrl+Q` to detach.
 
@@ -43,14 +42,12 @@ $ docker attach zealous_kapitsa
 
 The id of the container can also be used to specify the container.
 
-:::{tip}
-The container will stop if you exit the shell, and can be started and attached by:
-
-```console
-$ docker start -ai zealous_kapitsa
-```
-
-:::
+> [!TIP]
+> The container will stop if you exit the shell, and can be started and attached by:
+>
+> ```console
+> $ docker start -ai zealous_kapitsa
+> ```
 
 ## Run as daemons
 
@@ -189,15 +186,13 @@ Edit file `/etc/docker/daemon.json` to set our registry as in-secure:
 }
 ```
 
-::::{tip}
-If you want to use the registry in `containerd`, create a file `las3:5000/hosts.toml` in dir `/etc/containerd/certs.d/`:
-
-:::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/las3_5000/hosts.toml
-:::
-
-See "<project:/cluster/k8s/deploy.md#configure-containerd>".
-
-::::
+> [!TIP]
+> If you want to use the registry in `containerd`, create a file `las3:5000/hosts.toml` in dir `/etc/containerd/certs.d/`:
+>
+> :::{literalinclude} /_files/ubuntu/etc/containerd/certs.d/las3_5000/hosts.toml
+> :::
+>
+> See "<project:/cluster/k8s/deploy.md#configure-containerd>".
 
 Restart `docker` service to make the config effective:
 
@@ -221,9 +216,8 @@ $ ls /opt/docker_images/docker/registry/v2/repositories/
 busybox
 ```
 
-:::{tip}
-For more advanced functions, use [Harbor](project:/cluster/harbor.md) instead of this. Before installing Harbor, be sure to remove the container of this for name confliction.
-:::
+> [!TIP]
+> For more advanced functions, use [Harbor](project:/cluster/harbor.md) instead of this. Before installing Harbor, be sure to remove the container of this for name confliction.
 
 ### Save images to file
 

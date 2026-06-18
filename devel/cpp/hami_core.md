@@ -41,9 +41,8 @@ $ export CUDA_DEVICE_MEMORY_LIMIT=1g
 $ export CUDA_DEVICE_SM_LIMIT=50
 ```
 
-:::{caution}
-设置 `LD_PRELOAD` 将使所有新启动的进程都依赖 `libcuda.so.1`, 不管有没有用 GPU.
-:::
+> [!CAUTION]
+> 设置 `LD_PRELOAD` 将使所有新启动的进程都依赖 `libcuda.so.1`, 不管有没有用 GPU.
 
 如果之前用过 `HAMi-core`, 可能需要删除缓存的配置：
 

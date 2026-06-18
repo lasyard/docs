@@ -24,9 +24,8 @@ NOTES:
 ***********************************************************************
 ```
 
-:::{note}
-Argument `--kubelet-insecure-tls` is to skip TLS verify, because the cert is self signed if the cluster is depolyed by `kubeadm`.
-:::
+> [!NOTE]
+> Argument `--kubelet-insecure-tls` is to skip TLS verify, because the cert is self signed if the cluster is depolyed by `kubeadm`.
 
 ## Usage
 

@@ -27,16 +27,15 @@ las0 *                                              ssh://ubuntu@las0
 
 You will notice that the defaut context is totally useless for the endpoint doesn't exist at all. But it is a reserved context that cannot be deleted or updated.
 
-:::{note}
-当你把 Docker context 切到远端主机后，执行 docker build 时：
-
-- 你的本地客户端会先收集本地构建上下文，把这个上下文传给远端 Docker Engine 或 BuildKit, 远端再根据 Dockerfile 执行构建
-- Dockerfile 里的 COPY 是从这份已上传的构建上下文里取文件，不是从远端主机读文件
-- 被 .dockerignore 排除的文件不会上传，所以 COPY 不到
-- 构建产生的映像在远端，执行 `docker images` 列出的也是远端的映像
-- `docker save` 保存映像产生的文件在本地
-- `docker run` 挂载的文件在远端
-:::
+> [!NOTE]
+> 当你把 Docker context 切到远端主机后，执行 docker build 时：
+>
+> - 你的本地客户端会先收集本地构建上下文，把这个上下文传给远端 Docker Engine 或 BuildKit, 远端再根据 Dockerfile 执行构建
+> - Dockerfile 里的 COPY 是从这份已上传的构建上下文里取文件，不是从远端主机读文件
+> - 被 .dockerignore 排除的文件不会上传，所以 COPY 不到
+> - 构建产生的映像在远端，执行 `docker images` 列出的也是远端的映像
+> - `docker save` 保存映像产生的文件在本地
+> - `docker run` 挂载的文件在远端
 
 See the versions:
 

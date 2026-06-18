@@ -2,19 +2,17 @@
 
 这个古老设备在 Amazon 不支持之后基本已成砖，不过可以重装非官方系统挽救之。
 
-:::{note}
-本文适用于 Kindle Fire HD (2nd generation). 如何识别设备是 Kindle Fire HD (2nd generation)? 在设置中查看菜单`设备·关于·序列号`的前四位是 `D025`.
-
-以下提到的主机是 Windows 10 系统。
-:::
+> [!NOTE]
+> 本文适用于 Kindle Fire HD (2nd generation). 如何识别设备是 Kindle Fire HD (2nd generation)? 在设置中查看菜单`设备·关于·序列号`的前四位是 `D025`.
+>
+> 以下提到的主机是 Windows 10 系统。
 
 重装之路的第一步是获取 Root 权限.
 
 ## 1. 获取 Root 权限
 
-:::{caution}
-获取 Root 权限过程可能导致设备变砖，请谨慎操作！
-:::
+> [!CAUTION]
+> 获取 Root 权限过程可能导致设备变砖，请谨慎操作！
 
 获取 Root 权限需要用到一个软件包：[root_with_restore_by_bin4ry](https://xdaforums.com/attachments/root_with_restore_by_bin4ry_v33-zip.2476937/). 年代久远，链接不保证有效。
 
@@ -152,18 +150,17 @@ $ adb pull /sdcard/stock-system.img # This will take a few minutes
 /sdcard/stock-system.img: 1 file pulled. 3.2 MB/s (929038336 bytes in 280.605s)
 ```
 
-:::{tip}
-备份的文件据说可以通过 `fastboot` 烧入设备，完全恢复原来状态：
-
-```console
-$ fastboot -i 0x1949 flash boot stock-boot.img
-$ fastboot -i 0x1949 flash recovery stock-recovery.img
-$ fastboot -i 0x1949 flash system stock-system.img
-$ fastboot -i 0x1949 reboot
-```
-
-没试过不作保证。
-:::
+> [!TIP]
+> 备份的文件据说可以通过 `fastboot` 烧入设备，完全恢复原来状态：
+>
+> ```console
+> $ fastboot -i 0x1949 flash boot stock-boot.img
+> $ fastboot -i 0x1949 flash recovery stock-recovery.img
+> $ fastboot -i 0x1949 flash system stock-system.img
+> $ fastboot -i 0x1949 reboot
+> ```
+>
+> 没试过不作保证。
 
 ## 2. 进入 Fastboot 模式
 
@@ -387,11 +384,10 @@ Carbon Main Menu
 Carbon About
 :::
 
-:::{tip}
-Android 版本高可以安装较新的应用，缺点是较新的应用在老硬件上卡顿。
-
-老旧 APK 可以从 <https://www.apkmirror.com/> 这个网站下载。
-:::
+> [!TIP]
+> Android 版本高可以安装较新的应用，缺点是较新的应用在老硬件上卡顿。
+>
+> 老旧 APK 可以从 <https://www.apkmirror.com/> 这个网站下载。
 
 ## 附
 

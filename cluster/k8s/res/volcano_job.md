@@ -36,9 +36,8 @@ $ kubectl apply -f sleep_vj.yaml
 job.batch.volcano.sh/sleep created
 ```
 
-:::{note}
-The job will be in `PENDING` state if the underlying pods were not running succcessfuly, which may not caused by lack of resources.
-:::
+> [!NOTE]
+> The job will be in `PENDING` state if the underlying pods were not running succcessfuly, which may not caused by lack of resources.
 
 Watch events:
 
@@ -80,6 +79,5 @@ $ kubectl delete vj sleep
 job.batch.volcano.sh "sleep" deleted
 ```
 
-:::{note}
-Delete the job will also delete all task pods.
-:::
+> [!NOTE]
+> Delete the job will also delete all task pods.

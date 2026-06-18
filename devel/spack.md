@@ -199,22 +199,19 @@ $ spack compiler list
 gcc@11.4.0
 ```
 
-:::{note}
-The compiler settings were written to user scope, so they are available for all envs of the user. If the command was run with an active env, then the settings are only available in that env.
-:::
+> [!NOTE]
+> The compiler settings were written to user scope, so they are available for all envs of the user. If the command was run with an active env, then the settings are only available in that env.
 
 ## Install packages
 
-:::{note}
-If you have moved your spack directory, you need to regenerate the index:
-
-```console
-$ spack reindex
-==> Created a back-up copy of the DB at /home/ubuntu/opt/spack-data/tree/.spack-db/index.json.bkp
-==> The DB at /home/ubuntu/opt/spack-data/tree/.spack-db/index.json has been reindex to v8
-```
-
-:::
+> [!NOTE]
+> If you have moved your spack directory, you need to regenerate the index:
+>
+> ```console
+> $ spack reindex
+> ==> Created a back-up copy of the DB at /home/ubuntu/opt/spack-data/tree/.spack-db/index.json.bkp
+> ==> The DB at /home/ubuntu/opt/spack-data/tree/.spack-db/index.json has been reindex to v8
+> ```
 
 The following commands are run with `default` env activated.
 
@@ -327,21 +324,19 @@ Generate module files:
 $ spack module lmod refresh
 ```
 
-:::{tip}
-You can install Lmod by Spack:
-
-```console
-$ spack add lmod
-$ spack install
-```
-
-Source the init script of Lmod:
-
-```console
-$ . ${SPACK_ENV}/.spack-env/view/lmod/lmod/init/profile
-```
-
-:::
+> [!TIP]
+> You can install Lmod by Spack:
+>
+> ```console
+> $ spack add lmod
+> $ spack install
+> ```
+>
+> Source the init script of Lmod:
+>
+> ```console
+> $ . ${SPACK_ENV}/.spack-env/view/lmod/lmod/init/profile
+> ```
 
 Suppose [Lmod](project:lmod.md) has been installed, the modules can be used by:
 
@@ -396,6 +391,5 @@ $ spack buildcache list
 
 In fact, Spack will create the oci image, and put each software to an unique version of the image and tag it by the software name, version and hash.
 
-:::{note}
-You must be in an environment to push, also the prebuilt being pushed must be already installed. So you'd better do pushing before `spcak gc`, which will uninstall unnecessary packages.
-:::
+> [!NOTE]
+> You must be in an environment to push, also the prebuilt being pushed must be already installed. So you'd better do pushing before `spcak gc`, which will uninstall unnecessary packages.

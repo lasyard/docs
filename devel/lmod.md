@@ -22,9 +22,8 @@ Then install `Lmod`:
 $ sudo dnf install Lmod
 ```
 
-:::{note}
-The package name `Lmod` is case-sensitive.
-:::
+> [!NOTE]
+> The package name `Lmod` is case-sensitive.
 
 The traditional Tcl-based module system may be already installed, check the version:
 

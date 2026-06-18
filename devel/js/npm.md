@@ -14,9 +14,8 @@ Upgrate npm:
 $ npm install -g npm
 ```
 
-:::{note}
-Because our `npm` is installed in current user's home directory by `nvm` (along with `node`), no root previlege is needed.
-:::
+> [!NOTE]
+> Because our `npm` is installed in current user's home directory by `nvm` (along with `node`), no root previlege is needed.
 
 Clear cache:
 

@@ -51,14 +51,12 @@ $ cd build-x86_64-darwin-release
 $ cmake --build . --target install
 ```
 
-:::{note}
-`RPATH` for `wxrc` need to be fixed:
-
-```console
-$ install_name_tool -add_rpath "@executable_path/../lib" ~/bin/wxrc
-```
-
-:::
+> [!NOTE]
+> `RPATH` for `wxrc` need to be fixed:
+>
+> ```console
+> $ install_name_tool -add_rpath "@executable_path/../lib" ~/bin/wxrc
+> ```
 
 `wx-config` is used by CMake to find wxWidgets on Unix-like system, so set the path:
 
@@ -73,14 +71,12 @@ $ wx-config --version-full
 3.3.1.0
 ```
 
-:::{tip}
-To uninstall wxWidgets, run:
-
-```console
-$ cmake --build . --target uninstall
-```
-
-:::
+> [!TIP]
+> To uninstall wxWidgets, run:
+>
+> ```console
+> $ cmake --build . --target uninstall
+> ```
 
 ## Debug
 

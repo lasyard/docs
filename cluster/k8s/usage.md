@@ -130,30 +130,28 @@ metadata:
 type: kubernetes.io/dockerconfigjson
 ```
 
-:::{tip}
-The `data.dockerconfigjson` field is just base64 encoded docker config file, see:
-
-```console
-$ kubectl get secret las3-harbor -o "jsonpath={.data.\.dockerconfigjson}" | base64 --decode | jq
-{
-  "auths": {
-    "las3:443": {
-      "username": "admin",
-      "password": "AdminPassword123",
-      "auth": "YWRtaW46QWRtaW5QYXNzd29yZDEyMw=="
-    }
-  }
-}
-```
-
-The `auth` field in the above output is also base64 encoded. to dig into it, use the following command:
-
-```console
-$ kubectl get secret las3-harbor -o "jsonpath={.data.\.dockerconfigjson}" | base64 --decode | jq -r '.auths."las3:443".auth' | base64 --decode
-admin:AdminPassword123
-```
-
-:::
+> [!TIP]
+> The `data.dockerconfigjson` field is just base64 encoded docker config file, see:
+>
+> ```console
+> $ kubectl get secret las3-harbor -o "jsonpath={.data.\.dockerconfigjson}" | base64 --decode | jq
+> {
+>   "auths": {
+>     "las3:443": {
+>       "username": "admin",
+>       "password": "AdminPassword123",
+>       "auth": "YWRtaW46QWRtaW5QYXNzd29yZDEyMw=="
+>     }
+>   }
+> }
+> ```
+>
+> The `auth` field in the above output is also base64 encoded. to dig into it, use the following command:
+>
+> ```console
+> $ kubectl get secret las3-harbor -o "jsonpath={.data.\.dockerconfigjson}" | base64 --decode | jq -r '.auths."las3:443".auth' | base64 --decode
+> admin:AdminPassword123
+> ```
 
 Then the secret can be used to pull images from a private repository. Modify the pod spec:
 
@@ -295,9 +293,8 @@ Get specified info of all nodes:
 $ kubectl get no -o custom-columns=NAME:.metadata.name,CPU:.status.capacity.cpu,MEMORY:.status.capacity.memory,GPU:.status.capacity.nvidia\\.com/gpu
 ```
 
-:::{note}
-There must be double `\` to escape twice.
-:::
+> [!NOTE]
+> There must be double `\` to escape twice.
 
 ## kubelet config of nodes
 

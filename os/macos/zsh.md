@@ -21,9 +21,8 @@ Edit startup scripts `~/.zshrc`:
 :diff: /_files/macos/home/zshrc.orig
 :::
 
-:::{note}
-The last lines are added during installation of `nvm`, see "<project:/devel/js/node.md#using-nvm>". Do not edit it mannully.
-:::
+> [!NOTE]
+> The last lines are added during installation of `nvm`, see "<project:/devel/js/node.md#using-nvm>". Do not edit it mannully.
 
 Mannully update:
 

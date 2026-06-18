@@ -200,9 +200,8 @@ $ hdfs dfsadmin -safemode leave
 Safe mode is OFF
 ```
 
-:::{note}
-A freshly started/restarted NameNode is in safe mode temporarily. It will leave safe mode automatically.
-:::
+> [!NOTE]
+> A freshly started/restarted NameNode is in safe mode temporarily. It will leave safe mode automatically.
 
 #### Clear all data
 

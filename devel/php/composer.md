@@ -12,9 +12,8 @@
 $ brew install composer
 ```
 
-:::{tip}
-PHP is also installed as a dependency.
-:::
+> [!TIP]
+> PHP is also installed as a dependency.
 
 ::::
 :::::

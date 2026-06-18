@@ -81,12 +81,10 @@ pod/ray-cluster-kuberay-head-ftv6k                 2/2     Running   0          
 pod/ray-cluster-kuberay-workergroup-worker-xldnq   1/1     Running   0          58s
 ```
 
-:::{note}
-
-- The autoscaler run as a sidecar in the head pod, so there are two containers.
-- Though `worker.replicas` set to 1, there is still one worker started.
-
-:::
+> [!NOTE]
+>
+> - The autoscaler run as a sidecar in the head pod, so there are two containers.
+> - Though `worker.replicas` set to 1, there is still one worker started.
 
 Show the service:
 

@@ -95,9 +95,8 @@ On macOS after Monterey, you need to install php mannually for it is deprecated.
 
 Code signing is required on new macOS versions, so a certificate authority (CA) is needed to sign the php library. See [How to create Certificate Authority for Code Signing in macOS](https://www.simplified.guide/macos/keychain-ca-code-signing-create) to create a CA.
 
-:::{tip}
-Certificates are stored in `~/Library/Application Support/Certificate Authority/`.
-:::
+> [!TIP]
+> Certificates are stored in `~/Library/Application Support/Certificate Authority/`.
 
 Then sign the php lib (for Homebrew installed php on macOS Monterey):
 
@@ -133,9 +132,8 @@ Edit apache config file `/etc/apache2/httpd.conf`:
 :diff: /_files/macos/etc/apache2/httpd.conf.orig
 :::
 
-:::{note}
-CA Name is appended to the LoadModule line for `php`.
-:::
+> [!NOTE]
+> CA Name is appended to the LoadModule line for `php`.
 
 ::::
 ::::{tab-item} Debian
@@ -177,9 +175,8 @@ $ sudo dseditgroup -o edit -t user -a _www staff
 $ dseditgroup -o read staff
 ```
 
-:::{warning}
-This is dangerous if you want to expose your web root directory to the public.
-:::
+> [!WARNING]
+> This is dangerous if you want to expose your web root directory to the public.
 
 See this URL:
 

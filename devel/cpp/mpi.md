@@ -86,9 +86,8 @@ $ make -j
 $ sudo make install
 ```
 
-:::{note}
-Configure with `--with-pmix` force to use internal PMIx, avoid mangling with the PMIx existing in the system.
-:::
+> [!NOTE]
+> Configure with `--with-pmix` force to use internal PMIx, avoid mangling with the PMIx existing in the system.
 
 Check the version:
 
@@ -126,14 +125,12 @@ $ pmix_info
 ::::
 :::::
 
-:::{tip}
-If any of the new installed executables runs with error "symbol lookup" or "cannot find dynamic library", try refresh the `ld` cache with:
-
-```console
-$ sudo ldconfig
-```
-
-:::
+> [!TIP]
+> If any of the new installed executables runs with error "symbol lookup" or "cannot find dynamic library", try refresh the `ld` cache with:
+>
+> ```console
+> $ sudo ldconfig
+> ```
 
 ## Usage
 
@@ -228,9 +225,8 @@ $ scp ./mpi_hello_world las2:
 $ scp ./mpi_hello_world las3:
 ```
 
-:::{note}
-The executable must be put to correct path where `ssh` can find, not the same path as on local host. Pass free login must be configured before running.
-:::
+> [!NOTE]
+> The executable must be put to correct path where `ssh` can find, not the same path as on local host. Pass free login must be configured before running.
 
 Run on two hosts `las3` and `las2` with 4 processes per host:
 

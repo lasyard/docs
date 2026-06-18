@@ -99,9 +99,8 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl restart containerd
 ```
 
-:::{note}
-Must apply the same config on each node in the cluster.
-:::
+> [!NOTE]
+> Must apply the same config on each node in the cluster.
 
 ### Configure networking
 
@@ -163,9 +162,8 @@ $ sudo kubeadm reset
 
 See <project:teardown.md> to see how to completely remove a cluster.
 
-:::{tip}
-This command can also be used to reset the worker nodes if you want to do `join` again.
-:::
+> [!TIP]
+> This command can also be used to reset the worker nodes if you want to do `join` again.
 
 ## Join worker nodes
 
@@ -190,15 +188,14 @@ This node has joined the cluster:
 Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ```
 
-:::{note}
-If the token is expired, you can generate a new one and get the join command by:
-
-```console
-$ kubeadm token create --print-join-command --ttl 24h
-```
-
-The expiration time is set to 24 hours as above.
-:::
+> [!NOTE]
+> If the token is expired, you can generate a new one and get the join command by:
+>
+> ```console
+> $ kubeadm token create --print-join-command --ttl 24h
+> ```
+>
+> The expiration time is set to 24 hours as above.
 
 ## Install networking
 

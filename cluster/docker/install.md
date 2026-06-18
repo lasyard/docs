@@ -173,15 +173,14 @@ Edit file `/etc/docker/daemon.json` to set docker daemon:
 
 ## Run hello-world
 
-:::{tip}
-To use docker as current user, add it to group `docker`:
-
-```console
-$ sudo usermod -aG docker $(whoami)
-```
-
-After adding group, you need to relogin.
-:::
+> [!TIP]
+> To use docker as current user, add it to group `docker`:
+>
+> ```console
+> $ sudo usermod -aG docker $(whoami)
+> ```
+>
+> After adding group, you need to relogin.
 
 Pull the image:
 

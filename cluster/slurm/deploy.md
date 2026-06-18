@@ -34,25 +34,22 @@ $ sudo useradd -Mlrc "SLURM workload manager" -g slurm -u998 slurm
 
 ### Create configuration files
 
+> [!TIP]
+> Online configuration generating tools are at <https://slurm.schedmd.com/configurator.html> and <https://slurm.schedmd.com/configurator.easy.html>.
+
 Create file `/etc/slurm/slurm.conf`:
 
 :::{literalinclude} /_files/ubuntu/etc/slurm/slurm.conf
 :language: ini
 :::
 
-:::{note}
-
-- `MaxNodeCount` must be set for configless mode
-- `SlurmdUser` (not `SlurmUser`) should be set to `root` (default), or `slurmd` cannot run properly
-- If log file paths are not set, slurm will write logs to syslog
-- `%h` in `SlurmdPidFile`, `SlurmdSpoolDir` and `SlurmdLogFile` is useful when these paths located in a storage shared by all computing node. Using `%n` is worse for it stand for "Node Name", and is not known at the start of `slurmd`
-- The type of GPU must be a substring of the real GPU type, and empty string is not looked on as substring of any other strings (maybe a bug). So a `_` will match most of GPU types
-
-:::
-
-:::{tip}
-Online configuration generating tools are at <https://slurm.schedmd.com/configurator.html> and <https://slurm.schedmd.com/configurator.easy.html>.
-:::
+> [!NOTE]
+>
+> - `MaxNodeCount` must be set for configless mode
+> - `SlurmdUser` (not `SlurmUser`) should be set to `root` (default), or `slurmd` cannot run properly
+> - If log file paths are not set, slurm will write logs to syslog
+> - `%h` in `SlurmdPidFile`, `SlurmdSpoolDir` and `SlurmdLogFile` is useful when these paths located in a storage shared by all computing node. Using `%n` is worse for it stand for "Node Name", and is not known at the start of `slurmd`
+> - The type of GPU must be a substring of the real GPU type, and empty string is not looked on as substring of any other strings (maybe a bug). So a `_` will match most of GPU types
 
 Create file `/etc/slurm/cgroup.conf`:
 
@@ -136,9 +133,8 @@ Create `slurmdbd` configuration file `/etc/slurm/slurmdbd.conf`:
 :language: ini
 :::
 
-:::{note}
-If `SlurmUser` is not set, slurmdbd will try to act as root.
-:::
+> [!NOTE]
+> If `SlurmUser` is not set, slurmdbd will try to act as root.
 
 Set owner and modes of the configuration file:
 
@@ -147,9 +143,8 @@ $ sudo chown slurm:slurm /etc/slurm/slurmdbd.conf
 $ sudo chmod 0600 /etc/slurm/slurmdbd.conf
 ```
 
-:::{important}
-For the password of database is set in this file, no others should read the file except the owner.
-:::
+> [!IMPORTANT]
+> For the password of database is set in this file, no others should read the file except the owner.
 
 ## JWT and REST API
 
@@ -184,9 +179,8 @@ $ sudo systemctl edit --full slurmrestd
 :diff: /_files/ubuntu/etc/systemd/system/slurmrestd.service.orig
 :::
 
-:::{note}
-Service slurmrestd cannot be run as root or `SlurmUser`.
-:::
+> [!NOTE]
+> Service slurmrestd cannot be run as root or `SlurmUser`.
 
 ## Run
 

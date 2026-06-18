@@ -91,9 +91,8 @@ Client port found: 2181. Client address: localhost. Client SSL: false.
 Mode: follower
 ```
 
-:::{note}
-The last line will be `Mode: leader` if run the command on a leader node. Only one of the nodes should be 'leader' and the others should be 'follower'.
-:::
+> [!NOTE]
+> The last line will be `Mode: leader` if run the command on a leader node. Only one of the nodes should be 'leader' and the others should be 'follower'.
 
 Stop the service on one node:
 

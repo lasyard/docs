@@ -180,9 +180,8 @@ $ ceph orch host add las2 10.225.4.53
 Added host 'las2' with addr '10.225.4.53'
 ```
 
-:::{important}
-Best providing the ip, for there may be many ips for the host and the auto resolved one may not be appropriate.
-:::
+> [!IMPORTANT]
+> Best providing the ip, for there may be many ips for the host and the auto resolved one may not be appropriate.
 
 Now follow the same process on `las1` to create logical volume, and add an OSD located in the new host:
 

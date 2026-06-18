@@ -51,9 +51,8 @@ high         up   infinite      1  down* las2
 high         up   infinite      3   idle las[0-1,3]
 ```
 
-:::{tip}
-The `*` after the node state means it is not responding.
-:::
+> [!TIP]
+> The `*` after the node state means it is not responding.
 
 ## srun
 

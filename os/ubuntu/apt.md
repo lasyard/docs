@@ -4,9 +4,8 @@
 
 ## Usage
 
-:::{tip}
-Use `apt-get` instead of `apt` in scripts for it has stable interfaces.
-:::
+> [!TIP]
+> Use `apt-get` instead of `apt` in scripts for it has stable interfaces.
 
 List installed packages:
 

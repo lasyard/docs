@@ -36,9 +36,8 @@ $ sudo cephadm unit restart -n mon.las3 --fsid 628d3140-37c9-11f1-8f6f-d3e73c698
 Inferring config /var/lib/ceph/628d3140-37c9-11f1-8f6f-d3e73c698443/mon.las3/config
 ```
 
-:::{important}
-Do not manage ceph services by `systemctl` if your cluster is managed by `cephadm`, the ceph orchestrator is guarding these settings.
-:::
+> [!IMPORTANT]
+> Do not manage ceph services by `systemctl` if your cluster is managed by `cephadm`, the ceph orchestrator is guarding these settings.
 
 ## Enable a shell
 

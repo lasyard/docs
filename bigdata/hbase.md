@@ -108,19 +108,17 @@ stopping hbase..............
 ...
 ```
 
-:::{tip}
-If the command above does not work, try these commands:
-
-```console
-$ hbase-daemon.sh stop regionserver
-running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-las0.out
-stopping regionserver.
-$ hbase-daemon.sh stop master
-running master, logging to /opt/hbase/bin/../logs/hbase-ubuntu-master-las0.out
-stopping master..
-```
-
-:::
+> [!TIP]
+> If the command above does not work, try these commands:
+>
+> ```console
+> $ hbase-daemon.sh stop regionserver
+> running regionserver, logging to /opt/hbase/bin/../logs/hbase-ubuntu-regionserver-las0.out
+> stopping regionserver.
+> $ hbase-daemon.sh stop master
+> running master, logging to /opt/hbase/bin/../logs/hbase-ubuntu-master-las0.out
+> stopping master..
+> ```
 
 ## Usage
 

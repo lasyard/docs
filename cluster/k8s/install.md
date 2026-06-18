@@ -40,17 +40,16 @@ clientVersion:
 
 Default output style is Go style, which is why `-o yaml` is needed.
 
-:::{tip}
-If you want to upgrade these components, you can unpin them by:
+> [!TIP]
+> If you want to upgrade these components, you can unpin them by:
+>
+> ```console
+> $ sudo apt-mark unhold kubelet kubeadm kubectl
+> Canceled hold on kubelet.
+> Canceled hold on kubeadm.
+> Canceled hold on kubectl.
+> ```
 
-```console
-$ sudo apt-mark unhold kubelet kubeadm kubectl
-Canceled hold on kubelet.
-Canceled hold on kubeadm.
-Canceled hold on kubectl.
-```
-
-:::
 ::::
 :::::
 

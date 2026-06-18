@@ -123,9 +123,8 @@ $ ray stop
 Stopped all 2 Ray processes.
 ```
 
-:::{note}
-Must stop workers first before stopping the head.
-:::
+> [!NOTE]
+> Must stop workers first before stopping the head.
 
 ### Using config file
 
@@ -194,9 +193,8 @@ Pending Demands:
  (no resource demands)
 ```
 
-:::{important}
-There is a `max_workers` config, which is default to the number of `worker_ips` (and cannot be set to a larger number), and a worker is run on the head node, so there is always a host left without any worker running on. Don't know why it is designed.
-:::
+> [!IMPORTANT]
+> There is a `max_workers` config, which is default to the number of `worker_ips` (and cannot be set to a larger number), and a worker is run on the head node, so there is always a host left without any worker running on. Don't know why it is designed.
 
 Teardown the cluster:
 
@@ -274,9 +272,8 @@ Job 'raysubmit_62j7dPtmX6UfzDnx' succeeded
 
 ```
 
-:::{note}
-In this way, the files under the working directory is packaged and uploaded. So don't put irrelevant files in it.
-:::
+> [!NOTE]
+> In this way, the files under the working directory is packaged and uploaded. So don't put irrelevant files in it.
 
 Submit a job asynchronously:
 

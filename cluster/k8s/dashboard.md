@@ -76,23 +76,22 @@ $ kubectl -n kubernetes-dashboard port-forward --address=0.0.0.0 svc/kubernetes-
 
 The exposed port is `8443`.
 
-:::{note}
-Port forwarding is running on the host where the command is emitted, and will be ceased if the command quit. You can make the service available outside simply by modify service type to `NodePort`:
-
-```console
-$ kubectl patch service/kubernetes-dashboard-kong-proxy -n kubernetes-dashboard -p '{"spec": {"type": "NodePort"}}'
-service/kubernetes-dashboard-kong-proxy patched
-```
-
-Find the exposed node port:
-
-```console
-$ kubectl get -o template --template='{{range .spec.ports}}{{if .name | eq "kong-proxy-tls"}}{{.nodePort}}{{end}}{{end}}' service/kubernetes-dashboard-kong-proxy -n kubernetes-dashboard
-32712
-```
-
-The port is exposed on each node in the cluster.
-:::
+> [!NOTE]
+> Port forwarding is running on the host where the command is emitted, and will be ceased if the command quit. You can make the service available outside simply by modify service type to `NodePort`:
+>
+> ```console
+> $ kubectl patch service/kubernetes-dashboard-kong-proxy -n kubernetes-dashboard -p '{"spec": {"type": "NodePort"}}'
+> service/kubernetes-dashboard-kong-proxy patched
+> ```
+>
+> Find the exposed node port:
+>
+> ```console
+> $ kubectl get -o template --template='{{range .spec.ports}}{{if .name | eq "kong-proxy-tls"}}{{.nodePort}}{{end}}{{end}}' service/kubernetes-dashboard-kong-proxy -n kubernetes-dashboard
+> 32712
+> ```
+>
+> The port is exposed on each node in the cluster.
 
 Open the dashboard in your browser using `https` scheme with the host name of your node and exposed port.
 
@@ -106,12 +105,10 @@ $ kubectl -n kubernetes-dashboard create token admin
 
 Paste the output token into the login page.
 
-:::{tip}
-Restart `coredns` may solve some network problem:
-
-```console
-$ kubectl rollout restart deploy coredns -n kube-system
-deployment.apps/coredns restarted
-```
-
-:::
+> [!TIP]
+> Restart `coredns` may solve some network problem:
+>
+> ```console
+> $ kubectl rollout restart deploy coredns -n kube-system
+> deployment.apps/coredns restarted
+> ```

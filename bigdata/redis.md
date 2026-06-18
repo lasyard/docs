@@ -41,9 +41,8 @@ Edit file `/etc/redis/redis.conf` to enable cluster mode:
 :diff: /_files/ubuntu/etc/redis/redis.conf.orig
 :::
 
-:::{caution}
-The protected mode is off and the service is opened to outside world, which is dangerous. The configurations is for learning and testing in internal network only.
-:::
+> [!CAUTION]
+> The protected mode is off and the service is opened to outside world, which is dangerous. The configurations is for learning and testing in internal network only.
 
 Start all nodes, then create the cluster:
 

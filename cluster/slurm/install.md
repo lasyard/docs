@@ -24,9 +24,8 @@ For worker nodes:
 $ sudo dnf install slurm-slurmd
 ```
 
-:::{tip}
-Install `slurmctld` or `slurmd` will install `slurm` as dependencies.
-:::
+> [!TIP]
+> Install `slurmctld` or `slurmd` will install `slurm` as dependencies.
 
 For client:
 
@@ -109,9 +108,8 @@ $ cd ~/rpmbuild/RPMS/x86_64/
 $ sudo rpm -iv slurm-24.11.0-1.el8.x86_64.rpm 
 ```
 
-:::{tip}
-Packages installed by `rpm` can be uninstalled by `dnf remove`.
-:::
+> [!TIP]
+> Packages installed by `rpm` can be uninstalled by `dnf remove`.
 
 ::::
 ::::{tab-item} Ubuntu
@@ -162,9 +160,8 @@ slurm-smd-libslurm-perl_24.11.5-1_amd64.deb               slurm-smd_24.11.5-1_am
 slurm-smd-openlava_24.11.5-1_all.deb                      slurm-smd_24.11.5-1_amd64.deb
 ```
 
-:::{note}
-In order to use `nvml`, Slurm must be build with CUDA installed.
-:::
+> [!NOTE]
+> In order to use `nvml`, Slurm must be build with CUDA installed.
 
 Install the packages. For controller nodes:
 
@@ -178,19 +175,16 @@ For worker nodes:
 $ sudo dpkg -i slurm-smd_24.11.5-1_amd64.deb slurm-smd-slurmd_24.11.5-1_amd64.deb slurm-smd-client_24.11.5-1_amd64.deb
 ```
 
-:::{important}
-Slurm client is required on computing nodes for it is common to using `srun` in slurm batch scripts.
-:::
-
-:::{note}
-If the installation failed due to missing dependencies, fix them by:
-
-```console
-$ sudo apt install -f
-```
-
-then re-run the installation command.
-:::
+> [!NOTE]
+> Slurm client is required on computing nodes for it is common to using `srun` in slurm batch scripts.
+>
+> If the installation failed due to missing dependencies, fix them by:
+>
+> ```console
+> $ sudo apt install -f
+> ```
+>
+> then re-run the installation command.
 
 ::::
 :::::

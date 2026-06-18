@@ -15,9 +15,8 @@ pip 24.0 from /usr/local/lib/python3.12/site-packages/pip (python 3.12)
 $ pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-:::{tip}
-Command `config set` may not exist for low version of `pip`.
-:::
+> [!TIP]
+> Command `config set` may not exist for low version of `pip`.
 
 ## Install packages
 
@@ -31,14 +30,12 @@ Install with specified index-url:
 $ pip3 install python-socks -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-:::{tip}
-If python is managed by other package manager, for example, `brew` on macOS. Try:
-
-```console
-$ pip3 install -r requirements.txt --break-system-packages
-```
-
-:::
+> [!TIP]
+> If python is managed by other package manager, for example, `brew` on macOS. Try:
+>
+> ```console
+> $ pip3 install -r requirements.txt --break-system-packages
+> ```
 
 ## List installed packages
 

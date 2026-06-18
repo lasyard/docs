@@ -13,9 +13,8 @@ configmap/volcano-scheduler-configmap edited
 :diff: /_files/macos/console/kubectl/get_cm_volcano_scheduler.txt
 :::
 
-:::{note}
-`capacity` 插件和 `proportion` 插件互斥，不能同时使用。
-:::
+> [!NOTE]
+> `capacity` 插件和 `proportion` 插件互斥，不能同时使用。
 
 编辑文件 `hierarchical_q.yaml`, 内容如下：
 

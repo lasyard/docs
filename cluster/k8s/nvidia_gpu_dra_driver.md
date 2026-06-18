@@ -1,8 +1,7 @@
 # Nvidia GPU DRA Driver
 
-:::{note}
-这个驱动将来可能被整合进 GPU Operator.
-:::
+> [!NOTE]
+> 这个驱动将来可能被整合进 GPU Operator.
 
 ## 安装
 

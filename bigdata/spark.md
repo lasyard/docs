@@ -50,9 +50,8 @@ las1: starting org.apache.spark.deploy.worker.Worker, logging to /opt/spark/logs
 las0: starting org.apache.spark.deploy.worker.Worker, logging to /opt/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-las0.out
 ```
 
-:::{caution}
-The `hadoop` distribution contains scripts with the same name `start-all.sh`. Do not run the wrong one.
-:::
+> [!CAUTION]
+> The `hadoop` distribution contains scripts with the same name `start-all.sh`. Do not run the wrong one.
 
 Show java processes:
 
@@ -65,9 +64,8 @@ $ jps -lm
 
 Spark web UI is available at URL `http://las0:8080`.
 
-:::{note}
-Spark workers' web UI is binding to prot `8081`, which is conflicting with [Flink](project:flink.md).
-:::
+> [!NOTE]
+> Spark workers' web UI is binding to prot `8081`, which is conflicting with [Flink](project:flink.md).
 
 To stop the Spark cluster:
 

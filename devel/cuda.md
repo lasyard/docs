@@ -29,13 +29,8 @@ To uninstall the NVIDIA Driver, run nvidia-uninstall
 Logfile is /var/log/cuda-installer.log
 ```
 
-:::{note}
-Be patient! It is slow and need interactive inputs.
-:::
-
-:::{caution}
-`cuda-uninstaller` is not installed if you do not install Demo/Documentation, though mentioned in the output.
-:::
+> [!NOTE]
+> `cuda-uninstaller` is not installed if you do not install Demo/Documentation, though mentioned in the output.
 
 Check:
 

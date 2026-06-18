@@ -20,18 +20,16 @@ Create file `topology_rf_cq_lq.yaml` for some `kueue` staffs:
 :::{literalinclude} /_files/macos/workspace/k8s/topology_rf_cq_lq.yaml
 :::
 
-:::{note}
-For `ResourceFlavor`, At least one of `nodeLabels` is required if `topologyName` is set. That means, the correct label must be set to schedule pods on the expected nodes before running jobs:
-
-```console
-$ kubectl label node --all node-group=default
-node/las1 labeled
-node/las2 labeled
-node/las0 labeled
-node/las3 labeled
-```
-
-:::
+> [!NOTE]
+> For `ResourceFlavor`, At least one of `nodeLabels` is required if `topologyName` is set. That means, the correct label must be set to schedule pods on the expected nodes before running jobs:
+>
+> ```console
+> $ kubectl label node --all node-group=default
+> node/las1 labeled
+> node/las2 labeled
+> node/las0 labeled
+> node/las3 labeled
+> ```
 
 Apply to the cluster:
 
