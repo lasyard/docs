@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
@@ -19,8 +19,8 @@ $ munge --version
 munge-0.5.13 (2017-09-26)
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -34,46 +34,46 @@ $ munge --version
 munge-0.5.14 (2020-01-14)
 ```
 
-:::
 ::::
+:::::
 
 ## Configure
 
 On one node:
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
 $ sudo create-munge-key
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
 $ sudo -u munge -g munge mungekey -cf
 ```
 
-:::
 ::::
+:::::
 
 The generated key file is `/etc/munge/munge.key` by default. Copy it to all nodes. Be careful with the file owner, group and modes.
 
 ## Run
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
 $ sudo systemctl enable munge --now
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Restart the service after the key is re-generated:
@@ -82,8 +82,8 @@ Restart the service after the key is re-generated:
 $ sudo systemctl restart munge
 ```
 
-:::
 ::::
+:::::
 
 ## Usage
 

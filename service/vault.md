@@ -2,8 +2,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Add the HashiCorp repository:
@@ -20,8 +20,8 @@ Install:
 $ sudo apt install vault
 ```
 
-:::
 ::::
+:::::
 
 Show the version:
 

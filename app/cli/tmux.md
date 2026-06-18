@@ -4,16 +4,16 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
 $ sudo dnf install tmux
 ```
 
-:::
 ::::
+:::::
 
 Check the version:
 

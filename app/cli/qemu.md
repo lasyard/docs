@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -18,8 +18,8 @@ QEMU emulator version 11.0.0
 Copyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers
 ```
 
-:::
 ::::
+:::::
 
 ## Usage
 

@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Add the repository:
@@ -23,8 +23,8 @@ $ sudo apt update
 $ sudo apt install redis
 ```
 
-:::
 ::::
+:::::
 
 Check the version:
 

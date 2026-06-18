@@ -57,8 +57,8 @@ Default output style is Go style, which is why `-o yaml` is needed.
 
 `kubectl` can be installed anywhere to access k8s system.
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 For Intel silicon:
@@ -74,6 +74,7 @@ $ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/sta
 ```
 
 ::::
+:::::
 
 ```console
 $ chmod +x kubectl

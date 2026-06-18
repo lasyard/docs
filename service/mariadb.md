@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -44,8 +44,8 @@ $ brew services start mariadb
 ==> Successfully started `mariadb` (label: homebrew.mxcl.mariadb)
 ```
 
-:::
-:::{tab-item} CentOS 8
+::::
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
@@ -65,8 +65,8 @@ Enable the server:
 $ sudo systemctl enable mariadb --now
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -80,8 +80,8 @@ $ mysql --version
 mysql  Ver 15.1 Distrib 10.6.21-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper
 ```
 
-:::
 ::::
+:::::
 
 Initialize:
 

@@ -2,16 +2,16 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
 $ sudo apt install nfs-kernel-server
 ```
 
-:::
 ::::
+:::::
 
 ## Configure
 
@@ -45,16 +45,16 @@ $ sudo exportfs -v
 
 On a client, you need to install the NFS tools:
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
 $ sudo apt install nfs-common
 ```
 
-:::
 ::::
+:::::
 
 Then do mounting:
 

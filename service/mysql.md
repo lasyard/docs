@@ -2,8 +2,8 @@
 
 <https://www.mysql.com/>
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
@@ -17,5 +17,5 @@ $ mysql --version
 mysql  Ver 8.0.26 for Linux on x86_64 (Source distribution)
 ```
 
-:::
 ::::
+:::::

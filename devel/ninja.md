@@ -4,16 +4,16 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
 $ brew install ninja
 ```
 
-:::
 ::::
+:::::
 
 ```console
 $ ninja --version

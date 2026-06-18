@@ -2,22 +2,22 @@
 
 ## By package manager
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
 $ sudo apt install python3 python3-pip python-is-python3
 ```
 
-:::
-:::{tab-item} Windows
+::::
+::::{tab-item} Windows
 :sync: windows
 
 Python 3.13 can be installed from Microsoft Store.
 
-:::
-:::{tab-item} MSYS2
+::::
+::::{tab-item} MSYS2
 :sync: msys2
 
 ```console
@@ -25,8 +25,8 @@ $ pacman -S ${MINGW_PACKAGE_PREFIX}-python
 $ pacman -S ${MINGW_PACKAGE_PREFIX}-python-pip
 ```
 
-:::
 ::::
+:::::
 
 ## Build from sources
 
@@ -35,10 +35,6 @@ Download sources:
 ```console
 $ curl -LO https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
 ```
-
-::::{tab-set}
-:::{tab-item} CentOS 8
-:sync: centos8
 
 Extract files:
 
@@ -49,9 +45,24 @@ $ cd ~/workspace/devel/Python-3.10.14/
 
 Install dependent packages before building:
 
+:::::{tab-set}
+::::{tab-item} CentOS 8
+:sync: centos8
+
 ```console
 $ sudo dnf install -y libffi-devel zlib-devel bzip2-devel xz-devel openssl-devel uuid-devel sqlite-devel libnsl2-devel
 ```
+
+::::
+::::{tab-item} Ubuntu
+:sync: ubuntu
+
+```console
+$ sudo apt install libbz2-dev
+```
+
+::::
+:::::
 
 Configure, build and install:
 
@@ -67,6 +78,3 @@ Create symbolic links:
 $ sudo ln -snf pip3.10 /usr/local/bin/pip3
 $ sudo ln -snf pip3.10 /usr/local/bin/pip
 ```
-
-:::
-::::

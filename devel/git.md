@@ -4,8 +4,8 @@
 
 ## Install git
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -17,8 +17,8 @@ $ git --version
 git version 2.34.1
 ```
 
-:::
-:::{tab-item} CentOS 8
+::::
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
@@ -30,8 +30,8 @@ $ git --version
 git version 2.27.0
 ```
 
-:::
-:::{tab-item} macOS
+::::
+::::{tab-item} macOS
 :sync: macos
 
 `git` is pre-installed on macOS Monterey.
@@ -49,8 +49,8 @@ $ git --version
 git version 2.46.0
 ```
 
-:::
 ::::
+:::::
 
 ## Usage
 

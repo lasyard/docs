@@ -2,8 +2,8 @@
 
 ## By package manager
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 Install Go by `dnf`:
@@ -12,8 +12,8 @@ Install Go by `dnf`:
 $ sudo dnf install go-toolset
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Install Go by `apt`:
@@ -29,8 +29,8 @@ $ go version
 go version go1.18.1 linux/amd64
 ```
 
-:::
 ::::
+:::::
 
 The packaged version is quite old, so it is not recommended.
 
@@ -38,9 +38,9 @@ The packaged version is quite old, so it is not recommended.
 
 Donwload and install Go manually:
 
-::::{tab-set}
-:::{tab-item} Linux
-:sync: linux
+:::::{tab-set}
+::::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ curl -LO https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
@@ -56,8 +56,8 @@ $ go version
 go version go1.24.2 linux/amd64
 ```
 
-:::
-:::{tab-item} macOS
+::::
+::::{tab-item} macOS
 :sync: macos
 
 For Intel silicon:
@@ -92,5 +92,5 @@ $ go env GOPATH
 /Users/xxxx/go
 ```
 
-:::
 ::::
+:::::

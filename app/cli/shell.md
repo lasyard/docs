@@ -2,8 +2,8 @@
 
 ## Show version
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -11,13 +11,13 @@ $ ${SHELL} --version
 zsh 5.8.1 (x86_64-apple-darwin21.0)
 ```
 
-:::
 ::::
+:::::
 
 ## Date
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 
 Translate from unix timestamp to `ymdhms`:
 
@@ -33,8 +33,8 @@ $ date -j -f "%Y-%m-%d %H:%M:%S" "+%s" "2025-01-16 12:00:00"
 1737000000
 ```
 
-:::
 ::::
+:::::
 
 ## Remove executable flags recursively
 

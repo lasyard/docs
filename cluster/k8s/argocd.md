@@ -73,8 +73,8 @@ Now we can access the web UI. The initial admin password can be get as said in t
 
 ### CLI
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -94,8 +94,8 @@ argocd: v3.4.3+1801122.dirty
 {"level":"fatal","msg":"Argo CD server address unspecified","time":"2026-06-03T10:35:48+08:00"}
 ```
 
-:::
 ::::
+:::::
 
 ## Usage
 

@@ -6,8 +6,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
@@ -23,8 +23,8 @@ $ chronyc --version
 chronyc (chrony) version 4.1 (+READLINE +SECHASH +IPV6 +DEBUG)
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -42,8 +42,8 @@ ubuntu@las0:~$ chronyc --version
 chronyc (chrony) version 4.2 (+READLINE +SECHASH +IPV6 -DEBUG)
 ```
 
-:::
 ::::
+:::::
 
 ## Configure
 

@@ -8,8 +8,9 @@ Install `git` first, see "<project:/devel/git.md#install-git>".
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} Linux
+:::::{tab-set}
+::::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
@@ -28,8 +29,9 @@ $ helm version
 version.BuildInfo{Version:"v3.17.3", GitCommit:"e4da49785aa6e6ee2b86efd5dd9e43400318262b", GitTreeState:"clean", GoVersion:"go1.23.7"}
 ```
 
-:::
-:::{tab-item} macOS
+::::
+::::{tab-item} macOS
+:sync: macos
 
 ```console
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
@@ -48,8 +50,8 @@ $ helm version
 version.BuildInfo{Version:"v3.16.4", GitCommit:"7877b45b63f95635153b29a42c0c2f4273ec45ca", GitTreeState:"clean", GoVersion:"go1.22.7"}
 ```
 
-:::
 ::::
+:::::
 
 ## Usage
 

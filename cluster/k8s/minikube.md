@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -13,8 +13,8 @@ $ curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minik
 $ sudo install minikube-darwin-amd64 /usr/local/bin/minikube
 ```
 
-:::
 ::::
+:::::
 
 Show the version:
 
@@ -35,8 +35,8 @@ $ minikube config set driver vmware
 
 Start a minikube cluster:
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -59,8 +59,8 @@ $ minikube start
 🏄  完成！kubectl 现在已配置，默认使用"minikube"集群和"default"命名空间
 ```
 
-:::
 ::::
+:::::
 
 Check status:
 

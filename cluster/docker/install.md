@@ -1,7 +1,7 @@
 # Install Docker
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 Use brew:
@@ -30,8 +30,8 @@ docker-buildx is a Docker plugin. For Docker to find the plugin, add "cliPlugins
 
 Note the Caveats in the output.
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Add docker repository:
@@ -54,8 +54,8 @@ Add the current user to `docker` group to use the docker engine directly:
 $ sudo usermod -aG docker ubuntu
 ```
 
-:::
 ::::
+:::::
 
 Check the version:
 

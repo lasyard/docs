@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} Debian
+:::::{tab-set}
+::::{tab-item} Debian
 :sync: debian
 
 ```console
@@ -23,8 +23,8 @@ Zend Engine v4.2.29, Copyright (c) Zend Technologies
     with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans
 ```
 
-:::
 ::::
+:::::
 
 ## Configure
 

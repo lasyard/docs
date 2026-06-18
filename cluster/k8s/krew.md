@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```sh
@@ -56,14 +56,14 @@ Installed plugin: krew
 /
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 The same as on macOS.
 
-:::
 ::::
+:::::
 
 Show the version:
 

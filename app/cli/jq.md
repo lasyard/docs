@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -19,8 +19,8 @@ $ jq --version
 jq-1.6
 ```
 
-:::
-:::{tab-item} CentOS 8
+::::
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
@@ -34,8 +34,8 @@ $ jq --version
 jq-1.5
 ```
 
-:::
-:::{tab-item} macOS
+::::
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -49,5 +49,5 @@ $ jq --version
 jq-1.7.1
 ```
 
-:::
 ::::
+:::::

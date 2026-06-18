@@ -4,15 +4,15 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 
-```sh
-brew install derailed/k9s/k9s
+```console
+$ brew install derailed/k9s/k9s
 ```
 
-:::
 ::::
+:::::
 
 ```console
 $ k9s version

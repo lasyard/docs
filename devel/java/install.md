@@ -1,7 +1,7 @@
 # Install Java Development Environment
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 Install JDK:
@@ -13,8 +13,8 @@ $ sudo dnf install java-1.8.0-openjdk-devel
 
 The latter is needed for `jps` command.
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
@@ -30,5 +30,5 @@ OpenJDK Runtime Environment (build 1.8.0_452-8u452-ga~us1-0ubuntu1~22.04-b09)
 OpenJDK 64-Bit Server VM (build 25.452-b09, mixed mode)
 ```
 
-:::
 ::::
+:::::

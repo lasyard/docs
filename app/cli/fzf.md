@@ -6,8 +6,8 @@
 
 By package manager:
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -26,16 +26,16 @@ To set up shell integration, add this to your shell configuration file:
   fzf --fish | source
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 ```console
 $ sudo apt install fzf
 ```
 
-:::
 ::::
+:::::
 
 Use binary release:
 

@@ -1,7 +1,7 @@
 # Install C/C++ Development Environment
 
-::::{tab-set}
-:::{tab-item} CentOS 8
+:::::{tab-set}
+::::{tab-item} CentOS 8
 :sync: centos8
 
 Install the package group:
@@ -56,8 +56,8 @@ Install clang tools (clang-format, clang-tidy, etc.):
 $ sudo dnf install clang-tools-extra
 ```
 
-:::
-:::{tab-item} Ubuntu
+::::
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 Install build essenstial:
@@ -85,8 +85,8 @@ If you want to build deb packages, you need to install `equivs`:
 $ sudo apt satisfy equivs
 ```
 
-:::
-:::{tab-item} macOS
+::::
+::::{tab-item} macOS
 :sync: macos
 
 macOS has `clang` installed, but you can install a new version by:
@@ -108,13 +108,13 @@ $ ln -snf gcc-14 /usr/local/bin/gcc
 $ ln -snf g++-14 /usr/local/bin/g++
 ```
 
-:::
-:::{tab-item} MSYS2
+::::
+::::{tab-item} MSYS2
 :sync: msys2
 
 ```console
 $ pacman -S make
 ```
 
-:::
 ::::
+:::::

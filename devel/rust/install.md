@@ -1,7 +1,7 @@
 # Install Rust Development Environment
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -89,8 +89,8 @@ $ rustc --version
 rustc 1.90.0 (1159e78c4 2025-09-14)
 ```
 
-:::
 ::::
+:::::
 
 ## rustup
 

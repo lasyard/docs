@@ -4,8 +4,8 @@
 
 ## Install etcd client
 
-::::{tab-set}
-:::{tab-item} Ubuntu
+:::::{tab-set}
+::::{tab-item} Ubuntu
 :sync: ubuntu
 
 By `snap`:
@@ -23,8 +23,8 @@ etcdctl version: 3.4.36
 API version: 3.4
 ```
 
-:::
 ::::
+:::::
 
 Install by downloading package binaries:
 

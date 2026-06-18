@@ -2,8 +2,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -19,8 +19,8 @@ Copyright (c) The PHP Group
 Zend Engine v4.3.11, Copyright (c) Zend Technologies
 ```
 
-:::
-:::{tab-item} Debian
+::::
+::::{tab-item} Debian
 :sync: debian
 
 ```console
@@ -32,8 +32,8 @@ $ sudo apt install php-gd
 $ sudo apt install php-imagick
 ```
 
-:::
 ::::
+:::::
 
 ## Configure
 

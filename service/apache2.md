@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 `apache2` is pre-installed on macOS Monterey as `httpd`.
@@ -43,8 +43,8 @@ Make it start at boot:
 $ sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
-:::
-:::{tab-item} Debian
+::::
+::::{tab-item} Debian
 :sync: debian
 
 ```console
@@ -82,8 +82,8 @@ To activate the new configuration, you need to run:
   systemctl restart apache2
 ```
 
-:::
 ::::
+:::::
 
 ## Enable php
 

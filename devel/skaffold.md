@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 For macOS on Apple silicon:
@@ -15,5 +15,5 @@ $ curl -LO https://storage.googleapis.com/skaffold/releases/latest/skaffold-darw
 $ sudo install skaffold-darwin-arm64 /usr/local/bin/skaffold
 ```
 
-:::
 ::::
+:::::

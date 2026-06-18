@@ -4,8 +4,8 @@
 
 ## Install
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 Install using `brew`:
@@ -22,8 +22,9 @@ if command -v pyenv > /dev/null; then
 fi
 ```
 
-:::
-:::{tab-item} Linux
+::::
+::::{tab-item} Ubuntu
+:sync: ubuntu
 
 ```console
 $ curl -fsSL https://pyenv.run | bash
@@ -50,8 +51,8 @@ eval "$(pyenv virtualenv-init -)"
 
 Add the scripts mentioned above to `.bashrc` (Generally, `.profile` would call `.bashrc` on Ubuntu).
 
-:::
 ::::
+:::::
 
 Show the version:
 
@@ -75,6 +76,9 @@ python-build: use tcl-tk from homebrew
 python-build: use readline from homebrew
 Installed Python-3.12.5 to /Users/xxxx/.pyenv/versions/3.12.5
 ```
+
+> [!TIP]
+> For PyEnv install python by building from sources, so some other dependencies may have to be installed first. See <project:install.md>.
 
 Show all vresions:
 

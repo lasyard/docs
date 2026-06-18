@@ -4,8 +4,8 @@
 
 ## By package manager
 
-::::{tab-set}
-:::{tab-item} macOS
+:::::{tab-set}
+::::{tab-item} macOS
 :sync: macos
 
 ```console
@@ -21,8 +21,8 @@ cmake version 3.30.3
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-:::
-:::{tab-item} CentOS 8
+::::
+::::{tab-item} CentOS 8
 :sync: centos8
 
 ```console
@@ -31,8 +31,8 @@ $ sudo dnf install cmake
 
 This version is quite old, so you may want ot install a newer version manually.
 
-:::
 ::::
+:::::
 
 ## From a release tarball
 
