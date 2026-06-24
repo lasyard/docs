@@ -324,9 +324,7 @@ Function failed <ae5cc75b-59fb-49b0-9883-74fbb8cba613> ❌
 The square is None
 ```
 
-:::{error}
-Error occured. Don't know why.
-:::
+**Error occured.** Don't know why.
 
 > [!TIP]
 > Copy the beta9 config to beam:

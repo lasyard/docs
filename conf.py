@@ -27,6 +27,8 @@ myst_substitutions = {
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'logo_only': True,
+}
 
-if html_theme == 'sphinx_rtd_theme':
-    html_css_files = ['lasyard_sphinx_rtd_theme.css']
+html_css_files = ['lasyard_sphinx_rtd_theme.css']

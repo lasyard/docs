@@ -58,7 +58,7 @@ $ sudo dnf install -y libffi-devel zlib-devel bzip2-devel xz-devel openssl-devel
 :sync: ubuntu
 
 ```console
-$ sudo apt install libbz2-dev
+$ sudo apt install libbz2-dev libsqlite3-dev
 ```
 
 ::::

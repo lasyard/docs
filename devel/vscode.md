@@ -269,3 +269,18 @@ There are two words with no brackes, but two right parenthesises:
 
 - todo))
 - fixme))
+
+## Other Plugins
+
+### Esbonio
+
+Set the python command to your venv:
+
+```json
+{
+  "esbonio.sphinx.pythonCommand": "/Users/xxxx/.venv/bin/python"
+}
+```
+
+> [!NOTE]
+> No substitution or variables are supported. The value must be a pure string.
