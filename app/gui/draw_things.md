@@ -18,4 +18,3 @@ Put the model files into `~/Library/Containers/com.liuliu.draw-things/Data/Docum
 - ERNIE Image Turbo 1.0 [{{hf}}](https://huggingface.co/baidu/ERNIE-Image-Turbo)
 - Flux.2 [klein] 4B [{{hf}}](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B)
 - Z Image Turbo 1.0 [{{hf}}](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo)
-- SD3 Large Turbo 3.5

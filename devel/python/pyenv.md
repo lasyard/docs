@@ -79,6 +79,12 @@ Installed Python-3.12.5 to /Users/xxxx/.pyenv/versions/3.12.5
 
 > [!TIP]
 > For PyEnv install python by building from sources, so some other dependencies may have to be installed first. See <project:install.md>.
+>
+> List all installable versions:
+>
+> ```console
+> $ pyenv install --list
+> ```
 
 Show all vresions:
 
