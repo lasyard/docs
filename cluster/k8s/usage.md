@@ -311,6 +311,13 @@ $ kubectl rollout restart deploy volcano-scheduler -n volcano-system
 deployment.apps/volcano-scheduler restarted
 ```
 
+## Change image of deploy/sts
+
+```console
+$ kubectl set image deploy sm sm-container=sm-image:v2
+deployment.apps/sm image updated
+```
+
 ## Set default StorageClass
 
 To set a StorageClass as default:

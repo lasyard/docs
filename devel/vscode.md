@@ -284,3 +284,5 @@ Set the python command to your venv:
 
 > [!NOTE]
 > No substitution or variables are supported. The value must be a pure string.
+
+If the preview refuse to refresh even after the language server restarting, delete cache files in `~/Library/Caches/esbonio`.
