@@ -219,7 +219,7 @@ busybox
 > [!TIP]
 > For more advanced functions, use [Harbor](project:/cluster/harbor.md) instead of this. Before installing Harbor, be sure to remove the container of this for name confliction.
 
-### Save images to file
+## Save images to file
 
 ```console
 $ docker image save busybox:1.37.0-glibc -o busybox-1.37.0-glibc.tar
@@ -231,7 +231,7 @@ Or to a compressed tar:
 $ docker image save busybox:1.37.0-glibc | bzip2 > busybox-1.37.0-glibc.tar.bz2
 ```
 
-### Clean used storage
+## Clean used storage
 
 ```console
 $ docker system df
@@ -272,4 +272,26 @@ Deleted Volumes:
 Deleted build cache objects:
 ...
 Total reclaimed space: 30.84GB
+```
+
+## Builder
+
+See disk usage:
+
+```console
+$ docker builder du
+ID                           RECLAIMABLE   SIZE       LAST ACCESSED
+...
+Shared:         5.447GB
+Private:        0B
+Reclaimable:    5.447GB
+Total:          5.447GB
+```
+
+Clean cache:
+
+```console
+$ docker builder prune
+WARNING! This will remove all dangling build cache. Are you sure you want to continue? [y/N] y
+Total:   0B
 ```
