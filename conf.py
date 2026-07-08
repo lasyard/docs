@@ -23,6 +23,8 @@ html_favicon = '_images/favicon-96x96.png'
 myst_substitutions = {
 }
 
+exclude_patterns += ['AGENTS.md']
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
