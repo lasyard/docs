@@ -13,6 +13,15 @@ $ brew install yq
 ```
 
 ::::
+::::{tab-item} Ubuntu
+:sync: ubuntu
+
+```console
+$ curl -LO https://github.com/mikefarah/yq/releases/download/v4.53.3/yq_linux_amd64
+$ sudo install yq_linux_amd64 /usr/local/bin/yq
+```
+
+::::
 :::::
 
 Check the version:
