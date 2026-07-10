@@ -33,4 +33,4 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_css_files = ['lasyard_sphinx_rtd_theme.css']
+html_css_files += ['lasyard_sphinx_rtd_theme.css']
