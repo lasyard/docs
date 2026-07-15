@@ -72,6 +72,30 @@
 
 这 SSD 貌似也没快多少。
 
+## 优盘
+
+补充一个优盘。控制器：
+
+:生产企业: VERBATIM
+:链接速度: 480 Mb/s
+:USB供应商ID: 0x0ed1
+:USB产品ID: 0x6981
+:USB产品版本: 0x0101
+
+盘：
+
+:容量: 16.83 GB（16,833,118,208字节）
+:文件系统: MS-DOS FAT32
+:设备名称: Store'N'Go
+:介质名称: VERBATIM Store'N'Go Media
+:分区图类型: MBR（主引导记录）
+
+测速结果：
+
+![dst_verbatim_16g.png](/_images/hardware/dst_verbatim_16g.png)
+
+这优盘年纪有点大了。
+
 ## SD 卡
 
 意犹未尽，又搬出了一堆老硬件，首先是品胜 USB 3.0 读卡器：
