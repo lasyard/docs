@@ -112,6 +112,7 @@ $ pyenv local 3.12.5
 $ pyenv versions
   system
 * 3.12.5 (set by /Users/xxxx/.python-version)
+```
 
 Set version in current shell:
 

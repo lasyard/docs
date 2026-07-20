@@ -74,7 +74,7 @@
 
 ## 优盘
 
-补充一个优盘。控制器：
+一个优盘。控制器：
 
 :生产企业: VERBATIM
 :链接速度: 480 Mb/s
@@ -96,7 +96,7 @@
 
 这优盘年纪有点大了。
 
-## SD 卡
+## TF 卡
 
 意犹未尽，又搬出了一堆老硬件，首先是品胜 USB 3.0 读卡器：
 
@@ -107,6 +107,24 @@
 :USB产品版本: 0x1201
 
 这个用的是公版驱动，名称显示不出来。
+
+一张 TF 卡：
+
+![tf_banq_joy_hc1_32g.jpg](/_images/hardware/tf_banq_joy_hc1_32g.jpg)
+
+:容量: 31.29 GB（31,293,095,936字节）
+:文件系统: MS-DOS FAT32
+:设备名称: STORAGE DEVICE
+:介质名称: Generic STORAGE DEVICE Media
+:分区图类型: MBR（主引导记录）
+
+测速结果：
+
+![dst_banq_joy_hc1_32g.png](/_images/hardware/dst_banq_joy_hc1_32g.png)
+
+这个被行车记录仪用了好多年，估计磨得差不多了。
+
+## SD 卡
 
 然后是一堆老旧 SD 卡。第一张：
 
