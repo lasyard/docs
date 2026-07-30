@@ -55,6 +55,8 @@ $ ceph fs volume ls
         "name": "cephfs"
     }
 ]
+$ ceph fs ls
+name: cephfs, metadata pool: cephfs.cephfs.meta, data pools: [cephfs.cephfs.data ]
 ```
 
 The Ceph Orchestrator will automatically create and configure MDS for your file system, show the MDSes:
@@ -144,6 +146,35 @@ Create a subvolume in a specified volume:
 ```console
 $ ceph fs subvolume create cephfs ceph-vol --group-name ceph-sg
 ```
+
+> [!TiP]
+> `--group-name` can be omitted, just put the group name at right place.
+
+Set quota on the subvolume:
+
+```console
+$ ceph fs subvolume resize cephfs ceph-vol 1073741824 ceph-sg
+[
+    {
+        "bytes_used": 0
+    },
+    {
+        "bytes_quota": 1073741824
+    },
+    {
+        "bytes_pcent": "0.00"
+    }
+]
+```
+
+> [!TIP]
+> To set quota on a subvolume when creating:
+>
+> ```console
+> $ ceph fs subvolume create cephfs ceph-vol ceph-sg --size=1073741824
+> ```
+>
+> The command seems change the quota setting if the subvolume exists already.
 
 If `--group-name` is omitted, the subvolume would be put in a default group `_nogroup`.
 
