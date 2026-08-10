@@ -65,6 +65,8 @@ val has 111,540 tokens
 $ python train.py config/train_shakespeare_char.py
 Overriding config with config/train_shakespeare_char.py:
 ...
+step 5000: train loss 0.6197, val loss 1.7098
+iter 5000: loss 0.8210, time 90530.46ms, mfu 0.53%
 ```
 
 If you run the above command with the too old Tesla P4, an error will be encoutered:
@@ -80,3 +82,35 @@ compile = False
 ```
 
 Which disables model compiling. Then run it again.
+
+Power and memory consumption:
+
+```console
+$ nvidia-smi
+Mon Aug 10 11:06:46 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.28.03              Driver Version: 560.28.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla P4                       Off |   00000000:00:05.0 Off |                    0 |
+| N/A   69C    P0             59W /   75W |    3509MiB /   7680MiB |     96%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A   3003965      C   python                                       3506MiB |
++-----------------------------------------------------------------------------------------+
+```
+
+## Sampling/Inference
+
+```console
+$ python sample.py --out_dir=out-shakespeare --start="I'm your father."
+```

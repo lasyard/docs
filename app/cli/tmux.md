@@ -43,3 +43,5 @@ Press {kbd}`Ctrl+B`, {kbd}`?` to show help information.
 Press {kbd}`Ctrl+B`, {kbd}`c` to create a new window.
 
 Press {kbd}`Ctrl+B`, {kbd}`n` to switch to the next window.
+
+Press {kbd}`Ctrl+B`, {kbd}`[` to enter copy mode, then press {kbd}`Esc` to exit.
