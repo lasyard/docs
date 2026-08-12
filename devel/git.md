@@ -115,3 +115,10 @@ $ git clean -dxf
 ```console
 $ git merge-base develop main
 ```
+
+### Check ignore
+
+```console
+$ git check-ignore -v coding.worktrees
+.gitignore:2:*  coding.worktrees
+```
