@@ -1,0 +1,47 @@
+apiVersion: kamaji.clastix.io/v1alpha1
+kind: TenantControlPlane
+metadata:
+  name: user-tcp
+  namespace: tenant-ns
+  labels:
+    tenant.clastix.io: user-tcp
+spec:
+  dataStore: default
+  controlPlane:
+    deployment:
+      replicas: 3
+      additionalMetadata:
+        labels:
+          tenant.clastix.io: user-tcp
+      extraArgs:
+        apiServer: []
+        controllerManager: []
+        scheduler: []
+      resources: {}
+    service:
+      additionalMetadata:
+        labels:
+          tenant.clastix.io: user-tcp
+      serviceType: NodePort
+  kubernetes:
+    version: v1.35.0
+    kubelet:
+      cgroupfs: systemd
+    admissionControllers:
+      - ResourceQuota
+      - LimitRanger
+  networkProfile:
+    address: 10.220.70.56
+    port: 30443
+    certSANs:
+      - las0
+    serviceCidr: 10.96.0.0/16
+    podCidr: 10.36.0.0/16
+    dnsServiceIPs:
+      - 10.96.0.10
+  addons:
+    coreDNS: {}
+    kubeProxy: {}
+    konnectivity:
+      server:
+        port: 8132
