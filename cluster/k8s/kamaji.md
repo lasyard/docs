@@ -208,3 +208,59 @@ No resources found
 ```
 
 最后的信息表明集群内还没有 Worker 节点。可以用已知的方式向新的控制平面添加节点，比如用 `kubeadm`.
+
+## Kamaji 终端
+
+Kamaji 终端实际上是一个 Web 管理应用，与 Kamaji 部署在同一个管理集群里。
+
+首先创建一个 Secret:
+
+```console
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: kamaji-console
+  namespace: kamaji-system
+stringData:
+  ADMIN_EMAIL: admin@kamaji.sys
+  ADMIN_PASSWORD: abc123
+  JWT_SECRET: jwt_secret
+  NEXTAUTH_URL: https://10.220.70.56:8080/ui
+EOF
+```
+
+这里的 `ADMIN_EMAIL` 和 `ADMIN_PASSWORD` 将用于登录终端。
+
+用 helm 安装：
+
+```console
+$ helm pull clastix/kamaji-console
+$ helm install console kamaji-console-0.1.3.tgz -n kamaji-system
+NAME: console
+LAST DEPLOYED: Thu Aug 27 11:16:20 2026
+NAMESPACE: kamaji-system
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace kamaji-system -l "app.kubernetes.io/name=kamaji-console,app.kubernetes.io/instance=console" -o jsonpath="{.items[0].metadata.name}")
+  export CONTAINER_PORT=$(kubectl get pod --namespace kamaji-system $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+  echo "Visit http://127.0.0.1:8080/ui to use your application"
+  kubectl --namespace kamaji-system port-forward $POD_NAME 8080:$CONTAINER_PORT
+```
+
+通过端口转发暴露服务：
+
+```console
+$ kubectl port-forward svc/console-kamaji-console -n kamaji-system 8080:80
+Forwarding from 127.0.0.1:8080 -> 3000
+Forwarding from [::1]:8080 -> 3000
+```
+
+访问 `https://localhost:8080/ui` 可以看到登录界面。登录后界面：
+
+![kamaji_console.png](/_images/cluster/k8s/kamaji_console.png)
+
+可见除 "Tenant Control Planes" 和 "Datastores" 两项外，其他功能都标记为 "Pro" 或不可用。
