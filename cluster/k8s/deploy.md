@@ -199,49 +199,42 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 
 ## Install networking
 
-Install the Tigera operator and custom resource definitions:
+> [!NOTE]
+> This section has been rewritten against kubernetes 1.37.0.
+
+Download the Tigera operator definitions:
 
 ```console
-$ curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/tigera-operator.yaml
-$ kubectl create -f tigera-operator.yaml
+$ curl -Lo tigera-operator-3.32.2.yaml https://raw.githubusercontent.com/projectcalico/calico/v3.32.2/manifests/tigera-operator.yaml
+```
+
+Install it:
+
+```console
+$ kubectl create -f tigera-operator-3.32.2.yaml
 namespace/tigera-operator created
-customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/bgpfilters.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/tiers.crd.projectcalico.org created
-customresourcedefinition.apiextensions.k8s.io/adminnetworkpolicies.policy.networking.k8s.io created
-customresourcedefinition.apiextensions.k8s.io/apiservers.operator.tigera.io created
-customresourcedefinition.apiextensions.k8s.io/imagesets.operator.tigera.io created
-customresourcedefinition.apiextensions.k8s.io/installations.operator.tigera.io created
-customresourcedefinition.apiextensions.k8s.io/tigerastatuses.operator.tigera.io created
 serviceaccount/tigera-operator created
+clusterrole.rbac.authorization.k8s.io/tigera-operator-secrets created
 clusterrole.rbac.authorization.k8s.io/tigera-operator created
 clusterrolebinding.rbac.authorization.k8s.io/tigera-operator created
+rolebinding.rbac.authorization.k8s.io/tigera-operator-secrets created
 deployment.apps/tigera-operator created
 ```
 
-Install Calico:
+Download the Calico definitions:
 
 ```console
-$ curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/custom-resources.yaml
-$ kubectl create -f custom-resources.yaml
+$ curl -Lo custom-resources-3.32.2.yaml https://raw.githubusercontent.com/projectcalico/calico/v3.32.2/manifests/custom-resources.yaml
+```
+
+Install it:
+
+```console
+$ kubectl create -f custom-resources-3.32.2.yaml
 installation.operator.tigera.io/default created
 apiserver.operator.tigera.io/default created
+goldmane.operator.tigera.io/default created
+whisker.operator.tigera.io/default created
 ```
 
 Wait until all these pods are in the "Running" state:
