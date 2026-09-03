@@ -266,6 +266,9 @@ las0     Ready    control-plane   125m   v1.32.3
 
 Without installing network, the status of node would be `NotReady`.
 
+> [!IMPORTANT]
+> If you add proxy environment in your containerd service, be sure to add the IP of all nodes, Service CIDR and Pod CIDR to `NO_PROXY`.
+
 ## Ready
 
 If you want to schedule pod to the control-plane node, you need to remove the taint:

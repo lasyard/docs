@@ -2,12 +2,18 @@
 
 <https://kamaji.clastix.io/>
 
+## 准备工作
+
+- 须先安装 <project:cert_manager.md>.
+- 一个默认的 StorageClass, 对应的 CSI driver 必须开通，可以用 <project:local_path_provisioner.md>.
+
 ## 用 helm 安装
 
 下载 helm 安装包：
 
 ```console
-$ helm repo add jetstack https://charts.jetstack.io
+$ helm repo add clastix https://clastix.github.io/charts
+"clastix" has been added to your repositories
 $ helm repo update
 $ helm pull clastix/kamaji --version=0.0.0+latest
 ```
@@ -17,7 +23,7 @@ $ helm pull clastix/kamaji --version=0.0.0+latest
 安装：
 
 ```console
-$ helm install kamaji kamaji-0.0.0+latest.tgz --version 0.0.0+latest --namespace kamaji-system --create-namespace --set datastore.enabled=true
+$ helm install kamaji kamaji-0.0.0+latest.tgz --namespace kamaji-system --create-namespace --set datastore.enabled=true
 NAME: kamaji
 LAST DEPLOYED: Tue Aug 25 11:30:32 2026
 NAMESPACE: kamaji-system
@@ -68,6 +74,16 @@ kubeconfiggenerators   kc           kamaji.clastix.io/v1alpha1   false        Ku
 tenantcontrolplanes    tcp          kamaji.clastix.io/v1alpha1   true         TenantControlPlane
 ```
 
+可以看到每个 etcd Pod 绑定的 pvc 用了默认存储类：
+
+```console
+$ kubectl get pvc -n kamaji-system
+NAME                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+data-kamaji-etcd-0   Bound    pvc-3db63b2c-22b2-4980-be8a-8973ab684843   8Gi        RWO            local-path     <unset>                 22h
+data-kamaji-etcd-1   Bound    pvc-eeb351ec-350e-4b5f-a212-5a21c43ccd69   8Gi        RWO            local-path     <unset>                 22h
+data-kamaji-etcd-2   Bound    pvc-8510ba02-efb1-4c94-bc16-6038bf028722   8Gi        RWO            local-path     <unset>                 22h
+```
+
 因为指定了 `--set datastore.enabled=true`, 因此生成了一个 DataStore:
 
 ```console
@@ -80,13 +96,40 @@ default   etcd     true    4m25s
 
 ## 创建一个控制平面
 
-控制平面由 TenantControlPlane 代表：
+查看管理集群的 Service CIDR 和 Pod CIDR:
+
+```console
+$ kubectl get pod -n kube-system -l component=kube-apiserver -o yaml | grep service-cluster-ip-range
+      - --service-cluster-ip-range=10.96.0.0/12
+$ kubectl get pod -n kube-system -l component=kube-controller-manager -o yaml | grep cluster-cidr
+      - --cluster-cidr=192.168.0.0/16
+```
+
+如果是 kubeadm 部署的集群可以直接查看 kubeadm-config:
+
+```console
+$ kubectl get configmap kubeadm-config -n kube-system -o yaml | grep -A3 networking
+    networking:
+      dnsDomain: cluster.local
+      podSubnet: 192.168.0.0/16
+      serviceSubnet: 10.96.0.0/12
+```
+
+新控制平面的 CIDR 最好不要跟管理集群重叠，否则即使安装正常也可能会有路由失败的问题。
+
+控制平面由 TenantControlPlane 代表（目前只支持到 Kubernetes v1.36）：
 
 :::{literalinclude} /_files/macos/workspace/k8s/kamaji/tcp.yaml
 :::
 
-> [!IMPORTANT]
-> 此处使用了 NodePort 类型的服务，实际还可以是 ClusterIP 或 LoadBanlancer. 注意当使用 NodePort 类型时，需要设置 `spec.networkProfile.address` 并且端口号必须在 30000-32767 范围内。其他两种则不需要设置 `address` 也不限制端口号。
+此处需要解释：
+
+- 为了简单使用了 NodePort 类型的服务，所以每个控制面需要不同的端口，并且不能与管理集群端口冲突。如果有 LB 则可以通过不同 IP 区分
+- NodePort 类型的端口号必须在 30000-32767 范围内，所以将控制平面端口设为 30443
+- Kamaji 使用 Konnectivity 组件桥接控制平面和节点之间的通信，默认为 8132 端口，现改为 30132 端口
+- 当使用 NodePort 方式暴露服务时，必须设置 `spec.networkProfile.address` 为管理集群的一个节点 IP, 并且必须能外部（将要加入新控制平面的 Worker 节点）访问
+- 用于访问控制平面的其他 IP 和域名写入 `certSANs` 列表
+- 控制平面可以部署多个副本，通过设置 `spec.controlPlane.deployment.replicas`
 
 将以上内容保存为文件 `tcp.yaml`, 应用到集群：
 
@@ -102,7 +145,7 @@ tenantcontrolplane.kamaji.clastix.io/user-tcp created
 ```console
 $ kubectl get tcp -n tenant-ns
 NAME       VERSION   INSTALLED VERSION   STATUS   CONTROL-PLANE ENDPOINT   KUBECONFIG                  DATASTORE   AGE
-user-tcp   v1.35.0   v1.35.0             Ready    10.220.70.56:30443       user-tcp-admin-kubeconfig   default     101s
+user-tcp   v1.35.8   v1.35.8             Ready    10.225.4.51:30443        user-tcp-admin-kubeconfig   default     88s
 ```
 
 Kamaji 根据 TenantControlPlane 的信息创建了控制平面的工作负载：
@@ -110,41 +153,41 @@ Kamaji 根据 TenantControlPlane 的信息创建了控制平面的工作负载�
 ```console
 $ kubectl get all -n tenant-ns
 NAME                            READY   STATUS    RESTARTS   AGE
-pod/user-tcp-664ffdf7d4-rkgxh   4/4     Running   0          3m7s
-pod/user-tcp-664ffdf7d4-rtw68   4/4     Running   0          3m7s
-pod/user-tcp-664ffdf7d4-tzpps   4/4     Running   0          3m7s
+pod/user-tcp-8668876c55-5g76d   4/4     Running   0          102s
 
-NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)           AGE
-service/user-tcp   NodePort   10.99.115.123   <none>        30443:30443/TCP   3m25s
+NAME               TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)                           AGE
+service/user-tcp   NodePort   10.101.175.155   <none>        30443:30443/TCP,30132:30132/TCP   116s
 
 NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/user-tcp   3/3     3            3           3m9s
+deployment.apps/user-tcp   1/1     1            1           103s
 
 NAME                                  DESIRED   CURRENT   READY   AGE
-replicaset.apps/user-tcp-664ffdf7d4   3         3         3       3m8s
-replicaset.apps/user-tcp-67f69568f8   0         0         0       3m9s
-replicaset.apps/user-tcp-6c46bfc594   0         0         0       3m9s
-replicaset.apps/user-tcp-7f49c7b5b4   0         0         0       3m9s
+replicaset.apps/user-tcp-756bd49fcf   0         0         0       103s
+replicaset.apps/user-tcp-7f54dc5cbc   0         0         0       102s
+replicaset.apps/user-tcp-8668876c55   1         1         1       102s
+replicaset.apps/user-tcp-cbf646f97    0         0         0       103s
 ```
+
+注意服务 `user-tcp` 是新控制平面的入口，它的 Cluster IP 仍然是管理集群的 IP, 控制平面端口和 Konnectivity 端口必须开放。
 
 Deployment 的详细信息：
 
 ```console
 $ kubectl get deploy user-tcp -owide
-NAME       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                                                                  IMAGES                                                                                                                                                                                 SELECTOR
-user-tcp   3/3     3            3           4m13s   kube-apiserver,kube-scheduler,kube-controller-manager,konnectivity-server   registry.k8s.io/kube-apiserver:v1.35.0,registry.k8s.io/kube-scheduler:v1.35.0,registry.k8s.io/kube-controller-manager:v1.35.0,registry.k8s.io/kas-network-proxy/proxy-server:v0.35.0   kamaji.clastix.io/name=user-tcp
+NAME       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                                                                  IMAGES                                                                                                                                                                                                                                                         SELECTOR
+user-tcp   1/1     1            1           2m28s   kube-apiserver,kube-scheduler,kube-controller-manager,konnectivity-server   registry.aliyuncs.com/google_containers/kube-apiserver:v1.35.8,registry.aliyuncs.com/google_containers/kube-scheduler:v1.35.8,registry.aliyuncs.com/google_containers/kube-controller-manager:v1.35.8,registry.k8s.io/kas-network-proxy/proxy-server:v0.35.0   kamaji.clastix.io/name=user-tcp
 ```
 
-可见每一个 Pod 都包含了控制平面需要的所有组件，并且创建了 3 个副本。
+可见每一个 Pod 都包含了控制平面需要的所有组件和 konnectivity-server.
 
 ## 访问新集群
 
-虽然指定了控制平面的 IP, 但由于是 NodePort 类型的服务，实际上用任意节点 IP 都能访问到：
+虽然是 NodePort 类型的服务，但由于证书的限制，只能用指定的 URL 访问：
 
 ```console
-$ curl -k https://10.220.70.56:30443/healthz
+$ curl -k https://10.225.4.51:30443/healthz
 ok
-$ curl -k https://10.220.70.56:30443/version 
+$ curl -k https://10.225.4.51:30443/version
 {
   "major": "1",
   "minor": "35",
@@ -152,11 +195,11 @@ $ curl -k https://10.220.70.56:30443/version
   "emulationMinor": "35",
   "minCompatibilityMajor": "1",
   "minCompatibilityMinor": "34",
-  "gitVersion": "v1.35.0",
-  "gitCommit": "66452049f3d692768c39c797b21b793dce80314e",
+  "gitVersion": "v1.35.8",
+  "gitCommit": "1c2e10a409eb1b03f2f28f401ce935312e20d9fb",
   "gitTreeState": "clean",
-  "buildDate": "2025-12-17T12:32:07Z",
-  "goVersion": "go1.25.5",
+  "buildDate": "2026-08-20T15:16:16Z",
+  "goVersion": "go1.26.5",
   "compiler": "gc",
   "platform": "linux/amd64"
 }
@@ -165,12 +208,12 @@ $ curl -k https://10.220.70.56:30443/version
 获得 admin kubeconfig:
 
 ```console
-$ kubectl get secret user-tcp-admin-kubeconfig -n tenant-ns -ojsonpath='{.data.admin\.conf}' | base64 -D
+$ kubectl get secret user-tcp-admin-kubeconfig -n tenant-ns -ojsonpath='{.data.admin\.conf}' | base64 -d
 apiVersion: v1
 clusters:
 - cluster:
     certificate-authority-data: ...
-    server: https://10.220.70.56:6443
+    server: https://10.225.4.51:30443
   name: user-tcp
 contexts:
 - context:
@@ -186,28 +229,124 @@ users:
     client-key-data: ...
 ```
 
-将以上 kubeconfig 保存成文件 `user.kubeconfig`, 然后可以访问集群了：
+将以上 kubeconfig 保存成文件 `user.kubeconfig`, 然后可以用它来访问集群了：
 
 ```console
 $ kubectl cluster-info --kubeconfig=user.kubeconfig
-Kubernetes control plane is running at https://10.220.70.56:30443
-CoreDNS is running at https://10.220.70.56:30443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Kubernetes control plane is running at https://10.225.4.51:30443
+CoreDNS is running at https://las0:30443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 $ kubectl get ns --kubeconfig=user.kubeconfig
 NAME              STATUS   AGE
-default           Active   11m
-kube-node-lease   Active   11m
-kube-public       Active   11m
-kube-system       Active   11m
+default           Active   6m48s
+kube-node-lease   Active   6m48s
+kube-public       Active   6m48s
+kube-system       Active   6m48s
 $ kubectl get svc --kubeconfig=user.kubeconfig
 NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   11m
+kubernetes   ClusterIP   10.128.0.1   <none>        443/TCP   6m58s
 $ kubectl get no --kubeconfig=user.kubeconfig
 No resources found
 ```
 
-最后的信息表明集群内还没有 Worker 节点。可以用已知的方式向新的控制平面添加节点，比如用 `kubeadm`.
+最后的信息表明集群内还没有 Worker 节点，同时会发现一些系统的服务运行不起来：
+
+```console
+$ kubectl get all --kubeconfig=user.kubeconfig -n kube-system 
+NAME                          READY   STATUS    RESTARTS   AGE
+pod/coredns-9444bc947-mf9wg   0/1     Pending   0          7m33s
+pod/coredns-9444bc947-pgccb   0/1     Pending   0          7m33s
+
+NAME               TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns   ClusterIP   10.128.0.10   <none>        53/UDP,53/TCP,9153/TCP   7m41s
+
+NAME                                DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+daemonset.apps/konnectivity-agent   0         0         0       0            0           kubernetes.io/os=linux   7m43s
+daemonset.apps/kube-proxy           0         0         0       0            0           kubernetes.io/os=linux   7m42s
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/coredns   0/2     2            0           7m42s
+
+NAME                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/coredns-9444bc947   2         2         0       7m33s
+```
+
+运行不起来的原因是没有 Worker 节点：
+
+```console
+$ kubectl --kubeconfig=user.kubeconfig get event -n kube-system --field-selector='reason=FailedScheduling'
+$ kubectl --kubeconfig=user.kubeconfig get event -n kube-system --field-selector='reason=FailedScheduling'
+LAST SEEN   TYPE      REASON             OBJECT                        MESSAGE
+7m59s       Warning   FailedScheduling   pod/coredns-9444bc947-mf9wg   no nodes available to schedule pods
+7m55s       Warning   FailedScheduling   pod/coredns-9444bc947-mf9wg   no nodes available to schedule pods
+8m          Warning   FailedScheduling   pod/coredns-9444bc947-pgccb   no nodes available to schedule pods
+7m55s       Warning   FailedScheduling   pod/coredns-9444bc947-pgccb   no nodes available to schedule pods
+```
+
+## 添加节点
+
+可以用已知的方式向新的控制平面添加节点。
+
+### 使用 `kubeadm`
+
+创建 token 并输出添加节点的命令：
+
+```console
+$ kubeadm --kubeconfig=user.kubeconfig token create --print-join-command
+kubeadm join 10.225.4.51:30443 --token 3ha0pt.h24armczjti8v35y --discovery-token-ca-cert-hash sha256:3348e46f32c6742e9c7bc6c0c5d182dc042f7bf98359b8d3e5a3bfa88cd87b83
+```
+
+以 `root` 用户身份在其他节点上运行这个命令即可将节点加入。
+
+```console
+$ kubectl get no --kubeconfig=user.kubeconfig
+NAME   STATUS   ROLES    AGE   VERSION
+las1   Ready    <none>   17s   v1.35.8
+```
+
+Kamaji 实现了控制平面与节点分离，所以这个集群里不存在 control-plane 角色的节点。
+
+现在有节点可以调度系统服务了，但还需要安装 CNI 以后网络才能工作。
+
+## 安装 CNI
+
+需要安装一种 CNI 插件，以 Calico 为例：
+
+```console
+$ kubectl --kubeconfig=user.kubeconfig create -f tigera-operator-3.32.2.yaml
+```
+
+进行下一步安装的时候须确保 Installation 对象的 cidr 设置与新集群的 Pod CIDR 一致：
+
+```console
+$ kubectl --kubeconfig=user.kubeconfig create -f custom-resources-3.32.2.yaml
+```
+
+## Konnectivity
+
+一般集群的各个节点和控制平面之间可以直接通信，因此不需要 Konnectivity. 在 Kamaji 管理的集群中，控制平面与其 Worker 节点不一定能直接通信，因此默认启用了 Konnectivity.
+
+参考网址：
+
+- [Kamaji 关于 konnectivity 的介绍](https://kamaji.clastix.io/concepts/konnectivity/)
+- [Kubernetes 关于 konnectivity 的文档](https://kubernetes.io/docs/tasks/extend-kubernetes/setup-konnectivity/)
+
+Konnectivity 有两个组件，安装在控制平面上的 konnectivity-server 和安装在 Worker 节点上的 konnectivity-agent.
+
+```console
+$ kubectl --kubeconfig user.kubeconfig -n kube-system get ds konnectivity-agent       
+NAME                 DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+konnectivity-agent   1         1         1       1            1           kubernetes.io/os=linux   4h
+```
+
+这是一个 DaemonSet, 因此每个新加入的节点都会启动一个 agent. 这个 agent 会向 konnectivity-server 注册。
+
+类似以下的功能都必须经由 Konnectivity 转发实现：
+
+- 在 Pod 中执行命令 (`kubectl exec`)
+- 获取 log (`kubectl logs`)
+- 端口转发 (`kubectl port-forwarding`)
 
 ## Kamaji 终端
 

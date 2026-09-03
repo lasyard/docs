@@ -191,7 +191,7 @@ vc-my-vcluster   Opaque   5      5m1s
 Get the kubeconfig:
 
 ```console
-$ kubectl get secret vc-my-vcluster -n team-x -ojsonpath='{.data.config}' | base64 -D
+$ kubectl get secret vc-my-vcluster -n team-x -ojsonpath='{.data.config}' | base64 -d
 apiVersion: v1
 clusters:
 - cluster:
@@ -253,7 +253,7 @@ By adjust the startup command args, we turn on debug logs for `api-server`, `con
 vCluster config is stored in a Secret:
 
 ```console
-$ kubectl get secret vc-config-my-vcluster -n team-x -ojsonpath='{.data.config\.yaml}'  | base64 -D
+$ kubectl get secret vc-config-my-vcluster -n team-x -ojsonpath='{.data.config\.yaml}'  | base64 -d
 controlPlane:
   advanced:
     cloudControllerManager:

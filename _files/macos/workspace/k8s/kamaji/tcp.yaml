@@ -9,7 +9,12 @@ spec:
   dataStore: default
   controlPlane:
     deployment:
-      replicas: 3
+      replicas: 1
+      registrySettings:
+        registry: registry.aliyuncs.com/google_containers
+        apiServerImage: kube-apiserver
+        controllerManagerImage: kube-controller-manager
+        schedulerImage: kube-scheduler
       additionalMetadata:
         labels:
           tenant.clastix.io: user-tcp
@@ -24,24 +29,25 @@ spec:
           tenant.clastix.io: user-tcp
       serviceType: NodePort
   kubernetes:
-    version: v1.35.0
+    version: v1.35.8
     kubelet:
       cgroupfs: systemd
     admissionControllers:
       - ResourceQuota
       - LimitRanger
   networkProfile:
-    address: 10.220.70.56
+    address: 10.225.4.51
     port: 30443
     certSANs:
       - las0
-    serviceCidr: 10.96.0.0/16
-    podCidr: 10.36.0.0/16
+      - 10.220.70.56
+    serviceCidr: 10.128.0.0/12
+    podCidr: 192.169.0.0/16
     dnsServiceIPs:
-      - 10.96.0.10
+      - 10.128.0.10
   addons:
     coreDNS: {}
     kubeProxy: {}
     konnectivity:
       server:
-        port: 8132
+        port: 30132

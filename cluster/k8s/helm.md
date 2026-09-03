@@ -124,5 +124,5 @@ sh.helm.release.v1.kueue.v3   helm.sh/release.v1   1      85d
 One for each release version. You can get the whole manifest by:
 
 ```console
-$ kubectl get secret sh.helm.release.v1.kueue.v3 -o jsonpath='{.data.release}' | base64 -D | base64 -D | gzip -d | yq -r '.manifest'
+$ kubectl get secret sh.helm.release.v1.kueue.v3 -o jsonpath='{.data.release}' | base64 -d | base64 -d | gzip -d | yq -r '.manifest'
 ```
