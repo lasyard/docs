@@ -237,6 +237,9 @@ goldmane.operator.tigera.io/default created
 whisker.operator.tigera.io/default created
 ```
 
+> [!IMPORTANT]
+> The CIDR setting of the Installation object must be the same as the Pod CIDR setting of the cluster.
+
 Wait until all these pods are in the "Running" state:
 
 ```console

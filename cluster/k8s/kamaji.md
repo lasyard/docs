@@ -96,27 +96,6 @@ default   etcd     true    4m25s
 
 ## 创建一个控制平面
 
-查看管理集群的 Service CIDR 和 Pod CIDR:
-
-```console
-$ kubectl get pod -n kube-system -l component=kube-apiserver -o yaml | grep service-cluster-ip-range
-      - --service-cluster-ip-range=10.96.0.0/12
-$ kubectl get pod -n kube-system -l component=kube-controller-manager -o yaml | grep cluster-cidr
-      - --cluster-cidr=192.168.0.0/16
-```
-
-如果是 kubeadm 部署的集群可以直接查看 kubeadm-config:
-
-```console
-$ kubectl get configmap kubeadm-config -n kube-system -o yaml | grep -A3 networking
-    networking:
-      dnsDomain: cluster.local
-      podSubnet: 192.168.0.0/16
-      serviceSubnet: 10.96.0.0/12
-```
-
-新控制平面的 CIDR 最好不要跟管理集群重叠，否则即使安装正常也可能会有路由失败的问题。
-
 控制平面由 TenantControlPlane 代表（目前只支持到 Kubernetes v1.36）：
 
 :::{literalinclude} /_files/macos/workspace/k8s/kamaji/tcp.yaml
@@ -155,8 +134,8 @@ $ kubectl get all -n tenant-ns
 NAME                            READY   STATUS    RESTARTS   AGE
 pod/user-tcp-8668876c55-5g76d   4/4     Running   0          102s
 
-NAME               TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)                           AGE
-service/user-tcp   NodePort   10.101.175.155   <none>        30443:30443/TCP,30132:30132/TCP   116s
+NAME               TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)                           AGE
+service/user-tcp   NodePort   10.96.190.29   <none>        30443:30443/TCP,30132:30132/TCP   116s
 
 NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/user-tcp   1/1     1            1           103s
@@ -173,7 +152,7 @@ replicaset.apps/user-tcp-cbf646f97    0         0         0       103s
 Deployment 的详细信息：
 
 ```console
-$ kubectl get deploy user-tcp -owide
+$ kubectl get deploy user-tcp  -n tenant-ns -owide
 NAME       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                                                                  IMAGES                                                                                                                                                                                                                                                         SELECTOR
 user-tcp   1/1     1            1           2m28s   kube-apiserver,kube-scheduler,kube-controller-manager,konnectivity-server   registry.aliyuncs.com/google_containers/kube-apiserver:v1.35.8,registry.aliyuncs.com/google_containers/kube-scheduler:v1.35.8,registry.aliyuncs.com/google_containers/kube-controller-manager:v1.35.8,registry.k8s.io/kas-network-proxy/proxy-server:v0.35.0   kamaji.clastix.io/name=user-tcp
 ```
@@ -245,7 +224,7 @@ kube-public       Active   6m48s
 kube-system       Active   6m48s
 $ kubectl get svc --kubeconfig=user.kubeconfig
 NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-kubernetes   ClusterIP   10.128.0.1   <none>        443/TCP   6m58s
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   6m58s
 $ kubectl get no --kubeconfig=user.kubeconfig
 No resources found
 ```
@@ -275,7 +254,6 @@ replicaset.apps/coredns-9444bc947   2         2         0       7m33s
 运行不起来的原因是没有 Worker 节点：
 
 ```console
-$ kubectl --kubeconfig=user.kubeconfig get event -n kube-system --field-selector='reason=FailedScheduling'
 $ kubectl --kubeconfig=user.kubeconfig get event -n kube-system --field-selector='reason=FailedScheduling'
 LAST SEEN   TYPE      REASON             OBJECT                        MESSAGE
 7m59s       Warning   FailedScheduling   pod/coredns-9444bc947-mf9wg   no nodes available to schedule pods
@@ -321,6 +299,52 @@ $ kubectl --kubeconfig=user.kubeconfig create -f tigera-operator-3.32.2.yaml
 
 ```console
 $ kubectl --kubeconfig=user.kubeconfig create -f custom-resources-3.32.2.yaml
+```
+
+## 网络拓扑
+
+以上部署完成后的网络拓扑图（AI 辅助编写）：
+
+```mermaid
+flowchart TB
+
+client[外部客户端]
+
+subgraph host[管理集群]
+    hostNetwork[管理集群网络<br/>Service CIDR: 10.96.0.0/12<br/>Pod CIDR: 192.168.0.0/16]
+    las0[节点 las0<br/>管理集群控制面和 Worker]
+    kamaji[Kamaji Operator<br/>kamaji-system]
+    tenantPod[TenantControlPlane Pod<br/>user-tcp<br/>kube-apiserver<br/>kube-controller-manager<br/>kube-scheduler<br/>konnectivity-server]
+    tenantService[TenantControlPlane Service<br/>user-tcp<br/>ClusterIP: 10.96.190.29<br/>NodePort: 30443 / 30132]
+
+    hostNetwork --- las0
+    las0 -->|管理宿主集群| kamaji
+    kamaji -->|创建并管理| tenantPod
+    tenantPod --> tenantService
+    tenantService -.->|运行在管理集群网络中| hostNetwork
+end
+
+subgraph hosted[托管集群 user-tcp]
+    hostedNetwork[托管集群网络<br/>Service CIDR: 10.96.0.0/12<br/>Pod CIDR: 192.168.0.0/16]
+    hostedControlPlane[托管集群控制面<br/>通过 https://10.225.4.51:30443 访问]
+    hostedWorker[托管集群 Worker 节点<br/>节点 las1]
+    hostedPods[托管集群工作负载 Pod<br/>CoreDNS 等]
+    hostedNetwork --- hostedControlPlane
+    hostedNetwork --- hostedWorker
+    hostedWorker --> hostedPods
+end
+
+client -->|HTTPS :30443| tenantService
+tenantService -->|转发控制面请求| hostedControlPlane
+hostedControlPlane <-->|Konnectivity :30132| hostedWorker
+hostedWorker -.->|Pod 网络| hostedPods
+
+classDef network fill:#e8f4f8,stroke:#087e8b,stroke-width:2px
+classDef node fill:#fff4d6,stroke:#b7791f,stroke-width:1px
+classDef control fill:#e8eaf6,stroke:#3949ab,stroke-width:1px
+class hostNetwork,hostedNetwork network
+class las0,hostedWorker node
+class kamaji,tenantPod,tenantService,hostedControlPlane,hostedPods control
 ```
 
 ## Konnectivity

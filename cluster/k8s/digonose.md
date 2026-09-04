@@ -63,3 +63,22 @@ $ kubectl get --raw='/readyz?verbose'
 [+]shutdown ok
 readyz check passed
 ```
+
+## 查看 Service CIDR 和 Pod CIDR
+
+```console
+$ kubectl get pod -n kube-system -l component=kube-apiserver -o yaml | grep service-cluster-ip-range
+      - --service-cluster-ip-range=10.96.0.0/12
+$ kubectl get pod -n kube-system -l component=kube-controller-manager -o yaml | grep cluster-cidr
+      - --cluster-cidr=192.168.0.0/16
+```
+
+如果是 kubeadm 部署的集群可以直接查看 kubeadm-config:
+
+```console
+$ kubectl get configmap kubeadm-config -n kube-system -o yaml | grep -A3 networking
+    networking:
+      dnsDomain: cluster.local
+      podSubnet: 192.168.0.0/16
+      serviceSubnet: 10.96.0.0/12
+```
