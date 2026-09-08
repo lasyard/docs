@@ -21,6 +21,8 @@ html_logo = '_images/lasydoc.png'
 html_favicon = '_images/favicon-96x96.png'
 
 myst_substitutions = {
+    "ai_main": '🤖以下内容为人工智能生成 | AI Generated Contents',
+    "ai_help": '✨以下内容借助人工智能编写 | AI Assisted Contents',
 }
 
 exclude_patterns += ['AGENTS.md']
