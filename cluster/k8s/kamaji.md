@@ -23,7 +23,7 @@ $ helm pull clastix/kamaji --version=0.0.0+latest
 安装：
 
 ```console
-$ helm install kamaji kamaji-0.0.0+latest.tgz --namespace kamaji-system --create-namespace --set datastore.enabled=true
+$ helm install kamaji kamaji-0.0.0+latest.tgz --namespace kamaji-system --create-namespace --set datastore.enabled=true --set telemetry.disabled=true
 NAME: kamaji
 LAST DEPLOYED: Tue Aug 25 11:30:32 2026
 NAMESPACE: kamaji-system
@@ -427,3 +427,62 @@ Forwarding from [::1]:8080 -> 3000
 ![kamaji_console.png](/_images/cluster/k8s/kamaji_console.png)
 
 可见除 "Tenant Control Planes" 和 "Datastores" 两项外，其他功能都标记为 "Pro" 或不可用。
+
+## 从源码构建 Helm Chart
+
+可以从源码直接构建出 Helm Chart 以锁定版本。需要两个源码仓库：
+
+```console
+$ git clone -b 26.9.2-edge git@github.com:clastix/kamaji
+$ git clone -b v0.17.0 git@github.com:clastix/kamaji-etcd.git
+```
+
+其中 `kamaji` 依赖 `kamaji-etcd`. 进入 `kamaji` 目录，修改原 Charts 中的版本号和依赖：
+
+```diff
+--- a/charts/kamaji/Chart.yaml
++++ b/charts/kamaji/Chart.yaml
+@@ -17,10 +17,10 @@ name: kamaji
+ sources:
+ - https://github.com/clastix/kamaji
+ type: application
+-version: 0.0.0+latest
++version: 26.9.2-edge
+ dependencies:
+ - name: kamaji-etcd
+-  repository: https://clastix.github.io/charts
++  repository: file://../../../kamaji-etcd/charts/kamaji-etcd
+   version: ">=0.15.0"
+   condition: kamaji-etcd.deploy
+ annotations:
+```
+
+这里将依赖改成本地文件，注意其中的相对路径是从源 `Chart.yaml` 出发。
+
+构建清单：
+
+```console
+$ make manifests
+```
+
+更新并构建依赖：
+
+```console
+$ helm dep update charts/kamaji
+Saving 1 charts
+Deleting outdated charts
+$ helm dep build charts/kamaji
+Saving 1 charts
+Deleting outdated charts
+```
+
+检查并打包：
+
+```console
+$ helm lint charts/kamaji
+==> Linting charts/kamaji
+
+1 chart(s) linted, 0 chart(s) failed
+$ helm package charts/kamaji
+Successfully packaged chart and saved it to: /home/ubuntu/workspace/kamaji/kamaji-26.9.2-edge.tgz
+```
