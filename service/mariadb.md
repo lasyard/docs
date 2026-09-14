@@ -107,6 +107,102 @@ In mysql client:
 SELECT user FROM mysql.user;
 ```
 
+### Set TLS connection
+
+According to <project:/app/cli/openssl.md>, if you already have a CA key and cert, use it to sign a cert for mysql server:
+
+```console
+$ openssl genrsa -out server.key 4096
+$ openssl req -new -key server.key -subj "/CN=mysql-server" -out server.csr
+$ openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 365 -sha256 -extfile <(printf "subjectAltName=DNS:las0,IP:10.220.70.56")
+Certificate request self-signature ok
+subject=CN = mysql-server
+```
+
+> [!IMPORTANT]
+> If you want to login to the server remotely, the `/CN` field can be set to the hostname you will use, or bake the "DNS name"/"IP address" into `subjectAltName` by extfile. This is not required if you login at local by UNIX domain socket.
+
+Copy the key and the certs into a dedicated place and allow `mysqld` to read the private key:
+
+```console
+$ sudo mkdir /etc/mysql/certs
+$ sudo cp ca.crt server.crt server.key /etc/mysql/certs/
+$ sudo chown mysql:mysql server.key
+```
+
+Create a config file `/etc/mysql/conf.d/tls.cnf`:
+
+:::{literalinclude} /_files/ubuntu/etc/mysql/conf.d/tls.cnf
+:language: ini
+:::
+
+Make sure this file is included in the main `cnf` file, generally `/etc/mysql/my.cnf`.
+
+Restart `mysql`/`mariadb`. Connect to the db as `root`, check ssl related settings:
+
+```sql
+show variables like '%ssl%';
+```
+
+The output may be:
+
+```text
++---------------------+-----------------------------+
+| Variable_name       | Value                       |
++---------------------+-----------------------------+
+| have_openssl        | YES                         |
+| have_ssl            | YES                         |
+| ssl_ca              | /etc/mysql/certs/ca.crt     |
+| ssl_capath          |                             |
+| ssl_cert            | /etc/mysql/certs/server.crt |
+| ssl_cipher          |                             |
+| ssl_crl             |                             |
+| ssl_crlpath         |                             |
+| ssl_key             | /etc/mysql/certs/server.key |
+| version_ssl_library | OpenSSL 3.0.2 15 Mar 2022   |
++---------------------+-----------------------------+
+10 rows in set (0.001 sec)
+```
+
+Create a user for testing:
+
+```sql
+CREATE USER 'tls'@'%' IDENTIFIED BY 'xxxxxxxx' REQUIRE X509;
+```
+
+Now generate a key and cert for the new user:
+
+```console
+$ openssl genrsa -out client.key 4096
+$ openssl req -new -key client.key -subj "/CN=mysql-client" -out client.csr
+$ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 365 -sha256
+Certificate request self-signature ok
+subject=CN = mysql-client
+```
+
+Use the new key and certs to login into mysql server:
+
+```console
+$ mysql -u tls -p --ssl-ca=/etc/mysql/certs/ca.crt --ssl-cert=client.crt --ssl-key=client.key
+```
+
+The mysql server will check if the certs are valid. After login, check if SSL is enabled:
+
+```sql
+SHOW STATUS LIKE 'Ssl_cipher';
+```
+
+The output may be:
+
+```text
++---------------+------------------------+
+| Variable_name | Value                  |
++---------------+------------------------+
+| Ssl_cipher    | TLS_AES_256_GCM_SHA384 |
++---------------+------------------------+
+1 row in set (0.001 sec)
+```
+
 ## Troubleshoot
 
 ### Bind address
