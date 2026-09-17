@@ -41,8 +41,10 @@ spec:
     certSANs:
       - las0
       - 10.220.70.56
-    serviceCidr: 10.96.0.0/12
-    podCidr: 192.168.0.0/16
+    serviceCidrs:
+      - 10.96.0.0/12
+    podCidrs:
+      - 192.168.0.0/16
     dnsServiceIPs:
       - 10.96.0.10
   addons:

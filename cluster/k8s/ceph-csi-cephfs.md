@@ -209,7 +209,7 @@ Now create the `pv` (also with a Secret to provide credentials for user `csi-sta
 :::{literalinclude} /_files/macos/workspace/k8s/cephfs_static_pv.yaml
 :::
 
-The `userID` and `userKey` here are plaintext and Kubernetes will `base64` encode it and move to `data` field.
+The `userID` and `userKey` here are plaintext and {{k8s}} will `base64` encode it and move to `data` field.
 
 Then the `pvc` and Pod (show the diff from the dynamic one):
 

@@ -1,4 +1,4 @@
-# Kubernetes API resources
+# {{k8s}} API resources
 
 :::{toctree}
 :maxdepth: 1

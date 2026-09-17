@@ -1,3 +1,8 @@
+---
+myst:
+  substitutions:
+    tcp: TenantControlPlane
+---
 # Kamaji
 
 <https://kamaji.clastix.io/>
@@ -96,7 +101,7 @@ default   etcd     true    4m25s
 
 ## 创建一个控制平面
 
-控制平面由 TenantControlPlane 代表（目前只支持到 Kubernetes v1.36）：
+控制平面由 {{tcp}} 代表（目前只支持到 {{k8s}} v1.36）：
 
 :::{literalinclude} /_files/macos/workspace/k8s/kamaji/tcp.yaml
 :::
@@ -127,7 +132,7 @@ NAME       VERSION   INSTALLED VERSION   STATUS   CONTROL-PLANE ENDPOINT   KUBEC
 user-tcp   v1.35.8   v1.35.8             Ready    10.225.4.51:30443        user-tcp-admin-kubeconfig   default     88s
 ```
 
-Kamaji 根据 TenantControlPlane 的信息创建了控制平面的工作负载：
+Kamaji 根据 {{tcp}} 的信息创建了控制平面的工作负载：
 
 ```console
 $ kubectl get all -n tenant-ns

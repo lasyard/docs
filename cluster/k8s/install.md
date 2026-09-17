@@ -1,4 +1,4 @@
-# Install Kubernetes Packages
+# Install {{k8s}} Packages
 
 ## By package manager
 
@@ -6,7 +6,7 @@
 ::::{tab-item} Ubuntu
 :sync: ubuntu
 
-Add the Kubernetes repository:
+Add the {{k8s}} repository:
 
 ```console
 $ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg

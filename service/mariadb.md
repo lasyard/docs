@@ -95,7 +95,7 @@ $ sudo mysql_secure_installation
 
 In mysql client:
 
-```sql
+```mysql
 SELECT version();
 ```
 
@@ -103,7 +103,7 @@ SELECT version();
 
 In mysql client:
 
-```sql
+```mysql
 SELECT user FROM mysql.user;
 ```
 
@@ -140,7 +140,7 @@ Make sure this file is included in the main `cnf` file, generally `/etc/mysql/my
 
 Restart `mysql`/`mariadb`. Connect to the db as `root`, check ssl related settings:
 
-```sql
+```mysql
 show variables like '%ssl%';
 ```
 
@@ -166,7 +166,7 @@ The output may be:
 
 Create a user for testing:
 
-```sql
+```mysql
 CREATE USER 'tls'@'%' IDENTIFIED BY 'xxxxxxxx' REQUIRE X509;
 ```
 
@@ -188,7 +188,7 @@ $ mysql -u tls -p --ssl-ca=/etc/mysql/certs/ca.crt --ssl-cert=client.crt --ssl-k
 
 The mysql server will check if the certs are valid. After login, check if SSL is enabled:
 
-```sql
+```mysql
 SHOW STATUS LIKE 'Ssl_cipher';
 ```
 

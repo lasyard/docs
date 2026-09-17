@@ -1,4 +1,4 @@
-# 从外网访问 k8s 集群发生认证错误
+# 从外网访问 {{k8s}} 集群发生认证错误
 
 ## 版本
 
@@ -11,7 +11,7 @@ Server Version: v1.32.0
 
 ## 问题
 
-在外网的一台主机上获得内网 k8s 的配置 (`/etc/kubernetes/admin.conf`) 并修改 `cluster.server` 为外部 IP, 访问时发生错误：
+在外网的一台主机上获得内网 {{k8s}} 的配置 (`/etc/kubernetes/admin.conf`) 并修改 `cluster.server` 为外部 IP, 访问时发生错误：
 
 ```console
 $ kubectl get nodes

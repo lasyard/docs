@@ -2,7 +2,7 @@
 
 ## 问题
 
-在 Kubernetes 集群中删除一个 PV 时，PV 一直处于 `Terminating` 无法删除。
+在 {{k8s}} 集群中删除一个 PV 时，PV 一直处于 `Terminating` 无法删除。
 
 ## 分析
 

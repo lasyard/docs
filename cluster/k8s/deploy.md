@@ -1,4 +1,4 @@
-# Deploy Kubernetes with kubeadm
+# Deploy {{k8s}} with kubeadm
 
 This document is for Ubuntu 22.04.
 
@@ -130,7 +130,7 @@ Initialize the cluster using the config we edited:
 ```console
 $ sudo kubeadm init --v=5 --config kubeadm_init.yaml
 ...
-Your Kubernetes control-plane has initialized successfully!
+Your {{k8s}} control-plane has initialized successfully!
 
 To start using your cluster, you need to run the following as a regular user:
 
@@ -312,7 +312,7 @@ Check cluster info:
 
 ```console
 $ kubectl cluster-info
-Kubernetes control plane is running at https://10.225.4.51:6443
+{{k8s}} control plane is running at https://10.225.4.51:6443
 CoreDNS is running at https://10.225.4.51:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.

@@ -122,9 +122,10 @@ $ sudo systemctl edit --full slurmd
 
 Create user and grant previleges for `slurmdbd` in the mysql/mariadb database:
 
-```sql
+```mysql
 CREATE USER slurmdbd IDENTIFIED BY 'slurmdbd-password';
 GRANT ALL on `slurm_acct_db`.* TO `slurmdbd`@`%`;
+FLUSH PRIVILEGES;
 ```
 
 Create `slurmdbd` configuration file `/etc/slurm/slurmdbd.conf`:

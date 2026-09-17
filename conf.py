@@ -21,6 +21,7 @@ html_logo = '_images/lasydoc.png'
 html_favicon = '_images/favicon-96x96.png'
 
 myst_substitutions |= {
+    'k8s': 'Kubernetes',
 }
 
 exclude_patterns += ['AGENTS.md']

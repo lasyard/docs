@@ -52,7 +52,7 @@ $ kubectl describe po -n kube-system -lcomponent=etcd
 
 For the output, you can also get the details of certificates path.
 
-Kubernetes secures `etcd` with TLS. Usually, the certificates and endpoint details are in your control plane node, often at:
+{{k8s}} secures `etcd` with TLS. Usually, the certificates and endpoint details are in your control plane node, often at:
 
 - `/etc/kubernetes/pki/etcd/ca.crt` (CA cert)
 - `/etc/kubernetes/pki/etcd/server.crt` (client cert)

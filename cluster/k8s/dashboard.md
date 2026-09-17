@@ -1,4 +1,4 @@
-# Dashboard of Kubernetes
+# Dashboard of {{k8s}}
 
 ## Install
 

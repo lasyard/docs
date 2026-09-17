@@ -1,4 +1,4 @@
-# Use Kubernetes
+# Use {{k8s}}
 
 ## Kubectl config
 

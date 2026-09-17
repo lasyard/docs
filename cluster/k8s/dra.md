@@ -1,12 +1,12 @@
 # Dynamic Resource Allocation
 
-相关知识请参阅 Kubernetes 官网文档 <https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/>, 目前是 1.34 版本。
+相关知识请参阅 {{k8s}} 官网文档 <https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/>, 目前是 1.34 版本。
 
-## Kubernetes 1.32
+## {{k8s}} 1.32
 
-请参阅 Kubernetes 官网文档 <https://v1-32.docs.kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/>.
+请参阅 {{k8s}} 官网文档 <https://v1-32.docs.kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/>.
 
-`DynamicResourceAllocation` 在 Kubernetes 1.32 上为 beta 特性，需要额外参数启用。如果集群是用 `kubeadm` 安装的，控制平面运行在 Pod 里，可用以下命令检查：
+`DynamicResourceAllocation` 在 {{k8s}} 1.32 上为 beta 特性，需要额外参数启用。如果集群是用 `kubeadm` 安装的，控制平面运行在 Pod 里，可用以下命令检查：
 
 ```console
 $ kubectl get po -n kube-system -l tier=control-plane
@@ -171,7 +171,7 @@ example-claim-example-4cb2t   pending              63s
 
 这种自动生成的 ResourceClaim 的所有者是这个 Pod, 当 Pod 被删除时它也被删除。
 
-## Kubernetes 1.34
+## {{k8s}} 1.34
 
 把集群升级到 1.34:
 
@@ -184,7 +184,7 @@ las2   Ready    <none>          189d   v1.34.2
 las3   Ready    <none>          185d   v1.34.2
 ```
 
-`DynamicResourceAllocation` 特性在 Kubernetes 1.34 上默认启用，所以之前的额外参数可以去掉，但别忘了升级服务映像的版本：
+`DynamicResourceAllocation` 特性在 {{k8s}} 1.34 上默认启用，所以之前的额外参数可以去掉，但别忘了升级服务映像的版本：
 
 1. `/etc/kubernetes/manifests/kube-apiserver.yaml`
 

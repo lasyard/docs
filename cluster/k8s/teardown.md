@@ -1,4 +1,4 @@
-# Teardown Kubernetes Cluster
+# Teardown {{k8s}} Cluster
 
 For every node do:
 

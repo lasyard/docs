@@ -1,0 +1,16 @@
+apiVersion: kamaji.clastix.io/v1alpha1
+kind: DataStore
+metadata:
+  name: mysql
+spec:
+  driver: MySQL
+  endpoints:
+    - las0:3306
+  basicAuth:
+    username:
+      content: a2FtYWpp
+    password:
+      secretReference:
+        name: mysql-secret
+        namespace: mysql-system
+        keyPath: password

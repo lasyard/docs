@@ -1,4 +1,4 @@
-# 在 Kubernetes 集群中安装 Volcano 调度器
+# 在 {{k8s}} 集群中安装 Volcano 调度器
 
 ## 使用 helm 安装
 
