@@ -122,3 +122,49 @@ $ git merge-base develop main
 $ git check-ignore -v coding.worktrees
 .gitignore:2:*  coding.worktrees
 ```
+
+## Setup a git server
+
+Create user `git`:
+
+```console
+$ sudo useradd -r -m -d /home/git -s /bin/bash git
+```
+
+Create a dir for repos and SSH login stuff:
+
+```console
+$ sudo -u git -H bash -c ' \
+  mkdir -p ~/.ssh ~/repos \
+  chmod 700 ~/.ssh \
+  touch ~/.ssh/authorized_keys \
+  chmod 600 ~/.ssh/authorized_keys \
+'
+```
+
+Then copy the users' public keys to `/home/git/.ssh/authorized_keys`.
+
+Create a bare repo:
+
+```console
+$ sudo -u git -H bash -c ' \
+  mkdir -p ~/repos/flux.git \
+  cd ~/repos/flux.git \
+  git init --bare --initial-branch=main \
+'
+Initialized empty Git repository in /home/git/repos/flux.git/
+```
+
+Now we can restrict user `git` to use `git-shell`:
+
+```console
+$ sudo usermod -s $(which git-shell) git
+```
+
+Test clone the repo on the client:
+
+```console
+$ git clone git@las0:repos/flux.git
+Cloning into 'flux'...
+warning: You appear to have cloned an empty repository.
+```
