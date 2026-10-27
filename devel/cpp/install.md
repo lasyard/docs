@@ -85,6 +85,12 @@ If you want to build deb packages, you need to install `equivs`:
 $ sudo apt satisfy equivs
 ```
 
+If `clang` is required:
+
+```console
+$ sudo apt install clang
+```
+
 ::::
 ::::{tab-item} macOS
 :sync: macos

@@ -133,12 +133,12 @@ $ sudo useradd -r -m -d /home/git -s /bin/bash git
 
 Create a dir for repos and SSH login stuff:
 
-```console
-$ sudo -u git -H bash -c ' \
-  mkdir -p ~/.ssh ~/repos \
-  chmod 700 ~/.ssh \
-  touch ~/.ssh/authorized_keys \
-  chmod 600 ~/.ssh/authorized_keys \
+```sh
+sudo -u git -H bash -c '
+  mkdir -p ~/.ssh ~/repos
+  chmod 700 ~/.ssh
+  touch ~/.ssh/authorized_keys
+  chmod 600 ~/.ssh/authorized_keys
 '
 ```
 
@@ -146,12 +146,17 @@ Then copy the users' public keys to `/home/git/.ssh/authorized_keys`.
 
 Create a bare repo:
 
-```console
-$ sudo -u git -H bash -c ' \
-  mkdir -p ~/repos/flux.git \
-  cd ~/repos/flux.git \
-  git init --bare --initial-branch=main \
+```sh
+sudo -u git -H bash -c '
+  mkdir -p ~/repos/flux.git
+  cd ~/repos/flux.git
+  git init --bare --initial-branch=main
 '
+```
+
+The response:
+
+```text
 Initialized empty Git repository in /home/git/repos/flux.git/
 ```
 
