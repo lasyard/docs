@@ -43,6 +43,19 @@ Find the package which contains a file:
 $ dpkg -S $(which file)
 ```
 
+Easter egg:
+
+```console
+$ apt moo
+                 (__) 
+                 (oo) 
+           /------\/ 
+          / |    ||   
+         *  /\---/\ 
+            ~~   ~~   
+..."Have you mooed today?"...
+```
+
 ## Popular packages
 
 ### Networking

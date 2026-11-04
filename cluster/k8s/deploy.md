@@ -197,65 +197,9 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 >
 > The expiration time is set to 24 hours as above.
 
-## Install networking
+## Install CNI
 
-> [!NOTE]
-> This section has been rewritten against kubernetes 1.37.0.
-
-Download the Tigera operator definitions:
-
-```console
-$ curl -Lo tigera-operator-3.32.2.yaml https://raw.githubusercontent.com/projectcalico/calico/v3.32.2/manifests/tigera-operator.yaml
-```
-
-Install it:
-
-```console
-$ kubectl create -f tigera-operator-3.32.2.yaml
-namespace/tigera-operator created
-serviceaccount/tigera-operator created
-clusterrole.rbac.authorization.k8s.io/tigera-operator-secrets created
-clusterrole.rbac.authorization.k8s.io/tigera-operator created
-clusterrolebinding.rbac.authorization.k8s.io/tigera-operator created
-rolebinding.rbac.authorization.k8s.io/tigera-operator-secrets created
-deployment.apps/tigera-operator created
-```
-
-Download the Calico definitions:
-
-```console
-$ curl -Lo custom-resources-3.32.2.yaml https://raw.githubusercontent.com/projectcalico/calico/v3.32.2/manifests/custom-resources.yaml
-```
-
-Install it:
-
-```console
-$ kubectl create -f custom-resources-3.32.2.yaml
-installation.operator.tigera.io/default created
-apiserver.operator.tigera.io/default created
-goldmane.operator.tigera.io/default created
-whisker.operator.tigera.io/default created
-```
-
-> [!IMPORTANT]
-> The CIDR setting of the Installation object must be the same as the Pod CIDR setting of the cluster.
-
-Wait until all these pods are in the "Running" state:
-
-```console
-$ watch kubectl get pods -n calico-system
-...
-NAME                                       READY   STATUS    RESTARTS   AGE
-calico-kube-controllers-548dddd6d4-kbdhq   1/1     Running   0          55m
-calico-node-42drn                          1/1     Running   0          55m
-calico-node-tvf4f                          1/1     Running   0          55m
-calico-node-znwtb                          1/1     Running   0          55m
-calico-typha-7cf7ffb6b-44vpb               1/1     Running   0          55m
-calico-typha-7cf7ffb6b-bd46j               1/1     Running   0          55m
-csi-node-driver-5kxdw                      2/2     Running   0          55m
-csi-node-driver-kt585                      2/2     Running   0          55m
-csi-node-driver-ljr6d                      2/2     Running   0          55m
-```
+Install <project:calico.md> or <project:cilium.md>.
 
 Check the node status:
 
@@ -267,7 +211,7 @@ las2     Ready    <none>          67m    v1.32.3
 las0     Ready    control-plane   125m   v1.32.3
 ```
 
-Without installing network, the status of node would be `NotReady`.
+Without installing CNI, the status of node would be `NotReady`.
 
 > [!IMPORTANT]
 > If you add proxy environment in your containerd service, be sure to add the IP of all nodes, Service CIDR and Pod CIDR to `NO_PROXY`.
