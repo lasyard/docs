@@ -8,7 +8,7 @@
 For `bpftool`:
 
 ```console
-$ sudo apt install linux-tools-$(uname -r)
+$ sudo apt install linux-tools-generic
 ```
 
 ```console

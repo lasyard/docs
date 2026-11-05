@@ -2,7 +2,7 @@
 
 <https://cilium.io/>
 
-## Install CLI
+## Install Cilium CLI
 
 :::::{tab-set}
 ::::{tab-item} macOS
@@ -25,6 +25,14 @@ $ sudo tar -C /usr/local/bin -xzf cilium-darwin-arm64.tar.gz
 
 ::::
 :::::
+
+```console
+$ cilium version
+cilium-cli: v0.20.1 compiled with go1.27.1 on darwin/arm64
+cilium image (default): v1.20.1
+cilium image (stable): v1.20.4
+cilium image (running): 1.20.1
+```
 
 ## Install Cilium In Current {{k8s}}
 
@@ -68,7 +76,23 @@ $ cilium install 1.20.4
 ℹ️  Cilium will fully replace all functionalities of kube-proxy
 ```
 
-This command actually use `helm` to install:
+In this case, the duty of `kube-proxy` is taken over by Cilium. Verify it in the Cilium config:
+
+```console
+$ kubectl get cm cilium-config -n kube-system -ojsonpath='{.data.kube-proxy-replacement}'
+true
+```
+
+Or run the debug utility to see the config:
+
+```console
+$ kubectl -n kube-system exec ds/cilium -- cilium-dbg status
+```
+
+> [!TIP]
+> Add `--verbose` to the above command to see more useful info.
+
+The installation command actually use `helm` to install:
 
 ```console
 $ helm list -n kube-system
@@ -92,4 +116,101 @@ daemonset.apps/cilium-envoy   2         2         2       2            2        
 NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/cilium-operator   1/1     1            1           7m53s
 deployment.apps/coredns           2/2     2            2           62d
+```
+
+## Hubble
+
+### Enable Hubble
+
+```console
+$ cilium hubble enable
+```
+
+### Install Hubble CLI
+
+:::::{tab-set}
+::::{tab-item} macOS
+:sync: macos
+
+Download the binaries:
+
+```console
+$ curl -LO https://github.com/cilium/hubble/releases/download/v1.20.2/hubble-darwin-arm64.tar.gz
+$ curl -LO https://github.com/cilium/hubble/releases/download/v1.20.2/hubble-darwin-arm64.tar.gz.sha256sum
+$ shasum -a 256 -c hubble-darwin-arm64.tar.gz.sha256sum
+hubble-darwin-arm64.tar.gz: OK
+```
+
+Install:
+
+```console
+$ sudo tar -C /usr/local/bin -xzf hubble-darwin-arm64.tar.gz
+```
+
+::::
+:::::
+
+Check the status:
+
+```console
+$ hubble status -P
+Healthcheck (via 127.0.0.1:4245): Ok
+Current/Max Flows: 8,190/8,190 (100.00%)
+Flows/s: 125.15
+Connected Nodes: 2/2
+```
+
+> [!TIP]
+> The `-P` is for port-forward. You can omit it if you do forwarding in another console:
+>
+> ```console
+> $ cilium hubble port-forward
+> ℹ️  Hubble Relay is available at 127.0.0.1:4245
+> ```
+
+### Enable Hubble UI
+
+```console
+$ cilium hubble enable --ui
+```
+
+Then open the UI:
+
+```console
+$ cilium hubble ui
+ℹ️  Opening "http://localhost:12000" in your browser...
+```
+
+## Status
+
+Now the status of Cilium:
+
+```console
+$ cilium status
+    /¯¯\
+ /¯¯\__/¯¯\    Cilium:             OK
+ \__/¯¯\__/    Operator:           OK
+ /¯¯\__/¯¯\    Envoy DaemonSet:    OK
+ \__/¯¯\__/    Hubble Relay:       OK
+    \__/       ClusterMesh:        disabled
+
+DaemonSet              cilium                   Desired: 2, Ready: 2/2, Available: 2/2
+DaemonSet              cilium-envoy             Desired: 2, Ready: 2/2, Available: 2/2
+Deployment             cilium-operator          Desired: 1, Ready: 1/1, Available: 1/1
+Deployment             hubble-relay             Desired: 1, Ready: 1/1, Available: 1/1
+Deployment             hubble-ui                Desired: 1, Ready: 1/1, Available: 1/1
+Containers:            cilium                   Running: 2
+                       cilium-envoy             Running: 2
+                       cilium-operator          Running: 1
+                       clustermesh-apiserver    
+                       hubble-relay             Running: 1
+                       hubble-ui                Running: 1
+Cluster Pods:          25/25 managed by Cilium
+Helm chart version:    1.20.1
+Image versions         cilium             quay.io/cilium/cilium:v1.20.1@sha256:ae9ea21f7427fe24bc6ea7247eb552157a1b0a431744045d3f641545ca71d11b: 2
+                       cilium-envoy       quay.io/cilium/cilium-envoy:v1.37.5-1786810558-766ccfb37260a43e9d228837aa84ce3faf9f64e7@sha256:75b8094c7127736a2ffd2dce3945e0931cb6df21b0372ff661940eca26730b91: 2
+                       cilium-operator    quay.io/cilium/operator-generic:v1.20.1@sha256:6c3885fc7b629099fdbe2a5c87869c86feb825fa18fae299eac0f61918d16ecf: 1
+                       hubble-relay       quay.io/cilium/hubble-relay:v1.20.1@sha256:59be0ae7d475ab9011a5e954618c0f27b5778b17140381425b308b55ba4917f4: 1
+                       hubble-ui          quay.io/cilium/hubble-ui-backend:v0.13.5@sha256:fac0c300ae119274edca11fd89b1ad23c788792d8bc4ea2ba631c709e8d3c688: 1
+                       hubble-ui          quay.io/cilium/hubble-ui:v0.13.5@sha256:f7d514fc54d784ed6df9d58cf0e97648b143f92b766dd1780ed3fc845bd4c516: 1
 ```
