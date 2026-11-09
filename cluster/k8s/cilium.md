@@ -126,6 +126,12 @@ deployment.apps/coredns           2/2     2            2           62d
 $ cilium hubble enable
 ```
 
+### Disable Hubble
+
+```console
+$ cilium hubble disable
+```
+
 ### Install Hubble CLI
 
 :::::{tab-set}
@@ -205,7 +211,7 @@ Containers:            cilium                   Running: 2
                        clustermesh-apiserver    
                        hubble-relay             Running: 1
                        hubble-ui                Running: 1
-Cluster Pods:          25/25 managed by Cilium
+Cluster Pods:          4/4 managed by Cilium
 Helm chart version:    1.20.1
 Image versions         cilium             quay.io/cilium/cilium:v1.20.1@sha256:ae9ea21f7427fe24bc6ea7247eb552157a1b0a431744045d3f641545ca71d11b: 2
                        cilium-envoy       quay.io/cilium/cilium-envoy:v1.37.5-1786810558-766ccfb37260a43e9d228837aa84ce3faf9f64e7@sha256:75b8094c7127736a2ffd2dce3945e0931cb6df21b0372ff661940eca26730b91: 2
@@ -213,4 +219,82 @@ Image versions         cilium             quay.io/cilium/cilium:v1.20.1@sha256:a
                        hubble-relay       quay.io/cilium/hubble-relay:v1.20.1@sha256:59be0ae7d475ab9011a5e954618c0f27b5778b17140381425b308b55ba4917f4: 1
                        hubble-ui          quay.io/cilium/hubble-ui-backend:v0.13.5@sha256:fac0c300ae119274edca11fd89b1ad23c788792d8bc4ea2ba631c709e8d3c688: 1
                        hubble-ui          quay.io/cilium/hubble-ui:v0.13.5@sha256:f7d514fc54d784ed6df9d58cf0e97648b143f92b766dd1780ed3fc845bd4c516: 1
+```
+
+## IPAM mode
+
+If you set `networking.podSubnet` when doing `kubeadm init` to deploy the cluster, for each node, there will be specs of `podCIDR` and `podCIDRs`:
+
+```console
+$ kubectl get no -o custom-columns='NAME:.metadata.name,POD-CIDR:spec.podCIDR,POD-CIDRS:spec.podCIDRs'
+NAME   POD-CIDR         POD-CIDRS
+las0   192.168.0.0/24   [192.168.0.0/24]
+las1   192.168.1.0/24   [192.168.1.0/24]
+```
+
+But Cilium's default IPAM mode is `cluster-pool`, which ignores these specs. You can check the `CiliumNode` resources to see the actual IPs:
+
+```console
+$ kubectl get cn
+NAME   CILIUMINTERNALIP   INTERNALIP    AGE
+las0   10.0.1.188         10.225.4.51   13m
+las1   10.0.0.66          10.225.4.52   13m
+```
+
+And the IPs of each Cilium managed pods by checking `CiliumEndpoint`:
+
+```console
+$ kubectl get cep -n kube-system
+NAME                            SECURITY IDENTITY   ENDPOINT STATE   IPV4         IPV6
+coredns-77b678d576-c9rsp        30461               ready            10.0.0.117   
+coredns-77b678d576-p6drq        30461               ready            10.0.1.220   
+hubble-relay-79b5b4b5f4-lq26s   60659               ready            10.0.0.67    
+hubble-ui-74b4645b7f-8rkv7      9497                ready            10.0.0.253
+```
+
+Note the default CIDR for pods overlaps with `serviceSubnet` of the cluster:
+
+```console
+$ kubectl -n kube-system get cm cilium-config -ojsonpath='{.data.cluster-pool-ipv4-cidr}'
+10.0.0.0/8
+```
+
+To respect the specs, IPAM mode must be set to `kubernetes`. You can do this when installing Cilium, or upgrade it:
+
+```console
+$ cilium upgrade --set ipam.mode=kubernetes  
+ℹ️  Using Cilium version 1.20.1
+🔮 Auto-detected cluster name: las
+🔮 Auto-detected kube-proxy has not been installed
+ℹ️  Cilium will fully replace all functionalities of kube-proxy
+⚠️  You maybe need to restart Cilium pods for configmap changes to take effect
+```
+
+Then restart all Cilium components:
+
+```console
+$ kubectl -n kube-system rollout restart ds/cilium deploy/cilium-operator
+daemonset.apps/cilium restarted
+deployment.apps/cilium-operator restarted
+```
+
+These are `CiliumNode` resources created for each node. These must be deleted and will be created automatically when needed:
+
+```console
+$ kubeclt delete cn --all
+ciliumnode.cilium.io "las0" deleted
+ciliumnode.cilium.io "las1" deleted
+```
+
+Then restart each pod managed by Cilium to get new IPs.
+
+## Best Practise
+
+Need not set `podSubnet` when deploy {{k8s}}. Keep IPAM mode `cluster-pool` but set the ip pool explicitly to avoid collision with service CIDR:
+
+```console
+$ cilium install 1.20.4 \
+  --set ipam.mode=cluster-pool \
+  --set ipam.operator.clusterPoolIPv4PodCIDRList='{192.168.0.0/16}' \
+  --set ipam.operator.clusterPoolIPv4MaskSize=24
 ```
