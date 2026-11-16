@@ -37,9 +37,3 @@ The default config file:
 ## Models
 
 Using <project:llama.cpp.md> to run the GGUF models.
-
-| HuggingFace Model                       | SillyTavern Template |
-| :-------------------------------------- | :------------------- |
-| TheDrummer/Rocinante-X-12B-v1-GGUF:Q8_0 | Mistral V3-Tekken    |
-| bartowski/L3-8B-Stheno-v3.2-GGUF:Q8_0   | Llama 3 Instruct     |
-| bartowski/MN-12B-Mag-Mell-R1-GGUF:Q8_0  | ChatML               |

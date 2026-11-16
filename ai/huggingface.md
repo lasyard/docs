@@ -26,9 +26,6 @@ $ hf cache ls
 ID                                            SIZE LAST_ACCESSED  LAST_MODIFIED REFS
 -------------------------------------------- ----- -------------- ------------- ----
 model/TheDrummer/Rocinante-X-12B-v1-GGUF     13.0G 51 minutes ago 2 days ago    main
-model/bartowski/L3-8B-Stheno-v3.2-GGUF        8.5G 18 hours ago   2 days ago    main
-model/bartowski/MN-12B-Mag-Mell-R1-GGUF      13.0G 2 hours ago    4 days ago    main
-model/bartowski/Rocinante-12B-v1.1-GGUF      13.0G 26 minutes ago 4 days ago    main
 ```
 
 Delete a unwanted model:
