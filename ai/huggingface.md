@@ -11,10 +11,10 @@ $ pip install -U huggingface_hub
 ## Usage
 
 ```console
-$ hf download bartowski/Rocinante-12B-v1.1-GGUF Rocinante-12B-v1.1-Q8_0.gguf
+$ hf download hf://TheDrummer/Cydonia-24B-v4.3-GGUF/Cydonia-24B-v4zg-Q4_K_M.gguf
 ...
 ✓ Downloaded
-  path: /Users/xxxx/.cache/huggingface/hub/models--bartowski--Rocinante-12B-v1.1-GGUF/snapshots/9d15ca24c675a428fc5821cccc537f2a6f64987d/Rocinante-12B-v1.1-Q8_0.gguf
+  path: /Users/jyg/.cache/huggingface/hub/models--TheDrummer--Cydonia-24B-v4.3-GGUF/snapshots/5f34e78ac0b8b61671a683b2e094e6f3fe6ae037/Cydonia-24B-v4zg-Q4_K_M.gguf
 ```
 
 You can download a model to a specified dir by `--local-dir /path/to/dir`. Note there will be a `.cache` dir generated in it.
@@ -22,22 +22,23 @@ You can download a model to a specified dir by `--local-dir /path/to/dir`. Note 
 List models in cache:
 
 ```console
-$ hf cache ls
-ID                                            SIZE LAST_ACCESSED  LAST_MODIFIED REFS
--------------------------------------------- ----- -------------- ------------- ----
-model/TheDrummer/Rocinante-X-12B-v1-GGUF     13.0G 51 minutes ago 2 days ago    main
+$ hf cache ls                                                   
+ID                                      SIZE LAST_ACCESSED  LAST_MODIFIED REFS
+-------------------------------------- ----- -------------- ------------- ----
+model/TheDrummer/Cydonia-24B-v4.3-GGUF 14.3G 52 minutes ago 7 hours ago   main
+
+Found 1 repo(s) for a total of 1 revision(s) and 14.3G on disk.
 ```
 
 Delete a unwanted model:
 
 ```console
-$ hf cache rm model/mradermacher/Qwen3-14B-Uncensored-GGUF
-About to delete 1 repo(s) totalling 12.1G.
-  - model/mradermacher/Qwen3-14B-Uncensored-GGUF (entire repo)
+$ hf cache rm model/Doctor-Shotgun/MS3.2-24B-Magnum-Diamond-GGUF
+About to delete 1 repo(s) totalling 14.3G.
+  - model/Doctor-Shotgun/MS3.2-24B-Magnum-Diamond-GGUF (entire repo)
 Proceed with deletion? [y/N]: y
-Cache deletion done. Saved 12.1G.
-✓ Deleted 1 repo(s) and 1 revision(s); freed 12.1G.
+✓ Deleted 1 repo(s) and 1 revision(s); freed 14.3G.
   repos_deleted: 1
   revisions_deleted: 1
-  freed: 12.1G
+  freed: 14.3G
 ```

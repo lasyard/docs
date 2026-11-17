@@ -37,3 +37,7 @@ The default config file:
 ## Models
 
 Using <project:llama.cpp.md> to run the GGUF models.
+
+| Models                           | Templates         |
+| :------------------------------- | :---------------- |
+| TheDrummer/Cydonia-24B-v4.3-GGUF | Mistral v7 Tekken |
